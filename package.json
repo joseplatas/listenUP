@@ -1,0 +1,23 @@
+{
+  "name": "listenup",
+  "version": "1.0.0",
+  "description": "Team repository for CSC 481 Project 2",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tsannifer/listenUP.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tsannifer/listenUP/issues"
+  },
+  "homepage": "https://github.com/tsannifer/listenUP#readme",
+  "devDependencies": {
+    "express": "^4.15.4"
+  }
+}
