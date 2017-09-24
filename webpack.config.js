@@ -7,12 +7,20 @@ module.exports = {
     filename: 'index_bundle.js'
   },
   module: {
-    loaders: [
+    rules: [
       { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
-      { test: /\.jsx$/, loader: 'babel-loader', exclude: /node_modules/ }
+      { test: /\.jsx$/, loader: 'babel-loader', exclude: /node_modules/ },
+      { test: /\.css$/, loader: [ 'style-loader', 'css-loader' ] }
     ]
   },
-  plugins: [new htmlWebpackPlugin()],
+  resolve: {
+    modules: ["node_modules", path.resolve(__dirname, 'app')]
+  },
+  plugins: [new htmlWebpackPlugin({
+    inject: false,
+    template: require('html-webpack-template'),//from https://github.com/jaketrent/html-webpack-template
+    appMountId: 'app'
+  })],
   devServer: {
     port: 8000,
     proxy: {
