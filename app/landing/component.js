@@ -14,7 +14,7 @@ export const LandingPage = () =>
         <h1>listenUP</h1>
         <div id='header'>
             <ul>
-                <li><Link to='/login'>Log In</Link></li>
+                <li><a href = '/login'>Log In</a></li>
                 <li><Link to='/transcription'>First Exercise</Link></li>
             </ul>
         </div>

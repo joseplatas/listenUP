@@ -17,7 +17,7 @@ import { Signup } from './user/signup/component.js'
 import { LandingPage } from './landing/component.js'
 import { Dashboard } from './user/dashboard/component.js'
 import { Settings } from './user/settings/component.js'
-import { Credits } from './user/landing/credits/component.js'
+import { Credits } from './landing/credits/component.js'
 
 
 export class MainLayout extends React.Component {
