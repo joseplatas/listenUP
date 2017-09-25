@@ -21,3 +21,11 @@ ListenUp is a web application that is aimed to help intermediate-level foreign l
 - Open browser
 - Go to http://localhost:8000 to view frontend 
 - Go to http://localhost:80 to view backend 
+
+### Writing HTML-style code in component.js with React
+
+- Function render() must return ONE element. Put the entire page in a single element (i.e. div)
+- className instead of class
+- Before linking pages, go to app --> index.js and add the page to the routing table (follow examples already present)
+- See app --> landing --> component.js to see how to do in-line links. Remember import statements and "link to" not "href"
+- To properly render a page, see either landing or transcription's component.js file
