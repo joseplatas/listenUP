@@ -29,3 +29,4 @@ ListenUp is a web application that is aimed to help intermediate-level foreign l
 - Check app/user/landing/component.js for example of how to link to other pages
 - To properly render a page, see either landing or transcription's component.js file
 
+-Testing
