@@ -11,6 +11,8 @@ import {
 
 export class Login extends React.Component {
     render() {
-        return <h1>Login</h1>
+        return <div>
+                <h1>Login Page</h1>
+            </div>
     }
 }
