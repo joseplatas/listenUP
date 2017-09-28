@@ -1,0 +1,130 @@
+* {
+    box-sizing: border-box; 
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+  }
+  
+  body {
+    margin: 0; 
+    font-weight: 500;
+    font-family: 'HelveticaNeue';
+  }
+  
+  section {
+    width: 100%;
+    padding: 0 7%;
+    display: table;
+    margin: 0;
+    max-width: none;
+    height: 100vh;
+  }
+
+  /*-----------------------*/
+
+  nav {
+      overflow: hidden;
+      background-color: #475c64;
+      position: fixed;
+      top: 0;
+      width: 100%;
+  }
+
+  .navLogo {
+      width: 30vh;
+      float: left;
+      margin: 5%;
+  }
+
+  .loginButton {
+      float: right;
+      margin: 5%;
+      height: 100%;
+      line-height: 100%;
+      white-space: nowrap;
+  }
+
+  /*-----------------------*/
+  
+  .intro {
+    height: 90vh;
+    background-color: #475c64;    
+  }
+
+  .about {
+      height: 90vh;
+      background-color: #fffef3;
+  }
+
+  .howitworks {
+      height: 90vh;
+      background-color: #d2ead7;
+  }
+
+  .content {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .whiteHeader {
+    color: #fffef3;
+  }
+
+  .blueHeader {
+      color: #33669a;
+  }
+
+  h2, h3, h4, h5 {
+      font-size: 2em;
+      display: block;
+  }
+  
+  h1 {
+    font-size: 3em;
+    display: block;
+    font-weight: 300;
+  }
+  
+  p {
+    font-size: 1.5em;
+    font-weight: 500;
+    color: #475055;
+  }
+  
+  a {
+    font-weight: 700;
+    color: #33669a;
+    position: relative;
+    text-decoration: none;
+  }
+
+  .loginButton a {
+      color: #fffef3;
+  }
+
+  a:hover {
+      opacity: 0.8;
+  }
+
+  a:active {
+      top: 1px;
+  }
+
+  em {
+      color: #9ed4ae;
+      font-weight: bold;
+  }
+  
+  footer {
+    padding: 1% 5%;
+    text-align:center;
+    background-color: #373B44;
+    color: #fffef3;
+    
+    
+  }
+
+  footer:a {
+    color: #fe4a49;
+    font-weight: 500;
+    text-decoration: none;
+  }
