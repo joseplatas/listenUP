@@ -19,7 +19,7 @@
     height: 100vh;
   }
 
-  /*-----------------------*/
+  /*----------nav----------*/
 
   nav {
       overflow: hidden;
@@ -29,40 +29,86 @@
       width: 100%;
   }
 
-  .navLogo {
-      width: 30vh;
-      float: left;
-      margin: 5%;
-  }
-
-  .loginButton {
+  nav ul {
       float: right;
-      margin: 5%;
-      height: 100%;
-      line-height: 100%;
+      margin-right: 2%;
+      margin-top: 2%;
       white-space: nowrap;
   }
 
-  /*-----------------------*/
+  nav ul li {
+      list-style: none;
+      list-style-type: none;
+      width: 100px;
+      text-align: center;
+      display: inline-block;
+  }
+
+  nav ul li a {
+      text-align: center;
+  }
+
+  .navLogo {
+    width: 200px;
+    height: 50px;
+    margin: .5%;
+    height: auto;
+    float: left;
+  }
+
+  /*
+  .loginButton {
+      float: right;
+      margin-right: 5%;
+      margin-top: 2%;
+      white-space: nowrap;
+  }
+*/
+  /*--------intro----------*/
   
   .intro {
     height: 90vh;
     background-color: #475c64;    
   }
 
+  .centerButton a {
+      position: relative;
+      line-height: 200%;
+      margin: auto;
+      height: auto;
+      border-radius: 5px;
+      font-weight: lighter;
+}
+
+.signupButton a {
+    background: #9ed4ae;
+    color: #475055;
+    white-space: nowrap;
+    padding: 2%;
+    
+}
+
+  /*--------about----------*/
+
+
   .about {
       height: 90vh;
       background-color: #fffef3;
   }
+
+  /*--------how it works----------*/
 
   .howitworks {
       height: 90vh;
       background-color: #d2ead7;
   }
 
+ /*--------end sections----------*/
+
   .content {
     display: table-cell;
     vertical-align: middle;
+    text-align: center;
   }
 
   .whiteHeader {
