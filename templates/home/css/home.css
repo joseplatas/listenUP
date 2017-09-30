@@ -81,6 +81,14 @@
 
   /*--------about----------*/
 
+  .columns-3 div {
+      display: inline-block;
+      position: relative;
+      width: 30%;
+      margin: 10px;
+      align-content: center;
+      text-align: left;
+  }
 
   .about {
       height: 90vh;
@@ -88,6 +96,12 @@
   }
 
   /*--------how it works----------*/
+
+  .columns-3 div img {
+      width: 200px;
+      height: auto;
+      top: 0;
+  }
 
   .howitworks {
       height: 90vh;
