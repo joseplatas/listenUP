@@ -29,9 +29,9 @@
     text-align: center;
   }
 
-  /*----------nav----------*/
+  /*----------header----------*/
 
-  nav {
+  header {
       overflow: hidden;
       background-color: #475c64;
       position: fixed;
@@ -39,30 +39,33 @@
       width: 100%;
   }
 
-  nav ul {
+  .header-buttons {
+      margin-right: 2%;
       float: right;
-      margin-right: 20px;
+  }
+
+  .header-buttons ul {
       white-space: nowrap;
   }
 
-  nav ul li {
+  .header-buttons ul li {
       list-style: none;
       list-style-type: none;
-      width: 100px;
       text-align: center;
       display: inline-block;
   }
 
-  nav ul li a {
+  header ul li a {
       text-align: center;
   }
 
-  nav .logo {
+
+  header .logo {
     width: 20%;
     height: auto;
-    margin: .5%;
-    height: auto;
     float: left;
+    margin: 2%;
+    vertical-align: middle;    
   }
 
   /*--------columns----------*/
@@ -92,14 +95,6 @@
     margin-bottom: 1%;
 }
 
-  @media only screen and (min-width: 700px) {
-
-    .col {
-        display: table-cell;
-    }
-  
-  }
-
 
   /*--------intro----------*/
   
@@ -107,23 +102,7 @@
     background-color: #475c64;    
   }
 
-  .centerButton a {
-      position: relative;
-      line-height: 200%;
-      margin: auto;
-      height: auto;
-      border-radius: 5px;
-      font-weight: lighter;
-      font-size: 1.2em;
-}
 
-.signupButton a {
-    background: #9ed4ae;
-    color: #475055;
-    white-space: nowrap;
-    padding: 2%;
-    
-}
 
   /*--------about----------*/
 
@@ -165,6 +144,50 @@
     color: #33669a;
   }
 
+/*--------buttons----------*/
+
+
+.button {
+    user-select: none;
+    padding: 5px 10px;
+    font-size: 1rem;
+    font-weight: 400;
+    display: inline-block;
+    line-height: 1.5;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    text-decoration: none;
+}
+
+
+.loginButton {
+  background-color: #fffef3;
+  color: #475055;
+}
+
+.centerButton a {
+    position: relative;
+    line-height: 200%;
+    margin: auto;
+    height: auto;
+    border-radius: 5px;
+    font-weight: lighter;
+    font-size: 1.2em;
+    width: 100%;
+}
+
+
+.signupButton a {
+  background: #9ed4ae;
+  color: #475055;
+  white-space: nowrap;
+  padding: 2%;
+  
+}
+
  /*--------text----------*/
 
   
@@ -193,6 +216,10 @@
       top: 1px;
   }
 
+  a:visited {
+      color: #475055;
+  }
+
   em {
       font-weight: bolder;
   }
@@ -201,6 +228,8 @@
       color: #9ed4ae;
       font-style: italic;
   }
+
+ 
   
   footer {
     padding: 1% 5%;
@@ -212,3 +241,14 @@
   footer a {
     color: #fffef3;
   }
+
+  
+  @media only screen and (min-width: 700px) {
+        .col {
+            display: table-cell;
+        }
+
+        .centerButton {
+            width: auto;
+        }
+    }
