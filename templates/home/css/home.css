@@ -71,6 +71,7 @@
   .column-container {
       display: table;
       width: 100%;
+      margin-top: 10%;
   }
 
   .col { 
@@ -84,6 +85,11 @@
 .col img {
     width: 100%;
     height: auto;
+}
+
+.col h1,h2, h3, h4, h5, h6, p {
+    margin-top: 0;
+    margin-bottom: 1%;
 }
 
   @media only screen and (min-width: 700px) {
@@ -133,6 +139,10 @@
       background-color: #d2ead7;
   }
 
+  .howitworks h3 {
+      text-align: left;
+  }
+
  /*--------headers----------*/
 
 
@@ -140,10 +150,10 @@
   h1, h2, h3, h4, h5 {
       font-size: 2em;
       display: block;
-      color: #475055;      
+      color: #475055; 
   }
   
-  h1 {
+  h1, h3 {
     font-size: 3em;
   }
 
@@ -152,7 +162,7 @@
   }
 
   .blueHeader {
-      color: #33669a;
+    color: #33669a;
   }
 
  /*--------text----------*/
@@ -162,6 +172,7 @@
     font-size: 1.1em;
     font-weight: 500;
     color: #475055;
+    margin: 0;
   }
   
   a {
