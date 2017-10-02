@@ -2,13 +2,16 @@
     box-sizing: border-box; 
     font-family: Arial, Helvetica, sans-serif;
     font-weight: lighter;
-  }
+}
   
   body {
     margin: 0; 
     font-weight: 500;
     font-family: 'HelveticaNeue';
   }
+
+  /*----------sections----------*/
+
   
   section {
     width: 100%;
@@ -17,6 +20,13 @@
     margin: 0;
     max-width: none;
     height: 100vh;
+  }
+
+  
+  .content {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
   }
 
   /*----------nav----------*/
@@ -55,10 +65,39 @@
     float: left;
   }
 
+  /*--------columns----------*/
+
+
+  .column-container {
+      display: table;
+      width: 100%;
+  }
+
+  .col { 
+    display: block;
+    text-align: left;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 1%;    
+}
+
+.col img {
+    width: 100%;
+    height: auto;
+}
+
+  @media only screen and (min-width: 700px) {
+
+    .col {
+        display: table-cell;
+    }
+  
+  }
+
+
   /*--------intro----------*/
   
   .intro {
-    height: 90vh;
     background-color: #475c64;    
   }
 
@@ -69,6 +108,7 @@
       height: auto;
       border-radius: 5px;
       font-weight: lighter;
+      font-size: 1.2em;
 }
 
 .signupButton a {
@@ -81,39 +121,30 @@
 
   /*--------about----------*/
 
-  .columns-3 div {
-      display: inline-block;
-      position: relative;
-      width: 30%;
-      margin: 10px;
-      align-content: center;
-      text-align: left;
-  }
-
+  
   .about {
-      height: 90vh;
       background-color: #fffef3;
   }
 
   /*--------how it works----------*/
 
-  .columns-3 div img {
-      width: 200px;
-      height: auto;
-      top: 0;
-  }
 
   .howitworks {
-      height: 90vh;
       background-color: #d2ead7;
   }
 
- /*--------end sections----------*/
+ /*--------headers----------*/
 
-  .content {
-    display: table-cell;
-    vertical-align: middle;
-    text-align: center;
+
+
+  h1, h2, h3, h4, h5 {
+      font-size: 2em;
+      display: block;
+      color: #475055;      
+  }
+  
+  h1 {
+    font-size: 3em;
   }
 
   .whiteHeader {
@@ -124,31 +155,22 @@
       color: #33669a;
   }
 
-  h2, h3, h4, h5 {
-      font-size: 2em;
-      display: block;
-  }
-  
-  h1 {
-    font-size: 3em;
-    display: block;
-    font-weight: 300;
-  }
+ /*--------text----------*/
+
   
   p {
-    font-size: 1.5em;
+    font-size: 1.1em;
     font-weight: 500;
     color: #475055;
   }
   
   a {
-    font-weight: 700;
     color: #33669a;
     position: relative;
     text-decoration: none;
   }
 
-  .loginButton a {
+  .whiteLink a {
       color: #fffef3;
   }
 
@@ -161,8 +183,12 @@
   }
 
   em {
+      font-weight: bolder;
+  }
+
+  strong {
       color: #9ed4ae;
-      font-weight: bold;
+      font-style: italic;
   }
   
   footer {
@@ -170,12 +196,8 @@
     text-align:center;
     background-color: #373B44;
     color: #fffef3;
-    
-    
   }
 
-  footer:a {
-    color: #fe4a49;
-    font-weight: 500;
-    text-decoration: none;
+  footer a {
+    color: #fffef3;
   }
