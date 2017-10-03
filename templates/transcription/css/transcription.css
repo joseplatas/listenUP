@@ -36,14 +36,15 @@
 
 * {
     box-sizing: border-box; 
-    font-family: Pragmatica;
+	font-family: Pragmatica;
+	margin: 0;
 }
   
   body {
     margin: 0; 
     font-weight: 500;
-		background-color: #fffef3;
-		color: #475055;
+	background-color: #fffef3;
+	color: #475055;
   }
   
   .wrapper {
@@ -79,33 +80,75 @@
 }
 
 	.header-buttons {
+		margin-top: 2%;
 		margin-right: 2%;
 		float: right;
 }
 
-	.header-buttons ul {
-		white-space: nowrap;
+/*
+All ul / ul li on this page are used to display inline-block content
+includes header, language-score section,
+and special character toolbar
+*/
 
+ul {
+	white-space: nowrap;
 }
 
-	.header-buttons ul li {
-		list-style: none;
-		list-style-type: none;
-		text-align: center;
-		display: inline-block;
-		border: 1px;
-		border-style: solid;
-		border-color: #475055;
-		border-radius: 5px;		
-		width: 100px;
-		height: auto;
-		line-height: 2.5rem;
-		margin: 2px;
+ul li {
+	list-style: none;
+	list-style-type: none;
+	text-align: center;
+	display: inline-block;
+	vertical-align: top;
 }
 
-	header ul li a {
-		text-align: center;
-		color: #475055;
+.header-buttons ul li {
+	border: 1px;
+	border-style: solid;
+	border-color: #475055;
+	border-radius: 5px;		
+	width: 100px;
+	height: auto;
+	line-height: 2.5rem;
+	margin: 2px;
+}
+
+header ul li a {
+	text-align: center;
+	color: #475055;
+}
+
+.lang-score {
+	float: right;
+}
+
+.lang-score .circleIcon {
+	width: 80px;
+}
+
+.score {
+	border-style: solid;
+	border-color: #475055;
+	height: 80px;
+	border-radius: 50%;
+	line-height: 80px;
+	text-align: center;
+	font-size: 2em;	
+	font-weight: bold;	
+}
+
+
+h1, h2, h3, h4, h5 {
+	font-size: 2em;
+	display: block;
+	color: #475055;
+	font-weight: lighter; 
+	text-align: left;
+}
+
+h1, h3 {
+  font-size: 3em;
 }
 
 a {
