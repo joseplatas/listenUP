@@ -1,0 +1,290 @@
+@font-face {
+	font-family: 'Pragmatica';
+	src: url('fonts/PragmaticaItalic.eot');
+	src: url('fonts/PragmaticaItalic.eot?#iefix') format('embedded-opentype'),
+		url('fonts/PragmaticaItalic.woff2') format('woff2'),
+		url('fonts/PragmaticaItalic.woff') format('woff'),
+		url('fonts/PragmaticaItalic.ttf') format('truetype'),
+		url('fonts/PragmaticaItalic.svg#PragmaticaItalic') format('svg');
+	font-weight: normal;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Pragmatica';
+	src: url('fonts/PragmaticaBold.eot');
+	src: url('fonts/PragmaticaBold.eot?#iefix') format('embedded-opentype'),
+		url('fonts/PragmaticaBold.woff2') format('woff2'),
+		url('fonts/PragmaticaBold.woff') format('woff'),
+		url('fonts/PragmaticaBold.ttf') format('truetype'),
+		url('fonts/PragmaticaBold.svg#PragmaticaBold') format('svg');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Pragmatica';
+	src: url('fonts/Pragmatica.eot');
+	src: url('fonts/Pragmatica.eot?#iefix') format('embedded-opentype'),
+		url('fonts/Pragmatica.woff2') format('woff2'),
+		url('fonts/Pragmatica.woff') format('woff'),
+		url('fonts/Pragmatica.ttf') format('truetype'),
+		url('fonts/Pragmatica.svg#Pragmatica') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+* {
+    box-sizing: border-box; 
+    font-family: Pragmatica;
+}
+  
+  body {
+    margin: 0; 
+    font-weight: 500;
+    font-family: 'HelveticaNeue';
+  }
+
+  /*----------sections----------*/
+
+  
+  section {
+    width: 100%;
+    padding: 0 7%;
+    display: table;
+    margin: 0;
+    max-width: none;
+    height: 100vh;
+  }
+
+  
+  .content {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+  }
+
+  /*----------header----------*/
+
+  header {
+      overflow: hidden;
+      background-color: #475c64;
+      position: fixed;
+      top: 0;
+      width: 100%;
+  }
+
+  .header-buttons {
+      margin-right: 2%;
+      float: right;
+  }
+
+  .header-buttons ul {
+      white-space: nowrap;
+  }
+
+  .header-buttons ul li {
+      list-style: none;
+      list-style-type: none;
+      text-align: center;
+      display: inline-block;
+  }
+
+  header ul li a {
+      text-align: center;
+  }
+
+
+  header .logo {
+    width: 200px;
+    height: auto;
+    float: left;
+    margin: 2%;
+    vertical-align: middle;    
+  }
+
+  /*--------columns----------*/
+
+
+  .column-container {
+      display: table;
+      width: 100%;
+      margin-top: 10%;
+  }
+
+  .col { 
+    display: block;
+    text-align: left;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 1%;    
+}
+
+.col img {
+    width: 100%;
+    height: auto;
+}
+
+.col h1,h2, h3, h4, h5, h6, p {
+    margin-top: 0;
+    margin-bottom: 1%;
+}
+
+
+  /*--------intro----------*/
+  
+  .intro {
+    background-color: #475c64;    
+  }
+
+
+
+  /*--------about----------*/
+
+  
+  .about {
+      background-color: #fffef3;
+  }
+
+  /*--------how it works----------*/
+
+
+  .howitworks {
+      background-color: #d2ead7;
+  }
+
+  .howitworks h3 {
+      text-align: left;
+  }
+
+ /*--------headers----------*/
+
+
+
+  h1, h2, h3, h4, h5 {
+      font-size: 2em;
+      display: block;
+      color: #475055;
+      font-weight: lighter; 
+  }
+  
+  h1, h3 {
+    font-size: 3em;
+  }
+
+  .whiteHeader {
+    color: #fffef3;
+  }
+
+  .blueHeader {
+    color: #33669a;
+  }
+
+/*--------buttons----------*/
+
+
+.button {
+    user-select: none;
+    padding: 5px 10px;
+    font-size: 1rem;
+    font-weight: 400;
+    display: inline-block;
+    line-height: 1.5;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    text-decoration: none;
+}
+
+
+.loginButton {
+  background-color: #fffef3;
+  color: #475055;
+}
+
+.centerButton a {
+    position: relative;
+    line-height: 200%;
+    margin: auto;
+    height: auto;
+    border-radius: 5px;
+    font-weight: lighter;
+    font-size: 1.2em;
+    width: 100%;
+}
+
+
+.signupButton a {
+  background: #9ed4ae;
+  color: #475055;
+  white-space: nowrap;
+  padding: 2%;
+  
+}
+
+ /*--------text----------*/
+
+  
+  p {
+    font-size: 1.1em;
+    font-weight: 500;
+    color: #475055;
+    margin: 0;
+  }
+  
+  a {
+    color: #33669a;
+    position: relative;
+    text-decoration: none;
+  }
+
+  .whiteLink a {
+      color: #fffef3;
+  }
+
+  a:hover {
+      opacity: 0.8;
+  }
+
+  a:active {
+      top: 1px;
+  }
+
+  a:visited {
+      color: #475055;
+  }
+
+  em {
+      font-weight: bolder;
+  }
+
+  strong {
+      color: #9ed4ae;
+      font-style: italic;
+  }
+
+ 
+  
+  footer {
+    padding: 1% 5%;
+    text-align:center;
+    background-color: #373B44;
+    color: #fffef3;
+  }
+
+  footer a {
+    color: #fffef3;
+  }
+
+  
+  @media only screen and (min-width: 700px) {
+        .col {
+            display: table-cell;
+        }
+
+        .centerButton {
+            width: auto;
+        }
+    }
