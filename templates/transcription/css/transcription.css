@@ -36,121 +36,177 @@
 
 * {
     box-sizing: border-box; 
-	font-family: Pragmatica;
-	margin: 0;
-}
-  
-  body {
-    margin: 0; 
-    font-weight: 500;
-	background-color: #fffef3;
-	color: #475055;
-  }
-  
-  .wrapper {
-    width: 100%;
-    padding: 0 7%;
-    display: table;
+	font-family: Pragmatica, Arial, Helvetica, sans-serif;
     margin: 0;
-    max-width: none;
-    height: 100vh;
-  }
-
-  
-  .content {
-    display: table-cell;
-    vertical-align: middle;
-    text-align: center;
-	}
-
-	
-	header {
-		overflow: hidden;
-		position: fixed;
-		top: 0;
-		width: 100%;
-}
-	
-	header .logo {
-	width: 200px;
-	height: auto;
-	float: left;
-	margin: 2%;
-	vertical-align: middle;    
 }
 
-	.header-buttons {
-		margin-top: 2%;
-		margin-right: 2%;
-		float: right;
+.show-boxes {
+    border-style: solid;
+    border-color: lightgray;
+    border-width: 1px;
 }
 
-/*
-All ul / ul li on this page are used to display inline-block content
-includes header, language-score section,
-and special character toolbar
-*/
+.flex-container {
+    display: flex;
+}
 
 ul {
-	white-space: nowrap;
+    list-style-type: none;
 }
 
-ul li {
-	list-style: none;
-	list-style-type: none;
-	text-align: center;
-	display: inline-block;
-	vertical-align: top;
+/*---page-header---*/
+
+.page-header {
+    background-color: #475c64;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 2%;
 }
 
-.header-buttons ul li {
-	border: 1px;
-	border-style: solid;
+.page-header-logo {
+    flex: 2 1 auto;
+}
+
+.page-header-logo img {
+    height: 50px;
+    vertical-align: middle;
+}
+
+.page-header-buttons {
+    padding-left: 0;
+}
+
+.page-header-buttons li {
+    align-self: center;
+    text-align: center;
+}
+
+.page-header-buttons a {
+    display: inline-block;
+    width: 100px;
+    white-space: nowrap;
+    border-radius: 5%;
+    padding: 5% 1%;
+    background-color: #fffef3;
+    text-decoration: none;
+    color: #33669a;
+}
+
+.page-header-buttons li+li {
+    padding-left: 3%;
+}
+
+/*---Main Content---*/
+
+.page-container {
+    min-height: calc(100vh - 74px);
+    background-color: #fffef3;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10%;
+}
+
+.exercise-header h4 {
+    flex: 2 1 auto;
+}
+
+.exercise-header-icons {
+    height: 75px;
+}
+
+.exercise-header-icons * {
+    height: 100%;
+}
+
+.exercise-header-icons .icon+.icon {
+    padding-left: 10px;
+}
+
+.score-icon {
+    border-style: solid;
+    border-width: 2px;
 	border-color: #475055;
-	border-radius: 5px;		
-	width: 100px;
-	height: auto;
-	line-height: 2.5rem;
-	margin: 2px;
-}
-
-header ul li a {
-	text-align: center;
-	color: #475055;
-}
-
-.lang-score {
-	float: right;
-}
-
-.lang-score .circleIcon {
-	width: 80px;
-}
-
-.score {
-	border-style: solid;
-	border-color: #475055;
-	height: 80px;
+	width: 75px;
 	border-radius: 50%;
-	line-height: 80px;
+	line-height: 75px;
 	text-align: center;
-	font-size: 2em;	
-	font-weight: bold;	
 }
 
+.score-icon p {
+    font-size: 30pt;
+    font-weight: bold;	    
+}
+
+.exercise-content {
+    flex-direction: column;
+}
+
+/*---audio-panel---*/
+
+.audio-player,
+.audio-controls {
+    justify-content: center;
+}
+
+.audio-panel,
+.input-panel {
+    flex: 1 1 auto;
+}
+
+.audio-controls {
+    white-space: nowrap;
+}
+
+.audio-button {
+    height: 100px;
+    width: 100px;
+}
+
+/*---input-panel---*/
+
+.input-panel {
+    padding: 2%;
+}
+
+.user-input textarea {
+    resize: none;
+    margin-top: 16px;
+    display: block;
+    width: 100%;
+}
+
+.user-input ul {
+    padding-left: 0;
+}
+
+.user-input ul li {
+    flex: 1 1 auto;
+    text-align: center;
+}
+
+/*---Misc Formatting---*/
+
+a:visited {
+    color: #475c64;
+}
 
 h1, h2, h3, h4, h5 {
-	font-size: 2em;
-	display: block;
-	color: #475055;
-	font-weight: lighter; 
-	text-align: left;
+    font-size: 2rem;
+    font-weight: lighter;
+    color: #33669a;
 }
 
-h1, h3 {
-  font-size: 3em;
+h5 {
+    font-size: 1.5rem;
 }
 
-a {
-	text-decoration: none;
+/*---Desktop & Tablet---*/
+@media only screen and (min-width: 700px) {
+    .page-header {
+        flex-wrap: nowrap;
+    }
+
+    .exercise-content {
+        flex-direction: row;
+    }
 }

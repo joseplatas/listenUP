@@ -2,46 +2,84 @@
 
 <html>
     <head>
+        <title>Transcription</title>
         <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="css/transcription.css"> 
+        <link rel="stylesheet" type="text/css" href="css/transcription.css">
     </head>
 
     <body>
+        <header class="page-header flex-container">
+            <div class="page-header-logo"><img src="img/ListenUp_logo_white.png"></div>
 
-        <header>
-            <img src="img/ListenUp_logo_gray.png" class ="logo">
-            <div class="header-buttons">
-                <ul>
-                    <li class="button"><a href="#">Dashboard</a></li>
-                    <li class="button"><a href="#">Log Out</a></li>
-                </ul>
-            </div>
+            <ul class="page-header-buttons flex-container">
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Log Out</a></li>
+            </ul>
+
         </header>
 
-        <div class="wrapper">
-                <div class="content">
+        <div class="page-container flex-container">
 
-                    <h4>transcription</h4>
+            <section class="exercise-header flex-container">
+                    <h4>
+                        transcription exercise
+                    </h4>
+                    <div class="exercise-header-icons flex-container">
+                        <div class="language-icon icon">
+                            <img src="img/icon_fr.png">
+                        </div>
+                        <div class="score-icon icon">
+                            <p>10</p>
+                        </div>
+                    </div>
+            </section>
 
-                    <div class="lang-score">
-                        <ul>
-                            <li><img src="img/icon_fr.png" class="circleIcon"></li>
-                            <li><p class = "score circleIcon">10</p></li>
-                        </ul>
+            <section class="exercise-content flex-container">
+                <div class="audio-panel">
+                    <div class="audio-player flex-container">
+                        <img src="img/icon_speaker_blue.png">
                     </div>
 
-                    <div class="exercise">
-                        <div class="audioPlayer">
+                    <div class="audio-controls flex-container">
+                        <img src="img/audio_controls_play.png" class="audio-button">
+                        <img src="img/audio_controls_pause.png" class="audio-button">
+                        <img src="img/audio_controls_stop.png" class="audio-button">
+                    </div>
+                </div>
+                <div class="input-panel">
 
-                        </div>
+                    <div class="user-input">
 
-                        <div class="input-tooltip">
-                            
-                        </div>
+                        <h5>type what you hear:</h5>
+
+                        <textarea name="user-input"></textarea>
+
+                        <ul class="char-bar flex-container">
+
+                            <li>à</li>
+                            <li>â</li>
+                            <li>é</li>
+                            <li>ê</li>
+                            <li>è</li>
+                            <li>ë</li>
+                            <li>î</li>
+                            <li>ô</li>
+                            <li>oe</li>
+                            <li>û</li>
+                            <li>ù</li>
+                            <li>ç</li>
+
+                        </ul>
+
+                    </div>
+
+                    <div class="tooltip">
+
                     </div>
 
                 </div>
+            </section>
+
         </div>
-        
     </body>
 </html>
