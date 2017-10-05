@@ -1,3 +1,5 @@
+/*---Font: Pragmatica---*/
+
 @font-face {
 	font-family: 'Pragmatica';
 	src: url('fonts/PragmaticaItalic.eot');
@@ -34,6 +36,8 @@
 	font-style: normal;
 }
 
+/*---Generic---*/
+
 * {
     box-sizing: border-box; 
 	font-family: Pragmatica, Arial, Helvetica, sans-serif;
@@ -51,6 +55,7 @@
 }
 
 ul {
+    padding-left: 0;
     list-style-type: none;
 }
 
@@ -70,10 +75,6 @@ ul {
 .page-header-logo img {
     height: 50px;
     vertical-align: middle;
-}
-
-.page-header-buttons {
-    padding-left: 0;
 }
 
 .page-header-buttons li {
@@ -118,10 +119,6 @@ ul {
     height: 100%;
 }
 
-.exercise-header-icons .icon+.icon {
-    padding-left: 10px;
-}
-
 .score-icon {
     border-style: solid;
     border-width: 2px;
@@ -129,7 +126,8 @@ ul {
 	width: 75px;
 	border-radius: 50%;
 	line-height: 75px;
-	text-align: center;
+    text-align: center;
+    margin-left: 10px;
 }
 
 .score-icon p {
@@ -173,10 +171,6 @@ ul {
     margin-top: 16px;
     display: block;
     width: 100%;
-}
-
-.user-input ul {
-    padding-left: 0;
 }
 
 .user-input ul li {
