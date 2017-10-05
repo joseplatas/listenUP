@@ -40,7 +40,7 @@
     margin: 0;
 }
 
-.show-boxes {
+.show-boxes * {
     border-style: solid;
     border-color: lightgray;
     border-width: 1px;
