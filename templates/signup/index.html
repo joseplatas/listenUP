@@ -28,18 +28,31 @@
 		</div>
 		<!-- end of header -->
 
-		<div id="main">
+		<div id="main" class="clearfix">
 			<div class="page_wrap">
 				<div class="signup">
-					<fieldset>
-						<form action="/submit.php">
-							<input type="text" name="name" placeholder="Your Name" >
-							<input type="email" name="email" placeholder="Your Email" >
-						</form>
-					</fieldset>
+                    <h1>Create an account</h1>
+                    <form action="/submit.php">
+                        <div class="input_wrapper">
+                            <img src="img/" alt="img">
+                            <input type="text" name="name" placeholder="Your Name" maxlength="30" size="30" >
+                        </div>
+
+                        <div class="input_wrapper">
+                            <img src="img/" alt="img">
+                            <input type="email" name="email" placeholder="Your Email" maxlength="30" size="30" >
+                        </div>
+
+                        <div class="input_wrapper">
+                            <img src="img/" alt="img">
+                            <input type="password" name="password" placeholder="Your Password" maxlength="30" size="30" >
+                        </div>
+                    </form>
+                    <div class="login">
+                        Already have an account? Sign in <a href="t:\School 2017-18\Software Engineering\listenUP\templates\login\index.html" src="login/index.html">here</a>
+                    </div>
 					
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam varius, dolor et placerat ultricies, ipsum quam tincidunt ligula, quis placerat nisi tortor et enim. Vivamus nec iaculis lorem. Nam maximus, risus sed tristique fermentum, erat sapien cursus purus, a pellentesque dolor tellus sit amet turpis. Sed metus dui, imperdiet vel venenatis ut, cursus gravida lectus.
-					Vivamus ullamcorper scelerisque dolor nec sagittis. Duis ut justo congue, iaculis libero et, tempus erat. Maecenas et mi ac risus fringilla luctus sit amet ac mauris. Vestibulum ultrices mollis tempor.</p>
+					
 				</div>
 
 			<div>
