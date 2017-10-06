@@ -37,6 +37,22 @@ body {
     width: 100%;
 }
 
+#header .getStarted .button {
+    margin-right: 40px;
+    background-color: #9ed4ae;
+    /* border: 2px solid; */
+    border-radius: 5px;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    float: right;
+}
+
 #header .homeButton .button{
     background-color: #475c64;
     border: 2px solid;
@@ -52,23 +68,46 @@ body {
     float: right;
 }
 
-#main .signup{
-    width: 300px;
-    margin: auto;
-    margin-top: 250px;
+#main .title{
+    margin-top: 150px;
+    margin-left: 91px;
+    /* float: left; */
 }
 
-#main .signup .input_wrapper{
+#main .login{
+    width: 300px;
+    margin: auto;
+    margin-top: 150px;
+}
+
+#main .login .input_wrapper{
     max-width: 300px;
 }
 
-#main .signup .input_wrapper input{
+#main .login .input_wrapper input{
     margin-top: 20px;
     maxlength: 20;
     size: 14;
 }
 
-#main .signup .login{
+#main .login .input_wrapper button{
+    margin-top: 20px;
+    width: 270px;
+    height: 50px;
+    background-color: #9ed4ae;
+    /* border: 2px solid; */
+    border-radius: 5px;
+    color: #6f6363;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    /* margin: 4px 2px; */
+    cursor: pointer;
+}
+
+#main .login .signup{
     max-width: 300px;
     margin-top: 20px;
 }
