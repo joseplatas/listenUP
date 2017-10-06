@@ -19,7 +19,8 @@ body {
 .page_wrap {
     width: 100%;
     max-width: 1200px;
-    margin: auto
+    margin: auto;
+    margin-bottom: 49px;
 }
 
 #header {
@@ -70,51 +71,145 @@ body {
 
 #main .title{
     margin-top: 150px;
-    margin-left: 91px;
+    margin-left: 310px;
     /* float: left; */
 }
 
-#main .login{
-    width: 300px;
+#main .credits{
+    max-width: 900px;
     margin: auto;
-    margin-top: 150px;
+    margin-top: 50px;
 }
 
-#main .login .input_wrapper{
-    max-width: 300px;
+#main .credits .audio_video{
+    border: 2px solid #676767;
+    max-width: 1000px;
 }
 
-#main .login .input_wrapper input{
+#main .credits .audio_video p{
+    font-size: 45px;
+    color: #676767;
+    margin-left: 10px;
+}
+
+#main .credits .audio_video img.img1{
+    width: 274px;
+    margin-left: 30px;
+    margin-top: 30px;
+}
+
+#main .credits .audio_video img.img2{
+    width: 292px;
+    margin-left: 30px;
+    margin-top: 30px;
+    margin-bottom: 25px;
+}
+
+#main .credits .technology{
+    border: 2px solid #676767;
+    max-width: 1000px;
     margin-top: 20px;
-    maxlength: 20;
-    size: 14;
 }
 
-#main .login .input_wrapper button{
+#main .credits .technology p{
+    font-size: 45px;
+    color: #676767;
+    margin-left: 10px;
+}
+
+#main .credits .technology img.img1{
+    width: 200px;
+    margin-left: 28px;
+    margin-top: 30px;
+    margin-bottom: 7px;
+}
+
+#main .credits .technology img.img2{
+    width: 200px;
+    margin-left: 10px;
     margin-top: 20px;
-    width: 270px;
-    height: 50px;
-    background-color: #9ed4ae;
-    /* border: 2px solid; */
-    border-radius: 5px;
-    color: #6f6363;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
+    margin-bottom: 18px;
+}
+
+#main .credits .technology img.img3{
+    width: 200px;
+    margin-left: -3px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+#main .credits .technology img.img4{
+    width: 200px;
+    margin-left: 22px;
+    margin-top: 30px;
+    margin-bottom: 19px;
+}
+
+
+#main .credits .team{
+    display: flex;
+    border: 2px solid #676767;
+    max-width: 1000px;
+    margin-top: 20px;
+}
+
+#main .credits .team p{
+    font-size: 45px;
+    color: #676767;
+    margin-left: 10px;
+}
+
+#main .credits .team .krystina{
+    border: 2px solid #676767;
+    width: 150;
+    height: 150;
+    margin: 65px 0px 50px 32px;
+}
+
+#main .credits .team .jose{
+    border: 2px solid #676767;
+    width: 150;
+    height: 150;
+    margin: 65px 0px 50px 32px;
+}
+
+#main .credits .team .terrence{
+    border: 2px solid #676767;
+    width: 150;
+    height: 150;
+    margin: 65px 0px 50px 32px;
+}
+
+#main .credits .team .jennifer{
+    border: 2px solid #676767;
+    width: 150;
+    height: 150;
+    margin: 65px 0px 50px 32px;
+}
+
+#main .credits .team .krystina p.p1{
     font-size: 20px;
-    /* margin: 4px 2px; */
-    cursor: pointer;
+    margin-top: 160px;
 }
 
-#main .login .signup{
-    max-width: 300px;
-    margin-top: 20px;
+#main .credits .team .jose p.p2{
+    font-size: 20px;
+    margin-top: 160px;
 }
 
-#main p{
+#main .credits .team .terrence p.p3{
+    font-size: 20px;
+    margin-top: 160px;
+}
+
+#main .credits .team .jennifer p.p4{
+    font-size: 20px;
+    margin-top: 160px;
+}
+
+/* #main p{
     color:red;
-}
+} */
 .content p{
     color: blue;
 }
