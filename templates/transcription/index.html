@@ -29,7 +29,7 @@
                             <img src="img/icon_fr.png">
                         </div>
                         <div class="score-icon icon">
-                            <p>9</p>
+                            <p class="score">9</p>
                         </div>
                     </div>
             </section>
@@ -46,15 +46,21 @@
                         <img src="img/audio_controls_stop.png" class="audio-button">
                     </div>
                 </div>
+
                 <div class="input-panel flex-container">
+
+                    <!--Parts of the user-input panel-->
 
                     <div class="user-input">
 
                         <h5>type what you hear:</h5>
 
                         <textarea name="user-input" spellcheck="false"></textarea>
+                    
+                        <!--Clicking on a character in the char-bar
+                            will input that character into the textarea-->
 
-                        <ul class="char-bar flex-container">
+                        <ul class="char-bar fr-chars flex-container">
 
                             <li>à</li>
                             <li>â</li>
@@ -71,11 +77,31 @@
 
                         </ul>
 
+                        <ul class="char-bar es-chars flex-container">
+
+                            <li>á</li>
+                            <li>é</li>
+                            <li>í</li>
+                            <li>ó</li>
+                            <li>ú</li>
+                            <li>ñ</li>
+                            <li>ü</li>
+                            <li>¡</li>
+                            <li>¿</li>
+
+                        </ul>
+
                     </div>
 
-                    <div class="skip-button">
-                        <h5>enter/skip button will go here</h5>
+                    <!--Enter button is SKIP BUTTON when user has not
+                        entered anything into the text box-->
+
+                    <div class="enter-button">
+                        <h5>enter</h5>
                     </div>
+
+                    <!--Tooltip will be replaced by feedback, giving
+                        the user the correct answer to the audio clipx-->
 
                     <div class="tooltip">
 

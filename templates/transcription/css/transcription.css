@@ -59,6 +59,19 @@ ul {
     list-style-type: none;
 }
 
+a:visited {
+    color: #475c64;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: lighter;
+    color: #33669a;
+}
+
+h4, h5 {
+    font-size: 2rem;
+}
+
 /*---page-header---*/
 
 .page-header {
@@ -107,8 +120,13 @@ ul {
     padding: 10%;
 }
 
+.exercise-header {
+    flex-direction: column;
+}
+
 .exercise-header h4 {
-    flex: 2 1 auto;
+    display: block;
+    width: 100%;
 }
 
 .exercise-header-icons {
@@ -130,13 +148,14 @@ ul {
     margin-left: 10px;
 }
 
-.score-icon p {
+.score {
     font-size: 30pt;
     font-weight: bold;	    
 }
 
 .exercise-content {
     flex-direction: column;
+    justify-content: center;
 }
 
 /*---audio-panel---*/
@@ -146,9 +165,9 @@ ul {
     justify-content: center;
 }
 
-.audio-panel,
-.input-panel {
-    flex: 1 1 auto;
+.audio-player img {
+    width: 250px;
+    height: auto;
 }
 
 .audio-controls {
@@ -166,6 +185,8 @@ ul {
     padding: 2%;
     flex-direction: column;
     justify-content: space-between;
+    min-width: 400px;
+    max-width: 500px;
 }
 
 .user-input textarea {
@@ -183,20 +204,23 @@ ul {
     font-size: 1.4em;
 }
 
-
-/*---Misc Formatting---*/
-
-a:visited {
-    color: #475c64;
+.enter-button {
+    width: 100%;
+    background-color: #9ed4ae;
+    text-align: center;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-weight: lighter;
-    color: #33669a;
+.enter-button h5 {
+    color: #475055;
 }
 
-h4, h5 {
-    font-size: 1.5rem;
+.tooltip {
+    margin-top: 16px;
+}
+
+/*---HIDDEN ON THE FRENCH PAGE---*/
+.es-chars {
+    visibility: hidden;
 }
 
 /*---Desktop & Tablet---*/
@@ -207,5 +231,14 @@ h4, h5 {
 
     .exercise-content {
         flex-direction: row;
+    }
+
+    .exercise-header {
+        flex-direction: row;
+    }
+
+    .exercise-header h4 {
+        flex: 2 1 auto;
+        max-width: 650px;
     }
 }
