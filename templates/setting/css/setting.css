@@ -1,0 +1,83 @@
+*{
+    box-sizing: border-box; 
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+ }
+ 
+ nav 
+ {
+      overflow: hidden;
+      background-color: "white";
+      position: fixed;
+      top: 0;
+      width: 50%;
+ }
+
+ nav ul 
+ {
+      float: right;
+      margin-right: 10px;
+      white-space: nowrap;
+ }
+
+ nav ul li 
+ {
+      list-style: none;
+      list-style-type: none;
+      width: 100px;
+      text-align: center;
+      display: inline-block;
+ }
+
+ nav ul li a 
+ {
+      text-align: center;
+ }
+
+ nav .logo 
+ {
+    width: 20%;
+    height: auto;
+    margin: .5%;
+    height: auto;
+    float: left;
+ }
+ 
+ form
+ {
+	border: 3px solid
+	#f1f1f1;
+	width: 100%;
+	height: auto;
+	min-height: 500px;
+	margin-top: 40px;
+ }	 
+ 
+ input[type=user],
+ input[type=email],
+ input[type=pass],
+ {
+	width: 100%;
+	padding: 15px 20px;
+	margin: 8px 0; 
+	display: inline-block;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+ }
+ 
+ button
+ {
+	background-color: #4CAF50;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+ }
+
+ form.container
+ {
+     padding: 16px;
+ }
+
