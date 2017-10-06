@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html {
+    background: #fff;
+}
+
+body {
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+.content {
+    max-width: 100%;
+    margin: auto;
+}
+
+.page_wrap {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto
+}
+
+#header {
+    width: 100%;
+    height: auto;
+    background: #475c64;
+
+}
+#header .logo{
+    width: 300px;
+    float: left;
+}
+#header .logo img{
+    width: 100%;
+}
+
+#header .button{
+    background-color: #4CAF50;
+    border: 2px solid;
+    border-radius: 5px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    float: right;
+}
+
+#header .signup{
+
+}
+
+
+
+#main p{
+    color:red;
+}
+.content p{
+    color: blue;
+}
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */
