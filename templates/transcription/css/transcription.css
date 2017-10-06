@@ -172,12 +172,15 @@ ul {
     resize: none;
     display: block;
     width: 100%;
-    height: 100px;
+    height: auto;
+    margin: 16px 0;
+    font-size: 1.2em;
 }
 
 .user-input ul li {
     flex: 1 1 auto;
     text-align: center;
+    font-size: 1.4em;
 }
 
 
