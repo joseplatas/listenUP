@@ -122,6 +122,7 @@ h4, h5 {
 
 .exercise-header {
     flex-direction: column;
+    justify-content: center;
 }
 
 .exercise-header h4 {
