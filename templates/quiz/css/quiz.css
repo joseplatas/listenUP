@@ -1,0 +1,252 @@
+/*---Font: Pragmatica---*/
+
+@font-face {
+	font-family: 'Pragmatica';
+	src: url('fonts/PragmaticaItalic.eot');
+	src: url('fonts/PragmaticaItalic.eot?#iefix') format('embedded-opentype'),
+		url('fonts/PragmaticaItalic.woff2') format('woff2'),
+		url('fonts/PragmaticaItalic.woff') format('woff'),
+		url('fonts/PragmaticaItalic.ttf') format('truetype'),
+		url('fonts/PragmaticaItalic.svg#PragmaticaItalic') format('svg');
+	font-weight: normal;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Pragmatica';
+	src: url('fonts/PragmaticaBold.eot');
+	src: url('fonts/PragmaticaBold.eot?#iefix') format('embedded-opentype'),
+		url('fonts/PragmaticaBold.woff2') format('woff2'),
+		url('fonts/PragmaticaBold.woff') format('woff'),
+		url('fonts/PragmaticaBold.ttf') format('truetype'),
+		url('fonts/PragmaticaBold.svg#PragmaticaBold') format('svg');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Pragmatica';
+	src: url('fonts/Pragmatica.eot');
+	src: url('fonts/Pragmatica.eot?#iefix') format('embedded-opentype'),
+		url('fonts/Pragmatica.woff2') format('woff2'),
+		url('fonts/Pragmatica.woff') format('woff'),
+		url('fonts/Pragmatica.ttf') format('truetype'),
+		url('fonts/Pragmatica.svg#Pragmatica') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/*---Generic---*/
+
+* {
+    box-sizing: border-box; 
+	font-family: Pragmatica, Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+.show-boxes * {
+    border-style: solid;
+    border-color: lightgray;
+    border-width: 1px;
+}
+
+.flex-container {
+    display: flex;
+}
+
+ul {
+    padding-left: 0;
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: #475c64;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: lighter;
+    color: #33669a;
+}
+
+h4, h5 {
+    font-size: 3em;
+}
+
+/*---page-header---*/
+
+.page-header {
+    background-color: #475c64;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 2%;
+}
+
+.page-header-logo {
+    flex: 2 1 auto;
+}
+
+.page-header-logo img {
+    height: 50px;
+    vertical-align: middle;
+}
+
+.page-header-buttons li {
+    align-self: center;
+    text-align: center;
+}
+
+.page-header-buttons a {
+    display: inline-block;
+    width: 100px;
+    white-space: nowrap;
+    border-radius: 5%;
+    padding: 5% 1%;
+    background-color: #fffef3;
+    text-decoration: none;
+    color: #33669a;
+}
+
+.page-header-buttons li+li {
+    padding-left: 3%;
+}
+
+/*---Main Content---*/
+
+.page-container {
+    min-height: calc(100vh - 74px);
+    background-color: #fffef3;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10%;
+}
+
+.exercise-header {
+    flex-direction: column;
+    justify-content: center;
+}
+
+.exercise-header h4 {
+    display: block;
+    width: 100%;
+}
+
+.exercise-header-icons {
+    height: 75px;
+}
+
+.exercise-header-icons * {
+    height: 100%;
+}
+
+.score-icon {
+    border-style: solid;
+    border-width: 2px;
+	border-color: #475055;
+	width: 75px;
+	border-radius: 50%;
+	line-height: 75px;
+    text-align: center;
+    margin-left: 10px;
+}
+
+.score {
+    font-size: 30pt;
+    font-weight: bold;	    
+}
+
+.exercise-content {
+    flex-direction: column;
+    justify-content: center;
+}
+
+/*---audio-panel---*/
+
+.audio-player,
+.audio-controls {
+    justify-content: center;
+}
+
+.audio-player img {
+    width: 150px;
+    height: 150px;
+}
+
+.audio-controls {
+    white-space: nowrap;
+}
+
+.audio-button {
+    height: 100px;
+    width: 100px;
+}
+
+/*---answer-panel---*/
+
+.answer-panel {
+    padding: 2%;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 400px;
+    max-width: 500px;
+    min-height: 250px;
+    max-height: 400px;
+}
+
+.quiz-question {
+    font-size: 1.5em;
+    font-weight: normal;
+    color: #475055;
+}
+
+.answer-choice {
+    background-color: #fff;
+    color: #475055;
+    width: 100%;
+    min-height: 50px;
+    max-height: 60px;
+    padding: 2%;
+    border-style: solid;
+    border-width: .5px;
+    border-color: #475055;
+    border-radius: 5px;
+}
+
+.answer-choice:hover {
+    border-color: #33669a;
+    background-color: #33669a;
+    color: #fffef3;
+}
+
+/*---HIDDEN ON THE FRENCH PAGE---*/
+.es-chars {
+    visibility: hidden;
+}
+
+/*---Desktop & Tablet---*/
+@media only screen and (min-width: 700px) {
+    .page-header {
+        flex-wrap: nowrap;
+    }
+
+    .exercise-content {
+        flex-direction: row;
+    }
+
+    .exercise-header {
+        flex-direction: row;
+    }
+
+    .exercise-header h4 {
+        flex: 2 1 auto;
+        max-width: 650px;
+    }
+
+    .audio-player img {
+        width: 250px;
+        height: 250px;
+    }
+}
