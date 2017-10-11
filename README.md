@@ -25,9 +25,13 @@ ListenUp is a web application that is aimed to help intermediate-level foreign l
 ### File Structure
 
 ### Top Level
+
 /app
+
 /api
+
 /shared
+
 
 ### /app
 Includes all code that will run in the browser (front-end)
