@@ -24,28 +24,30 @@ ListenUp is a web application that is aimed to help intermediate-level foreign l
 
 ### File Structure
 
-## Top Level
+### Top Level
 /app
 /api
 /shared
 
-## /app
+### /app
 Includes all code that will run in the browser (front-end)
 - Components
 - CSS
 - HTML / JSX
 
-## /api
+### /api
 Includes all code that will run on a part of your machine
 - Express code
 - MongoDB access (read, write, delete data)
 
-## /shared
+### /shared
 Because all of the code uses the same language, it is possible to share CERTAIN code between both app and api. Examples:
 - Validation functions
 - Text formatting
 - Sorting or filtering algorithms
+
 **Do NOT put code here that needs either the browser OR the server to run:**
+
 - MongoDB code
 - React JS code
 - API bindings
