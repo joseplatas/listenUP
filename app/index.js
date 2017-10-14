@@ -12,13 +12,9 @@ import {
 
 import { Transcription } from './exercises/transcription/component.js'
 import { Quiz } from './exercises/quiz/component.js'
-import { Login } from './user/login/component.js'
-import { Signup } from './user/signup/component.js'
+import * as user from './user/index.js'
 import { Home } from './home/component.js'
-import { Dashboard } from './user/dashboard/component.js'
-import { Settings } from './user/settings/component.js'
 import { Credits } from './home/credits/component.js'
-
 
 export class MainLayout extends React.Component {
     render() {
@@ -26,10 +22,10 @@ export class MainLayout extends React.Component {
             <div id='body'>
                 <Switch>
                     {/*---ROUTING TO USER COMPONENTS---*/}
-                    <Route path='/login' component={Login} />
-                    <Route path='/signup' component={Signup} />
-                    <Route path='/dashboard' component={Dashboard} />
-                    <Route path='/settings' component={Settings} />
+                    <Route path='/login' component={user.Login} />
+                    <Route path='/signup' component={user.Signup} />
+                    <Route path='/dashboard' component={user.Dashboard} />
+                    <Route path='/settings' component={user.Settings} />
                     <Route path='/credits' component={Credits} />
                     {/*---ROUTING TO EXERCISE COMPONENTS---*/}
                     <Route path='/transcription' component={Transcription} />
