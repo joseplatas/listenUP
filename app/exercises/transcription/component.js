@@ -1,6 +1,6 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
-import * as Styles from './transcription.css'
+import * as styles from './transcription.css'
 
 import {
     HashRouter,

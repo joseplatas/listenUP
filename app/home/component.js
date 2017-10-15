@@ -14,7 +14,7 @@ export const Home=() =>
     <div className="wrapper">
         
         <header>
-            <img src="img/ListenUp_logo_white.png" classNameName ="logo"/>
+            <img src="img/ListenUp_logo_white.png" className ="logo"/>
             <div className="header-buttons">
                 <ul>
                     <li className="button loginButton"><a href="#">Login</a></li>
