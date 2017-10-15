@@ -1,6 +1,9 @@
 
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
+import * as styles from 'styles.css'
+import logo from './shared/img/ListenUp_logo_white.png'
+
 import {
     HashRouter,
     Route,
@@ -13,12 +16,23 @@ import {
 import { Transcription } from './exercises/transcription/component.js'
 import { Quiz } from './exercises/quiz/component.js'
 import * as user from './user/index.js'
-import { Home } from './home/component.js'
+import { Home, NavButtons as HomeNavButtons } from './home/component.js'
 import { Credits } from './home/credits/component.js'
 
 export class MainLayout extends React.Component {
     render() {
         return <div>
+            <header className="page-header flex-container">
+                <div className="page-header-logo"><Link to="/"><img src={logo}/></Link></div>
+
+                <ul className="page-header-buttons flex-container">
+                    <li><a href="#">Sign Up</a></li>
+                    <li><a href="#">Log In</a></li>
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#">Settings</a></li>
+                    <li><a href="#">Log Out</a></li>
+                </ul>
+            </header>
             <div id='body'>
                 <Switch>
                     {/*---ROUTING TO USER COMPONENTS---*/}

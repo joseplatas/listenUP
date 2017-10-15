@@ -7,3 +7,8 @@ export class Dashboard extends React.Component {
         return <h1>Dashboard Header</h1>
     }
 }
+
+export const NavButtons = () => 
+    <div>
+        Dashboard buttons go here
+    </div>

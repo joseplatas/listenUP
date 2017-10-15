@@ -6,26 +6,17 @@ import ss_Listen from './img/howitworks_listen.png'
 import ss_Answer from './img/howitworks_type.png'
 import ss_Learn from './img/howitworks_learn.png'
 
-import {
-    HashRouter,
-    Route,
-    Link,
-    Switch
-  } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+
+export const NavButtons = () => 
+    <div>
+        Home buttons go here.
+    </div>
 
 export const Home=() =>
 
     <div className="wrapper">
         
-        <header>
-            <img src={whiteLogo} className ="logo"/>
-            <div className="header-buttons">
-                <ul>
-                    <li className="button loginButton"><a href="#">Login</a></li>
-                </ul>
-            </div>
-        </header>
-
         <section className="intro">  
             <div className="content">
 

@@ -16,15 +16,6 @@ import {
 export const Transcription=() => (
 
 <div className="transcription">
-        <header className="page-header flex-container">
-            <div className="page-header-logo"><img src=""/></div>
-
-            <ul className="page-header-buttons flex-container">
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="#">Log Out</a></li>
-            </ul>
-
-        </header>
 
         <div className="page-container flex-container">
 

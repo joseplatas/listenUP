@@ -68,45 +68,6 @@
     text-align: center;
   }
 
-  /*----------header----------*/
-
-  header {
-      overflow: hidden;
-      background-color: #475c64;
-      position: fixed;
-      top: 0;
-      width: 100%;
-  }
-
-  .header-buttons {
-      margin-right: 2%;
-      float: right;
-  }
-
-  .header-buttons ul {
-      white-space: nowrap;
-  }
-
-  .header-buttons ul li {
-      list-style: none;
-      list-style-type: none;
-      text-align: center;
-      display: inline-block;
-  }
-
-  header ul li a {
-      text-align: center;
-  }
-
-
-  header .logo {
-    width: 200px;
-    height: auto;
-    float: left;
-    margin: 2%;
-    vertical-align: middle;    
-  }
-
   /*--------columns----------*/
 
 
