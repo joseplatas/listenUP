@@ -1,8 +1,46 @@
+/*---Font: Pragmatica---*/
 
+@font-face {
+	font-family: 'Pragmatica';
+	src: url('../shared/fonts/PragmaticaItalic.eot');
+	src: url('../shared/fonts/PragmaticaItalic.eot?#iefix') format('embedded-opentype'),
+		url('../shared/fonts/PragmaticaItalic.woff2') format('woff2'),
+		url('../shared/fonts/PragmaticaItalic.woff') format('woff'),
+		url('../shared/fonts/PragmaticaItalic.ttf') format('truetype'),
+		url('../shared/fonts/PragmaticaItalic.svg#PragmaticaItalic') format('svg');
+	font-weight: normal;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Pragmatica';
+	src: url('../shared/fonts/PragmaticaBold.eot');
+	src: url('../shared/fonts/PragmaticaBold.eot?#iefix') format('embedded-opentype'),
+		url('../shared/fonts/PragmaticaBold.woff2') format('woff2'),
+		url('../shared/fonts/PragmaticaBold.woff') format('woff'),
+		url('../shared/fonts/PragmaticaBold.ttf') format('truetype'),
+		url('../shared/fonts/PragmaticaBold.svg#PragmaticaBold') format('svg');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Pragmatica';
+	src: url('../shared/fonts/Pragmatica.eot');
+	src: url('../shared/fonts/Pragmatica.eot?#iefix') format('embedded-opentype'),
+		url('../shared/fonts/Pragmatica.woff2') format('woff2'),
+		url('../shared/fonts/Pragmatica.woff') format('woff'),
+		url('../shared/fonts/Pragmatica.ttf') format('truetype'),
+		url('../shared/fonts/Pragmatica.svg#Pragmatica') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/*---Generic---*/
 
 * {
     box-sizing: border-box; 
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Pragmatica, Arial, Helvetica, sans-serif;
 }
   
   body {

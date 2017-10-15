@@ -1,6 +1,10 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 import * as styles from './transcription.css'
+import icon_speaker from '../shared/img/icon_speaker_blue.png'
+import playButton from '../shared/img/audio_controls_play.png'
+import pauseButton from '../shared/img/audio_controls_pause.png'
+import stopButton from '../shared/img/audio_controls_stop.png'
 
 import {
     HashRouter,
@@ -13,7 +17,7 @@ export const Transcription=() => (
 
 <div className="transcription">
         <header className="page-header flex-container">
-            <div className="page-header-logo"><img src="img/ListenUp_logo_white.png"/></div>
+            <div className="page-header-logo"><img src=""/></div>
 
             <ul className="page-header-buttons flex-container">
                 <li><a href="#">Dashboard</a></li>
@@ -22,7 +26,7 @@ export const Transcription=() => (
 
         </header>
 
-        <section className="page-container flex-container">
+        <div className="page-container flex-container">
 
             <div className="exercise-header flex-container">
                     <h4>
@@ -37,18 +41,18 @@ export const Transcription=() => (
                         <div className="score-icon icon"/>
                             <p className="score">9</p>
                         </div>
-            </section>
 
-            <section className="exercise-content flex-container">
+
+            <div className="exercise-content flex-container">
                 <div className="audio-panel">
                     <div className="audio-player flex-container">
-                        <img src="img/icon_speaker_blue.png"/>
+                        <img src={icon_speaker}/>
                     </div>
 
                     <div className="audio-controls flex-container">
-                        <img src="img/audio_controls_play.png" className="audio-button"/>
-                        <img src="img/audio_controls_pause.png" className="audio-button"/>
-                        <img src="img/audio_controls_stop.png" className="audio-button"/>
+                        <img src={playButton} className="audio-button"/>
+                        <img src={pauseButton} className="audio-button"/>
+                        <img src={stopButton} className="audio-button"/>
                     </div>
                 </div>
 
@@ -111,7 +115,7 @@ export const Transcription=() => (
                     </div>
 
                 </div>
-            </section>
-
+            </div>
+            </div>
         </div>
 )

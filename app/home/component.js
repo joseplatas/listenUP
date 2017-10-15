@@ -1,6 +1,10 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 import * as styles from './home.css'
+import whiteLogo from '../shared/img/ListenUp_logo_white.png'
+import ss_Listen from './img/howitworks_listen.png'
+import ss_Answer from './img/howitworks_type.png'
+import ss_Learn from './img/howitworks_learn.png'
 
 import {
     HashRouter,
@@ -14,7 +18,7 @@ export const Home=() =>
     <div className="wrapper">
         
         <header>
-            <img src="img/ListenUp_logo_white.png" className ="logo"/>
+            <img src={whiteLogo} className ="logo"/>
             <div className="header-buttons">
                 <ul>
                     <li className="button loginButton"><a href="#">Login</a></li>
@@ -80,7 +84,7 @@ export const Home=() =>
                 <div className="column-container">
                         
                         <div className="col">
-                            <img src ="img/how_screenshot.png"/>
+                            <img src ={ss_Listen}/>
                             <h4>listen.</h4>
                             <p>We'll play short clips of native speakers 
                                 having natural conversations, answering 
@@ -89,7 +93,7 @@ export const Home=() =>
                         </div>
         
                         <div className="col">
-                            <img src ="img/how_screenshot.png"/>
+                            <img src ={ss_Answer}/>
                                                 
                             <h4>answer.</h4>
                             <p>We offer two exercises: Transcription and Quiz. 
@@ -99,7 +103,7 @@ export const Home=() =>
                         </div>
         
                         <div className="col">
-                            <img src ="img/how_screenshot.png"/>                            
+                            <img src ={ss_Learn}/>                            
                             <h4>learn.</h4>
                             <p>Get scored based on your answer. Review exercises 
                                 and improve over time with repetition. You'll be 
