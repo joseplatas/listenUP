@@ -28,7 +28,7 @@ export class MainLayout extends React.Component {
                 <ul className="page-header-buttons flex-container">
                     <li><a href="#">Sign Up</a></li>
                     <li><a href="#">Log In</a></li>
-                    <li><a href="#">Dashboard</a></li>
+                    <li><Link to="/dashboard">Dashboard</Link></li>
                     <li><a href="#">Settings</a></li>
                     <li><a href="#">Log Out</a></li>
                 </ul>
@@ -36,10 +36,10 @@ export class MainLayout extends React.Component {
             <div id='body'>
                 <Switch>
                     {/*---ROUTING TO USER COMPONENTS---*/}
-                    <Route path='/login' component={user.Login} />
-                    <Route path='/signup' component={user.Signup} />
-                    <Route path='/dashboard' component={user.Dashboard} />
-                    <Route path='/settings' component={user.Settings} />
+                    <Route path='/login' component={user.default.Login} />
+                    <Route path='/signup' component={user.default.Signup} />
+                    <Route path='/dashboard' component={user.default.Dashboard} />
+                    <Route path='/settings' component={user.default.Settings} />
                     <Route path='/credits' component={Credits} />
                     {/*---ROUTING TO EXERCISE COMPONENTS---*/}
                     <Route path='/transcription' component={Transcription} />

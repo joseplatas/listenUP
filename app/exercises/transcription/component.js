@@ -54,7 +54,7 @@ export const Transcription=() => (
 
                         <h5>type what you hear:</h5>
 
-                        <textarea name="user-input" spellcheck="false"></textarea>
+                        <textarea name="user-input" spellCheck="false"></textarea>
                     
                         <ul className="char-bar fr-chars flex-container">
 
