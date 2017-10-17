@@ -2,6 +2,7 @@ import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 import * as styles from './transcription.css'
 import icon_speaker from '../shared/img/icon_speaker_blue.png'
+import icon_en from '../shared/img/icon_en.png'
 import playButton from '../shared/img/audio_controls_play.png'
 import pauseButton from '../shared/img/audio_controls_pause.png'
 import stopButton from '../shared/img/audio_controls_stop.png'
@@ -26,7 +27,7 @@ export const Transcription=() => (
 
                     <div className="exercise-header-icons flex-container">
                         <div className="language-icon icon"/>
-                            <img src="img/icon_fr.png"/>
+                            <img src={icon_en}/>
                         </div>
                         
                         <div className="score-icon icon"/>

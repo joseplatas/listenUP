@@ -35,3 +35,7 @@
 .page-header-buttons li+li {
     padding-left: 3%;
 }
+
+#body {
+    min-height: calc(100vh - 85px);
+}

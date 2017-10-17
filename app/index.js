@@ -21,7 +21,8 @@ import { Credits } from './home/credits/component.js'
 
 export class MainLayout extends React.Component {
     render() {
-        return <div>
+        return <div id = "app">
+            
             <header className="page-header flex-container">
                 <div className="page-header-logo"><Link to="/"><img src={logo}/></Link></div>
 
@@ -33,6 +34,7 @@ export class MainLayout extends React.Component {
                     <li><a href="#">Log Out</a></li>
                 </ul>
             </header>
+
             <div id='body'>
                 <Switch>
                     {/*---ROUTING TO USER COMPONENTS---*/}

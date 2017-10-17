@@ -12,7 +12,7 @@ module.exports = {
       { test: /\.jsx$/, loader: 'babel-loader', exclude: /node_modules/ },
       { test: /\.css$/, loader: [ 'style-loader', 'css-loader' ] },
       {
-        test: /(\/|\\)(img|fonts)(\/|\\)/,
+        test: /(\/|\\)(img|fonts|audio)(\/|\\)/,
         use: [
           {
             loader: 'file-loader',
