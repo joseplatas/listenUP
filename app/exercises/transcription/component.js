@@ -1,6 +1,11 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
-import * as Styles from './transcription.css'
+import * as styles from './transcription.css'
+import icon_speaker from '../shared/img/icon_speaker_blue.png'
+import icon_en from '../shared/img/icon_en.png'
+import playButton from '../shared/img/audio_controls_play.png'
+import pauseButton from '../shared/img/audio_controls_pause.png'
+import stopButton from '../shared/img/audio_controls_stop.png'
 
 import {
     HashRouter,
@@ -12,17 +17,8 @@ import {
 export const Transcription=() => (
 
 <div className="transcription">
-        <header className="page-header flex-container">
-            <div className="page-header-logo"><img src="img/ListenUp_logo_white.png"/></div>
 
-            <ul className="page-header-buttons flex-container">
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="#">Log Out</a></li>
-            </ul>
-
-        </header>
-
-        <section className="page-container flex-container">
+        <div className="page-container flex-container">
 
             <div className="exercise-header flex-container">
                     <h4>
@@ -31,24 +27,24 @@ export const Transcription=() => (
 
                     <div className="exercise-header-icons flex-container">
                         <div className="language-icon icon"/>
-                            <img src="img/icon_fr.png"/>
+                            <img src={icon_en}/>
                         </div>
                         
                         <div className="score-icon icon"/>
                             <p className="score">9</p>
                         </div>
-            </section>
 
-            <section className="exercise-content flex-container">
+
+            <div className="exercise-content flex-container">
                 <div className="audio-panel">
                     <div className="audio-player flex-container">
-                        <img src="img/icon_speaker_blue.png"/>
+                        <img src={icon_speaker}/>
                     </div>
 
                     <div className="audio-controls flex-container">
-                        <img src="img/audio_controls_play.png" className="audio-button"/>
-                        <img src="img/audio_controls_pause.png" className="audio-button"/>
-                        <img src="img/audio_controls_stop.png" className="audio-button"/>
+                        <img src={playButton} className="audio-button"/>
+                        <img src={pauseButton} className="audio-button"/>
+                        <img src={stopButton} className="audio-button"/>
                     </div>
                 </div>
 
@@ -59,7 +55,7 @@ export const Transcription=() => (
 
                         <h5>type what you hear:</h5>
 
-                        <textarea name="user-input" spellcheck="false"></textarea>
+                        <textarea name="user-input" spellCheck="false"></textarea>
                     
                         <ul className="char-bar fr-chars flex-container">
 
@@ -111,7 +107,7 @@ export const Transcription=() => (
                     </div>
 
                 </div>
-            </section>
-
+            </div>
+            </div>
         </div>
 )

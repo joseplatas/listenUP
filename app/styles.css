@@ -1,0 +1,41 @@
+.page-header {
+    background-color: #475c64;
+    display: flex;
+    position: fixed;
+    width: 100%;
+    flex-wrap: wrap;
+    padding: 10px 2%;
+}
+
+.page-header-logo {
+    flex: 2 1 auto;
+}
+
+.page-header-logo img {
+    height: 50px;
+    vertical-align: middle;
+}
+
+.page-header-buttons li {
+    align-self: center;
+    text-align: center;
+}
+
+.page-header-buttons a {
+    display: inline-block;
+    width: 100px;
+    white-space: nowrap;
+    border-radius: 5%;
+    padding: 5% 1%;
+    background-color: #fffef3;
+    text-decoration: none;
+    color: #33669a;
+}
+
+.page-header-buttons li+li {
+    padding-left: 3%;
+}
+
+#body {
+    min-height: calc(100vh - 85px);
+}
