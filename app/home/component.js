@@ -12,9 +12,9 @@ import {
 export const Home=() =>
 
     <div className="wrapper">
-        
+
         <header>
-            <img src="img/ListenUp_logo_white.png" classNameName ="logo"/>
+            <img src="/#/home/img/ListenUp_logo_white.png" className="logo"/>
             <div className="header-buttons">
                 <ul>
                     <li className="button loginButton"><a href="#">Login</a></li>
@@ -22,7 +22,7 @@ export const Home=() =>
             </div>
         </header>
 
-        <section className="intro">  
+        <section className="intro">
             <div className="content">
 
                 <h1 className="whiteHeader">Practice your listening comprehension
@@ -44,7 +44,7 @@ export const Home=() =>
                 <h1 className="blueHeader">It's time to listenUP.</h1>
 
                 <div className="column-container">
-                    
+
                     <div className="col">
                         <h4>real speakers.</h4>
                         <p>Listen to audio clips of native
@@ -61,7 +61,7 @@ export const Home=() =>
                             like, um... filler words and all!</p>
                     </div>
 
-                    <div className="col">        
+                    <div className="col">
                         <h4>real effective.</h4>
                         <p>All 2 of our test subjects have
                             agreed that listenUp is helpful.
@@ -78,40 +78,40 @@ export const Home=() =>
                 <h3>how it works</h3>
 
                 <div className="column-container">
-                        
+
                         <div className="col">
                             <img src ="img/how_screenshot.png"/>
                             <h4>listen.</h4>
-                            <p>We'll play short clips of native speakers 
-                                having natural conversations, answering 
+                            <p>We'll play short clips of native speakers
+                                having natural conversations, answering
                                 interview questions, or doing skits.
                             </p>
                         </div>
-        
+
                         <div className="col">
                             <img src ="img/how_screenshot.png"/>
-                                                
+
                             <h4>answer.</h4>
-                            <p>We offer two exercises: Transcription and Quiz. 
-                                You'll either transcribe the given audio clip or 
+                            <p>We offer two exercises: Transcription and Quiz.
+                                You'll either transcribe the given audio clip or
                                 take a mini-quiz on the content presented.
-                            </p>                            
+                            </p>
                         </div>
-        
+
                         <div className="col">
-                            <img src ="img/how_screenshot.png"/>                            
+                            <img src ="img/how_screenshot.png"/>
                             <h4>learn.</h4>
-                            <p>Get scored based on your answer. Review exercises 
-                                and improve over time with repetition. You'll be 
+                            <p>Get scored based on your answer. Review exercises
+                                and improve over time with repetition. You'll be
                                 listening like a pro in no time!
-                            </p>                                                        
+                            </p>
                         </div>
-        
+
                     </div>
 
             </div>
         </section>
-    
+
     <footer>
         <a href="#" className="whiteLink">Credits</a>
     </footer>
