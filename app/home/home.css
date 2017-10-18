@@ -49,202 +49,133 @@
     font-family: 'HelveticaNeue';
   }
 
-  /*----------sections----------*/
+  /*---Multiple Sections---*/
 
-  
-  section {
-    width: 100%;
-    padding: 0 7%;
-    display: table;
-    margin: 0;
-    max-width: none;
-    height: 100vh;
+.flex_container {
+    display: flex;
   }
-
   
-  :local .content {
-    display: table-cell;
-    vertical-align: middle;
+  .homePage {
+    flex-direction: column;
+  }
+  
+  .full_height {
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2%;
+  }
+  
+  .centered_text {
     text-align: center;
   }
-
-  /*--------columns----------*/
-
-
-  :local .column-container {
-      display: table;
-      width: 100%;
-      margin-top: 10%;
-  }
-
-  :local .col { 
-    display: block;
-    text-align: left;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin: 1%;    
-}
-
-:local(.col) img {
-    width: 100%;
-    height: auto;
-}
-
-:local(.col) h1,h2, h3, h4, h5, h6, p {
-    margin-top: 0;
-    margin-bottom: 1%;
-}
-
-
-  /*--------intro----------*/
   
-  :local .intro {
-    background-color: #475c64;    
-  }
-
-
-
-  /*--------about----------*/
-
-  
-  :local .about {
-      background-color: #fffef3;
-  }
-
-  /*--------how it works----------*/
-
-
-  :local .howitworks {
-      background-color: #d2ead7;
-  }
-
-  :local(.howitworks) h3 {
-      text-align: left;
-  }
-
- /*--------headers----------*/
-
-
-
-  h1, h2, h3, h4, h5 {
-      font-size: 2em;
-      display: block;
-      color: #475055;
-      font-weight: lighter; 
+  .details_container {
+    padding-left: 10%;
+    padding-right: 10%;
+    flex-direction: column;
+    justify-content: space-around;
   }
   
-  h1, h3 {
-    font-size: 3em;
+  .detail {
+    flex-direction: column;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
-
-  :local .whiteHeader {
-    color: #fffef3;
-  }
-
-  :local .blueHeader {
+  
+  .detail_header {
+    font-size: 1.5em;
     color: #33669a;
   }
-
-/*--------buttons----------*/
-
-
-:local .button {
-    user-select: none;
-    padding: 5px 10px;
-    font-size: 1rem;
-    font-weight: 400;
-    display: inline-block;
-    line-height: 1.5;
+  
+  /*---Welcome---*/
+  
+  .welcome {
+    background-color: #475c64;
+  }
+  
+  .welcome_header {
+    font-size: 2em;
+    color: #fffef3;
     text-align: center;
-    vertical-align: middle;
-    cursor: pointer;
-    border: 1px solid transparent;
-    border-radius: .25rem;
-    text-decoration: none;
-}
-
-
-:local .loginButton {
-  background-color: #fffef3;
-  color: #475055;
-}
-
-:local(.centerButton) a {
+  }
+  
+  .welcome_getStartedButton {
+    margin-top: 20px;
+  }
+  
+  .actionButton {
+    display: inline-block;
+    width: 150px;
+    line-height: 50px;
     border-radius: 5px;
-    font-weight: lighter;
-    font-size: 1.2em;
-    display: inline-block;
-}
-
-
-:local(.signupButton) a {
-  background: #9ed4ae;
-  color: #475055;
-  white-space: nowrap;
-  padding: 2%;
-  
-}
-
- /*--------text----------*/
-
-  
-  p {
-    font-size: 1.1em;
-    font-weight: 500;
-    color: #475055;
-    margin: 0;
-  }
-  
-  a {
-    color: #33669a;
-    position: relative;
+    
     text-decoration: none;
+    color: #475055;
+    background-color: #9ed4ae;
+    font-size: 1.2em;
   }
-
-  .whiteLink a {
-      color: #fffef3;
-  }
-
-  a:hover {
-      opacity: 0.8;
-  }
-
-  a:active {
-      top: 1px;
-  }
-
-  a:visited {
-      color: #475055;
-  }
-
-  em {
-      font-weight: bolder;
-  }
-
-  strong {
-      color: #9ed4ae;
-      font-style: italic;
-  }
-
- 
-  footer {
-    padding: 1% 5%;
-    text-align:center;
-    background-color: #373B44;
-    color: #fffef3;
-  }
-
-  footer a {
-    color: #fffef3;
-  }
-
   
-  @media only screen and (min-width: 700px) {
-    :local .col {
-            display: table-cell;
-        }
-
-        :local .centerButton {
-            width: auto;
-        }
+  .welcome_em {
+    color: #9ed4ae;
+    font-style: italic;
+  }
+  
+  /*---About---*/
+  
+  .about {
+    background-color: #fffef3;
+    justify-content: space-around;
+  }
+  
+  .about_header {
+    color: #475c64;
+    font-size: 2em;
+  }
+  
+  .big_blue_header {
+    font-size: 3em;
+    color: #33669a;
+  }
+  
+  /*---How it Works---*/
+  
+  .howitworks {
+    background-color: #d2ead7;
+    justify-content: space-around;
+  }
+  
+  .howitworks_header {
+    font-size: 2em;
+    color: #475c64;
+  }
+  
+  .detail_thumbnail {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #475c64;
+    height: 200px;
+  }
+  
+  /*---Media Queries---*/
+  
+  @media only screen and (min-width: 768px) {
+    
+    .full_height {
+      padding: 6%;
     }
+    
+    .details_container {
+      flex-direction: row;
+      justify-content: center;
+    }
+    
+    .detail {
+      flex-direction: column;
+      max-width: 300px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    
+  }
+  
