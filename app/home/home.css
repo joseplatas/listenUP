@@ -62,7 +62,7 @@
   }
 
   
-  .content {
+  :local .content {
     display: table-cell;
     vertical-align: middle;
     text-align: center;
@@ -71,13 +71,13 @@
   /*--------columns----------*/
 
 
-  .column-container {
+  :local .column-container {
       display: table;
       width: 100%;
       margin-top: 10%;
   }
 
-  .col { 
+  :local .col { 
     display: block;
     text-align: left;
     padding-left: 10px;
@@ -85,12 +85,12 @@
     margin: 1%;    
 }
 
-.col img {
+:local(.col) img {
     width: 100%;
     height: auto;
 }
 
-.col h1,h2, h3, h4, h5, h6, p {
+:local(.col) h1,h2, h3, h4, h5, h6, p {
     margin-top: 0;
     margin-bottom: 1%;
 }
@@ -98,7 +98,7 @@
 
   /*--------intro----------*/
   
-  .intro {
+  :local .intro {
     background-color: #475c64;    
   }
 
@@ -107,18 +107,18 @@
   /*--------about----------*/
 
   
-  .about {
+  :local .about {
       background-color: #fffef3;
   }
 
   /*--------how it works----------*/
 
 
-  .howitworks {
+  :local .howitworks {
       background-color: #d2ead7;
   }
 
-  .howitworks h3 {
+  :local(.howitworks) h3 {
       text-align: left;
   }
 
@@ -137,18 +137,18 @@
     font-size: 3em;
   }
 
-  .whiteHeader {
+  :local .whiteHeader {
     color: #fffef3;
   }
 
-  .blueHeader {
+  :local .blueHeader {
     color: #33669a;
   }
 
 /*--------buttons----------*/
 
 
-.button {
+:local .button {
     user-select: none;
     padding: 5px 10px;
     font-size: 1rem;
@@ -164,24 +164,20 @@
 }
 
 
-.loginButton {
+:local .loginButton {
   background-color: #fffef3;
   color: #475055;
 }
 
-.centerButton a {
-    position: relative;
-    line-height: 200%;
-    margin: auto;
-    height: auto;
+:local(.centerButton) a {
     border-radius: 5px;
     font-weight: lighter;
     font-size: 1.2em;
-    width: 100%;
+    display: inline-block;
 }
 
 
-.signupButton a {
+:local(.signupButton) a {
   background: #9ed4ae;
   color: #475055;
   white-space: nowrap;
@@ -231,7 +227,6 @@
   }
 
  
-  
   footer {
     padding: 1% 5%;
     text-align:center;
@@ -245,11 +240,11 @@
 
   
   @media only screen and (min-width: 700px) {
-        .col {
+    :local .col {
             display: table-cell;
         }
 
-        .centerButton {
+        :local .centerButton {
             width: auto;
         }
     }

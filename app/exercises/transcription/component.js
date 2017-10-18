@@ -14,50 +14,55 @@ import {
     Switch
   } from 'react-router-dom'
 
+function classes(...classNames) {
+    return classNames
+        .map(cn => styles[cn])
+        .join(' ')
+}
+
 export const Transcription=() => (
 
-<div className="transcription">
 
-        <div className="page-container flex-container">
+        <div className={classes('page-container', 'flex-container')}>
 
-            <div className="exercise-header flex-container">
+            <div className={classes('exercise-header', 'flex-container')}>
                     <h4>
                         transcription exercise
                     </h4>
 
-                    <div className="exercise-header-icons flex-container">
-                        <div className="language-icon icon"/>
+                    <div className={classes('exercise-header-icons', 'flex-container')}>
+                        <div className={classes('language-icon', 'icon')}>
                             <img src={icon_en}/>
                         </div>
                         
-                        <div className="score-icon icon"/>
+                        <div className={classes('score-icon', 'icon')}>
                             <p className="score">9</p>
                         </div>
 
 
-            <div className="exercise-content flex-container">
-                <div className="audio-panel">
-                    <div className="audio-player flex-container">
+            <div className={classes('exercise-content', 'flex-container')}>
+                <div className={classes('audio-panel')}>
+                    <div className={classes('audio-player', 'flex-container')}>
                         <img src={icon_speaker}/>
                     </div>
 
-                    <div className="audio-controls flex-container">
-                        <img src={playButton} className="audio-button"/>
-                        <img src={pauseButton} className="audio-button"/>
-                        <img src={stopButton} className="audio-button"/>
+                    <div className={classes('audio-controls', 'flex-container')}>
+                        <img src={playButton} className={classes('audio-button')}/>
+                        <img src={pauseButton} className={classes('audio-button')}/>
+                        <img src={stopButton} className={classes('audio-button')}/>
                     </div>
                 </div>
 
-                <div className="input-panel flex-container">
+                <div className={classes('input-panel', 'flex-container')}>
 
 
-                    <div className="user-input">
+                    <div className={classes('user-input')}>
 
                         <h5>type what you hear:</h5>
 
                         <textarea name="user-input" spellCheck="false"></textarea>
                     
-                        <ul className="char-bar fr-chars flex-container">
+                        <ul className={classes('char-bar', 'fr-chars', 'flex-container')}>
 
                             <li>à</li>
                             <li>â</li>
@@ -74,7 +79,7 @@ export const Transcription=() => (
 
                         </ul>
 
-                        <ul className="char-bar es-chars flex-container">
+                        <ul className={classes('char-bar', 'es-chars', 'flex-container')}>
 
                             <li>á</li>
                             <li>é</li>
@@ -90,11 +95,11 @@ export const Transcription=() => (
 
                     </div>
 
-                    <div className="enter-button">
+                    <div className={classes('enter-button')}>
                         <h5>enter</h5>
                     </div>
 
-                    <div className="tooltip">
+                    <div className={classes('tooltip')}>
 
                         <h5>here's a tip</h5>
 
@@ -110,4 +115,6 @@ export const Transcription=() => (
             </div>
             </div>
         </div>
+    </div>
+
 )
