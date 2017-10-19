@@ -1,0 +1,48 @@
+:local .flex_container {
+    display: flex;
+}
+
+:local .page_header {
+    background-color: #475c64;
+    padding: 10px 2%;
+}
+
+:local .header_logo {
+    flex: 1;
+}
+
+:local .logo {
+    height: 50px;
+    vertical-align: middle;
+}
+
+:local .nav_buttons {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+:local .nav_buttons li {
+    align-self: center;
+    text-align: center;
+}
+
+:local .nav_buttons a {
+    display: inline-block;
+    width: 100px;
+    white-space: nowrap;
+    border-radius: 5%;
+    padding: 5% 1%;
+    background-color: #fffef3;
+    text-decoration: none;
+    color: #33669a;
+}
+
+:local .nav_buttons li+li {
+    padding-left: 3%;
+}
+
+:local .stickyContainer {
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
