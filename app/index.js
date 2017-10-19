@@ -2,7 +2,6 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 import * as styles from 'styles.css'
-import logo from './shared/img/ListenUp_logo_white.png'
 
 import {
     HashRouter,
@@ -18,22 +17,13 @@ import { Quiz } from './exercises/quiz/component.js'
 import * as user from './user/index.js'
 import { Home, NavButtons as HomeNavButtons } from './home/component.js'
 import { Credits } from './home/credits/component.js'
+import { Header } from './header.js'
 
 export class MainLayout extends React.Component {
     render() {
         return <div id = "app">
-            
-            <header className="page-header flex-container">
-                <div className="page-header-logo"><Link to="/"><img src={logo}/></Link></div>
 
-                <ul className="page-header-buttons flex-container">
-                    <li><a href="#">Sign Up</a></li>
-                    <li><a href="#">Log In</a></li>
-                    <li><Link to="/dashboard">Dashboard</Link></li>
-                    <li><a href="#">Settings</a></li>
-                    <li><a href="#">Log Out</a></li>
-                </ul>
-            </header>
+            <Header/>
 
             <div id='body'>
                 <Switch>

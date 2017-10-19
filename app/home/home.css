@@ -38,73 +38,69 @@
 
 /*---Generic---*/
 
-* {
+:local .homePage {
     box-sizing: border-box; 
     font-family: Pragmatica, Arial, Helvetica, sans-serif;
 }
-  
-  body {
-    margin: 0; 
-    font-weight: 500;
-    font-family: 'HelveticaNeue';
-  }
 
   /*---Multiple Sections---*/
 
-.flex_container {
+:local .marginOnTop {
+  margin-top: 10px;
+}
+
+:local .flex_container {
     display: flex;
   }
   
-  .homePage {
+ :local .homePage {
     flex-direction: column;
   }
   
-  .full_height {
+ :local .full_height {
     min-height: 100vh;
     flex-direction: column;
     justify-content: center;
     padding: 2%;
   }
   
-  .centered_text {
+ :local .centered_text {
     text-align: center;
+    font-weight: lighter;    
   }
   
-  .details_container {
+ :local .details_container {
     padding-left: 10%;
     padding-right: 10%;
     flex-direction: column;
     justify-content: space-around;
   }
   
-  .detail {
+ :local .detail {
     flex-direction: column;
     padding-top: 10px;
     padding-bottom: 10px;
   }
   
-  .detail_header {
-    font-size: 1.5em;
+ :local .detail_header {
+    font-size: 2em;
     color: #33669a;
+    font-weight: lighter;
   }
   
   /*---Welcome---*/
   
-  .welcome {
+ :local .welcome {
     background-color: #475c64;
   }
   
-  .welcome_header {
+ :local .welcome_header {
     font-size: 2em;
     color: #fffef3;
     text-align: center;
   }
   
-  .welcome_getStartedButton {
-    margin-top: 20px;
-  }
-  
-  .actionButton {
+ :local .actionButton {
     display: inline-block;
     width: 150px;
     line-height: 50px;
@@ -116,61 +112,63 @@
     font-size: 1.2em;
   }
   
-  .welcome_em {
+ :local .welcome_em {
     color: #9ed4ae;
     font-style: italic;
+    font-weight: bold;
   }
   
   /*---About---*/
   
-  .about {
+ :local .about {
     background-color: #fffef3;
-    justify-content: space-around;
   }
   
-  .about_header {
+ :local .about_header {
     color: #475c64;
     font-size: 2em;
   }
   
-  .big_blue_header {
+ :local .big_blue_header {
     font-size: 3em;
     color: #33669a;
   }
   
   /*---How it Works---*/
   
-  .howitworks {
+ :local .howitworks {
     background-color: #d2ead7;
-    justify-content: space-around;
   }
   
-  .howitworks_header {
-    font-size: 2em;
+ :local .howitworks_header {
+    font-size: 3em;
     color: #475c64;
+    font-weight: lighter;
   }
   
-  .detail_thumbnail {
+ :local .detail_thumbnail {
     border-style: solid;
     border-width: 1px;
     border-color: #475c64;
     height: 200px;
+    margin-bottom: 20px;
   }
   
   /*---Media Queries---*/
   
   @media only screen and (min-width: 768px) {
     
-    .full_height {
+   :local .full_height {
       padding: 6%;
     }
     
-    .details_container {
+   :local .details_container {
       flex-direction: row;
       justify-content: center;
+      margin-top: 100px;
     }
     
-    .detail {
+   :local .detail {
       flex-direction: column;
       max-width: 300px;
       padding-left: 10px;

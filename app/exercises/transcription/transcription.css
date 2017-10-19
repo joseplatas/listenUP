@@ -1,99 +1,97 @@
-.flex-container {
+:local * {
+    font-family: Pragmatica, Arial, Helvetica, sans-serif;
+}
+
+:local .flex_container {
     display: flex;
 }
 
-ul {
-    padding-left: 0;
-    list-style-type: none;
-}
+/*---Shared Styles---*/
 
-a:visited {
-    color: #475c64;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-weight: lighter;
-    color: #33669a;
-}
-
-h4, h5 {
-    font-size: 2rem;
-}
-
-
-/*---Main Content---*/
-
-.page-container {
-    min-height: 100vh;
+:local .page_container {
+    max-height: 100vh;
     background-color: #fffef3;
     flex-direction: column;
     justify-content: center;
     padding: 10%;
 }
 
-.exercise-header {
+:local .exercise_header {
     flex-direction: column;
     justify-content: center;
 }
 
-.exercise-header h4 {
-    display: block;
-    width: 100%;
-}
-
-.exercise-header-icons {
+:local .exercise_header_icons {
     height: 75px;
+    align-self: center;
 }
 
-.exercise-header-icons * {
+:local .exercise_header_icons * {
     height: 100%;
 }
 
-.score-icon {
-    border-style: solid;
-    border-width: 2px;
-	border-color: #475055;
-	width: 75px;
-	border-radius: 50%;
-	line-height: 75px;
-    text-align: center;
-    margin-left: 10px;
+:local .exercise_name {
+    font-size: 3em;
 }
 
-.score {
+:local .blue_text {
+    color: #33669a;
+    font-weight: lighter;
+}
+
+:local .header_icon {
+    height: 75px;
+    width: 75px;
+}
+
+:local .score_icon {
+    margin-left: 10px;
+    
+    border-style: solid;
+    border-width: 2px;
+    border-color: #475055;
+    border-radius: 50%;    
+    width: 75px;
+    
+	line-height: 75px;
+    text-align: center;
     font-size: 30pt;
     font-weight: bold;	    
 }
 
-.exercise-content {
+:local .exercise_content {
     flex-direction: column;
     justify-content: center;
 }
 
+:local .small_blue_header {
+    font-size: 2em;
+}
+
 /*---audio-panel---*/
 
-.audio-player,
-.audio-controls {
+:local .audio_player,
+:local .audio_controls {
     justify-content: center;
 }
 
-.audio-player img {
+:local .audio_player img {
     width: 250px;
     height: auto;
 }
 
-.audio-controls {
+:local .audio_controls {
     white-space: nowrap;
 }
 
-.audio-button {
+:local .audio_button {
     height: 100px;
     width: 100px;
 }
 
 /*---input-panel---*/
 
-.input-panel {
+:local .input_panel {
     padding: 2%;
     flex-direction: column;
     justify-content: space-between;
@@ -101,7 +99,14 @@ h4, h5 {
     max-width: 500px;
 }
 
-.user-input textarea {
+:local .input_header {
+    font-size: 2em;
+    
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+:local .user_input_area {
     resize: none;
     display: block;
     width: 100%;
@@ -111,47 +116,67 @@ h4, h5 {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.user-input ul li {
+:local .char_bar {
+    padding-left: 0;
+    list-style-type: none;
+}
+
+:local .char_bar li {
     flex: 1 1 auto;
     text-align: center;
+}
+
+:local .char_button {
+    text-decoration: none;
     font-size: 1.4em;
     font-family: Arial, Helvetica, sans-serif;
-}
-
-.enter-button {
-    width: 100%;
-    background-color: #9ed4ae;
-    text-align: center;
-}
-
-.enter-button h5 {
     color: #475055;
 }
 
-.tooltip {
+:local .enter_button {
+    display: inline-block;
+    width: 100%;
+    line-height: 50px;
+    border-radius: 5px;
+    
+    text-decoration: none;
+    color: #475055;
+    background-color: #9ed4ae;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+:local .tooltip_header {
+    font-size: 1.5em;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+:local .tooltip_feedback {
     margin-top: 16px;
 }
 
 /*---HIDDEN ON THE FRENCH PAGE---*/
-.es-chars {
+:local .es_chars {
     visibility: hidden;
 }
 
 /*---Desktop & Tablet---*/
 @media only screen and (min-width: 700px) {
-    .page-header {
+    :local .page_header {
         flex-wrap: nowrap;
     }
 
-    .exercise-content {
+    :local .exercise_content {
         flex-direction: row;
     }
 
-    .exercise-header {
+    :local .exercise_header {
+        display: flex;
         flex-direction: row;
     }
 
-    .exercise-header h4 {
+    :local .exercise_header h4 {
         flex: 2 1 auto;
         max-width: 650px;
     }
