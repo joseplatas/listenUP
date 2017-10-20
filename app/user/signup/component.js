@@ -1,6 +1,18 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
-import * as styles from './styles.css'
+import styles from './signup.css'
+
+import {
+  HashRouter,
+  Route,
+  Link,
+} from 'react-router-dom'
+
+function classes(...classNames) {
+  return classNames
+      .map(cn => styles[cn])
+      .join(' ')
+}
 
 export class Signup extends React.Component {
     constructor(props) {
@@ -27,22 +39,23 @@ export class Signup extends React.Component {
         event.preventDefault();
       }
       
+      
       render() {
-        return <div className="signup">
+        return <div className={styles.signup}>
           
-          <div className='page_container flex_container'>
+          <div className={classes('page_container', 'flex_container')}>
             
-            <h3 className='signup_header'>
+            <h3 className={styles.signup_header}>
               create an account
             </h3>
             
             <form onSubmit={this.handleSubmit}
-              className='signup_form formField flex-container'>
+              className={classes('signup_form', 'formField', 'flex-container')}>
               
-              <label className='formLabel flex_container'>
-                <div className='form_icon'/>
+              <label className={classes('formLabel', 'flex_container')}>
+                <div className={styles.form_icon}/>
                 <input 
-                  className='placeholder'
+                  className={styles.placeholder}
                   name='name'
                   type='text'
                   value={this.state.name}
@@ -50,20 +63,20 @@ export class Signup extends React.Component {
               </label>
               
               
-              <label className='topSpace formField flex_container'>
-                <div className='form_icon'/>
+              <label className={classes('topSpace', 'formField', 'flex_container')}>
+                <div className={styles.form_icon}/>
                 <input 
-                  className='placeholder'
+                  className={styles.placeholder}
                   name='email'
                   type='text'
                   value={this.state.email}
                   onChange={this.handleChange}/>
               </label>
               
-              <label className='topSpace formField flex_container'>
-                <div className='form_icon'/>
+              <label className={classes('topSpace', 'formField', 'flex_container')}>
+                <div className={styles.form_icon}/>
                 <input 
-                  className='placeholder'
+                  className={styles.placeholder}
                   name='email'
                   type='password'
                   value={this.state.password}
@@ -73,14 +86,14 @@ export class Signup extends React.Component {
               <input
                 type='submit'
                 value='register'
-                className='submitButton topSpace'/>
+                className={classes('submitButton', 'topSpace')}/>
               
             </form>
             
-            <div className="topSpace signup_tooltip">
+            <div className={classes('topSpace', 'signup_tooltip')}>
               already have an account? 
               sign in <a href="#" 
-              className="login_link">here</a>
+              className={styles.login_link}>here</a>
             </div>
             
           </div>
