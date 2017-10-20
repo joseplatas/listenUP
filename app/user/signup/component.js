@@ -19,7 +19,7 @@ export class Signup extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-          username: (this.state || {}).username || 'your name',
+          username: (this.state || {}).username || 'username',
           email: (this.state || {}).email || 'your email',
           password: (this.state || {}).password || 'password'
         }
@@ -86,7 +86,7 @@ export class Signup extends React.Component {
                   className='inputField'
                   name='username'
                   type='text'
-                  placeholder='your name'
+                  placeholder='username'
                   value={this.state.username}
                   onChange={this.handleUsernameChange}
                   />
