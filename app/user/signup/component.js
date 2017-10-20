@@ -15,28 +15,49 @@ function classes(...classNames) {
 }
 
 export class Signup extends React.Component {
+
     constructor(props) {
         super(props);
         this.state = {
-          name: 'your name',
-          email: 'your email',
-          password: 'fillerpassword'
-        };
+          username: (this.state || {}).username || 'your name',
+          email: (this.state || {}).email || 'your email',
+          password: (this.state || {}).password || 'password'
+        }
         
-        this.handleChange = this.handleChange.bind(this);
+        this.handleUsernameChange = this.handleUsernameChange.bind(this);
+        this.handleEmailChange = this.handleEmailChange.bind(this);
+        this.handlePasswordChange = this.handlePasswordChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
       }
-      
-      handleChange(event) {
-        
-        this.setState({value: event.target.value})
-        
+
+      handleUsernameChange(event) {
+        this.setState({
+          username: event.target.value
+        })
+      }
+
+      handleEmailChange(event) {
+        this.setState({
+          email: event.target.value
+        })
+      }
+
+      handlePasswordChange(event) {
+        this.setState({
+          password: event.target.value
+        })
       }
       
       handleSubmit(event) {
-        alert('NAME: ' + this.state.name + ' | EMAIL: ' + this.state.email 
-             + ' | PASSWORD: ' + this.state.password);
+
+        var username = this.state.username
+        var email = this.state.email
+        var password = this.state.password
+
+        alert('NAME: ' + username + ' | EMAIL: ' + email + ' | PASSWORD: ' + password);
+
         event.preventDefault();
+        
       }
       
       
@@ -55,39 +76,45 @@ export class Signup extends React.Component {
               <label className={classes('formLabel', 'flex_container')}>
                 <div className={styles.form_icon}/>
                 <input 
-                  className={styles.placeholder}
-                  name='name'
+                  className='inputField'
+                  name='username'
                   type='text'
-                  value={this.state.name}
-                  onChange={this.handleChange} />
+                  placeholder='your name'
+                  value={this.state.username}
+                  onChange={this.handleUsernameChange}
+                  />
               </label>
               
               
               <label className={classes('topSpace', 'formField', 'flex_container')}>
                 <div className={styles.form_icon}/>
                 <input 
-                  className={styles.placeholder}
+                  className='inputField'
                   name='email'
                   type='text'
+                  placeholder='your email'
                   value={this.state.email}
-                  onChange={this.handleChange}/>
+                  onChange={this.handleEmailChange} 
+                  />
               </label>
               
               <label className={classes('topSpace', 'formField', 'flex_container')}>
                 <div className={styles.form_icon}/>
                 <input 
-                  className={styles.placeholder}
+                  className='inputField'
                   name='email'
                   type='password'
+                  placeholder='password'
                   value={this.state.password}
-                  onChange={this.handleChange}/>
+                  onChange={this.handlePasswordChange}
+                  />
               </label>
               
               <input
                 type='submit'
                 value='register'
                 className={classes('submitButton', 'topSpace')}/>
-              
+
             </form>
             
             <div className={classes('topSpace', 'signup_tooltip')}>
