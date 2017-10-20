@@ -36,6 +36,7 @@ userRouter.post('/registerPost', function(req, res, next){
     console.log("All Parameters pass");
   }else{
     console.log("Please enter all parameters");
+    res.send("Please enter all parameters");
   }
   //check if passwords are matching
   if(req.body.password !== req.body.confirmPassword){
