@@ -17,7 +17,7 @@ import { Quiz } from './exercises/quiz/component.js'
 import * as user from './user/index.js'
 import { Home, NavButtons as HomeNavButtons } from './home/component.js'
 import { Credits } from './home/credits/component.js'
-import { Header } from './header.js'
+import { Header } from './header/header.js'
 
 export class MainLayout extends React.Component {
     render() {
