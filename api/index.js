@@ -1,9 +1,13 @@
 const user = require('./user/index.js')
 const exercises = require('./exercises/index.js')
 const core = require('./core/index.js')
-const express = require('express')
 
-const app = express()
+//initialize variable
+var express = require('express');
+var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
+var session = require('express-session');
+var app = express();
 
 core.configure(app);
 user.configure(app);
