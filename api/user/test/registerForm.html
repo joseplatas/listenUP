@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Test Register form</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <style media="screen">
+    body {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+      <h1>Register Test Form</h1>
+      <hr>
+      <form class="form-horizontal" action="/api/user/registerPost" method="post">
+        <fieldset>
+
+          <!-- Text input-->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="textinput">Email</label>
+            <div class="col-md-4">
+              <input id="textinput" name="email" type="text" placeholder="" class="form-control input-md">
+
+            </div>
+          </div>
+
+          <!-- Text input-->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="textinput">First Name</label>
+            <div class="col-md-4">
+              <input id="textinput" name="fname" type="text" placeholder="" class="form-control input-md">
+
+            </div>
+          </div>
+
+          <!-- Text input-->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="textinput">Last Name</label>
+            <div class="col-md-4">
+              <input id="textinput" name="lname" type="text" placeholder="" class="form-control input-md">
+
+            </div>
+          </div>
+
+          <!-- Password input-->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="passwordinput">Password</label>
+            <div class="col-md-4">
+              <input id="passwordinput" name="password" type="password" placeholder="" class="form-control input-md">
+
+            </div>
+          </div>
+
+          <!-- Password input-->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="passwordinput">Confirm Password</label>
+            <div class="col-md-4">
+              <input id="passwordinput" name="confirmPassword" type="password" placeholder="" class="form-control input-md">
+
+            </div>
+          </div>
+
+          <!-- Button -->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="singlebutton"></label>
+            <div class="col-md-4">
+              <button id="singlebutton" name="" class="btn btn-primary btn-lg">SUBMIT</button>
+            </div>
+          </div>
+
+        </fieldset>
+      </form>
+
+
+  </div>
+  <!-- endof:: container -->
+
+
+</body>
+
+</html>
