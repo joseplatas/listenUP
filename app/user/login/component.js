@@ -41,6 +41,8 @@ export class Login extends React.Component {
         var username = this.state.username
         var password = this.state.password
 
+        {/*---Alert is only used for testing, remove when functioning---*/}
+
         alert('NAME: ' + username + ' | PASSWORD: ' + password);
 
         event.preventDefault();
