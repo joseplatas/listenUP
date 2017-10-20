@@ -1,0 +1,56 @@
+
+:local .flex_container {
+    display: flex;
+  }
+  
+  :local .page_container {
+    flex-direction: column;
+    text-align: center;
+    min-height: 100vh;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  :local .signup_header {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  
+  :local .signup_form {
+    align-self: center;
+  }
+  
+  :local .submitButton {
+    width: 100%;
+    background-color: #3dd28d;
+    color: #fffef3;
+    line-height: 30px;
+    font-size: 1.2em;
+  }
+  
+  :local .topSpace {
+    margin-top: 10px;
+  }
+  
+  :local .signup_tooltip {
+    font-size: 12px;
+  }
+  
+  :local .form_icon {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #333;
+    width: 30px;
+    height: 30px;
+  }
+  
+  :local .login_link {
+    color: green;
+    text-decoration: none;
+    font-style: italic;
+  }
+  
+  :local .placeholder {
+    padding-left: 5px;
+    color: #a8a8a8;
+  }

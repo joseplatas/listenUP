@@ -11,7 +11,6 @@ import {
     HashRouter,
     Route,
     Link,
-    Switch
 } from 'react-router-dom'
 
 function classes(...classNames) {
