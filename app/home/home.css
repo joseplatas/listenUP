@@ -86,6 +86,7 @@
     font-size: 2em;
     color: #33669a;
     font-weight: lighter;
+    margin-bottom: 10px;    
   }
   
   /*---Welcome---*/
@@ -165,7 +166,6 @@
    :local .details_container {
       flex-direction: row;
       justify-content: center;
-      margin-top: 100px;
     }
     
    :local .detail {

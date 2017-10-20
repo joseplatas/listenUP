@@ -1,8 +1,8 @@
 
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
-import * as styles from 'header.css'
-import logo from './shared/img/ListenUp_logo_white.png'
+import * as styles from './header.css'
+import logo from '../shared/img/ListenUp_logo_white.png'
 
 import {
     HashRouter,
@@ -26,8 +26,8 @@ export const Header = () => (
             </Link></div>
 
             <ul className={classes('nav_buttons','flex_container')}>
-                <li><Link to='/signup/'>Sign Up</Link></li>
-                <li><a href="#">Log In</a></li>
+                <li><Link to='/signup'>Sign Up</Link></li>
+                <li><Link to='/login'>Log In</Link></li>
                 <li><Link to="/dashboard">Dashboard</Link></li>
                 <li><a href="#">Settings</a></li>
                 <li><a href="#">Log Out</a></li>
