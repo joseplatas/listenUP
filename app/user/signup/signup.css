@@ -14,6 +14,8 @@
   :local .signup_header {
     font-size: 2em;
     margin-bottom: 20px;
+    font-weight: lighter;
+    color: #33669a;
   }
   
   :local .signup_form {
@@ -22,8 +24,8 @@
   
   :local .submitButton {
     width: 100%;
-    background-color: #3dd28d;
-    color: #fffef3;
+    background-color: #9ed4ae;
+    color: #475c64;
     line-height: 30px;
     font-size: 1.2em;
   }
@@ -39,20 +41,15 @@
   :local .form_icon {
     border-style: solid;
     border-width: 1px;
-    border-color: #333;
+    border-color: #475c64;
     width: 30px;
     height: 30px;
   }
   
   :local .login_link {
-    color: green;
+    color: #33669a;
     text-decoration: none;
     font-style: italic;
-  }
-  
-  :local .placeholder {
-    padding-left: 5px;
-    color: #a8a8a8;
   }
 
   .inputField {

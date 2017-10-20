@@ -30,6 +30,8 @@ export class Signup extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
       }
 
+      /*---Handlers for input change---*/
+
       handleUsernameChange(event) {
         this.setState({
           username: event.target.value
@@ -47,6 +49,8 @@ export class Signup extends React.Component {
           password: event.target.value
         })
       }
+
+      /*---Handler for SUBMIT button---*/
       
       handleSubmit(event) {
 
@@ -60,7 +64,8 @@ export class Signup extends React.Component {
         
       }
       
-      
+      /*---Handler for SUBMIT button---*/
+
       render() {
         return <div className={styles.signup}>
           
@@ -73,6 +78,8 @@ export class Signup extends React.Component {
             <form onSubmit={this.handleSubmit}
               className={classes('signup_form', 'formField', 'flex-container')}>
               
+              {/*---USERNAME Field---*/}
+
               <label className={classes('formLabel', 'flex_container')}>
                 <div className={styles.form_icon}/>
                 <input 
@@ -85,7 +92,8 @@ export class Signup extends React.Component {
                   />
               </label>
               
-              
+              {/*---EMAIL Field---*/}
+
               <label className={classes('topSpace', 'formField', 'flex_container')}>
                 <div className={styles.form_icon}/>
                 <input 
@@ -98,6 +106,8 @@ export class Signup extends React.Component {
                   />
               </label>
               
+              {/*---PASSWORD Field---*/}
+
               <label className={classes('topSpace', 'formField', 'flex_container')}>
                 <div className={styles.form_icon}/>
                 <input 
@@ -110,17 +120,20 @@ export class Signup extends React.Component {
                   />
               </label>
               
+              {/*---SUBMIT BUTTON---*/}
+
               <input
                 type='submit'
                 value='register'
                 className={classes('submitButton', 'topSpace')}/>
 
             </form>
-            
+
+            {/*---Tooltip (Already have an account?)--*/}
+
             <div className={classes('topSpace', 'signup_tooltip')}>
               already have an account? 
-              sign in <a href="#" 
-              className={styles.login_link}>here</a>
+              sign in <a href="#" className={styles.login_link}>here</a>
             </div>
             
           </div>
