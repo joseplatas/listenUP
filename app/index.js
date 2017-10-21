@@ -40,8 +40,8 @@ export class MainLayout extends React.Component {
                     <Route path='/' component={Home} />
                 </Switch>
             </div>
-        </div> 
-    } 
+        </div>
+    }
 }
 
 ReactDOM.render(
