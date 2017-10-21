@@ -17,6 +17,12 @@ app.use(session({
   resave: true,
   saveUninitialized: false
 }));
+//enabling CORS so front-end can talk to back-end.
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "http://localhost:8000");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+})
 
 // mongodb connection
 mongoose.connect('mongodb://localhost:27017/listenup',{ useMongoClient: true });
@@ -35,6 +41,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // include routes
 var userRouter = require('./user/index');
 app.use('/api/user', userRouter);
+
 
 
 /*

@@ -9,12 +9,16 @@ ListenUp is a web application that is aimed to help intermediate-level foreign l
 
 ### To get the most updated version
 - Pull for updated version
-- Open two command line windows
-- Navigate both to the root of your project folder (location of package.json)
-- In one of the windows type this command:
-    npm install
+- Open command line
+- Type "npm install"
 
-### To view frontend and backend progress in browser
+### View Progress in Web Browser
+- Run "npm run debug" in a command line prompt
+- Go to http://localhost:8000 to view frontend 
+- Go to http://localhost:80 to view backend 
+
+### Terminal Commands for separate backend/frontend debug
+- Open two terminals
 - Type one of these commands in each of the windows:
     1)  npm run debug-backend
     2)  npm run debug-frontend

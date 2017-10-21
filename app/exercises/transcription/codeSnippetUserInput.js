@@ -1,3 +1,5 @@
+/* --- commented out by JT due to syntax errors
+
 constructor(props){
  super(props)
  this.state = {
@@ -42,3 +44,5 @@ setNextQuestion(){
         answer: ''
     })
 }
+
+*/
