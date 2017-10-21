@@ -15,18 +15,18 @@ export class Login extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            username: (this.state || {}).username || 'username',
-            password: (this.state || {}).password || 'password'
+            email: (this.state || {}).email,
+            password: (this.state || {}).password
         }
 
-        this.handleUsernameChange = this.handleUsernameChange.bind(this);
+        this.handleEmailChange = this.handleEmailChange.bind(this);
         this.handlePasswordChange = this.handlePasswordChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleUsernameChange(event) {
+    handleEmailChange(event) {
         this.setState({
-            username: event.target.value
+            email: event.target.value
         })
     }
 
@@ -38,12 +38,12 @@ export class Login extends React.Component {
 
     handleSubmit(event) {
 
-        var username = this.state.username
+        var email = this.state.email
         var password = this.state.password
 
         {/*---Alert is only used for testing, remove when functioning---*/}
 
-        alert('NAME: ' + username + ' | PASSWORD: ' + password);
+        alert('NAME: ' + email + ' | PASSWORD: ' + password);
 
         event.preventDefault();
 
@@ -67,11 +67,11 @@ export class Login extends React.Component {
                         <div className={styles.form_icon} />
                         <input
                             className='inputField'
-                            name='username'
+                            name='email'
                             type='text'
-                            placeholder='username'
-                            value={this.state.username}
-                            onChange={this.handleUsernameChange}
+                            placeholder='email'
+                            value={this.state.email}
+                            onChange={this.handleEmailChange}
                         />
                     </label>
                     {/*---PASSWORD Field---*/}
