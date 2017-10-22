@@ -16,8 +16,9 @@ import { Transcription } from './exercises/transcription/component.js'
 import { Quiz } from './exercises/quiz/component.js'
 import * as user from './user/index.js'
 import { Home, NavButtons as HomeNavButtons } from './home/component.js'
-import { Credits } from './home/credits/component.js'
+import { Credits } from './footer/credits/component.js'
 import { Header } from './header/header.js'
+import { Footer } from './footer/component.js'
 
 export class MainLayout extends React.Component {
     render() {
@@ -40,6 +41,9 @@ export class MainLayout extends React.Component {
                     <Route path='/' component={Home} />
                 </Switch>
             </div>
+
+            <Footer/>
+
         </div>
     }
 }
