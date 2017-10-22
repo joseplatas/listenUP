@@ -9,11 +9,15 @@
 /*---Shared Styles---*/
 
 :local .page_container {
-    max-height: 100vh;
+    min-height: 100vh;
     background-color: #fffef3;
     flex-direction: column;
     justify-content: center;
-    padding: 10%;
+}
+
+:local .center_container {
+    max-width: 900px;
+    align-self: center;
 }
 
 :local .dashboard_section {
@@ -59,11 +63,11 @@
     border-style: solid;
     border-color: #333;
     border-width: 1px;
-    width: 500px;
+    width: 100%;
 }
 
 :local .lifetime_points {
-    width: 300px;
+    width: 100%;
     border-style: solid;
     border-color: #333;
     border-width: 1px;
@@ -72,10 +76,20 @@
 /*---Responsive---*/
 
 @media only screen and (min-width: 700px) {
+
+
     :local .dashboard_section {
         width: 800px;
         min-height: 200px;
         max-height: 300px;
+    }
+
+    :local .language_selector {
+        width: 500px;
+    }
+    
+    :local .lifetime_points {
+        width: 300px;
     }
 
     :local .first_panel {

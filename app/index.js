@@ -16,7 +16,7 @@ import { Transcription } from './exercises/transcription/component.js'
 import { Quiz } from './exercises/quiz/component.js'
 import * as user from './user/index.js'
 import { Home, NavButtons as HomeNavButtons } from './home/component.js'
-import { Credits } from './footer/credits/component.js'
+import { Credits } from './credits/component.js'
 import { Header } from './header/header.js'
 import { Footer } from './footer/component.js'
 

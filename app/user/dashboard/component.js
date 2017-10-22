@@ -21,47 +21,50 @@ export class Dashboard extends React.Component {
     render() {
         return <div className={classes('page_container', 'flex_container')}>
 
-            <h1 className={styles.dashboard_header}>
-                welcome back, <em className={styles.name_text}>{fns.getFirstName()}!</em>
-            </h1>
+            <div className={classes('center_container')}>
 
-            <section className={classes('dashboard_section', 'flex_container', 'first_panel')}>
+                <h1 className={styles.dashboard_header}>
+                    welcome back, <em className={styles.name_text}>{fns.getFirstName()}!</em>
+                </h1>
 
-                <div className={styles.language_selector}>
-                    <h2 className={styles.section_header}>
-                        languages in progress:
+                <section className={classes('dashboard_section', 'flex_container', 'first_panel')}>
+
+                    <div className={styles.language_selector}>
+                        <h2 className={styles.section_header}>
+                            languages in progress:
                     </h2>
-                    <Language_Selector />
-                </div>
+                        <Language_Selector />
+                    </div>
 
-                <div className={styles.lifetime_points}>
-                    <Lifetime_Points />
-                </div>
+                    <div className={styles.lifetime_points}>
+                        <Lifetime_Points />
+                    </div>
 
-            </section>
+                </section>
 
-            <section className={classes('dashboard_section', 'achievements')}>
+                <section className={classes('dashboard_section', 'achievements')}>
 
-                <div className={styles.achievements}>
-                    <h2 className={styles.section_header}>
-                        achievements:
+                    <div className={styles.achievements}>
+                        <h2 className={styles.section_header}>
+                            achievements:
                     </h2>
-                    <Achievements />
-                </div>
+                        <Achievements />
+                    </div>
 
-            </section>
+                </section>
 
-            <section className={classes('dashboard_section', 'statistics')}>
+                <section className={classes('dashboard_section', 'statistics')}>
 
-                <div className={styles.statistics}>
-                    <h2 className={styles.section_header}>
-                        statistics:
+                    <div className={styles.statistics}>
+                        <h2 className={styles.section_header}>
+                            statistics:
                     </h2>
-                    <Statistics />
-                </div>
+                        <Statistics />
+                    </div>
 
-            </section>
+                </section>
 
+            </div>
         </div>
     }
 }

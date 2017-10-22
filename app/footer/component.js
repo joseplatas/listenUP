@@ -6,7 +6,7 @@ import { generateClassHelper } from '../shared/shared_fns.js'
 import {
     HashRouter,
     Route,
-    Link,
+    Link
 } from 'react-router-dom'
 
 const classes = generateClassHelper(styles)
@@ -18,7 +18,7 @@ export class Footer extends React.Component {
 
             <Link to='/credits' className={styles.credits_link}>Credits</Link>
             
-            <p className={styles.footer_text}>© 2017 ListenUp Inc.</p>
+            <p className={styles.footer_text}>© 2017 ListenUp, Inc.</p>
 
         </footer>
     }

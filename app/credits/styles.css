@@ -1,0 +1,138 @@
+:local * {
+    color: #475055; 
+    font-weight: lighter;   
+}
+
+:local .flex_container {
+    display: flex;
+    justify-content: center;
+}
+
+:local .credits_page {
+    background-color: #fffef3;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+:local .center_container {
+    max-width: 900px;
+    align-self: center;
+}
+
+
+/*---Text Modifiers---*/
+
+:local .credits_header {
+    font-size: 3em;
+    margin-bottom: 0;
+}
+
+:local .credits_subtitle {
+    margin-top: 0;
+}
+
+:local .section_header {
+    padding-left: 10px;
+}
+
+/*---Shared Section Styles---*/
+
+:local .credits_section {
+    flex-direction: column;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #475c64;
+    max-width: 100%;
+}
+
+:local .logo_row {
+    flex-direction: column;
+    padding-left: 20px;
+}
+
+:local .credits_logo_container {
+    display: block;
+    max-width: 400px;
+    align-self: center;
+}
+
+:local .credits_logo {
+    width: 100%;
+}
+
+/*---Audio & Video Content Section---*/
+
+:local .credits_link {
+    padding-left: 20px;
+    width: 300px;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+:local .credits_link_text {
+    text-decoration: none;
+    font-size: 1.5em;
+}
+
+/*---Technology Section---*/
+
+:local .tech_content {
+    margin-top: 20px;
+}
+
+/*---Team Section---*/
+
+:local .team_content {
+    margin-top: 20px;
+}
+
+:local .team_member_container {
+    max-width: 150px;
+}
+
+:local .member_photo_container {
+    width: 150px;
+    height: 150px;
+    background-color: #d2ead7;
+}
+
+:local .team_member_name {
+    margin-top: 5px;
+    margin-bottom: 0;
+    color: #33669a;
+}
+
+:local .team_member_title {
+    margin-top: 2px;
+    font-style: italic;
+}
+
+/*---Responsive---*/
+
+@media only screen and (min-width: 700px) {
+    :local .credits_section {
+        min-width: 600px;
+        max-width: 800px;
+    }
+    
+    :local .logo_row {
+        flex-direction: row;
+        max-width: 800px;
+        justify-content: space-between;    
+        padding-right: 20px; 
+    }
+
+    :local .credits_logo_container {
+        max-height: 150px;
+        max-width: 200px;        
+        margin-right: 30px;        
+    }
+
+    :local .credits_link {
+        padding-left: 0;
+        max-width: 100px;        
+        margin-right: 30px;   
+    }
+}
