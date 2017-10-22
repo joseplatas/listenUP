@@ -34,7 +34,20 @@
     padding: 5% 1%;
     background-color: #fffef3;
     text-decoration: none;
-    color: #33669a;
+    color: #475055;
+}
+
+:local .nav_buttons a:hover {
+    background-color: #33669a;
+    color: #fffef3;
+}
+
+:local .nav_buttons a:visited {
+    color: #475055;
+}
+
+:local .nav_buttons a:visited:hover {
+    color: #fffef3;
 }
 
 :local .nav_buttons li+li {

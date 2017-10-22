@@ -22,44 +22,22 @@ export class Signup extends React.Component {
       confirmPassword: (this.state || {}).confirmPassword
     }
 
-    this.handleFirstNameChange = this.handleFirstNameChange.bind(this);
-    this.handleLastNameChange = this.handleLastNameChange.bind(this);
-    this.handleEmailChange = this.handleEmailChange.bind(this);
-    this.handlePasswordChange = this.handlePasswordChange.bind(this);
-    this.handleConfirmPasswordChange = this.handleConfirmPasswordChange.bind(this);
+    this.handleFirstNameChange = this._generateHandler('firstName')
+    this.handleLastNameChange = this._generateHandler('lastName')
+    this.handleEmailChange = this._generateHandler('email')
+    this.handlePasswordChange = this._generateHandler('password')
+    this.handleConfirmPasswordChange = this._generateHandler('confirmPassword')
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   /*---Handlers for input change---*/
 
-  handleFirstNameChange(event) {
-    this.setState({
-      firstName: event.target.value
-    })
-  }
-
-  handleLastNameChange(event) {
-    this.setState({
-      lastName: event.target.value
-    })
-  }
-
-  handleEmailChange(event) {
-    this.setState({
-      email: event.target.value
-    })
-  }
-
-  handlePasswordChange(event) {
-    this.setState({
-      password: event.target.value
-    })
-  }
-
-  handleConfirmPasswordChange(event) {
-    this.setState({
-      confirmPassword: event.target.value
-    })
+  _generateHandler(propertyName) {
+    return function(event) {
+      this.setState({
+        [propertyName]: event.target.value
+      })
+    }.bind(this)
   }
 
   /*---Handler for SUBMIT button---*/

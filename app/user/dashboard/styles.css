@@ -1,0 +1,84 @@
+:local * {
+    font-family: Pragmatica, Arial, Helvetica, sans-serif;
+}
+
+:local .flex_container {
+    display: flex;
+}
+
+/*---Shared Styles---*/
+
+:local .page_container {
+    max-height: 100vh;
+    background-color: #fffef3;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10%;
+}
+
+:local .dashboard_section {
+    width: 100%;
+    border-style: solid;
+    border-color: #333;
+    border-width: 1px;
+    margin-bottom: 20px;
+}
+
+/*---Page Header---*/
+
+:local .dashboard_header {
+    font-weight: lighter;
+    color: #475055;
+}
+
+:local .name_text {
+    color: #fe4a49;
+    font-weight: bold;
+}
+
+/*---First Panel---*/
+
+:local .first_panel {
+    display: flex;
+    flex-direction: column;
+}
+
+/*---Section Header---*/
+
+:local .section_header {
+    font-weight: lighter;
+    color: #475055;
+    padding-left: 30px;
+    margin-top: 10px;
+}
+
+/*---In Progress---*/
+
+:local .language_selector {
+    flex: 1;
+    border-style: solid;
+    border-color: #333;
+    border-width: 1px;
+    width: 500px;
+}
+
+:local .lifetime_points {
+    width: 300px;
+    border-style: solid;
+    border-color: #333;
+    border-width: 1px;
+}
+
+/*---Responsive---*/
+
+@media only screen and (min-width: 700px) {
+    :local .dashboard_section {
+        width: 800px;
+        min-height: 200px;
+        max-height: 300px;
+    }
+
+    :local .first_panel {
+        flex-direction: row;
+    }
+}

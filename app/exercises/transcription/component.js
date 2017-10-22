@@ -1,11 +1,12 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 import * as styles from './transcription.css'
-import icon_speaker from '../shared/img/icon_speaker_blue.png'
-import icon_en from '../shared/img/icon_en.png'
-import playButton from '../shared/img/audio_controls_play.png'
-import pauseButton from '../shared/img/audio_controls_pause.png'
-import stopButton from '../shared/img/audio_controls_stop.png'
+import * as fns from './fns.js'
+import '../shared/img/icon_speaker_blue.png'
+import '../shared/img/icon_en.png'
+import '../shared/img/audio_controls_play.png'
+import '../shared/img/audio_controls_pause.png'
+import '../shared/img/audio_controls_stop.png'
 
 import {
     HashRouter,
@@ -43,6 +44,8 @@ export class Transcription extends React.Component {
 
         {/*---Alert is only used for testing, remove when functioning---*/}
 
+        fns.changeInputTest(userInput)
+
         alert(userInput);
 
         event.preventDefault();
@@ -59,12 +62,12 @@ export class Transcription extends React.Component {
 
                 <div className={classes('exercise_header_icons', 'flex_container')}>
                     <div className={classes('language_icon', 'header_icon')}>
-                        <img src={icon_en} className={styles.icon_img} />
+                        <img src='/app/exercises/shared/img/icon_en.png' className={styles.icon_img} />
                     </div>
 
 
                     <div className={classes('score_icon', 'header_icon')}>
-                        9
+                        {fns.getScore(.7)}
                 </div>
                 </div>
 
@@ -74,13 +77,13 @@ export class Transcription extends React.Component {
             <div className={classes('exercise_content', 'flex_container')}>
                 <div className={styles.audio_panel}>
                     <div className={classes('audio_player', 'flex_container')}>
-                        <img src={icon_speaker} />
+                        <img src='/app/exercises/shared/img/icon_speaker_blue.png' />
                     </div>
 
                     <div className={classes('audio_controls', 'flex_container')}>
-                        <img src={playButton} className={styles.audio_button} />
-                        <img src={pauseButton} className={styles.audio_button} />
-                        <img src={stopButton} className={styles.audio_button} />
+                        <img src='/app/exercises/shared/img/audio_controls_play.png' className={styles.audio_button} />
+                        <img src='/app/exercises/shared/img/audio_controls_pause.png' className={styles.audio_button} />
+                        <img src='/app/exercises/shared/img/audio_controls_stop.png' className={styles.audio_button} />
                     </div>
                 </div>
 
