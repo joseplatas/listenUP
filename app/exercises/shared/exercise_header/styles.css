@@ -1,0 +1,63 @@
+:local * {
+    font-family: Pragmatica, Arial, Helvetica, sans-serif;
+}
+
+:local .flex_container {
+    display: flex;
+}
+
+:local .exercise_header {
+    justify-content: center;
+}
+
+:local .exercise_header_icons {
+    height: 75px;
+    align-self: center;
+}
+
+:local .exercise_header_icons * {
+    height: 100%;
+}
+
+:local .exercise_name {
+    font-size: 3em;
+}
+
+:local .blue_text {
+    color: #33669a;
+    font-weight: lighter;
+}
+
+:local .header_icon {
+    height: 75px;
+    width: 75px;
+}
+
+:local .score_icon {
+    margin-left: 10px;
+    
+    border-style: solid;
+    border-width: 2px;
+    border-color: #475055;
+    border-radius: 50%;    
+    width: 75px;
+    
+	line-height: 75px;
+    text-align: center;
+    font-size: 30pt;
+    font-weight: bold;	    
+}
+
+@media only screen and (min-width: 700px) {
+
+    :local .exercise_header {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    :local .exercise_header h4 {
+        flex: 2 1 auto;
+        max-width: 650px;
+    }
+}

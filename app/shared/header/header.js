@@ -2,7 +2,7 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 import * as styles from './header.css'
-import logo from '../shared/img/ListenUp_logo_white.png'
+import '../../shared/img/ListenUp_logo_white.png'
 
 import {
     HashRouter,
@@ -22,7 +22,7 @@ export const Header = () => (
         <header className={classes('page_header', 'flex_container')}>
             <div className={styles.header_logo}>
             <Link to="/">
-                <img src={logo} className={styles.logo} />
+                <img src='/app/shared/img/ListenUp_logo_white.png' className={styles.logo} />
             </Link></div>
 
             <ul className={classes('nav_buttons','flex_container')}>

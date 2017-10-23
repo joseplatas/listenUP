@@ -2,7 +2,7 @@ import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 import * as styles from './styles.css'
 
-import { generateClassHelper } from '../shared/shared_fns.js'
+import { generateClassHelper } from '../shared_fns.js'
 import {
     HashRouter,
     Route,

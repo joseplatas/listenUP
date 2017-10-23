@@ -1,12 +1,11 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
-import * as styles from './transcription.css'
+import * as styles from './styles.css'
 import * as fns from './fns.js'
-import '../shared/img/icon_speaker_blue.png'
-import '../shared/img/icon_en.png'
-import '../shared/img/audio_controls_play.png'
-import '../shared/img/audio_controls_pause.png'
-import '../shared/img/audio_controls_stop.png'
+import { generateClassHelper } from '../../shared/shared_fns.js'
+import { Exercise_Header } from '../shared/exercise_header/component.js'
+import { Audio_Panel } from '../shared/audio_panel/component.js'
+import { Tooltip } from './tooltip/component.js'
 
 import {
     HashRouter,
@@ -14,11 +13,8 @@ import {
     Link,
 } from 'react-router-dom'
 
-function classes(...classNames) {
-    return classNames
-        .map(cn => styles[cn])
-        .join(' ')
-}
+const classes = generateClassHelper(styles)
+
 
 export class Transcription extends React.Component {
 
@@ -39,10 +35,10 @@ export class Transcription extends React.Component {
     }
 
     handleSubmit(event) {
-        
+
         var userInput = this.state.userInput
 
-        {/*---Alert is only used for testing, remove when functioning---*/}
+        {/*---Alert is only used for testing, remove when functioning---*/ }
 
         fns.changeInputTest(userInput)
 
@@ -53,39 +49,16 @@ export class Transcription extends React.Component {
 
     render() {
 
-       return <div className={classes('page_container', 'flex_container')}>
+        return <div className={classes('page_container', 'flex_container')}>
 
             <div className={classes('exercise_header', 'flex_container')}>
-                <h4 className={classes('exercise_name', 'blue_text')}>
-                    transcription exercise
-            </h4>
-
-                <div className={classes('exercise_header_icons', 'flex_container')}>
-                    <div className={classes('language_icon', 'header_icon')}>
-                        <img src='/app/exercises/shared/img/icon_en.png' className={styles.icon_img} />
-                    </div>
-
-
-                    <div className={classes('score_icon', 'header_icon')}>
-                        {fns.getScore(.7)}
-                </div>
-                </div>
-
+                <Exercise_Header/>
             </div>
 
 
             <div className={classes('exercise_content', 'flex_container')}>
-                <div className={styles.audio_panel}>
-                    <div className={classes('audio_player', 'flex_container')}>
-                        <img src='/app/exercises/shared/img/icon_speaker_blue.png' />
-                    </div>
 
-                    <div className={classes('audio_controls', 'flex_container')}>
-                        <img src='/app/exercises/shared/img/audio_controls_play.png' className={styles.audio_button} />
-                        <img src='/app/exercises/shared/img/audio_controls_pause.png' className={styles.audio_button} />
-                        <img src='/app/exercises/shared/img/audio_controls_stop.png' className={styles.audio_button} />
-                    </div>
-                </div>
+                <Audio_Panel />
 
                 <div className={classes('input_panel', 'flex_container')}>
 
@@ -106,25 +79,25 @@ export class Transcription extends React.Component {
                                     spellCheck='false' />
                             </label>
 
+                            {/* ----TEMPORARILY COMMENTING OUT FOR STYLING---
 
-                        <ul className={classes('char_bar', 'fr_chars', 'flex_container')}>
+                            <ul className={classes('char_bar', 'fr_chars', 'flex_container')}>
 
-                            <li><a href="#" className={styles.char_button}>à</a></li>
-                            <li><a href="#" className={styles.char_button}>â</a></li>
-                            <li><a href="#" className={styles.char_button}>é</a></li>
-                            <li><a href="#" className={styles.char_button}>ê</a></li>
-                            <li><a href="#" className={styles.char_button}>è</a></li>
-                            <li><a href="#" className={styles.char_button}>ë</a></li>
-                            <li><a href="#" className={styles.char_button}>î</a></li>
-                            <li><a href="#" className={styles.char_button}>ô</a></li>
-                            <li><a href="#" className={styles.char_button}>oe</a></li>
-                            <li><a href="#" className={styles.char_button}>û</a></li>
-                            <li><a href="#" className={styles.char_button}>ù</a></li>
-                            <li><a href="#" className={styles.char_button}>ç</a></li>
+                                <li><a href="#" className={styles.char_button}>à</a></li>
+                                <li><a href="#" c assName={styles.char_button}>â</a></li>
+                                <li><a href="#" className={styles.char_button}>é</a></li>
+                                <li><a href="#" className={styles.char_button}>ê</a></li>
+                                <li><a href="#" className={styles.char_button}>è</a></li>
+                                <li><a href="#" className={styles.char_button}>ë</a></li>
+                                <li><a href="#" className={styles.char_button}>î</a></li>
+                                <li><a href="#" className={styles.char_button}>ô</a></li>
+                                <li><a href="#" className={styles.char_button}>oe</a></li>
+                                <li><a href="#" className={styles.char_button}>û</a></li>
+                                <li><a href="#" className={styles.char_button}>ù</a></li>
+                                <li><a href="#" className={styles.char_button}>ç</a></li>
 
-                        </ul>
+                            </ul>
 
-{/* ----TEMPORARILY COMMENTING OUT FOR STYLING---
     
                         <ul className={classes('char_bar', 'es_chars', 'flex_container')}>
 
@@ -141,7 +114,7 @@ export class Transcription extends React.Component {
 
                         </ul>
 */}
-                        <input
+                            <input
                                 type='submit'
                                 value='enter'
                                 className={styles.enter_button}
@@ -150,12 +123,7 @@ export class Transcription extends React.Component {
                         </form>
 
                         <div className={styles.tooltip_feedback}>
-
-                            <h5 className={classes('blue_text', 'tooltip_header')}>here's a tip</h5>
-                            <p>You can skip fillers sounds like 'umm...' and 'uhh...',
-                        but remember to include filler <em>words</em> such as
-                        'like' and 'well.'
-                        </p>
+                            <Tooltip />
                         </div>
                     </div>
                 </div>

@@ -9,54 +9,23 @@
 /*---Shared Styles---*/
 
 :local .page_container {
-    max-height: 100vh;
+    min-height: 100vh;
     background-color: #fffef3;
     flex-direction: column;
     justify-content: center;
-    padding: 10%;
+    padding: 2%;
 }
 
 :local .exercise_header {
     flex-direction: column;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
-:local .exercise_header_icons {
-    height: 75px;
-    align-self: center;
-}
-
-:local .exercise_header_icons * {
-    height: 100%;
-}
-
-:local .exercise_name {
-    font-size: 3em;
-}
 
 :local .blue_text {
     color: #33669a;
     font-weight: lighter;
-}
-
-:local .header_icon {
-    height: 75px;
-    width: 75px;
-}
-
-:local .score_icon {
-    margin-left: 10px;
-    
-    border-style: solid;
-    border-width: 2px;
-    border-color: #475055;
-    border-radius: 50%;    
-    width: 75px;
-    
-	line-height: 75px;
-    text-align: center;
-    font-size: 30pt;
-    font-weight: bold;	    
 }
 
 :local .exercise_content {
@@ -68,26 +37,6 @@
     font-size: 2em;
 }
 
-/*---audio-panel---*/
-
-:local .audio_player,
-:local .audio_controls {
-    justify-content: center;
-}
-
-:local .audio_player img {
-    width: 250px;
-    height: auto;
-}
-
-:local .audio_controls {
-    white-space: nowrap;
-}
-
-:local .audio_button {
-    height: 100px;
-    width: 100px;
-}
 
 /*---input-panel---*/
 
@@ -110,7 +59,7 @@
     resize: none;
     display: block;
     width: 100%;
-    height: auto;
+    height: 75px;
     margin: 16px 0;
     font-size: 1.2em;
     font-family: Arial, Helvetica, sans-serif;
@@ -145,10 +94,9 @@
     text-align: center;
 }
 
-:local .tooltip_header {
-    font-size: 1.5em;
-    margin-top: 10px;
-    margin-bottom: 10px;
+:local .enter_button:hover {
+    background-color: #33669a;
+    color: #fffef3;
 }
 
 :local .tooltip_feedback {
@@ -168,15 +116,5 @@
 
     :local .exercise_content {
         flex-direction: row;
-    }
-
-    :local .exercise_header {
-        display: flex;
-        flex-direction: row;
-    }
-
-    :local .exercise_header h4 {
-        flex: 2 1 auto;
-        max-width: 650px;
     }
 }
