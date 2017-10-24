@@ -23,45 +23,49 @@ userRouter.post('/loginPost', function(req, res, next){
 userRouter.get('/register', function(req, res, next) {
     res.sendFile(path.join(__dirname+'/test/registerForm.html'));
 });
-//register form handler
 userRouter.post('/registerPost', function(req, res, next){
-  //TO DO IN POST
+  res.setHeader('Content-Type', 'application/json');
+  var response = {};
+  // console.log("Data send from react");
+  // console.log(res.body);
   //check if all parameters are pass
   if(req.body.email &&
-    req.body.fname &&
-    req.body.lname &&
     req.body.password &&
     req.body.confirmPassword
   ){
-    console.log("All Parameters pass");
+    //ALL VALUES WERE PASS
   }else{
-    console.log("Please enter all parameters");
-    res.send("Please enter all parameters");
+    response.err = -1;
+    response.message = "Missing values";
+    res.send(response);
   }
+
   //check if passwords are matching
   if(req.body.password !== req.body.confirmPassword){
-    //PENDING: need code to valid strength of password
-    console.log("Passwords are not matching");
+    response.err = -2;
+    response.message = "Password not matching";
+    res.send(response);
   }
   //assign data to userData object
   var userData = {
     email: req.body.email,
-    fname: req.body.fname,
-    lname: req.body.lname,
     password: req.body.password,
     confirmPassword: req.body.password
   };
   //call function and insert to collection
-
   User.create(userData,function(error, user){
     if(error){
-      console.log("Error Creating user");
-      console.log(error);
-      res.send(error);
+      response.err = -3;
+      response.message = "User not created";
+      response.error = error;
+
+      res.send(response);
     }else{
       //PENDING: log the user in and send them to dashboard
-      console.log(user);
-      res.send('USER CREATED: '+user.email);
+      response.err = 0;
+      response.message = "Successfully created user"
+
+      res.send(response);
     }
   });
 

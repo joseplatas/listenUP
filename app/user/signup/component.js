@@ -15,15 +15,11 @@ export class Signup extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      firstName: (this.state || {}).firstName,
-      lastName: (this.state || {}).lastName,
       email: (this.state || {}).email,
       password: (this.state || {}).password,
       confirmPassword: (this.state || {}).confirmPassword
     }
-
-    this.handleFirstNameChange = this._generateHandler('firstName')
-    this.handleLastNameChange = this._generateHandler('lastName')
+    //WE NEED TO ADD THE CODE TO VALIDATE DATA
     this.handleEmailChange = this._generateHandler('email')
     this.handlePasswordChange = this._generateHandler('password')
     this.handleConfirmPasswordChange = this._generateHandler('confirmPassword')
@@ -44,20 +40,28 @@ export class Signup extends React.Component {
 
   handleSubmit(event) {
 
-    var firstName = this.state.firstName
-    var lastName = this.state.lastName
     var email = this.state.email
     var password = this.state.password
     var confirmPassword = this.state.confirmPassword
 
     fetch(new Request('http://localhost:8080/api/user/registerPost', {
       headers: new Headers({
-        'Content-Type': 'application/x-www-form-urlencoded'//change to application/json
+        'Content-Type': 'application/json'
       }),
       method: 'POST',
-      body: encodeURI(`email=${email}&fname=${firstName}&lname=${lastName}&password=${password}&confirmPassword=${confirmPassword}`)
-    }))
-    .then(() => alert('Successfully registered the user.'))
+      body: JSON.stringify({
+        "email": email,
+        "password": password,
+        "confirmPassword": confirmPassword
+        })
+    })).then((response) => {
+      //get json full response after is done processing
+      return response.json();
+    }).then((data)=>{
+      //return value from above
+      console.log(data);
+      alert(data.message);
+    });
 
     event.preventDefault();
 
@@ -77,33 +81,6 @@ export class Signup extends React.Component {
         <form onSubmit={this.handleSubmit}
           className={classes('signup_form', 'formField', 'flex-container')}>
 
-          {/*---FIRSTNAME Field---*/}
-
-          <label className={classes('formLabel', 'flex_container')}>
-            <div className={styles.form_icon} />
-            <input
-              className='inputField'
-              name='firstName'
-              type='text'
-              placeholder='first name'
-              value={this.state.firstName}
-              onChange={this.handleFirstNameChange}
-            />
-          </label>
-
-          {/*---LASTNAME Field---*/}
-
-          <label className={classes('topSpace','formLabel', 'flex_container')}>
-            <div className={styles.form_icon} />
-            <input
-              className='inputField'
-              name='lastName'
-              type='text'
-              placeholder='last name'
-              value={this.state.lastName}
-              onChange={this.handleLastNameChange}
-            />
-          </label>
 
           {/*---EMAIL Field---*/}
 
