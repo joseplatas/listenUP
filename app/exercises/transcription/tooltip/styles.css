@@ -1,0 +1,14 @@
+:local * {
+    font-family: Pragmatica, Arial, Helvetica, sans-serif;
+}
+
+:local .flex_container {
+    display: flex;
+}
+
+:local .tooltip_header {
+    font-size: 1.5em;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #33669a;
+}

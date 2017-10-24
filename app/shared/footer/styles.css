@@ -1,0 +1,26 @@
+:local .app_footer * {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+:local .app_footer {
+    background-color: #475055;
+    text-align: center;
+    min-height: 70px;
+    line-height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+:local .credits_link {
+    text-decoration: none;
+    color: #9ed4ae;
+    font-style: italic;
+    margin-bottom: 5px;
+}
+
+:local .footer_text {
+    color: #fffef3;
+    font-size: .8em;
+}

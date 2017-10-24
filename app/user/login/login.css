@@ -4,6 +4,7 @@
   }
   
   :local .page_container {
+    background-color: #fffef3;
     flex-direction: column;
     text-align: center;
     min-height: 100vh;

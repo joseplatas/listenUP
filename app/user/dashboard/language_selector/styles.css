@@ -1,0 +1,35 @@
+:local .flex_container {
+    display: flex;
+    justify-content: center;
+}
+
+:local .component_container {
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+:local .language {
+    flex-direction: column;
+    text-align: center;
+    text-decoration: none;
+}
+
+:local .language+.language {
+    margin-left: 20px;
+}
+
+:local .lang_icon {
+    width: 100px;
+    height: 100px;
+}
+
+:local .lang_link {
+    text-decoration: none;
+    color: #475055;
+}
+
+:local .lang_link:hover {
+    color: #33669a;
+    font-weight: bold;
+}

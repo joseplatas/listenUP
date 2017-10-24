@@ -1,13 +1,21 @@
+
+:local .stickyContainer {
+    position: fixed;
+    width: 100%;
+}
+
 :local .flex_container {
     display: flex;
 }
 
 :local .page_header {
     background-color: #475c64;
-    padding: 10px 2%;
+    flex-wrap: wrap;    
 }
 
 :local .header_logo {
+    padding-left: 20px;
+    padding-top: 5px;
     flex: 1;
 }
 
@@ -19,6 +27,7 @@
 :local .nav_buttons {
     list-style-type: none;
     padding-left: 0;
+    padding-right: 20px;
 }
 
 :local .nav_buttons li {
@@ -34,15 +43,22 @@
     padding: 5% 1%;
     background-color: #fffef3;
     text-decoration: none;
-    color: #33669a;
+    color: #475055;
+}
+
+:local .nav_buttons a:hover {
+    background-color: #33669a;
+    color: #fffef3;
+}
+
+:local .nav_buttons a:visited {
+    color: #475055;
+}
+
+:local .nav_buttons a:visited:hover {
+    color: #fffef3;
 }
 
 :local .nav_buttons li+li {
     padding-left: 3%;
-}
-
-:local .stickyContainer {
-    position: fixed;
-    width: 100%;
-    top: 0;
 }

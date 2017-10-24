@@ -1,0 +1,34 @@
+:local .flex_container {
+    display: flex;
+}
+
+/*---audio-panel---*/
+
+:local .audio_player,
+:local .audio_controls {
+    justify-content: center;
+}
+
+:local .audio_player {
+    flex-direction: column;
+    max-width: 250px;
+}
+
+:local .audio_player img {
+    width: 100%;
+}
+
+:local .audio_controls {
+    white-space: nowrap;
+}
+
+:local .audio_button {
+    height: 100px;
+    width: 100px;
+}
+
+@media only screen and (min-width: 700px) {
+    :local .audio_player {
+        max-width: 100%;
+    }
+}
