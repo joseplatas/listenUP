@@ -9,7 +9,10 @@ import './img/logo_nodeJS.png'
 import './img/logo_mongoDB.png'
 import './img/logo_reactJS.png'
 import './img/logo_webpack.png'
-
+import './img/avatar_krystina.png'
+import './img/avatar_jose.png'
+import './img/avatar_terrence.png'
+import './img/avatar_jennifer.png'
 
 import {
     HashRouter,
@@ -90,6 +93,7 @@ export class Credits extends React.Component {
 
                         <div className={styles.team_member_container}>
                             <div className={styles.member_photo_container}>
+                                <img src='app/credits/img/avatar_krystina.png' className={classes('member_photo')}/>
                             </div>
 
                             <h4 className={styles.team_member_name}>
@@ -102,6 +106,7 @@ export class Credits extends React.Component {
 
                         <div className={styles.team_member_container}>
                             <div className={styles.member_photo_container}>
+                            <img src='app/credits/img/avatar_jose.png' className={classes('member_photo')}/>
                             </div>
 
                             <h4 className={styles.team_member_name}>
@@ -114,6 +119,7 @@ export class Credits extends React.Component {
 
                         <div className={styles.team_member_container}>
                             <div className={styles.member_photo_container}>
+                            <img src='app/credits/img/avatar_terrence.png' className={classes('member_photo')}/>
                             </div>
 
                             <h4 className={styles.team_member_name}>
@@ -126,6 +132,7 @@ export class Credits extends React.Component {
 
                         <div className={styles.team_member_container}>
                             <div className={styles.member_photo_container}>
+                            <img src='app/credits/img/avatar_jennifer.png' className={classes('member_photo')}/>
                             </div>
 
                             <h4 className={styles.team_member_name}>

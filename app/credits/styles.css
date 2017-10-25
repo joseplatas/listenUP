@@ -98,6 +98,10 @@
     background-color: #d2ead7;
 }
 
+:local .member_photo {
+    width: 100%;
+}
+
 :local .team_member_name {
     margin-top: 5px;
     margin-bottom: 0;
