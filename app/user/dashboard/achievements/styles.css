@@ -1,0 +1,40 @@
+:local * {
+    font-family: Pragmatica, Arial, Helvetica, sans-serif;
+}
+
+:local .flex_container {
+    display: flex;
+}
+
+:local .achievements_container {
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+:local .achievement_container {
+    flex-direction: column;
+    max-width: 150px;
+}
+
+:local .thumbnail_container {
+    width: 150px;
+    height: 150px;
+}
+
+:local .thumbnail {
+    width: 100%;
+}
+
+:local .achievement_Name {
+    color: #33669a;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+:local .achievement_Description {
+    font-style: italic;
+    font-size: .8em;
+    margin-top: 0;
+}

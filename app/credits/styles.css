@@ -95,7 +95,11 @@
 :local .member_photo_container {
     width: 150px;
     height: 150px;
-    background-color: #d2ead7;
+    background-color: #9ed4ae;
+}
+
+:local .member_photo {
+    width: 100%;
 }
 
 :local .team_member_name {
