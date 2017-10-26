@@ -25,6 +25,7 @@ app.use(function(req, res, next) {
 })
 
 // mongodb connection
+mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost:27017/listenup',{ useMongoClient: true });
 var db = mongoose.connection;
 //mongo error
