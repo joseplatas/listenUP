@@ -18,8 +18,28 @@ const classes = generateClassHelper(styles)
 
 export class Dashboard extends React.Component {
 
+    constructor(props){
+      super(props);
+      //check if the user is login before showing page
+    }
+
     render() {
-        return <div className={classes('page_container', 'flex_container')}>
+      //console.log("dashboard greeting");
+      if(localStorage.user_id == undefined){
+        return(
+          <div className={classes('page_container', 'flex_container')}>
+            <div className={classes('center_container')}>
+                <h1 className={styles.dashboard_header}>
+                    Please login to see your dahsboard <Link to='/Login' className={styles.login_link}>here</Link>
+                </h1>
+
+            </div>
+          </div>
+        );
+      }
+
+      return (
+        <div className={classes('page_container', 'flex_container')}>
 
             <div className={classes('center_container')}>
 
@@ -66,5 +86,6 @@ export class Dashboard extends React.Component {
 
             </div>
         </div>
+      );
     }
 }

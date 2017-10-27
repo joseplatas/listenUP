@@ -2,27 +2,27 @@
 :local .flex_container {
     display: flex;
   }
-  
-  :local .page_container {
+
+:local .page_container {
     background-color: #fffef3;
     flex-direction: column;
     text-align: center;
-    min-height: 100vh;
     justify-content: center;
+    padding-top: 10%;
     font-family: Arial, Helvetica, sans-serif;
   }
-  
+
   :local .login_header {
     font-size: 2em;
     margin-bottom: 20px;
     font-weight: lighter;
     color: #33669a;
   }
-  
+
   :local .login_form {
     align-self: center;
   }
-  
+
   :local .submitButton {
     width: 100%;
     background-color: #9ed4ae;
@@ -30,23 +30,23 @@
     line-height: 30px;
     font-size: 1.2em;
   }
-  
+
   :local .topSpace {
     margin-top: 10px;
   }
-  
+
   :local .login_tooltip {
     font-size: 12px;
   }
-  
+
   :local .form_icon {
     border-style: solid;
     border-width: 1px;
     border-color: #475c64;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
   }
-  
+
   :local .login_link {
     color: #33669a;
     text-decoration: none;

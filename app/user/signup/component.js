@@ -15,12 +15,14 @@ export class Signup extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      username: (this.state || {}).username,
       email: (this.state || {}).email,
       password: (this.state || {}).password,
       confirmPassword: (this.state || {}).confirmPassword
     }
     //WE NEED TO ADD THE CODE TO VALIDATE DATA
-    this.handleEmailChange = this._generateHandler('email')
+    this.handleUsernameChange = this._generateHandler("username");
+    this.handleEmailChange = this._generateHandler("email");
     this.handlePasswordChange = this._generateHandler('password')
     this.handleConfirmPasswordChange = this._generateHandler('confirmPassword')
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -39,10 +41,16 @@ export class Signup extends React.Component {
   /*---Handler for SUBMIT button---*/
 
   handleSubmit(event) {
+    event.preventDefault();
+    var username = this.state.username;
+    var email = this.state.email;
+    var password = this.state.password;
+    var confirmPassword = this.state.confirmPassword;
 
-    var email = this.state.email
-    var password = this.state.password
-    var confirmPassword = this.state.confirmPassword
+    if(username == undefined || email == undefined || password == undefined || confirmPassword == undefined){
+      alert("Please enter all inputs");
+      return false;
+    }
 
     fetch(new Request('http://localhost:8080/api/user/registerPost', {
       headers: new Headers({
@@ -50,6 +58,7 @@ export class Signup extends React.Component {
       }),
       method: 'POST',
       body: JSON.stringify({
+        "username": username,
         "email": email,
         "password": password,
         "confirmPassword": confirmPassword
@@ -63,7 +72,7 @@ export class Signup extends React.Component {
       alert(data.message);
     });
 
-    event.preventDefault();
+
 
   }
 
@@ -81,6 +90,20 @@ export class Signup extends React.Component {
         <form onSubmit={this.handleSubmit}
           className={classes('signup_form', 'formField', 'flex-container')}>
 
+
+          {/*---EMAIL Field---*/}
+
+          <label className={classes('topSpace', 'formField', 'flex_container')}>
+            <div className={styles.form_icon} />
+            <input
+              className='inputField'
+              name='username'
+              type='text'
+              placeholder='your username'
+              value={this.state.username}
+              onChange={this.handleUsernameChange}
+            />
+          </label>
 
           {/*---EMAIL Field---*/}
 

@@ -2,6 +2,7 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 import * as styles from './header.css'
+import {browserHistory} from 'react-router';
 import '../../shared/img/ListenUp_logo_white.png'
 
 import {
@@ -15,6 +16,13 @@ function classes(...classNames) {
         .map(cn => styles[cn])
         .join(' ')
 }
+//kill localStorage
+function logOut(){
+  localStorage.removeItem("user_id");
+  alert("You have been logout");
+  window.location.href = ""
+}
+
 
 export const Header = () => (
 
@@ -29,8 +37,8 @@ export const Header = () => (
                 <li><Link to='/signup'>Sign Up</Link></li>
                 <li><Link to='/login'>Log In</Link></li>
                 <li><Link to="/dashboard">Dashboard</Link></li>
-                <li><a href="#">Settings</a></li>
-                <li><a href="#">Log Out</a></li>
+                <li><Link to="/settings">Settings</Link></li>
+                <li><Link to="/">Log Out</Link></li>
             </ul>
         </header>
     </div>

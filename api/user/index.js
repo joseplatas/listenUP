@@ -14,9 +14,42 @@ userRouter.get('/login', function(req, res, next) {
     res.sendFile(path.join(__dirname+'/test/loginForm.html'));
 });
 
+//login handler
 userRouter.post('/loginPost', function(req, res, next){
-    //PENDING: pending logic to login and create session
-    res.send('login post')
+    res.setHeader('Content-Type', 'application/json');
+    var response = {};
+    //console.log("Data send from react");
+    //console.log(res.body);
+    //check if all parameters are pass
+    if(req.body.email && req.body.password){
+      //ALL VALUES WERE PASS
+    }else{
+      response.err = -1;
+      response.message = "Missing values";
+      res.send(response);
+    }
+    //check if the user exist
+    User.authenticate(req.body.email, req.body.password, function(error, user){
+      //console.log(error);
+      //console.log(user);
+      if(error || !user){
+        response.err = -1;
+        response.message = "User not found";
+        response.error = error;
+        res.send(response);
+      }else{
+        //add session variable
+        //req.session.userId = user._id;
+        response.user_id = user._id;
+        response.username = user.username;
+        response.err = 0;
+        response.message = "User found";
+        res.send(response)
+      }
+    });
+
+
+
 
 });
 //register test form
@@ -29,10 +62,7 @@ userRouter.post('/registerPost', function(req, res, next){
   // console.log("Data send from react");
   // console.log(res.body);
   //check if all parameters are pass
-  if(req.body.email &&
-    req.body.password &&
-    req.body.confirmPassword
-  ){
+  if(req.body.username && req.body.email && req.body.password && req.body.confirmPassword){
     //ALL VALUES WERE PASS
   }else{
     response.err = -1;
@@ -48,6 +78,7 @@ userRouter.post('/registerPost', function(req, res, next){
   }
   //assign data to userData object
   var userData = {
+    username: req.body.username,
     email: req.body.email,
     password: req.body.password,
     confirmPassword: req.body.password
@@ -56,7 +87,7 @@ userRouter.post('/registerPost', function(req, res, next){
   User.create(userData,function(error, user){
     if(error){
       response.err = -3;
-      response.message = "User not created";
+      response.message = "Email or username is already in used";
       response.error = error;
 
       res.send(response);
