@@ -20,7 +20,7 @@ export class Signup extends React.Component {
       confirmPassword: (this.state || {}).confirmPassword
     }
     //WE NEED TO ADD THE CODE TO VALIDATE DATA
-    this.handleEmailChange = this._generateHandler('email')
+    this.handleEmailChange = this._generateHandler("email");
     this.handlePasswordChange = this._generateHandler('password')
     this.handleConfirmPasswordChange = this._generateHandler('confirmPassword')
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -39,10 +39,15 @@ export class Signup extends React.Component {
   /*---Handler for SUBMIT button---*/
 
   handleSubmit(event) {
-
+    event.preventDefault();
     var email = this.state.email
     var password = this.state.password
     var confirmPassword = this.state.confirmPassword
+
+    if(email == undefined || password == undefined || confirmPassword == undefined){
+      alert("Please enter all inputs");
+      return false;
+    }
 
     fetch(new Request('http://localhost:8080/api/user/registerPost', {
       headers: new Headers({
@@ -63,7 +68,7 @@ export class Signup extends React.Component {
       alert(data.message);
     });
 
-    event.preventDefault();
+
 
   }
 

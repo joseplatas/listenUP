@@ -21,6 +21,7 @@ export class Login extends React.Component {
 
         this.handleEmailChange = this.handleEmailChange.bind(this);
         this.handlePasswordChange = this.handlePasswordChange.bind(this);
+
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -37,15 +38,37 @@ export class Login extends React.Component {
     }
 
     handleSubmit(event) {
+        event.preventDefault();
+        var email = this.state.email;
+        var password = this.state.password;
 
-        var email = this.state.email
-        var password = this.state.password
+        if(email == "" || password == ""){
+          alert("Please enter the values");
+          return false;
+        }
 
         {/*---Alert is only used for testing, remove when functioning---*/}
+        fetch(new Request('http://localhost:8080/api/user/loginPost', {
+          headers: new Headers({
+            'Content-Type': 'application/json'
+          }),
+          method: 'POST',
+          body: JSON.stringify({
+            "email": email,
+            "password": password,
+            })
+        })).then((response) => {
+          //get json full response after is done processing
+          return response.json();
+        }).then((data)=>{
+          //return value from above
+          if(data.err == 0){
+            console.log(data);
+          }else{
+            alert(data.message);
+          }
+        });
 
-        alert('NAME: ' + email + ' | PASSWORD: ' + password);
-
-        event.preventDefault();
 
     }
 
