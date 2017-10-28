@@ -51,35 +51,40 @@ export class Transcription extends React.Component {
 
         return <div className={classes('page_container', 'flex_container')}>
 
-            <div className={classes('exercise_header', 'flex_container')}>
-                <Exercise_Header/>
-            </div>
+            <div className={classes('exercise_container', 'flex_container')}>
+
+                <div className={classes('exercise_header', 'flex_container')}>
+                    <h2 className={classes('exercise_name', 'blue_text')}>
+                        transcription exercise
+                </h2>
+                    <Exercise_Header />
+                </div>
 
 
-            <div className={classes('exercise_content', 'flex_container')}>
+                <div className={classes('exercise_content', 'flex_container')}>
 
-                <Audio_Panel />
+                    <Audio_Panel />
 
-                <div className={classes('input_panel', 'flex_container')}>
+                    <div className={classes('input_panel', 'flex_container')}>
 
 
-                    <div className={styles.user_input}>
+                        <div className={styles.user_input}>
 
-                        <h5 className={classes('blue_text', 'input_header')}>type what you hear:</h5>
+                            <h5 className={classes('blue_text', 'input_header')}>type what you hear:</h5>
 
-                        <form onSubmit={this.handleSubmit}>
+                            <form onSubmit={this.handleSubmit}>
 
-                            <label>
-                                <textarea
-                                    name='userInput'
-                                    placeholder='type here...'
-                                    value={this.state.value}
-                                    onChange={this.handleUserInputChange}
-                                    className={styles.user_input_area}
-                                    spellCheck='false' />
-                            </label>
+                                <label>
+                                    <textarea
+                                        name='userInput'
+                                        placeholder='type here...'
+                                        value={this.state.value}
+                                        onChange={this.handleUserInputChange}
+                                        className={styles.user_input_area}
+                                        spellCheck='false' />
+                                </label>
 
-                            {/* ----TEMPORARILY COMMENTING OUT FOR STYLING---
+                                {/* ----TEMPORARILY COMMENTING OUT FOR STYLING---
 
                             <ul className={classes('char_bar', 'fr_chars', 'flex_container')}>
 
@@ -114,16 +119,17 @@ export class Transcription extends React.Component {
 
                         </ul>
 */}
-                            <input
-                                type='submit'
-                                value='enter'
-                                className={styles.enter_button}
-                            />
+                                <input
+                                    type='submit'
+                                    value='enter'
+                                    className={styles.enter_button}
+                                />
 
-                        </form>
+                            </form>
 
-                        <div className={styles.tooltip_feedback}>
-                            <Tooltip />
+                            <div className={styles.tooltip_feedback}>
+                                <Tooltip />
+                            </div>
                         </div>
                     </div>
                 </div>

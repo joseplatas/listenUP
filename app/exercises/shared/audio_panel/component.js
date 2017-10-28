@@ -21,8 +21,10 @@ export class Audio_Panel extends React.Component {
     render() {
         return <div className={styles.audio_panel}>
 
-            <div className={classes('audio_player', 'flex_container')}>
-                <img src='/app/exercises/shared/audio_panel/img/icon_speaker_blue.png' />
+            <div className={classes('audio_player_container', 'flex_container')}>
+                <div className={classes('player_img_container')}>
+                    <img src='/app/exercises/shared/audio_panel/img/icon_speaker_blue.png' />
+                </div>
             </div>
 
             <div className={classes('audio_controls', 'flex_container')}>

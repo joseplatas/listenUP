@@ -2,6 +2,10 @@
     display: flex;
 }
 
+:local audio_panel {
+    justify-content: center;
+}
+
 /*---audio-panel---*/
 
 :local .audio_player,
@@ -9,9 +13,8 @@
     justify-content: center;
 }
 
-:local .audio_player {
-    flex-direction: column;
-    max-width: 250px;
+:local .player_img_container {
+    width: 250px;
 }
 
 :local .audio_player img {
