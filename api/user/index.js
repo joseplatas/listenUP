@@ -21,8 +21,7 @@ userRouter.post('/loginPost', function(req, res, next){
     //console.log("Data send from react");
     //console.log(res.body);
     //check if all parameters are pass
-    if(req.body.email && req.body.password
-    ){
+    if(req.body.email && req.body.password){
       //ALL VALUES WERE PASS
     }else{
       response.err = -1;
@@ -42,6 +41,7 @@ userRouter.post('/loginPost', function(req, res, next){
         //add session variable
         //req.session.userId = user._id;
         response.user_id = user._id;
+        response.username = user.username;
         response.err = 0;
         response.message = "User found";
         res.send(response)
@@ -62,10 +62,7 @@ userRouter.post('/registerPost', function(req, res, next){
   // console.log("Data send from react");
   // console.log(res.body);
   //check if all parameters are pass
-  if(req.body.email &&
-    req.body.password &&
-    req.body.confirmPassword
-  ){
+  if(req.body.username && req.body.email && req.body.password && req.body.confirmPassword){
     //ALL VALUES WERE PASS
   }else{
     response.err = -1;
@@ -81,6 +78,7 @@ userRouter.post('/registerPost', function(req, res, next){
   }
   //assign data to userData object
   var userData = {
+    username: req.body.username,
     email: req.body.email,
     password: req.body.password,
     confirmPassword: req.body.password
@@ -89,7 +87,7 @@ userRouter.post('/registerPost', function(req, res, next){
   User.create(userData,function(error, user){
     if(error){
       response.err = -3;
-      response.message = "User not created";
+      response.message = "Email or username is already in used";
       response.error = error;
 
       res.send(response);
