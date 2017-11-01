@@ -2,6 +2,11 @@ var mongoose = require('mongoose');
 var bcrypt = require('bcrypt');
 
 var UserSchema = new mongoose.Schema({
+  username:{
+    type: String,
+    trim: true,
+    unique: true
+  },
   email: {
     type: String,
     required: true,
@@ -11,7 +16,18 @@ var UserSchema = new mongoose.Schema({
   password: {
     type: String,
     required: true
+  },
+  points: {
+    type: Number,
+  },
+  learningTime: {
+    type: Number
+  },
+  languageActive:{
+    type: String,
+    trim: true
   }
+
 });
 //authenticate input against database document
 UserSchema.statics.authenticate = function(email,password, callback){
@@ -20,7 +36,7 @@ UserSchema.statics.authenticate = function(email,password, callback){
         if(error){
           return callback(error);
         }else if(!user){
-          return callback(err);
+          return callback(error);
         }
 
         bcrypt.compare(password, user.password, function(error, result){

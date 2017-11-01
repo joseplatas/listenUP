@@ -40,10 +40,11 @@
     height: 40px;
   }
 
-  .inputField {
+ .inputField {
+    width: 100%;
+    height: 40px;
     color: #475c64;
     padding-left: 10px;
-    width: 100%;
   }
 
   :local .submitButton {

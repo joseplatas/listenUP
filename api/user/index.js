@@ -21,8 +21,7 @@ userRouter.post('/loginPost', function(req, res, next){
     //console.log("Data send from react");
     //console.log(res.body);
     //check if all parameters are pass
-    if(req.body.email &&
-      req.body.password
+    if(req.body.email && req.body.password
     ){
       //ALL VALUES WERE PASS
     }else{
@@ -36,13 +35,13 @@ userRouter.post('/loginPost', function(req, res, next){
       //console.log(user);
       if(error || !user){
         response.err = -1;
-        response.message = "User found";
+        response.message = "User not found";
         response.error = error;
         res.send(response);
       }else{
         //add session variable
-        req.session.userId = user._id;
-        response._user_id = user._id;
+        //req.session.userId = user._id;
+        response.user_id = user._id;
         response.err = 0;
         response.message = "User found";
         res.send(response)
