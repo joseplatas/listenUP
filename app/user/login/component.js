@@ -1,7 +1,8 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 import * as styles from './login.css'
-
+import PropTypes from 'prop-types'
+import {browserHistory} from 'react-router';
 import { Link } from 'react-router-dom'
 
 function classes(...classNames) {
@@ -63,7 +64,10 @@ export class Login extends React.Component {
         }).then((data)=>{
           //return value from above
           if(data.err == 0){
-            console.log(data);
+            // console.log(data);
+            //set localstorage of the user
+            localStorage.user_id = data.user_id;
+            this.props.history.push('dashboard');
           }else{
             alert(data.message);
           }

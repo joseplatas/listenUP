@@ -3,12 +3,12 @@
     display: flex;
   }
 
-  :local .page_container {
+:local .page_container {
     background-color: #fffef3;
     flex-direction: column;
     text-align: center;
-    min-height: 100vh;
     justify-content: center;
+    padding-top: 10%;
     font-family: Arial, Helvetica, sans-serif;
   }
 
@@ -43,8 +43,8 @@
     border-style: solid;
     border-width: 1px;
     border-color: #475c64;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
   }
 
   :local .login_link {
