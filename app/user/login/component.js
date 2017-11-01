@@ -67,6 +67,12 @@ export class Login extends React.Component {
             // console.log(data);
             //set localstorage of the user
             localStorage.user_id = data.user_id;
+            if(data.username == undefined){
+                  localStorage.username = '';
+            }else{
+              localStorage.username = data.username;
+            }
+
             this.props.history.push('dashboard');
           }else{
             alert(data.message);
