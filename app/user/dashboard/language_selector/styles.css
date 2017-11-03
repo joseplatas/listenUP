@@ -39,14 +39,16 @@
 }
 
 :local .exercise_link {
-    color: #fffef3;
+    text-align: left;
+
+    border-radius: 5px;
+    width: 200px;
+    padding: 2%;
+
+    background-color: #d2ead7;
+    color: #475055;    
     text-decoration: none;
     font-size: 1.5em;
-    text-align: left;
-    border-radius: 5px;
-    padding: 2%;
-    background-color: #33669a;
-    width: 200px;
 }
 
 :local .exercise_link:hover {
