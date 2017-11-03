@@ -21,34 +21,28 @@ export class Transcription extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            userInput: (this.state || {}).userInput || 'enter your answer'
+            userInput: (this.state || {}).userInput || 'enter your answer',
+            user_answer: [] //array to keep user answer 
         };
-
         this.handleUserInputChange = this.handleUserInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleUserInputChange(event) {
-        this.setState({
-            userInput: event.target.value
-        })
+        this.setState({userInput: event.target.value})
     }
 
-    handleSubmit(event) {
-
-        var userInput = this.state.userInput
-
-        {/*---Alert is only used for testing, remove when functioning---*/ }
-
-        fns.changeInputTest(userInput)
-
-        alert(userInput);
-
+    handleSubmit(event) { 
+        //for reference https://stackoverflow.com/questions/42569899/storing-numbers-entered-via-an-input-form-into-an-array
+        var answer = this.state.value;
+        var allAnswer = this.state.user_answer.concat([userInput]); //stores user answer to be concatted to user_answer
+        this.setState({user_answer: allAnswer});
+        this.setState({userInput: ''}); //clears input on submit
         event.preventDefault();
     }
 
     render() {
-
+        console.log(this.state.user_answer);
         return <div className={classes('page_container', 'flex_container')}>
 
             <div className={classes('exercise_container', 'flex_container')}>
@@ -124,7 +118,7 @@ export class Transcription extends React.Component {
                                     value='enter'
                                     className={styles.enter_button}
                                 />
-
+                                
                             </form>
 
                             <div className={styles.tooltip_feedback}>
