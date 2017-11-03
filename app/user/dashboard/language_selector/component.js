@@ -23,20 +23,53 @@ export class Language_Selector extends React.Component {
 
             <div className={classes('languages_container', 'flex_container')}>
 
-                <Link to='/transcription' className={classes('flex_container','language')}>
+            <div className={classes('language_container','flex_container')}>
+
+                <div className={classes('lang_thumbnail')}>
                     <img src='/app/user/dashboard/language_selector/img/icon_en.png' className={styles.lang_icon} />
-                    <p className={styles.lang_link}>english</p>
-                </Link>
+                </div>
 
-                <Link to='/transcription' className={classes('flex_container','language')}>
+                <div className={classes('exercise_selectors_container','flex_container')}>
+                    <div className={classes('exercise_link_container','space_bottom')}>
+                    <Link to='/transcription' className={classes('exercise_link')}>transcription</Link>
+                    </div>
+                    <div className={classes('exercise_link_container')}>
+                    <Link to='/quiz' className={classes('exercise_link')}>quiz</Link>
+                    </div>
+                </div>
+            </div>
+
+            <div className={classes('language_container','flex_container')}>
+
+                <div className={classes('lang_thumbnail')}>
                     <img src='/app/user/dashboard/language_selector/img/icon_fr.png' className={styles.lang_icon} />
-                    <p className={styles.lang_link}>french</p>
-                </Link>
+                </div>
 
-                <Link to='/transcription' className={classes('flex_container','language')}>
+                <div className={classes('exercise_selectors_container','flex_container')}>
+                    <div className={classes('exercise_link_container','space_bottom')}>
+                    <Link to='/transcription' className={classes('exercise_link')}>transcription</Link>
+                    </div>
+                    <div className={classes('exercise_link_container')}>
+                    <Link to='/quiz' className={classes('exercise_link')}>quiz</Link>
+                    </div>
+                </div>
+            </div>
+
+            <div className={classes('language_container','flex_container')}>
+
+                <div className={classes('lang_thumbnail')}>
                     <img src='/app/user/dashboard/language_selector/img/icon_es.png' className={styles.lang_icon} />
-                    <p className={styles.lang_link}>spanish</p>
-                </Link>
+                </div>
+
+                <div className={classes('exercise_selectors_container','flex_container')}>
+                    <div className={classes('exercise_link_container','space_bottom')}>
+                    <Link to='/transcription' className={classes('exercise_link')}>transcription</Link>
+                    </div>
+                    <div className={classes('exercise_link_container')}>
+                    <Link to='/quiz' className={classes('exercise_link')}>quiz</Link>
+                    </div>
+                </div>
+            </div>
 
             </div>
 

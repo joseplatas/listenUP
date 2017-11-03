@@ -1,35 +1,57 @@
 :local .flex_container {
     display: flex;
-    justify-content: center;
 }
 
 :local .component_container {
     flex-direction: column;
     justify-content: center;
+    padding-left: 30px;
+    padding-bottom: 20px;
 }
 
-
-:local .language {
+:local .languages_container {
     flex-direction: column;
+}
+
+:local .language_container {
+    margin-top: 10px;
     text-align: center;
     text-decoration: none;
 }
 
-:local .language+.language {
-    margin-left: 20px;
+:local .lang_thumbnail {
+    flex-direction: column; 
+    height: 100px;   
 }
 
 :local .lang_icon {
-    width: 100px;
-    height: 100px;
+    height: 100%;
 }
 
-:local .lang_link {
+:local .exercise_selectors_container {
+    margin-left: 10px;
+    flex-direction: column;
+    justify-content: center;
+}
+
+:local .exercise_link_container {
+    text-align: left;
+    border-radius: 5px;
+    padding: 2%;
+    background-color: #33669a;
+    width: 400px;
+}
+
+:local .exercise_link {
+    color: #fffef3;
     text-decoration: none;
-    color: #475055;
+    font-size: 1.5em;
 }
 
-:local .lang_link:hover {
-    color: #33669a;
-    font-weight: bold;
+:local .space_bottom {
+    margin-bottom: 5px;
+}
+
+:local .language+.language {
+    margin-bottom: 2%;
 }
