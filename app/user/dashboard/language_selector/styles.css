@@ -17,15 +17,19 @@
     margin-top: 10px;
     text-align: center;
     text-decoration: none;
+    flex-direction: column;
+    align-self: center;
 }
 
 :local .lang_thumbnail {
     flex-direction: column; 
-    height: 100px;   
+    justify-content: center;
+    height: 114px;   
 }
 
 :local .lang_icon {
     height: 100%;
+    align-self: center;
 }
 
 :local .exercise_selectors_container {
@@ -34,18 +38,20 @@
     justify-content: center;
 }
 
-:local .exercise_link_container {
-    text-align: left;
-    border-radius: 5px;
-    padding: 2%;
-    background-color: #33669a;
-    width: 400px;
-}
-
 :local .exercise_link {
     color: #fffef3;
     text-decoration: none;
     font-size: 1.5em;
+    text-align: left;
+    border-radius: 5px;
+    padding: 2%;
+    background-color: #33669a;
+    width: 200px;
+}
+
+:local .exercise_link:hover {
+    background-color: #9ed4ae;
+    color: #475055;
 }
 
 :local .space_bottom {
@@ -54,4 +60,16 @@
 
 :local .language+.language {
     margin-bottom: 2%;
+}
+
+@media only screen and (min-width: 700px) {
+
+    :local .language_container {
+        flex-direction: row;
+        align-self: flex-start;
+    }
+    
+    :local .exercise_link {
+        width: 600px;
+    }
 }

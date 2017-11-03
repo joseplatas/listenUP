@@ -30,12 +30,8 @@ export class Language_Selector extends React.Component {
                 </div>
 
                 <div className={classes('exercise_selectors_container','flex_container')}>
-                    <div className={classes('exercise_link_container','space_bottom')}>
-                    <Link to='/transcription' className={classes('exercise_link')}>transcription</Link>
-                    </div>
-                    <div className={classes('exercise_link_container')}>
-                    <Link to='/quiz' className={classes('exercise_link')}>quiz</Link>
-                    </div>
+                    <Link to='/transcription' className={classes('exercise_link','space_bottom')}>transcription</Link>
+                    <Link to='/quiz' className={classes('exercise_link','space_bottom')}>quiz</Link>
                 </div>
             </div>
 
@@ -46,12 +42,8 @@ export class Language_Selector extends React.Component {
                 </div>
 
                 <div className={classes('exercise_selectors_container','flex_container')}>
-                    <div className={classes('exercise_link_container','space_bottom')}>
-                    <Link to='/transcription' className={classes('exercise_link')}>transcription</Link>
-                    </div>
-                    <div className={classes('exercise_link_container')}>
-                    <Link to='/quiz' className={classes('exercise_link')}>quiz</Link>
-                    </div>
+                    <Link to='/transcription' className={classes('exercise_link','space_bottom')}>transcription</Link>
+                    <Link to='/quiz' className={classes('exercise_link','space_bottom')}>quiz</Link>
                 </div>
             </div>
 
@@ -62,12 +54,8 @@ export class Language_Selector extends React.Component {
                 </div>
 
                 <div className={classes('exercise_selectors_container','flex_container')}>
-                    <div className={classes('exercise_link_container','space_bottom')}>
-                    <Link to='/transcription' className={classes('exercise_link')}>transcription</Link>
-                    </div>
-                    <div className={classes('exercise_link_container')}>
-                    <Link to='/quiz' className={classes('exercise_link')}>quiz</Link>
-                    </div>
+                    <Link to='/transcription' className={classes('exercise_link','space_bottom')}>transcription</Link>
+                    <Link to='/quiz' className={classes('exercise_link','space_bottom')}>quiz</Link>
                 </div>
             </div>
 

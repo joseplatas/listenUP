@@ -47,11 +47,17 @@
 
 /*---Section Header---*/
 
-:local .section_header {
+:local .section_header_container {
     font-weight: lighter;
+    width: 800px;
+    background-color: #9ed4ae;
+    margin: 0 0 20px 0;
+}
+
+:local .section_header {
+    padding: 2%;
+    margin: 0;
     color: #475055;
-    padding-left: 30px;
-    margin-top: 10px;
 }
 
 /*--- Courses ---*/

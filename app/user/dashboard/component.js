@@ -49,9 +49,12 @@ export class Dashboard extends React.Component {
                 <section className={classes('dashboard_section', 'flex_container', 'first_panel')}>
 
                     <div className={styles.language_selector}>
+                        <div className={styles.section_header_container}>
                         <h2 className={styles.section_header}>
                             courses:
-                    </h2>
+                        </h2>
+                        </div>
+
                         <Language_Selector />
                     </div>
 
@@ -59,23 +62,24 @@ export class Dashboard extends React.Component {
 
                 <section className={classes('dashboard_section', 'achievements')}>
 
-                    <div className={styles.achievements}>
-                        <h2 className={styles.section_header}>
-                            achievements:
-                    </h2>
+                <div className={styles.section_header_container}>
+                <h2 className={styles.section_header}>
+                    achievements:
+                </h2>
+                </div>
+                
                         <Achievements />
-                    </div>
 
                 </section>
 
                 <section className={classes('dashboard_section', 'statistics')}>
 
-                    <div className={styles.statistics}>
-                        <h2 className={styles.section_header}>
-                            statistics:
-                    </h2>
+                <div className={styles.section_header_container}>
+                <h2 className={styles.section_header}>
+                    statistics:
+                </h2>
+                </div>
                         <Statistics />
-                    </div>
 
                 </section>
 
