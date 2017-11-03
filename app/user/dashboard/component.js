@@ -3,7 +3,6 @@ import * as ReactDOM from 'react-dom'
 import * as styles from './styles.css'
 import * as fns from './fns.js'
 import { Language_Selector } from './language_selector/component.js'
-import { Lifetime_Points } from './lifetime_points/component.js'
 import { Achievements } from './achievements/component.js'
 import { Statistics } from './statistics/component.js'
 
@@ -30,7 +29,7 @@ export class Dashboard extends React.Component {
           <div className={classes('page_container', 'flex_container')}>
             <div className={classes('center_container')}>
                 <h1 className={styles.dashboard_header}>
-                    Please login to see your dahsboard <Link to='/Login' className={styles.login_link}>here</Link>
+                    Please login to see your dashboard <Link to='/Login' className={styles.login_link}>here</Link>
                 </h1>
 
             </div>
@@ -44,43 +43,43 @@ export class Dashboard extends React.Component {
             <div className={classes('center_container')}>
 
                 <h1 className={styles.dashboard_header}>
-                    welcome back, <em className={styles.name_text}>{fns.getFirstName()}!</em>
+                    welcome back, <em className={styles.name_text}>{localStorage.username}!</em>
                 </h1>
 
                 <section className={classes('dashboard_section', 'flex_container', 'first_panel')}>
 
                     <div className={styles.language_selector}>
+                        <div className={styles.section_header_container}>
                         <h2 className={styles.section_header}>
-                            languages in progress:
-                    </h2>
-                        <Language_Selector />
-                    </div>
+                            courses:
+                        </h2>
+                        </div>
 
-                    <div className={styles.lifetime_points}>
-                        <Lifetime_Points />
+                        <Language_Selector />
                     </div>
 
                 </section>
 
                 <section className={classes('dashboard_section', 'achievements')}>
 
-                    <div className={styles.achievements}>
-                        <h2 className={styles.section_header}>
-                            achievements:
-                    </h2>
+                <div className={styles.section_header_container}>
+                <h2 className={styles.section_header}>
+                    achievements:
+                </h2>
+                </div>
+                
                         <Achievements />
-                    </div>
 
                 </section>
 
                 <section className={classes('dashboard_section', 'statistics')}>
 
-                    <div className={styles.statistics}>
-                        <h2 className={styles.section_header}>
-                            statistics:
-                    </h2>
+                <div className={styles.section_header_container}>
+                <h2 className={styles.section_header}>
+                    statistics:
+                </h2>
+                </div>
                         <Statistics />
-                    </div>
 
                 </section>
 

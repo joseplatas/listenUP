@@ -2,6 +2,10 @@
     display: flex;
 }
 
+:local audio_panel {
+    justify-content: center;
+}
+
 /*---audio-panel---*/
 
 :local .audio_player,
@@ -9,20 +13,27 @@
     justify-content: center;
 }
 
-:local .audio_player {
-    flex-direction: column;
-    max-width: 250px;
+:local .player_img_container {
+    width: 250px;
 }
 
-:local .audio_player img {
+:local .player_img {
     width: 100%;
+    align-self: center;
 }
 
 :local .audio_controls {
     white-space: nowrap;
 }
 
+:local .btn_img {
+    width: 100%;
+}
+
 :local .audio_button {
+    background-color: #fffef3;
+    border-style: none;
+    border-width: 0px;
     height: 100px;
     width: 100px;
 }

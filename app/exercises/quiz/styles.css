@@ -6,6 +6,12 @@
     display: flex;
 }
 
+:local .exercise_container {
+    align-self: center;
+    flex-direction: column;
+    max-width: 600px;
+}
+
 /*---Shared Styles---*/
 
 :local .page_container {
@@ -35,6 +41,7 @@
     font-size: 2em;
 }
 
+
 /*---Exercise header---*/
 
 :local .exercise_header {
@@ -42,15 +49,8 @@
 }
 
 :local .exercise_name {
-    font-size: 2.5em;
+    font-size: 3em;
     flex: 1;
-}
-
-/*---audio panel*/
-
-:local .audio_panel {
-    flex-direction: column;
-    align-self: center;
 }
 
 /*---input-panel---*/
@@ -59,72 +59,54 @@
     padding: 2%;
     flex-direction: column;
     justify-content: space-between;
-    align-self: center;
+    min-width: 400px;
     max-width: 500px;
 }
 
-:local .content_subheader {
+:local .input_header {
     font-size: 2em;
+    
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
-:local .user_input_area {
-    resize: none;
-    display: block;
+:local .quiz_btns_container {
+    flex-direction: column;
     width: 100%;
-    height: 75px;
-    margin: 16px 0;
-    font-size: 1.2em;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
-:local .char_bar {
-    padding-left: 0;
-    list-style-type: none;
-}
-
-:local .char_bar li {
-    flex: 1 1 auto;
-    text-align: center;
-}
-
-:local .char_button {
-    background-color: none;
-    text-decoration: none;
-    font-size: 1.4em;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #475055;
-}
-
-:local .enter_button {
-    width: 100%;
-    line-height: 50px;
-    border-radius: 5px;
+:local .quiz_option {
+    background-color: #fff;
     
+    border-style: solid;
+    border-width: .5px;
+    border-color: #475055;
+    border-radius: 5px;
+
+    width: 100%;
+    min-height: 50px;
+    max-height: 60px;
+
+    padding: 2%;
+    margin-top: 5px;
+
+    text-decoration: none;
     color: #475055;
-    background-color: #9ed4ae;
-    font-size: 1.5em;
-    text-align: center;
 }
 
-:local .enter_button:hover {
+:local .quiz_option:hover {
+    border-color: #33669a;
     background-color: #33669a;
     color: #fffef3;
-}
-
-:local .tooltip_feedback {
-    margin-top: 16px;
-}
-
-/*---HIDDEN ON THE FRENCH PAGE---*/
-:local .es_chars {
-    visibility: hidden;
 }
 
 /*---Desktop & Tablet---*/
 @media only screen and (min-width: 700px) {
     :local .page_header {
         flex-wrap: nowrap;
+    }
+
+    :local .exercise_content {
+        flex-direction: row;
     }
 }

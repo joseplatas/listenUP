@@ -32,7 +32,7 @@ export const Home=() =>
     </h3>
 
     <div className={classes('centered_text','marginOnTop')}>
-        <Link to="/transcription" className={styles.actionButton}>
+        <Link to="/signup" className={styles.actionButton}>
         Get Started
         </Link>
     </div>

@@ -24,26 +24,29 @@ export class MainLayout extends React.Component {
     render() {
         return <div id = "app">
 
-            <Header/>
+            <div className='app_container'>
 
-            <div id='body'>
-                <Switch>
-                    {/*---ROUTING TO USER COMPONENTS---*/}
-                    <Route path='/login' component={user.default.Login} />
-                    <Route path='/signup' component={user.default.Signup} />
-                    <Route path='/dashboard' component={user.default.Dashboard} />
-                    <Route path='/settings' component={user.default.Settings} />
-                    <Route path='/credits' component={Credits} />
-                    {/*---ROUTING TO EXERCISE COMPONENTS---*/}
-                    <Route path='/transcription' component={Transcription} />
-                    <Route path='/quiz' component={Quiz}/>
-                    {/*---ROUTING TO HOME PAGE---*/}
-                    <Route path='/' component={Home} />
-                </Switch>
+                <Header/>
+
+                <div id='body'>
+                    <Switch>
+                        {/*---ROUTING TO USER COMPONENTS---*/}
+                        <Route path='/login' component={user.default.Login} />
+                        <Route path='/signup' component={user.default.Signup} />
+                        <Route path='/dashboard' component={user.default.Dashboard} />
+                        <Route path='/settings' component={user.default.Settings} />
+                        <Route path='/credits' component={Credits} />
+                        {/*---ROUTING TO EXERCISE COMPONENTS---*/}
+                        <Route path='/transcription' component={Transcription} />
+                        <Route path='/quiz' component={Quiz}/>
+                        {/*---ROUTING TO HOME PAGE---*/}
+                        <Route path='/' component={Home} />
+                    </Switch>
+                </div>
+
+                <Footer/>
+
             </div>
-
-            <Footer/>
-
         </div>
     }
 }
