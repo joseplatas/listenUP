@@ -9,11 +9,10 @@
 /*---Shared Styles---*/
 
 :local .page_container {
-    min-height: 100vh;
+    min-height: calc(100vh - 130px);
     background-color: #fffef3;
     flex-direction: column;
     justify-content: center;
-    padding: 2%;
 }
 
 :local .exercise_container {
@@ -43,8 +42,15 @@
 }
 
 :local .exercise_name {
-    font-size: 3em;
+    font-size: 2.5em;
     flex: 1;
+}
+
+/*---audio panel*/
+
+:local .audio_panel {
+    flex-direction: column;
+    align-self: center;
 }
 
 /*---input-panel---*/
@@ -53,13 +59,12 @@
     padding: 2%;
     flex-direction: column;
     justify-content: space-between;
-    min-width: 400px;
+    align-self: center;
     max-width: 500px;
 }
 
-:local .input_header {
+:local .content_subheader {
     font-size: 2em;
-    
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -121,9 +126,5 @@
 @media only screen and (min-width: 700px) {
     :local .page_header {
         flex-wrap: nowrap;
-    }
-
-    :local .exercise_content {
-        flex-direction: row;
     }
 }

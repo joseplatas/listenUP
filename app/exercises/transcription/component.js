@@ -57,14 +57,22 @@ export class Transcription extends React.Component {
 
                 <div className={classes('exercise_content', 'flex_container')}>
 
-                    <Audio_Panel />
+                    <div className={classes('audio_panel','flex_container')}>
+
+                        <h5 className={classes('blue_text','content_subheader')}>
+                        listen to the audio:
+                        </h5>
+
+                        <Audio_Panel />
+
+                    </div>
 
                     <div className={classes('input_panel', 'flex_container')}>
 
 
                         <div className={styles.user_input}>
 
-                            <h5 className={classes('blue_text', 'input_header')}>type what you hear:</h5>
+                            <h5 className={classes('blue_text', 'content_subheader')}>type what you hear:</h5>
 
                             <form onSubmit={this.handleSubmit}>
 

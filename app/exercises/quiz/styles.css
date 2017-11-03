@@ -15,11 +15,10 @@
 /*---Shared Styles---*/
 
 :local .page_container {
-    min-height: 100vh;
+    min-height: calc(100vh - 130px);
     background-color: #fffef3;
     flex-direction: column;
     justify-content: center;
-    padding: 2%;
 }
 
 :local .exercise_container {

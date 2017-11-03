@@ -26,7 +26,14 @@
     white-space: nowrap;
 }
 
+:local .btn_img {
+    width: 100%;
+}
+
 :local .audio_button {
+    background-color: #fffef3;
+    border-style: none;
+    border-width: 0px;
     height: 100px;
     width: 100px;
 }

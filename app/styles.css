@@ -3,6 +3,11 @@ body {
 }
 
 #body {
-    min-height: calc(100vh - 70px);
+    min-height: calc(100vh - 130px);
     margin: 0;
+}
+
+:local .app_container {
+    display: flex;
+    flex-direction: column;
 }
