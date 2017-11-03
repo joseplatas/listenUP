@@ -17,8 +17,9 @@
     width: 250px;
 }
 
-:local .audio_player img {
+:local .player_img {
     width: 100%;
+    align-self: center;
 }
 
 :local .audio_controls {

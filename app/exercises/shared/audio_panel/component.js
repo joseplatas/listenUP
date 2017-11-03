@@ -3,6 +3,7 @@ import * as ReactDOM from 'react-dom'
 import * as styles from './styles.css'
 import * as fns from './fns.js'
 import { generateClassHelper } from '../../../shared/shared_fns.js'
+import '../../shared/audio_panel/audio/en_04.mp3'
 
 import '../../shared/audio_panel/img/audio_controls_pause.png'
 import '../../shared/audio_panel/img/audio_controls_stop.png'
@@ -23,7 +24,11 @@ export class Audio_Panel extends React.Component {
 
             <div className={classes('audio_player_container', 'flex_container')}>
                 <div className={classes('player_img_container')}>
-                    <img src='/app/exercises/shared/audio_panel/img/icon_speaker_blue.png' />
+                    <img src='/app/exercises/shared/audio_panel/img/icon_speaker_blue.png' className={classes('player_img')}/>
+
+                    <audio controls preload='auto'>
+                        <source src='/app/exercises/shared/audio_panel/audio/en_04.mp3'/>
+                        </audio>
                 </div>
             </div>
 
