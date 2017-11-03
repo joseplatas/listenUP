@@ -45,16 +45,18 @@ export class Transcription extends React.Component {
         console.log(this.state.user_answer);
         return <div className={classes('page_container', 'flex_container')}>
 
+            {/* container for entire exercise ( all subcomponents ) */}
             <div className={classes('exercise_container', 'flex_container')}>
 
                 <div className={classes('exercise_header', 'flex_container')}>
                     <h2 className={classes('exercise_name', 'blue_text')}>
                         transcription exercise
                 </h2>
+                    {/* calls component Exercise_Header to handle language + score display */}
                     <Exercise_Header />
                 </div>
 
-
+                {/* container for non-header content */}
                 <div className={classes('exercise_content', 'flex_container')}>
 
                     <div className={classes('audio_panel','flex_container')}>
@@ -63,17 +65,18 @@ export class Transcription extends React.Component {
                         listen to the audio:
                         </h5>
 
+                        {/* calls audio_panel component to handle audio playback */}
                         <Audio_Panel />
 
                     </div>
 
                     <div className={classes('input_panel', 'flex_container')}>
 
-
                         <div className={styles.user_input}>
 
                             <h5 className={classes('blue_text', 'content_subheader')}>type what you hear:</h5>
 
+                            {/* form to take user's input for the exercise */}
                             <form onSubmit={this.handleSubmit}>
 
                                 <label>
@@ -129,6 +132,7 @@ export class Transcription extends React.Component {
                                 
                             </form>
 
+                            {/* calls tooltip component to display correct answer */}
                             <div className={styles.tooltip_feedback}>
                                 <Tooltip />
                             </div>

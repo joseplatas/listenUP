@@ -17,6 +17,9 @@ export class Statistics extends React.Component {
     render() {
         return <div className={classes('flex_container', 'statistics_container')}>
 
+        {/* these should be verified on the user account before displaying. dummy text for mockup provided. */}
+
+        {/* lifetime points */}
         <div className={classes('stat','flex_container')}>
             <h3 className={classes('stats_text')}>
             382
@@ -26,6 +29,7 @@ export class Statistics extends React.Component {
             </p>
         </div>
 
+        {/* minutes spent learning */}
         <div className={classes('stat','flex_container')}>
             <h3 className={classes('stats_text')}>
             33
@@ -35,6 +39,7 @@ export class Statistics extends React.Component {
             </p>
         </div>
 
+        {/* number of exercises completed ('cards') */}
         <div className={classes('stat','flex_container')}>
             <h3 className={classes('stats_text')}>
             108
@@ -44,12 +49,13 @@ export class Statistics extends React.Component {
             </p>
         </div>
 
+        {/* number of perfect answers */}
         <div className={classes('stat','flex_container')}>
             <h3 className={classes('stats_text')}>
             10
             </h3>
             <p className={classes('stats_tooltip')}>
-            longest streak
+            perfect 10's scored
             </p>
         </div>
 

@@ -22,22 +22,35 @@ import {
 
 const classes = generateClassHelper(styles)
 
+/*  ----note by JT----
+    should call a function to determine which achievements the user has before displaying
+    the achievements below are only for mockup purposes
+*/
+
 export class Achievements extends React.Component {
 
     render() {
         return <div className={classes('flex_container', 'achievements_container')}>
 
+            {/* ---------- begin single achievement ---------- */}
             <div className={classes('achievement_container', 'flex_container')}>
+
+                {/* achievement thumbnail */}
                 <div className={classes('thumbnail_container')}>
                     <img src='/app/user/dashboard/achievements/img/badges_q_5correctStreak.png' className={classes('thumbnail')} />
                 </div>
+
+                {/* achievement name */}
                 <h4 className={classes('achievement_Name')}>
                     On Fire
                 </h4>
+
+                {/* achievement description */}
                 <p className={classes('achievement_Description')}>
                     Scored 5 correct Quiz answers in a row!
                 </p>
             </div>
+            {/* ---------- end single achievement ---------- */}
 
             <div className={classes('achievement_container', 'flex_container')}>
                 <div className={classes('thumbnail_container')}>
