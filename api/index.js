@@ -4,6 +4,7 @@ const core = require('./core/index.js')
 
 //initialize variable
 var express = require('express');
+var path = require('path');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var session = require('express-session');
@@ -35,23 +36,19 @@ db.on("error",console.error.bind(console,'connection error'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-
 // serve static files from /public
-//app.use(express.static(__dirname + '/public'));
+app.use('/public',express.static(path.join(__dirname, 'public')));
 
 // include routes
 var userRouter = require('./user/index');
 app.use('/api/user', userRouter);
 
+// default home route response
+app.get("/",function(req, res, next){
+  res.send("API ListenUp, please use request provided in documentation");
+});
 
 
-/*
-The app.configure() function has been removed in EXPRESS 4.
-Use the process.env.NODE_ENV or app.get('env') function to detect the environment and configure the app accordingly.
-*/
-// core.configure(app);
-// user.configure(app);
-// exercises.configure(app);
 
 //changing to 8080 to avoid collision with others apps the used port 80
 app.listen(8080, function (){
