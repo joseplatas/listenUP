@@ -19,10 +19,9 @@ function classes(...classNames) {
 //kill localStorage
 function logOut(){
   localStorage.removeItem("user_id");
-  alert("You have been logout");
+  alert("You have been logged out");
   window.location.href = ""
 }
-
 
 export const Header = () => (
 
@@ -37,8 +36,8 @@ export const Header = () => (
                 <li><Link to='/signup'>Sign Up</Link></li>
                 <li><Link to='/login'>Log In</Link></li>
                 <li><Link to="/dashboard">Dashboard</Link></li>
-                <li><Link to="/settings">Settings</Link></li>
-                <li><Link to="/">Log Out</Link></li>
+                <li><Link to='/settings'>Settings</Link></li>
+                <li><a href="#" onClick={logOut}>Log Out</a></li>
             </ul>
         </header>
     </div>
