@@ -41,10 +41,13 @@ export const Home=() =>
 
     <section className={classes('about', 'flex_container', 'full_height')}>
 
+    <h4 className={classes('about_subheader','centered_text')}>
+        You've been learning your target language for a while now.<br/>
+        Learning materials are getting way too easy, but you still<br/>
+        can't follow a native conversation to save your life!
+    </h4>
     <h3 className={classes('about_header', 'centered_text')}>
-        So, you still can’t understand anything that
-        native speakers are saying. Welcome to the
-        «Intermediate Hell» of language learning.
+         Welcome to <em className={classes('red_text')}>«Intermediate Hell»</em>.
     </h3>
     <h1 className={classes('big_blue_header', 'centered_text','marginOnTop')}>
         It's time to listenUP.

@@ -42,9 +42,13 @@ export class Dashboard extends React.Component {
 
             <div className={classes('center_container')}>
 
-                <h1 className={styles.dashboard_header}>
-                    welcome back, <em className={styles.name_text}>{localStorage.username}!</em>
-                </h1>
+                <div className={classes('flex_container','db_heading_container')}>
+                    <h1 className={styles.dashboard_header}>
+                        welcome back, <em className={styles.name_text}>{localStorage.username}!</em>
+                    </h1>
+
+                    <Link to='/settings' className={classes('settings_link')}>settings</Link>
+                </div>
 
                 <section className={classes('dashboard_section', 'flex_container', 'first_panel')}>
 

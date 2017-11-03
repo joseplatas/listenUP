@@ -58,7 +58,7 @@
   }
   
  :local .full_height {
-    min-height: 100vh;
+    min-height: calc(100vh - 130px);
     flex-direction: column;
     justify-content: center;
     padding: 2%;
@@ -66,7 +66,9 @@
   
  :local .centered_text {
     text-align: center;
-    font-weight: lighter;    
+    font-weight: lighter; 
+    max-width: 760px;
+    align-self: center;   
   }
   
  :local .details_container {
@@ -87,6 +89,10 @@
     color: #33669a;
     font-weight: lighter;
     margin-bottom: 10px;    
+  }
+
+  :local .red_text {
+    color: #fe4a49;
   }
   
   /*---Welcome---*/
@@ -126,8 +132,13 @@
   }
   
  :local .about_header {
-    color: #475c64;
+    color: #fe4a49;
     font-size: 2em;
+  }
+
+  :local .about_subheader {
+    font-size: 1.5em;
+    margin-bottom: 0;
   }
   
  :local .big_blue_header {

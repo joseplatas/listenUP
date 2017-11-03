@@ -12,6 +12,7 @@ import './img/badges_tr_10scoreStreak.png'
 import './img/badges_lang_medal_en.png'
 import './img/badges_lang_medal_es.png'
 import './img/badges_lang_medal_fr.png'
+import './img/badges_lang_medal_ALL.png'
 
 import {
     HashRouter,
@@ -71,6 +72,54 @@ export class Achievements extends React.Component {
                 </h4>
                 <p className={classes('achievement_Description')}>
                     3 Perfect 10s in a row on Transcription!
+                </p>
+            </div>
+
+            <div className={classes('achievement_container', 'flex_container')}>
+                <div className={classes('thumbnail_container')}>
+                    <img src='/app/user/dashboard/achievements/img/badges_lang_medal_en.png' className={classes('thumbnail')} />
+                </div>
+                <h4 className={classes('achievement_Name')}>
+                    Excellent in English
+                </h4>
+                <p className={classes('achievement_Description')}>
+                    Complete all English exercises with a perfect 10 score!
+                </p>
+            </div>
+
+            <div className={classes('achievement_container', 'flex_container')}>
+                <div className={classes('thumbnail_container')}>
+                    <img src='/app/user/dashboard/achievements/img/badges_lang_medal_fr.png' className={classes('thumbnail')} />
+                </div>
+                <h4 className={classes('achievement_Name')}>
+                    Fantastic in French
+                </h4>
+                <p className={classes('achievement_Description')}>
+                    Complete all French exercises with a perfect 10 score!
+                </p>
+            </div>
+
+            <div className={classes('achievement_container', 'flex_container')}>
+                <div className={classes('thumbnail_container')}>
+                    <img src='/app/user/dashboard/achievements/img/badges_lang_medal_es.png' className={classes('thumbnail')} />
+                </div>
+                <h4 className={classes('achievement_Name')}>
+                    Super in Spanish
+                </h4>
+                <p className={classes('achievement_Description')}>
+                    Complete all Spanish exercises with a perfect 10 score!
+                </p>
+            </div>
+
+            <div className={classes('achievement_container', 'flex_container')}>
+                <div className={classes('thumbnail_container')}>
+                    <img src='/app/user/dashboard/achievements/img/badges_lang_medal_ALL.png' className={classes('thumbnail')} />
+                </div>
+                <h4 className={classes('achievement_Name')}>
+                    Globetrotter
+                </h4>
+                <p className={classes('achievement_Description')}>
+                    Complete all exercises in every language with a perfect 10 score!
                 </p>
             </div>
 
