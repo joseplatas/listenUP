@@ -1,0 +1,112 @@
+
+:local .flex_container {
+    display: flex;
+}
+
+
+/*---Shared Styles---*/
+
+:local .page_container {
+    min-height: 100vh;
+    background-color: #fffef3;
+    flex-direction: column;
+    justify-content: center;
+}
+
+:local .center_container {
+    min-width: 400px;
+    max-width: 500px;
+    align-self: center;
+}
+
+:local .settings_container {
+    padding: 2%;
+}
+
+
+/*--- Headers ---*/
+
+:local .settings_header {
+    font-weight: lighter;
+    color: #475055;
+}
+
+/*--- Settings content--- */
+
+:local .settings_content {
+    margin: 20px;
+}
+
+/*---Form Fields---*/
+
+:local .formLabel {
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+:local .field_tooltip {
+    width: 450px;
+    padding-left: 2%;
+}
+
+:local .tooltip_text {
+    font-size: 0.8em;
+    font-style: italic;
+    font-weight: lighter;
+}
+
+/*---Buttons---*/
+
+:local .buttons_container {
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+:local .settings_button {
+    width: 100%;
+    height: 50px;
+    font-size: 1.5em;
+    color: #fffef3;    
+}
+
+:local .settings_button:hover {
+    background-color: #9ed4ae;
+    color: #475055;
+}
+
+:local .submit_button {
+    background-color: #33669a;
+}
+
+:local .cancel_button {
+    background-color: #475055;
+}
+
+/*--- delete account ---*/
+
+:local .delete_account_link {
+    text-decoration: none;
+    color: #fe4a49;
+}
+
+/*---Responsive---*/
+
+@media only screen and (min-width: 700px) {
+     :local .center_container {
+        min-width: 500px;
+        max-width: 900px;
+    }
+
+    :local .formLabel {
+        flex-direction: row-reverse;
+    }
+
+    :local .buttons_container {
+        flex-direction: row;
+    }
+
+    :local .settings_button {
+        width: 200px;
+    }
+}
