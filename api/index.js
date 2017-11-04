@@ -41,7 +41,9 @@ app.use('/public',express.static(path.join(__dirname, 'public')));
 
 // ROUTER API
 var userRouter = require('./user/index');
+var exericiseRouter = require('./exercises/index');
 app.use('/api/user', userRouter);
+app.use('/api/exercises',exericiseRouter);
 
 
 // default home route response

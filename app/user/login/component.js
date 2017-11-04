@@ -72,7 +72,6 @@ export class Login extends React.Component {
             }else{
               localStorage.username = data.username;
             }
-
             this.props.history.push('dashboard');
           }else{
             alert(data.message);

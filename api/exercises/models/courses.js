@@ -35,6 +35,10 @@ var CourseSchema = new mongoose.Schema({
     required: true,
     trim: true
   },
+  audioPath: {
+    type: String,
+    trim: true
+  },
   answerOptions: {
     type: Array,
     trim: true

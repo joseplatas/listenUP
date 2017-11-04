@@ -13,4 +13,4 @@ You need to go to this url in order to get the data set up.
 It will initialize the courses data
 You need to have mongo running
 
-http://localhost:8080/api/user/dashboard/coursesInit
+http://localhost:8080/api/exercises/buildCourses
