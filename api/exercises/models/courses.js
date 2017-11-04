@@ -61,5 +61,22 @@ var CourseSchema = new mongoose.Schema({
   }
 
 });
+
+//authenticate input against database document
+CourseSchema.statics.getCoursesByLang = function(language, callback){
+  Course.find({language: language})
+      .exec(
+        function(error,courses){
+          if(error){
+            return callback(error);
+          }else if(!courses){
+            return callback(error);
+          }
+
+          return callback(null, courses);
+      });
+}
+
+
 var Course = mongoose.model('Course', CourseSchema);
 module.exports = Course;

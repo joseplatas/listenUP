@@ -12,6 +12,40 @@ exerciseRouter.get('/', function(req, res, next) {
     res.send("exercise router");
 });
 
+exerciseRouter.get('/trascription',function(req, res, next){
+  res.setHeader('Content-Type', 'application/json');
+  var response = {};
+  //console.log(res.body);
+  //check if all parameters are pass
+  // if(req.body.language){
+  //   //ALL VALUES WERE PASS
+  // }else{
+  //   response.err = -1;
+  //   response.message = "Missing values";
+  //   res.send(response);
+  // }
+  var language = "es";
+  //check if the user exist
+  Course.getCoursesByLang(language, function(error, courses){
+    //console.log(error);
+    //console.log(user);
+    if(error || !courses){
+      response.err = -1;
+      response.message = "Error finding the courses for this language";
+      response.error = error;
+      res.send(response);
+    }else{
+      //add session variable
+      //req.session.userId = user._id;
+      response.courses = courses;
+      response.err = 0;
+      response.message = "Courses found";
+      res.send(response)
+    }
+  });
+
+
+});
 
 //this will add some data to our course schema
 exerciseRouter.get('/buildCourses',function(req, res, next){
