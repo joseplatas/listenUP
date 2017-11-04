@@ -20,6 +20,9 @@ const classes = generateClassHelper(styles)
 export class Exercise_Header extends React.Component {
     render() {
         return <div className={classes('exercise_header')}>
+            <h4 className={classes('exercise_name', 'blue_text')}>
+                transcription exercise
+            </h4>
 
             <div className={classes('exercise_header_icons', 'flex_container')}>
                 <div className={classes('language_icon', 'header_icon')}>
@@ -28,7 +31,7 @@ export class Exercise_Header extends React.Component {
 
 
                 <div className={classes('score_icon', 'header_icon')}>
-                    {fns.calcScore(.7)}
+                    {fns.getScore(.7)}
                 </div>
             </div>
         </div>

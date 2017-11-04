@@ -1,77 +1,35 @@
 :local .flex_container {
     display: flex;
+    justify-content: center;
 }
 
 :local .component_container {
     flex-direction: column;
     justify-content: center;
-    padding-left: 30px;
-    padding-bottom: 20px;
 }
 
-:local .languages_container {
+
+:local .language {
     flex-direction: column;
-}
-
-:local .language_container {
-    margin-top: 10px;
     text-align: center;
     text-decoration: none;
-    flex-direction: column;
-    align-self: center;
-}
-
-:local .lang_thumbnail {
-    flex-direction: column; 
-    justify-content: center;
-    height: 114px;   
-}
-
-:local .lang_icon {
-    height: 100%;
-    align-self: center;
-}
-
-:local .exercise_selectors_container {
-    margin-left: 10px;
-    flex-direction: column;
-    justify-content: center;
-}
-
-:local .exercise_link {
-    text-align: left;
-
-    border-radius: 5px;
-    width: 200px;
-    padding: 2%;
-
-    background-color: #d2ead7;
-    color: #475055;    
-    text-decoration: none;
-    font-size: 1.5em;
-}
-
-:local .exercise_link:hover {
-    background-color: #9ed4ae;
-    color: #475055;
-}
-
-:local .space_bottom {
-    margin-bottom: 5px;
 }
 
 :local .language+.language {
-    margin-bottom: 2%;
+    margin-left: 20px;
 }
 
-@media only screen and (min-width: 700px) {
+:local .lang_icon {
+    width: 100px;
+    height: 100px;
+}
 
-    :local .language_container {
-        flex-direction: row;
-        align-self: flex-start;
-    }
-    
-    :local .exercise_link {
-        width: 600px;
-    }
+:local .lang_link {
+    text-decoration: none;
+    color: #475055;
+}
+
+:local .lang_link:hover {
+    color: #33669a;
+    font-weight: bold;
 }

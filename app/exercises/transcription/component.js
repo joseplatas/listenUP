@@ -21,72 +21,65 @@ export class Transcription extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            userInput: (this.state || {}).userInput || 'enter your answer',
-            user_answer: [] //array to keep user answer 
+            userInput: (this.state || {}).userInput || 'enter your answer'
         };
+
         this.handleUserInputChange = this.handleUserInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleUserInputChange(event) {
-        this.setState({userInput: event.target.value})
+        this.setState({
+            userInput: event.target.value
+        })
     }
 
-    handleSubmit(event) { 
-        //for reference https://stackoverflow.com/questions/42569899/storing-numbers-entered-via-an-input-form-into-an-array
-        var answer = this.state.value;
-        var allAnswer = this.state.user_answer.concat([userInput]); //stores user answer to be concatted to user_answer
-        this.setState({user_answer: allAnswer});
-        this.setState({userInput: ''}); //clears input on submit
+    handleSubmit(event) {
+
+        var userInput = this.state.userInput
+
+        {/*---Alert is only used for testing, remove when functioning---*/ }
+
+        fns.changeInputTest(userInput)
+
+        alert(userInput);
+
         event.preventDefault();
     }
 
     render() {
-        console.log(this.state.user_answer);
+
         return <div className={classes('page_container', 'flex_container')}>
 
-            <div className={classes('exercise_container', 'flex_container')}>
-
-                <div className={classes('exercise_header', 'flex_container')}>
-                    <h2 className={classes('exercise_name', 'blue_text')}>
-                        transcription exercise
-                </h2>
-                    <Exercise_Header />
-                </div>
+            <div className={classes('exercise_header', 'flex_container')}>
+                <Exercise_Header/>
+            </div>
 
 
-                <div className={classes('exercise_content', 'flex_container')}>
+            <div className={classes('exercise_content', 'flex_container')}>
 
-                    <div className={classes('audio_panel','flex_container')}>
+                <Audio_Panel />
 
-                        <h5 className={classes('blue_text','content_subheader')}>
-                        listen to the audio:
-                        </h5>
-
-                        <Audio_Panel />
-
-                    </div>
-
-                    <div className={classes('input_panel', 'flex_container')}>
+                <div className={classes('input_panel', 'flex_container')}>
 
 
-                        <div className={styles.user_input}>
+                    <div className={styles.user_input}>
 
-                            <h5 className={classes('blue_text', 'content_subheader')}>type what you hear:</h5>
+                        <h5 className={classes('blue_text', 'input_header')}>type what you hear:</h5>
 
-                            <form onSubmit={this.handleSubmit}>
+                        <form onSubmit={this.handleSubmit}>
 
-                                <label>
-                                    <textarea
-                                        name='userInput'
-                                        placeholder='type here...'
-                                        value={this.state.value}
-                                        onChange={this.handleUserInputChange}
-                                        className={styles.user_input_area}
-                                        spellCheck='false' />
-                                </label>
+                            <label>
+                                <textarea
+                                    name='userInput'
+                                    placeholder='type here...'
+                                    value={this.state.value}
+                                    onChange={this.handleUserInputChange}
+                                    className={styles.user_input_area}
+                                    spellCheck='false' />
+                            </label>
 
-                                {/* ----TEMPORARILY COMMENTING OUT FOR STYLING---
+                            {/* ----TEMPORARILY COMMENTING OUT FOR STYLING---
 
                             <ul className={classes('char_bar', 'fr_chars', 'flex_container')}>
 
@@ -121,17 +114,16 @@ export class Transcription extends React.Component {
 
                         </ul>
 */}
-                                <input
-                                    type='submit'
-                                    value='enter'
-                                    className={styles.enter_button}
-                                />
-                                
-                            </form>
+                            <input
+                                type='submit'
+                                value='enter'
+                                className={styles.enter_button}
+                            />
 
-                            <div className={styles.tooltip_feedback}>
-                                <Tooltip />
-                            </div>
+                        </form>
+
+                        <div className={styles.tooltip_feedback}>
+                            <Tooltip />
                         </div>
                     </div>
                 </div>

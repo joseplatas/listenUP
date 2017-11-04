@@ -6,15 +6,27 @@
     display: flex;
 }
 
+:local .exercise_header {
+    justify-content: center;
+}
+
 :local .exercise_header_icons {
-    
     height: 75px;
+    align-self: center;
 }
 
 :local .exercise_header_icons * {
     height: 100%;
 }
 
+:local .exercise_name {
+    font-size: 3em;
+}
+
+:local .blue_text {
+    color: #33669a;
+    font-weight: lighter;
+}
 
 :local .header_icon {
     height: 75px;
