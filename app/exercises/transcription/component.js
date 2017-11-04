@@ -42,6 +42,21 @@ export class Transcription extends React.Component {
     }
 
     render() {
+      if(localStorage.user_id == undefined){
+        return(
+          <div className={classes('page_container', 'flex_container')}>
+            <div className={classes('center_container')}>
+                <h1>
+                  <center>
+                    Please login to see this exercise <Link to='/Login' className={styles.login_link}>here</Link>
+                  </center>
+                </h1>
+
+            </div>
+          </div>
+        );
+      }
+
         return <div className={classes('page_container', 'flex_container')}>
 
             <div className={classes('exercise_container', 'flex_container')}>
