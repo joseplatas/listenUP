@@ -1,0 +1,20 @@
+[
+  {
+    "courseId": 1,
+    "title": "Course title",
+    "exerciseType": "transcription",
+    "language": "en",
+    "courseCategory": "",
+    "question": "This is the question",
+    "answer": "answer",
+    "answerOptions": [
+      "answer option 1",
+      "answer option 2",
+      "answer option 3"
+    ],
+    "badgeName": "This is the badgeName",
+    "badgeDescription": "this is the badgeDescription",
+    "badgePath": "/public/img/badges/badges_tr_10score.png",
+    "points": 10
+  }
+]

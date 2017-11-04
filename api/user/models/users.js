@@ -13,12 +13,18 @@ var UserSchema = new mongoose.Schema({
     trim: true,
     unique: true
   },
+  points: {
+    type: Number,
+  },
   password: {
     type: String,
     required: true
   },
-  points: {
-    type: Number,
+  coursesTaken:{
+    type: Array
+  },
+  coursesPoints: {
+    type: Array
   },
   learningTime: {
     type: Number
@@ -26,8 +32,24 @@ var UserSchema = new mongoose.Schema({
   languageActive:{
     type: String,
     trim: true
+  },
+  percentAvg:{
+    type: Number
+  },
+  languageActive: {
+    type: String,
+    // get: function(data) {
+    //   try {
+    //     return JSON.parse(data);
+    //   } catch() {
+    //     return data;
+    //   }
+    // },
+    // set: function(data) {
+    //   return JSON.stringify(data);
+    // }
   }
-
+  //NOTE: look up set and get in mongoose
 });
 //authenticate input against database document
 UserSchema.statics.authenticate = function(email,password, callback){

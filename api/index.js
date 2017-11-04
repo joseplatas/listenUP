@@ -39,9 +39,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // serve static files from /public
 app.use('/public',express.static(path.join(__dirname, 'public')));
 
-// include routes
+// ROUTER API
 var userRouter = require('./user/index');
 app.use('/api/user', userRouter);
+
 
 // default home route response
 app.get("/",function(req, res, next){
