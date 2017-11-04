@@ -9,7 +9,7 @@
 /*---Shared Styles---*/
 
 :local .page_container {
-    min-height: 100vh;
+    min-height: calc(100vh - 130px);
     background-color: #fffef3;
     flex-direction: column;
     justify-content: center;
@@ -31,11 +31,18 @@
 :local .dashboard_header {
     font-weight: lighter;
     color: #475055;
+    flex: 1;
 }
 
 :local .name_text {
     color: #fe4a49;
     font-weight: bold;
+}
+
+:local .settings_link {
+    text-decoration: none;
+    font-size: 1.5em;
+    align-self: center;
 }
 
 /*---First Panel---*/

@@ -23,6 +23,7 @@ export const Home=() =>
 
 <div className={classes('homePage', 'flex_container')}>
 
+    {/* first section with welcome text & action button */}
     <section className={classes('welcome', 'flex_container', 'full_height')}>
 
     <h3 className={classes('welcome_header','centered_text')}>
@@ -39,12 +40,16 @@ export const Home=() =>
 
     </section>
 
+    {/* second section with additional information */}
     <section className={classes('about', 'flex_container', 'full_height')}>
 
+    <h4 className={classes('about_subheader','centered_text')}>
+        You've been learning your target language for a while now.<br/>
+        Learning materials are getting way too easy, but you still<br/>
+        can't follow a native conversation to save your life!
+    </h4>
     <h3 className={classes('about_header', 'centered_text')}>
-        So, you still can’t understand anything that
-        native speakers are saying. Welcome to the
-        «Intermediate Hell» of language learning.
+         Welcome to <em className={classes('red_text')}>«Intermediate Hell»</em>.
     </h3>
     <h1 className={classes('big_blue_header', 'centered_text','marginOnTop')}>
         It's time to listenUP.
@@ -89,6 +94,7 @@ export const Home=() =>
     </section>
     </section>
 
+    {/* third section with screenshots of usage */}
     <section className={classes('howitworks', 'flex_container', 'full_height')}>
 
     <h3 className={classes('howitworks_header', 'centered_text')}>

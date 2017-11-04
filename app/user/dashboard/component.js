@@ -39,13 +39,18 @@ export class Dashboard extends React.Component {
 
       return (
         <div className={classes('page_container', 'flex_container')}>
-
             <div className={classes('center_container')}>
 
-                <h1 className={styles.dashboard_header}>
-                    welcome back, <em className={styles.name_text}>{localStorage.username}!</em>
-                </h1>
+                {/* includes header (greeting) and settings link */}
+                <div className={classes('flex_container','db_heading_container')}>
+                    <h1 className={styles.dashboard_header}>
+                        welcome back, <em className={styles.name_text}>{localStorage.username}!</em>
+                    </h1>
 
+                    <Link to='/settings' className={classes('settings_link')}>settings</Link>
+                </div>
+
+                {/* courselist */}
                 <section className={classes('dashboard_section', 'flex_container', 'first_panel')}>
 
                     <div className={styles.language_selector}>
@@ -55,11 +60,13 @@ export class Dashboard extends React.Component {
                         </h2>
                         </div>
 
+                        {/* calls Language_Selector component to display courselist */}
                         <Language_Selector />
                     </div>
 
                 </section>
 
+                {/* achievements */}
                 <section className={classes('dashboard_section', 'achievements')}>
 
                 <div className={styles.section_header_container}>
@@ -67,11 +74,11 @@ export class Dashboard extends React.Component {
                     achievements:
                 </h2>
                 </div>
-                
+                        {/* calls Achievements component to display achievements */}
                         <Achievements />
-
                 </section>
 
+                {/* statistics */}
                 <section className={classes('dashboard_section', 'statistics')}>
 
                 <div className={styles.section_header_container}>
@@ -79,10 +86,9 @@ export class Dashboard extends React.Component {
                     statistics:
                 </h2>
                 </div>
+                        {/* calls Statistics component to display statistics */}
                         <Statistics />
-
                 </section>
-
             </div>
         </div>
       );

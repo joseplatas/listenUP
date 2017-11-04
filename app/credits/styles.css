@@ -10,7 +10,7 @@
 
 :local .credits_page {
     background-color: #fffef3;
-    min-height: 100vh;
+    min-height: calc(100vh - 130px);
     flex-direction: column;
 }
 
@@ -43,6 +43,8 @@
     border-style: solid;
     border-color: #475c64;
     max-width: 100%;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 :local .logo_row {
