@@ -1,10 +1,12 @@
 const fns = require('./fns.js')
 const data = require('./data.js')
+
 //initialize
 var express = require('express');
 var path = require('path');
 var userRouter = express.Router();
 var User = require('./models/users');
+
 
 userRouter.get('/', function(req, res, next) {
     res.send("user router");
@@ -17,8 +19,7 @@ userRouter.get('/login', function(req, res, next) {
 //login handler
 userRouter.post('/loginPost', function(req, res, next){
     res.setHeader('Content-Type', 'application/json');
-    var response = {};
-    //console.log("Data send from react");
+    var response = {}; //console.log("Data send from react");
     //console.log(res.body);
     //check if all parameters are pass
     if(req.body.email && req.body.password){
@@ -47,10 +48,6 @@ userRouter.post('/loginPost', function(req, res, next){
         res.send(response)
       }
     });
-
-
-
-
 });
 //register test form
 userRouter.get('/register', function(req, res, next) {
@@ -93,6 +90,8 @@ userRouter.post('/registerPost', function(req, res, next){
       res.send(response);
     }else{
       //PENDING: log the user in and send them to dashboard
+      response.user_id = user._id;
+      response.username = user.username;
       response.err = 0;
       response.message = "Successfully created user"
 
@@ -102,6 +101,10 @@ userRouter.post('/registerPost', function(req, res, next){
 
 });
 
+//will gathers all of the information needed for the dashboard
+userRouter.get('/dashboard', function(req, res, next) {
+    res.send("Dashboard Router");
+});
 
 
 //export routes to /api/index.js

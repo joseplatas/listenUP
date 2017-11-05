@@ -16,29 +16,48 @@ function classes(...classNames) {
         .map(cn => styles[cn])
         .join(' ')
 }
-//kill localStorage
-function logOut(){
-  localStorage.removeItem("user_id");
-  alert("You have been logged out");
-  window.location.href = ""
+
+// export const Header = () => (
+export class Header extends React.Component{
+  //kill localStorage
+  logOut(){
+    localStorage.removeItem("user_id");
+    localStorage.removeItem("username");
+    alert("You have been logged out");
+    window.location.href = "";
+  }
+  render(){
+    //display proper menu
+    let menuList;
+    if(localStorage.username){
+      menuList = (
+        <ul className={classes('nav_buttons','flex_container')}>
+          <li><Link to="/dashboard">Dashboard</Link></li>
+          <li><a href="#" onClick={this.logOut}>Log Out</a></li>
+        </ul>
+      );
+    }else{
+      menuList = (
+        <ul className={classes('nav_buttons','flex_container')}>
+          <li><Link to='/signup'>Sign Up</Link></li>
+          <li><Link to='/login'>Log In</Link></li>
+        </ul>
+      );
+    }
+
+    return (
+      <div className={styles.stickyContainer}>
+          <header className={classes('page_header', 'flex_container')}>
+              <div className={styles.header_logo}>
+                <Link to="/">
+                    <img src='/app/shared/img/ListenUp_logo_white.png' className={styles.logo} />
+                </Link>
+              </div>
+
+              { menuList }
+
+          </header>
+      </div>
+    );
+  }
 }
-
-export const Header = () => (
-
-    <div className={styles.stickyContainer}>
-        <header className={classes('page_header', 'flex_container')}>
-            <div className={styles.header_logo}>
-            <Link to="/">
-                <img src='/app/shared/img/ListenUp_logo_white.png' className={styles.logo} />
-            </Link></div>
-
-            <ul className={classes('nav_buttons','flex_container')}>
-                <li><Link to='/signup'>Sign Up</Link></li>
-                <li><Link to='/login'>Log In</Link></li>
-                <li><Link to="/dashboard">Dashboard</Link></li>
-                <li><a href="#" onClick={logOut}>Log Out</a></li>
-            </ul>
-        </header>
-    </div>
-
-)

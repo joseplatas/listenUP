@@ -21,10 +21,6 @@
     flex-direction: column;
 }
 
-:local .blue_text {
-    color: #33669a;
-    font-weight: lighter;
-}
 
 :local .exercise_content {
     flex-direction: column;
@@ -39,11 +35,6 @@
 
 :local .exercise_header {
     flex-wrap: wrap;
-}
-
-:local .exercise_name {
-    font-size: 2.5em;
-    flex: 1;
 }
 
 /*---audio panel*/
@@ -101,7 +92,7 @@
     width: 100%;
     line-height: 50px;
     border-radius: 5px;
-    
+
     color: #475055;
     background-color: #9ed4ae;
     font-size: 1.5em;

@@ -3,6 +3,7 @@
 }
 
 :local .statistics_container {
+    padding-left: 30px;
     justify-content: space-around;
     flex-wrap: wrap;
 }

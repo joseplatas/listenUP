@@ -70,6 +70,14 @@ export class Signup extends React.Component {
       //return value from above
       console.log(data);
       alert(data.message);
+      //set localstorage of the user
+      localStorage.user_id = data.user_id;
+      if(data.username == undefined){
+            localStorage.username = '';
+      }else{
+        localStorage.username = data.username;
+      }
+      this.props.history.push('dashboard');
     });
 
 

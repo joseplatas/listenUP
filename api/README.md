@@ -6,3 +6,11 @@ You can submit data using this forms to test if they post handler works
 
 - http://localhost:8080/api/user/login
 - http://localhost:8080/api/user/register
+
+
+## Create test data for courses
+You need to go to this url in order to get the data set up.
+It will initialize the courses data
+You need to have mongo running
+
+http://localhost:8080/api/exercises/buildCourses
