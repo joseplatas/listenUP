@@ -62,10 +62,14 @@ export class Transcription extends React.Component {
     }
 
     handleSubmit(event) {
+        //for reference https://stackoverflow.com/questions/42569899/storing-numbers-entered-via-an-input-form-into-an-array
         event.preventDefault();
         var answer = this.state.userInput;
-        console.log(answer);
-        this.setState({user_answer: answer});
+        // JT changed "userInput" to "answer" in this concat call
+        var allAnswer = this.state.user_answer.concat([answer]); //stores user answer to be concatted to user_answer
+        // JT added console.log to test -- returning undefined
+        console.log(allAnswer);
+        this.setState({user_answer: allAnswer});
         this.setState({userInput: ''}); //clears input on submit
     }
 
