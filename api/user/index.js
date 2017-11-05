@@ -19,8 +19,7 @@ userRouter.get('/login', function(req, res, next) {
 //login handler
 userRouter.post('/loginPost', function(req, res, next){
     res.setHeader('Content-Type', 'application/json');
-    var response = {};
-    //console.log("Data send from react");
+    var response = {}; //console.log("Data send from react");
     //console.log(res.body);
     //check if all parameters are pass
     if(req.body.email && req.body.password){

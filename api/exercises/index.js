@@ -8,25 +8,28 @@ var exerciseRouter = express.Router();
 var Course = require('./models/courses');
 
 
-exerciseRouter.get('/', function(req, res, next) {
-    res.send("exercise router");
+exerciseRouter.get('/getCourses', function(req, res, next) {
+    res.sendFile(path.join(__dirname + '/test/exerciseForm.html'));
 });
 
-exerciseRouter.get('/trascription',function(req, res, next){
+
+//NOTE: transcription post handler to give the courses in a language and a
+exerciseRouter.post('/getCourses',function(req, res, next){
   res.setHeader('Content-Type', 'application/json');
   var response = {};
-  //console.log(res.body);
+
   //check if all parameters are pass
-  // if(req.body.language){
-  //   //ALL VALUES WERE PASS
-  // }else{
-  //   response.err = -1;
-  //   response.message = "Missing values";
-  //   res.send(response);
-  // }
-  var language = "es";
+  if(req.body.language && req.body.exerciseType){
+    //ALL VALUES WERE PASS
+  }else{
+    response.err = -1;
+    response.message = "Missing values, you must send a language and exerciseType";
+    res.send(response);
+  }
+  var language = req.body.language;
+  var exerciseType = req.body.exerciseType;
   //check if the user exist
-  Course.getCoursesByLang(language, function(error, courses){
+  Course.getCoursesBy(language, exerciseType,function(error, courses){
     //console.log(error);
     //console.log(user);
     if(error || !courses){
@@ -39,7 +42,7 @@ exerciseRouter.get('/trascription',function(req, res, next){
       //req.session.userId = user._id;
       response.courses = courses;
       response.err = 0;
-      response.message = "Courses found";
+      response.message = "Courses that were found";
       res.send(response)
     }
   });

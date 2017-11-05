@@ -1,17 +1,36 @@
 [
   {
     "courseId": 1,
-    "title": "Course title",
+    "title": "Titulo del curso",
     "exerciseType": "transcription",
     "language": "es",
     "courseCategory": "",
-    "question": "This is the question",
-    "answer": "answer",
+    "question": "Esta es la pregunta",
+    "answer": "respuesta",
     "audioPath": "/public/audio/es_exercise_1.mp3",
     "answerOptions": [
-      "answer option 1",
-      "answer option 2",
-      "answer option 3"
+      "respuesta 1",
+      "respuesta 2",
+      "respuesta 3"
+    ],
+    "badgeName": "This is the badgeName",
+    "badgeDescription": "this is the badgeDescription",
+    "badgePath": "/public/img/badges/badges_tr_10score.png",
+    "points": 10
+  },
+  {
+    "courseId": 2,
+    "title": "Titulo del curso",
+    "exerciseType": "transcription",
+    "language": "es",
+    "courseCategory": "",
+    "question": "Esta es la pregunta",
+    "answer": "respuesta",
+    "audioPath": "/public/audio/es_exercise_1.mp3",
+    "answerOptions": [
+      "respuesta 1",
+      "respuesta 2",
+      "respuesta 3"
     ],
     "badgeName": "This is the badgeName",
     "badgeDescription": "this is the badgeDescription",

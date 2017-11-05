@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Test Register form</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <style media="screen">
+    body {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+      <h1>Get Courses Form</h1>
+      <hr>
+      <form class="form-horizontal" action="/api/exercises/getCourses" method="post">
+        <fieldset>
+
+          <!-- Text input-->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="textinput">Language</label>
+            <div class="col-md-4">
+              <select id="textinput" name="language" type="text" placeholder="" class="form-control input-md">
+                <option value="es">Spanish</option>
+                <option value="en">English</option>
+                <option value="fr">French</option>
+              </select>
+
+            </div>
+          </div>
+
+          <!-- Password input-->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="passwordinput">Exercise Type</label>
+            <div class="col-md-4">
+              <select id="textinput" name="exerciseType" type="text" placeholder="" class="form-control input-md">
+                <option value="transcription">Transcription</option>
+                <option value="quiz">Quiz</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Button -->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="singlebutton"></label>
+            <div class="col-md-4">
+              <button id="singlebutton" name="" class="btn btn-primary btn-lg">SUBMIT</button>
+            </div>
+          </div>
+
+        </fieldset>
+      </form>
+
+
+  </div>
+  <!-- endof:: container -->
+
+
+</body>
+
+</html>

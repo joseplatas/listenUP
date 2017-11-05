@@ -63,18 +63,33 @@ var CourseSchema = new mongoose.Schema({
 });
 
 //authenticate input against database document
-CourseSchema.statics.getCoursesByLang = function(language, callback){
-  Course.find({language: language})
-      .exec(
-        function(error,courses){
-          if(error){
-            return callback(error);
-          }else if(!courses){
-            return callback(error);
-          }
+CourseSchema.statics.getCoursesBy = function(language, exerciseType, callback){
+  if(language && exerciseType){
+    Course.find({language: language, exerciseType: exerciseType})
+          .exec(
+            function(error,courses){
+              if(error){
+                return callback(error);
+              }else if(!courses){
+                return callback(error);
+              }
 
-          return callback(null, courses);
-      });
+              return callback(null, courses);
+          });
+  }else if(language){
+    Course.find({language: language})
+          .exec(
+            function(error,courses){
+              if(error){
+                return callback(error);
+              }else if(!courses){
+                return callback(error);
+              }
+
+              return callback(null, courses);
+          });
+  }
+
 }
 
 
