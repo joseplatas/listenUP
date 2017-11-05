@@ -18,14 +18,43 @@ const classes = generateClassHelper(styles)
 
 export class Transcription extends React.Component {
 
+
     constructor(props) {
         super(props);
         this.state = {
+            language: this.props.match.params.language, //pass as param in url
+            courses: {},
             userInput: (this.state || {}).userInput || 'enter your answer',
             user_answer: [] //array to keep user answer
         };
         this.handleUserInputChange = this.handleUserInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+
+        //get the courses for the language
+        this.state.courses = this.getCourses();
+
+    }
+    /**
+      Returns courses base on the language
+    */
+    getCourses(){
+      fetch(new Request('http://localhost:8080/api/exercises/getCourses', {
+        headers: new Headers({
+          'Content-Type': 'application/json'
+        }),
+        method: 'POST',
+        body: JSON.stringify({
+          "language": this.props.match.params.language,
+          "exerciseType": "transcription"
+          })
+      })).then((response) => {
+        //get json full response after is done processing
+        return response.json();
+      }).then((data)=>{
+        //return value from above
+        console.log(data);
+        return data;
+      });
     }
 
     handleUserInputChange(event) {
@@ -34,38 +63,35 @@ export class Transcription extends React.Component {
 
     handleSubmit(event) {
         //for reference https://stackoverflow.com/questions/42569899/storing-numbers-entered-via-an-input-form-into-an-array
+        event.preventDefault();
         var answer = this.state.value;
         var allAnswer = this.state.user_answer.concat([userInput]); //stores user answer to be concatted to user_answer
         this.setState({user_answer: allAnswer});
         this.setState({userInput: ''}); //clears input on submit
-        event.preventDefault();
     }
 
     render() {
-      if(localStorage.user_id == undefined){
-        return(
-          <div className={classes('page_container', 'flex_container')}>
-            <div className={classes('center_container')}>
-                <h1>
-                  <center>
-                    Please login to see this exercise <Link to='/Login' className={styles.login_link}>here</Link>
-                  </center>
-                </h1>
+          if(localStorage.user_id == undefined){
+            return(
+              <div className={classes('page_container', 'flex_container')}>
+                <div className={classes('center_container')}>
+                    <h1>
+                      <center>
+                        Please login to see this exercise <Link to='/Login' className={styles.login_link}>here</Link>
+                      </center>
+                    </h1>
 
-            </div>
-          </div>
-        );
-      }
+                </div>
+              </div>
+            );
+          }
 
         return <div className={classes('page_container', 'flex_container')}>
 
             <div className={classes('exercise_container', 'flex_container')}>
 
                 <div className={classes('exercise_header', 'flex_container')}>
-                    <h2 className={classes('exercise_name', 'blue_text')}>
-                        transcription exercise
-                </h2>
-                    <Exercise_Header />
+                    <Exercise_Header language = {this.state.language} />
                 </div>
 
 
@@ -135,11 +161,7 @@ export class Transcription extends React.Component {
 
                         </ul>
 */}
-                                <input
-                                    type='submit'
-                                    value='enter'
-                                    className={styles.enter_button}
-                                />
+                              <input type='submit' value='enter' className={styles.enter_button}/>
 
                             </form>
 

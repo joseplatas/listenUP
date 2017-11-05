@@ -20,6 +20,39 @@ function getQuizQuestion() {
 
 
 export class Quiz extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            language: this.props.match.params.language, //pass as param in url
+            courses: {},
+        };
+
+        //get the courses for the language
+        this.state.courses = this.getCourses();
+    }
+
+    /**
+      Returns courses base on the language
+    */
+    getCourses(){
+      fetch(new Request('http://localhost:8080/api/exercises/getCourses', {
+        headers: new Headers({
+          'Content-Type': 'application/json'
+        }),
+        method: 'POST',
+        body: JSON.stringify({
+          "language": this.props.match.params.language,
+          "exerciseType": "quiz"
+          })
+      })).then((response) => {
+        //get json full response after is done processing
+        return response.json();
+      }).then((data)=>{
+        //return value from above
+        console.log(data);
+        return data;
+      });
+    }
 
     render() {
 
@@ -38,15 +71,14 @@ export class Quiz extends React.Component {
         );
       }
 
-        return <div className={classes('page_container', 'flex_container')}>
+      return (
+        <div className={classes('page_container', 'flex_container')}>
 
             <div className={classes('exercise_container', 'flex_container')}>
-                <div className={classes('exercise_header', 'flex_container')}>
-                    <h2 className={classes('exercise_name', 'blue_text')}>
-                        quiz exercise
-                    </h2>
-                    <Exercise_Header />
-                </div>
+
+              <div className={classes('exercise_header', 'flex_container')}>
+                  <Exercise_Header language = {this.state.language} />
+              </div>
 
 
                 <div className={classes('exercise_content', 'flex_container')}>
@@ -75,5 +107,8 @@ export class Quiz extends React.Component {
 
             </div>
         </div>
+      );
+
+
     }
 }

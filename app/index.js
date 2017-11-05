@@ -37,8 +37,9 @@ export class MainLayout extends React.Component {
                         <Route path='/settings' component={user.default.Settings} />
                         <Route path='/credits' component={Credits} />
                         {/*---ROUTING TO EXERCISE COMPONENTS---*/}
-                        <Route path='/transcription' component={Transcription} />
-                        <Route path='/quiz' component={Quiz}/>
+                        {/*:lang is a parameter that needs to be send*/}
+                        <Route path='/transcription/:language' component={Transcription} />
+                        <Route path='/quiz/:language' component={Quiz}/>
                         {/*---ROUTING TO HOME PAGE---*/}
                         <Route path='/' component={Home} />
                     </Switch>
