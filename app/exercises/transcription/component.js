@@ -34,8 +34,9 @@ export class Transcription extends React.Component {
 
     handleSubmit(event) { 
         //for reference https://stackoverflow.com/questions/42569899/storing-numbers-entered-via-an-input-form-into-an-array
+       var form = this._input.value;
         var answer = this.state.value;
-        var allAnswer = this.state.user_answer.concat([userInput]); //stores user answer to be concatted to user_answer
+        var allAnswer = this.state.user_answer.concat([form]); //stores user answer to be concatted to user_answer
         this.setState({user_answer: allAnswer});
         this.setState({userInput: ''}); //clears input on submit
         event.preventDefault();
@@ -85,6 +86,7 @@ export class Transcription extends React.Component {
                                         placeholder='type here...'
                                         value={this.state.value}
                                         onChange={this.handleUserInputChange}
+                                        ref={(el) => this._input = el}
                                         className={styles.user_input_area}
                                         spellCheck='false' />
                                 </label>
