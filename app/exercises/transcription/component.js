@@ -4,8 +4,10 @@ import * as styles from './styles.css'
 import * as fns from './fns.js'
 import { generateClassHelper } from '../../shared/shared_fns.js'
 import { Exercise_Header } from '../shared/exercise_header/component.js'
-import { Audio_Panel } from '../shared/audio_panel/component.js'
 import { Tooltip } from './tooltip/component.js'
+import '../shared/img/audio_controls_pause.png'
+import '../shared/img/audio_controls_play.png'
+import '../shared/img/audio_controls_stop.png'
 
 import {
     HashRouter,
@@ -15,6 +17,10 @@ import {
 
 const classes = generateClassHelper(styles)
 
+// audio player
+var audioTrack = document.createElement('audio');
+audioTrack.setAttribute('src','/app/exercises/transcription/test/audio/en_12.mp3')
+
 
 export class Transcription extends React.Component {
 
@@ -23,7 +29,7 @@ export class Transcription extends React.Component {
         super(props);
         this.state = {
             language: this.props.match.params.language, //pass as param in url
-            courses: {},
+            courses: this.getCourses(),
             userInput: (this.state || {}).userInput || 'enter your answer',
             user_answer: [] //array to keep user answer
         };
@@ -106,7 +112,34 @@ export class Transcription extends React.Component {
                         listen to the audio:
                         </h5>
 
-                        <Audio_Panel />
+                        <div className={classes('audio_player_container', 'flex_container')}>
+            
+                        {/* <div className={classes('player_img_container')}>
+                            <img src='/app/exercises/shared/audio_panel/img/icon_speaker_blue.png' className={classes('player_img')}/> */}
+
+                            {/* just for test purposes */}
+                            <audio id='audio_track' controls preload='auto'>
+                                <source src='/app/exercises/transcription/test/audio/en_12.mp3'/>
+                                </audio>
+
+                        {/* </div> */}
+
+
+                        </div>
+
+                        {/* 
+                        ------- Temporarily commenting out ------------
+                        <div className={classes('audio_controls', 'flex_container')}>
+                            <button id='btn_play' className={styles.audio_button}>
+                                <img src='/app/exercises/shared/img/audio_controls_play.png' className={styles.btn_img}/>
+                            </button>
+                            <button id='btn_pause' className={styles.audio_button}>
+                                <img src='/app/exercises/shared/img/audio_controls_pause.png' className={styles.btn_img}/>
+                            </button>
+                            <button id='btn_stop' className={styles.audio_button}>
+                                <img src='/app/exercises/shared/img/audio_controls_stop.png' className={styles.btn_img}/>
+                            </button>
+                        </div> */}
 
                     </div>
 
