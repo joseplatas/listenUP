@@ -8,6 +8,7 @@ import { Tooltip } from './tooltip/component.js'
 import '../shared/img/audio_controls_pause.png'
 import '../shared/img/audio_controls_play.png'
 import '../shared/img/audio_controls_stop.png'
+import '../../../api/public/audio/fr_03.mp3'
 
 import {
     HashRouter,
@@ -16,11 +17,6 @@ import {
 } from 'react-router-dom'
 
 const classes = generateClassHelper(styles)
-
-// audio player
-var audioTrack = document.createElement('audio');
-audioTrack.setAttribute('src','/app/exercises/transcription/test/audio/en_12.mp3')
-
 
 export class Transcription extends React.Component {
 
@@ -119,7 +115,7 @@ export class Transcription extends React.Component {
 
                             {/* just for test purposes */}
                             <audio id='audio_track' controls preload='auto'>
-                                <source src='/app/exercises/transcription/test/audio/en_12.mp3'/>
+                                <source src={'/api/public/audio/fr_03.mp3'}/>
                                 </audio>
 
                         {/* </div> */}
