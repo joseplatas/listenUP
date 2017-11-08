@@ -4,7 +4,6 @@ import * as styles from './styles.css'
 import * as fns from './fns.js'
 import { generateClassHelper } from '../../shared/shared_fns.js'
 import { Exercise_Header } from '../shared/exercise_header/component.js'
-import { Audio_Panel } from '../shared/audio_panel/component.js'
 
 import {
     HashRouter,
@@ -83,7 +82,6 @@ export class Quiz extends React.Component {
 
                 <div className={classes('exercise_content', 'flex_container')}>
 
-                    <Audio_Panel />
 
                     <div className={classes('input_panel', 'flex_container')}>
 

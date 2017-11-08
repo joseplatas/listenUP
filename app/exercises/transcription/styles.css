@@ -37,11 +37,48 @@
     flex-wrap: wrap;
 }
 
-/*---audio panel*/
+/*---audio panel--*/
 
 :local .audio_panel {
     flex-direction: column;
     align-self: center;
+    justify-content: center;
+}
+
+:local .audio_player,
+:local .audio_controls {
+    justify-content: center;
+}
+
+:local .player_img_container {
+    width: 250px;
+}
+
+:local .player_img {
+    width: 100%;
+    align-self: center;
+}
+
+:local .audio_controls {
+    white-space: nowrap;
+}
+
+:local .btn_img {
+    width: 100%;
+}
+
+:local .audio_button {
+    background-color: #fffef3;
+    border-style: none;
+    border-width: 0px;
+    height: 100px;
+    width: 100px;
+}
+
+@media only screen and (min-width: 700px) {
+    :local .audio_player {
+        max-width: 100%;
+    }
 }
 
 /*---input-panel---*/
