@@ -8,6 +8,7 @@ var express = require('express');
 var path = require('path');
 var exerciseRouter = express.Router();
 var Course = require('./models/courses');
+var User = require('../user/models/users.js');
 
 //test forms
 exerciseRouter.get('/getCourses', function(req, res, next) {
@@ -81,18 +82,24 @@ exerciseRouter.post('/verifyCourseAnswer',function(req, res, next){
       response.error = error;
       res.send(response);
     }else{
-      //check how many points they got
-
-      //add the course to the user array courses_taken
-
-      //add the points to the user array courses_points
-      // +Object is of form {courseId: 1, points: 10}
-
-      //then response with an answer
-      response.validateRes = validateRes;
-      response.err = 0;
-      response.message = "Proccess the answer succesfully";
-      res.send(response)
+      //add the course to the user array coursesTaken
+      User.addCourseToUser(username, validateRes, function(error, succesUpdate){
+        if(error || !succesUpdate){
+          response.courseTakenAdded = -1;
+          response.validateRes = validateRes;
+          response.err = -2;
+          response.error = error;
+          response.message = "Proccess answer, problem adding to user";
+          res.send(response)
+        }else{
+          //then response with an answer to the document
+          response.courseTakenAdded = succesUpdate;
+          response.validateRes = validateRes;
+          response.err = 0;
+          response.message = "Proccess answer, added to user ";
+          res.send(response)
+        }
+      });
     }
   });
 

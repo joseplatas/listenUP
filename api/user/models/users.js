@@ -68,8 +68,6 @@ UserSchema.statics.authenticate = function(email,password, callback){
 
       });
 }
-
-
 //has password before saving to database
 UserSchema.pre('save', function(next){
   var user = this;
@@ -81,6 +79,42 @@ UserSchema.pre('save', function(next){
     next();
   });
 });
+
+//add to coursesTaken property of document for an specific username
+UserSchema.statics.addCourseToUser = function(username, course, callback){
+  //check if course_id and userAnswer was pass
+  if(username && course){
+    User.findOneAndUpdate({username: username},
+           {
+             $push: {coursesTaken: course}
+           },
+           function (error, user) {
+               if(error){
+                 callback(error);
+               }else if(!user){
+                 var customErr = {
+                  origin: "mode/users.js",
+                  message: "User not found, course taken not save in DB"
+                 };
+                 callback(customErr);
+               }else{
+                 //return one if succesfully push into array coursesTaken
+                 callback(null, 1);
+               }
+           }
+    );
+
+  }else{
+    //send an error for missing parameters
+    var errRes = {
+      err: -1,
+      message: "Missing parameters in addCourseToUser model: username | course"
+    }
+    return callback(errRes);
+  }
+}
+
+
 
 var User = mongoose.model('User', UserSchema);
 module.exports = User;
