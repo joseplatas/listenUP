@@ -117,14 +117,18 @@ export class Transcription extends React.Component {
                         {/* <div className={classes('player_img_container')}>
                             <img src='/app/exercises/shared/audio_panel/img/icon_speaker_blue.png' className={classes('player_img')}/> */}
 
+                            {/* just for test purposes */}
                             <audio id='audio_track' controls preload='auto'>
                                 <source src='/app/exercises/transcription/test/audio/en_12.mp3'/>
                                 </audio>
+
                         {/* </div> */}
 
 
                         </div>
 
+                        {/* 
+                        ------- Temporarily commenting out ------------
                         <div className={classes('audio_controls', 'flex_container')}>
                             <button id='btn_play' className={styles.audio_button}>
                                 <img src='/app/exercises/shared/img/audio_controls_play.png' className={styles.btn_img}/>
@@ -135,7 +139,7 @@ export class Transcription extends React.Component {
                             <button id='btn_stop' className={styles.audio_button}>
                                 <img src='/app/exercises/shared/img/audio_controls_stop.png' className={styles.btn_img}/>
                             </button>
-                        </div>
+                        </div> */}
 
                     </div>
 
