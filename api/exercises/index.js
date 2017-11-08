@@ -7,9 +7,12 @@ var path = require('path');
 var exerciseRouter = express.Router();
 var Course = require('./models/courses');
 
-
+//test forms
 exerciseRouter.get('/getCourses', function(req, res, next) {
     res.sendFile(path.join(__dirname + '/test/exerciseForm.html'));
+});
+exerciseRouter.get('/matchStrings', function(req, res, next) {
+    res.sendFile(path.join(__dirname + '/test/matchStrings.html'));
 });
 
 
@@ -40,7 +43,7 @@ exerciseRouter.post('/getCourses',function(req, res, next){
     }else{
       //add session variable
       //req.session.userId = user._id;
-      response.courses = courses;
+        response.courses = courses;
       response.err = 0;
       response.message = "Courses that were found";
       res.send(response)

@@ -1,3 +1,4 @@
+const fns = require('../fns.js');
 var mongoose = require('mongoose');
 
 var CourseSchema = new mongoose.Schema({
@@ -73,7 +74,8 @@ CourseSchema.statics.getCoursesBy = function(language, exerciseType, callback){
               }else if(!courses){
                 return callback(error);
               }
-
+              //clean up data before sending
+              courses = fns.filterCourseData(courses);
               return callback(null, courses);
           });
   }else if(language){
@@ -85,7 +87,7 @@ CourseSchema.statics.getCoursesBy = function(language, exerciseType, callback){
               }else if(!courses){
                 return callback(error);
               }
-
+              courses = fns.filterCourseData(courses);
               return callback(null, courses);
           });
   }
