@@ -1,3 +1,5 @@
+const fns = require('../fns.js');
+
 var mongoose = require('mongoose');
 
 var CourseSchema = new mongoose.Schema({
@@ -21,7 +23,7 @@ var CourseSchema = new mongoose.Schema({
     required: true,
     trim: true
   },
-  courseCategory: {
+  category: {
     type: String,
     trim: true
   },
@@ -64,33 +66,72 @@ var CourseSchema = new mongoose.Schema({
 
 //authenticate input against database document
 CourseSchema.statics.getCoursesBy = function(language, exerciseType, callback){
+  //check parameters to see what to answer
   if(language && exerciseType){
     Course.find({language: language, exerciseType: exerciseType})
           .exec(
             function(error,courses){
+              //if there is an error, return it on the callback
               if(error){
                 return callback(error);
               }else if(!courses){
                 return callback(error);
               }
-
+              //clean up data before sending it back
+              courses = fns.filterCourseData(courses);
               return callback(null, courses);
           });
   }else if(language){
     Course.find({language: language})
           .exec(
             function(error,courses){
+              //if there is an error, return it on the callback
               if(error){
                 return callback(error);
               }else if(!courses){
                 return callback(error);
               }
-
+              //clean up data before sending it back
+              courses = fns.filterCourseData(courses);
               return callback(null, courses);
           });
   }
 
 }
+//validate the answer and give back a score
+CourseSchema.statics.validateCourseAnswer = function(courseId, userAnswer, callback){
+  //check if course_id and userAnswer was pass
+  if(courseId && userAnswer){
+    Course.findOne({courseId: courseId})
+          .exec(
+            function(error,course) {
+              //if there is an error, return it on the callback
+              if(error){
+                return callback(error);
+              }else if(!course){
+                //course was not found
+                var errRes = {
+                  message: "Course with courseId = "+courseId+" was not found"
+                }
+                return callback(errRes);
+              }
+              //check if answer matches the one in the course
+              //get back an object with points earned
+              var validateResp = fns.validatePointsEarned(course, userAnswer);
+              return callback(null, validateResp);
+            }
+          );
+  }else{
+    //send an error for missing parameters
+    var errRes = {
+      err: -1,
+      message: "Missing parameters: courseId or userAnswer"
+    }
+    return callback(errRes);
+  }
+
+}
+
 
 
 var Course = mongoose.model('Course', CourseSchema);
