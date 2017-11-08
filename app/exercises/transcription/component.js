@@ -17,6 +17,10 @@ import {
 
 const classes = generateClassHelper(styles)
 
+// audio player
+var audioTrack = document.createElement('audio');
+audioTrack.setAttribute('src','/app/exercises/transcription/test/audio/en_12.mp3')
+
 
 export class Transcription extends React.Component {
 
@@ -114,7 +118,7 @@ export class Transcription extends React.Component {
                             <img src='/app/exercises/shared/audio_panel/img/icon_speaker_blue.png' className={classes('player_img')}/> */}
 
                             <audio id='audio_track' controls preload='auto'>
-                                <source src='/app/exercises/shared/audio_panel/audio/en_04.mp3'/>
+                                <source src='/app/exercises/transcription/test/audio/en_12.mp3'/>
                                 </audio>
                         {/* </div> */}
 
