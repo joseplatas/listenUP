@@ -23,9 +23,6 @@ var UserSchema = new mongoose.Schema({
   coursesTaken:{
     type: Array
   },
-  coursesPoints: {
-    type: Array
-  },
   learningTime: {
     type: Number
   },
