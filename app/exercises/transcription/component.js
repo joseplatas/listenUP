@@ -52,6 +52,9 @@ export class Transcription extends React.Component {
       }).then((data)=>{
         //return value from above
         console.log(data);
+        //update mp3 file
+        document.getElementById('mp3').src = data.courses[0].audioPath;
+        document.getElementById("audio_track").load();
         return data;
       });
     }
@@ -130,8 +133,8 @@ export class Transcription extends React.Component {
 
                             {/* just for test purposes */}
                             <audio id='audio_track' controls preload='auto'>
-                                <source src={'/api/public/audio/en_01.mp3'}/>
-                                </audio>
+                              <source id="mp3" src={'/api/public/audio/en_01.mp3'}/>
+                            </audio>
 
                         {/* </div> */}
 
