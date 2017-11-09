@@ -1,7 +1,9 @@
 :local * {
     font-family: Pragmatica, Arial, Helvetica, sans-serif;
 }
-
+:local strong{
+  font-weight: bold;
+}
 :local .flex_container {
     display: flex;
 }
@@ -95,6 +97,10 @@
     font-size: 2em;
     margin-top: 10px;
     margin-bottom: 10px;
+}
+
+:local .user_input {
+    min-width: 500px;
 }
 
 :local .user_input_area {

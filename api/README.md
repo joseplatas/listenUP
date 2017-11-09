@@ -51,6 +51,6 @@ Test Form url
     "pointsEarned": 10
     },
   "err": 0,
-  "message": "Proccess answer, added to user "
+  "message": "Processed answer, added to user "
 }
 ```

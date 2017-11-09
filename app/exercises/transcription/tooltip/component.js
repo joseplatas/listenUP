@@ -15,9 +15,9 @@ export class Tooltip extends React.Component {
     render() {
         return <div>
 
-            <h5 className={classes('blue_text', 'tooltip_header')}>here's a tip</h5>
-            
-            <p>You can skip fillers sounds like 'umm...' and 'uhh...',
+            {/* <h5 className={classes('blue_text', 'tooltip_header')}>here's a tip</h5> */}
+
+            <p id='tooltip_text'>You can skip fillers sounds like 'umm...' and 'uhh...',
                         but remember to include filler <em>words</em> such as
                         'like' and 'well.'
                         </p>
