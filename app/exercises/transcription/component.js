@@ -32,9 +32,6 @@ export class Transcription extends React.Component {
         this.handleUserInputChange = this.handleUserInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
 
-        //get the courses for the language
-        this.state.courses = this.getCourses();
-
     }
     /**
       Returns courses base on the language
@@ -63,16 +60,34 @@ export class Transcription extends React.Component {
         this.setState({userInput: event.target.value})
     }
 
+    //validate answer with api
     handleSubmit(event) {
-        //for reference https://stackoverflow.com/questions/42569899/storing-numbers-entered-via-an-input-form-into-an-array
         event.preventDefault();
-        var answer = this.state.userInput;
-        // JT changed "userInput" to "answer" in this concat call
-        var allAnswer = this.state.user_answer.concat([answer]); //stores user answer to be concatted to user_answer
-        // JT added console.log to test -- returning undefined
-        console.log(allAnswer);
-        this.setState({user_answer: allAnswer});
-        this.setState({userInput: ''}); //clears input on submit
+        var userAnswer = this.state.userInput;
+        //api call to validate allAnswer
+        fetch(new Request('http://localhost:8080/api/exercises/verifyCourseAnswer', {
+          headers: new Headers({
+            'Content-Type': 'application/json'
+          }),
+          method: 'POST',
+          body: JSON.stringify({
+            "username": localStorage.username,
+            "courseId": 1,
+            "userAnswer": userAnswer
+            })
+        })).then((response) => {
+          //get json full response after is done processing
+          return response.json();
+        }).then((data)=>{
+          //return value from above
+          console.log(data);
+          //clear the textarea and disable it
+          //update button to say "next"
+          //update score on the top right
+          //show real answer in the tooltip
+
+          return data;
+        });
     }
 
     render() {
@@ -109,13 +124,13 @@ export class Transcription extends React.Component {
                         </h5>
 
                         <div className={classes('audio_player_container', 'flex_container')}>
-            
+
                         {/* <div className={classes('player_img_container')}>
                             <img src='/app/exercises/shared/audio_panel/img/icon_speaker_blue.png' className={classes('player_img')}/> */}
 
                             {/* just for test purposes */}
                             <audio id='audio_track' controls preload='auto'>
-                                <source src={'/api/public/audio/fr_03.mp3'}/>
+                                <source src={'/api/public/audio/en_01.mp3'}/>
                                 </audio>
 
                         {/* </div> */}
@@ -123,7 +138,7 @@ export class Transcription extends React.Component {
 
                         </div>
 
-                        {/* 
+                        {/*
                         ------- Temporarily commenting out ------------
                         <div className={classes('audio_controls', 'flex_container')}>
                             <button id='btn_play' className={styles.audio_button}>
