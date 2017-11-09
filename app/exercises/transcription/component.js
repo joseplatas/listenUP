@@ -26,7 +26,7 @@ export class Transcription extends React.Component {
         this.state = {
             language: this.props.match.params.language, //pass as param in url
             courses: this.getCourses(),
-            userInput: (this.state || {}).userInput || 'enter your answer',
+            userInput: (this.state || {}).userInput || '',
             user_answer: [] //array to keep user answer
         };
         this.handleUserInputChange = this.handleUserInputChange.bind(this);
@@ -52,9 +52,8 @@ export class Transcription extends React.Component {
       }).then((data)=>{
         //return value from above
         console.log(data);
-        //update mp3 file
-        document.getElementById('mp3').src = data.courses[0].audioPath;
-        document.getElementById("audio_track").load();
+        //document.getElementById('mp3').src = data.courses[0].audioPath;
+        //document.getElementById("audio_track").load();
         return data;
       });
     }
@@ -67,6 +66,13 @@ export class Transcription extends React.Component {
     handleSubmit(event) {
         event.preventDefault();
         var userAnswer = this.state.userInput;
+        console.log(userAnswer);
+        //stop if no answer
+        if(userAnswer.length < 5){
+          alert("Please enter full answer");
+          return;
+        }
+
         //api call to validate allAnswer
         fetch(new Request('http://localhost:8080/api/exercises/verifyCourseAnswer', {
           headers: new Headers({
@@ -84,10 +90,13 @@ export class Transcription extends React.Component {
         }).then((data)=>{
           //return value from above
           console.log(data);
-          //clear the textarea and disable it
-          //update button to say "next"
-          //update score on the top right
-          //show real answer in the tooltip
+          alert("PROCESS ANSWER");
+          //update score
+          document.getElementById('score').innerHTML = data.validateRes.pointsEarned;
+          //clear textarea
+          document.getElementById("textarea").value = "";
+          //add answer in tooltip
+          document.getElementById("tooltip_text").innerHTML = "<strong>ANSWER:</strong> " + data.validateRes.answer;
 
           return data;
         });
@@ -133,7 +142,7 @@ export class Transcription extends React.Component {
 
                             {/* just for test purposes */}
                             <audio id='audio_track' controls preload='auto'>
-                              <source id="mp3" src={'/api/public/audio/en_01.mp3'}/>
+                              <source id="mp3" src='http://localhost:8080/public/audio/en_01.mp3'/>
                             </audio>
 
                         {/* </div> */}
@@ -168,6 +177,7 @@ export class Transcription extends React.Component {
 
                                 <label>
                                     <textarea
+                                        id="textarea"
                                         name='userInput'
                                         placeholder='type here...'
                                         value={this.state.value}

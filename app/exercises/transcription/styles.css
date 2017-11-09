@@ -1,7 +1,9 @@
 :local * {
     font-family: Pragmatica, Arial, Helvetica, sans-serif;
 }
-
+:local strong{
+  font-weight: bold;
+}
 :local .flex_container {
     display: flex;
 }
