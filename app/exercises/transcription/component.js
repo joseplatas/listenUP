@@ -90,13 +90,13 @@ export class Transcription extends React.Component {
         }).then((data)=>{
           //return value from above
           console.log(data);
-          alert("PROCESS ANSWER");
+          alert("PROCESSED ANSWER");
           //update score
           document.getElementById('score').innerHTML = data.validateRes.pointsEarned;
           //clear textarea
           document.getElementById("textarea").value = "";
           //add answer in tooltip
-          document.getElementById("tooltip_text").innerHTML = "<strong>ANSWER:</strong> " + data.validateRes.answer;
+          document.getElementById("tooltip_text").innerHTML = "<strong>EXPECTED ANSWER:</strong> " + data.validateRes.answer;
 
           return data;
         });

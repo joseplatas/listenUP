@@ -99,6 +99,10 @@
     margin-bottom: 10px;
 }
 
+:local .user_input {
+    min-width: 500px;
+}
+
 :local .user_input_area {
     resize: none;
     display: block;
