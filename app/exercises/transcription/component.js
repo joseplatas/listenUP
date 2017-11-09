@@ -154,6 +154,7 @@ export class Transcription extends React.Component {
                                         placeholder='type here...'
                                         value={this.state.value}
                                         onChange={this.handleUserInputChange}
+                                        ref={(el) => this._input = el}
                                         className={styles.user_input_area}
                                         spellCheck='false' />
                                 </label>
