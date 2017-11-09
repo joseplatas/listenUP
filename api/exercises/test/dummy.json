@@ -1,0 +1,116 @@
+[
+  {
+    "courseId": 1,
+    "title": "Titulo del curso",
+    "exerciseType": "transcription",
+    "language": "es",
+    "category": "",
+    "question": "Esta es la pregunta",
+    "answer": "respuesta",
+    "audioPath": "/public/audio/es_exercise_1.mp3",
+    "answerOptions": [
+      "respuesta 1",
+      "respuesta 2",
+      "respuesta 3"
+    ],
+    "badgeName": "This is the badgeName",
+    "badgeDescription": "this is the badgeDescription",
+    "badgePath": "/public/img/badges/badges_tr_10score.png",
+    "points": 10
+  },
+  {
+    "courseId": 2,
+    "title": "Titulo del curso",
+    "exerciseType": "quiz",
+    "language": "es",
+    "category": "",
+    "question": "Esta es la pregunta",
+    "answer": "respuesta",
+    "audioPath": "/public/audio/es_exercise_1.mp3",
+    "answerOptions": [
+      "respuesta 1",
+      "respuesta 2",
+      "respuesta 3"
+    ],
+    "badgeName": "This is the badgeName",
+    "badgeDescription": "this is the badgeDescription",
+    "badgePath": "/public/img/badges/badges_tr_10score.png",
+    "points": 10
+  },
+  {
+    "courseId": 3,
+    "title": "Title of the course",
+    "exerciseType": "transcription",
+    "language": "en",
+    "category": "",
+    "question": "This is the question",
+    "answer": "answer",
+    "audioPath": "/public/audio/es_exercise_1.mp3",
+    "answerOptions": [
+      "answer 1",
+      "answer 2",
+      "answer 3"
+    ],
+    "badgeName": "This is the badgeName",
+    "badgeDescription": "this is the badgeDescription",
+    "badgePath": "/public/img/badges/badges_tr_10score.png",
+    "points": 10
+  },
+  {
+    "courseId": 4,
+    "title": "Title of the course",
+    "exerciseType": "quiz",
+    "language": "en",
+    "category": "",
+    "question": "This is the question",
+    "answer": "answer",
+    "audioPath": "/public/audio/es_exercise_1.mp3",
+    "answerOptions": [
+      "answer 1",
+      "answer 2",
+      "answer 3"
+    ],
+    "badgeName": "This is the badgeName",
+    "badgeDescription": "this is the badgeDescription",
+    "badgePath": "/public/img/badges/badges_tr_10score.png",
+    "points": 10
+  },
+  {
+    "courseId": 5,
+    "title": "titre bien sûr",
+    "exerciseType": "transcription",
+    "language": "fr",
+    "category": "",
+    "question": "Ceci est la question",
+    "answer": "répondre",
+    "audioPath": "/public/audio/es_exercise_1.mp3",
+    "answerOptions": [
+      "répondre 1",
+      "répondre 2",
+      "répondre 3"
+    ],
+    "badgeName": "This is the badgeName",
+    "badgeDescription": "this is the badgeDescription",
+    "badgePath": "/public/img/badges/badges_tr_10score.png",
+    "points": 10
+  },
+  {
+    "courseId": 6,
+    "title": "titre bien sûr",
+    "exerciseType": "quiz",
+    "language": "fr",
+    "category": "",
+    "question": "Ceci est la question",
+    "answer": "répondre",
+    "audioPath": "/public/audio/es_exercise_1.mp3",
+    "answerOptions": [
+      "répondre 1",
+      "répondre 2",
+      "répondre 3"
+    ],
+    "badgeName": "This is the badgeName",
+    "badgeDescription": "this is the badgeDescription",
+    "badgePath": "/public/img/badges/badges_tr_10score.png",
+    "points": 10
+  }
+]
