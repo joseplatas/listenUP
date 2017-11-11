@@ -222,5 +222,357 @@
     "badgePath": "n/a",
     "points": 10
   },
+
+  {
+    "courseId": 15,
+    "title": "fr_01",
+    "exerciseType": "transcription",
+    "language": "fr",
+    "category": "",
+    "question": "n/a",
+    "answer": "Il te reste 90% de batterie?",
+    "audioPath": "/public/audio/fr_01.mp3",
+    "answerOptions": [],
+    "badgeName": "n/a",
+    "badgeDescription": "n/a",
+    "badgePath": "n/a",
+    "points": 10
+  },
+
+  {
+    "courseId": 16,
+    "title": "fr_02",
+    "exerciseType": "transcription",
+    "language": "fr",
+    "category": "",
+    "question": "n/a",
+    "answer": "Ma mère m'a ajouté sur tous les reseaux sociaux.",
+    "audioPath": "/public/audio/fr_02.mp3",
+    "answerOptions": [],
+    "badgeName": "n/a",
+    "badgeDescription": "n/a",
+    "badgePath": "n/a",
+    "points": 10
+  },
+
+  {
+    "courseId": 17,
+    "title": "fr_03",
+    "exerciseType": "transcription",
+    "language": "fr",
+    "category": "",
+    "question": "n/a",
+    "answer": "Penses-tu que nous soyons seuls dans l'univers?",
+    "audioPath": "/public/audio/fr_03.mp3",
+    "answerOptions": [],
+    "badgeName": "n/a",
+    "badgeDescription": "n/a",
+    "badgePath": "n/a",
+    "points": 10
+  },
+
+  {
+    "courseId": 18,
+    "title": "fr_04",
+    "exerciseType": "transcription",
+    "language": "fr",
+    "category": "",
+    "question": "n/a",
+    "answer": "J'ai jamais goûté des frites bio, mais c'est vrai qu'il y a des trucs bio pas mal mais c'est super cher.",
+    "audioPath": "/public/audio/fr_04.mp3",
+    "answerOptions": [],
+    "badgeName": "n/a",
+    "badgeDescription": "n/a",
+    "badgePath": "n/a",
+    "points": 10
+  },
+
+  {
+    "courseId": 19,
+    "title": "fr_05",
+    "exerciseType": "transcription",
+    "language": "fr",
+    "category": "",
+    "question": "n/a",
+    "answer": "Savoir pourquoi, c'est une question vaste.",
+    "audioPath": "/public/audio/fr_05.mp3",
+    "answerOptions": [],
+    "badgeName": "n/a",
+    "badgeDescription": "n/a",
+    "badgePath": "n/a",
+    "points": 10
+  },
+
+  {
+    "courseId": 20,
+    "title": "fr_06",
+    "exerciseType": "transcription",
+    "language": "fr",
+    "category": "",
+    "question": "n/a",
+    "answer": "Car à côté on peut trouver l'opéra.",
+    "audioPath": "/public/audio/fr_06.mp3",
+    "answerOptions": [],
+    "badgeName": "n/a",
+    "badgeDescription": "n/a",
+    "badgePath": "n/a",
+    "points": 10
+  },
+
+  {
+    "courseId": 21,
+    "title": "fr_07",
+    "exerciseType": "transcription",
+    "language": "fr",
+    "category": "",
+    "question": "n/a",
+    "answer": "C'est pas toi qui part, c'est moi qui te vire. T'es viré!",
+    "audioPath": "/public/audio/fr_07.mp3",
+    "answerOptions": [],
+    "badgeName": "n/a",
+    "badgeDescription": "n/a",
+    "badgePath": "n/a",
+    "points": 10
+  },
+
+  {
+    "courseId": 22,
+    "title": "fr_08",
+    "exerciseType": "transcription",
+    "language": "fr",
+    "category": "",
+    "question": "n/a",
+    "answer": "Écoute, c'est normal d'être un peu fatigué.",
+    "audioPath": "/public/audio/fr_08.mp3",
+    "answerOptions": [],
+    "badgeName": "n/a",
+    "badgeDescription": "n/a",
+    "badgePath": "n/a",
+    "points": 10
+  },
+
+  {
+    "courseId": 23,
+    "title": "fr_09",
+    "exerciseType": "transcription",
+    "language": "fr",
+    "category": "",
+    "question": "n/a",
+    "answer": "Bon, écoute, je te rappelle à tout à l'heure.",
+    "audioPath": "/public/audio/fr_09.mp3",
+    "answerOptions": [],
+    "badgeName": "n/a",
+    "badgeDescription": "n/a",
+    "badgePath": "n/a",
+    "points": 10
+  },
+
+  {
+    "courseId": 24,
+    "title": "fr_10",
+    "exerciseType": "transcription",
+    "language": "fr",
+    "category": "",
+    "question": "n/a",
+    "answer": "Je viens d'arriver à Istanbul.",
+    "audioPath": "/public/audio/fr_10.mp3",
+    "answerOptions": [],
+    "badgeName": "n/a",
+    "badgeDescription": "n/a",
+    "badgePath": "n/a",
+    "points": 10
+  },
+
+  {
+    "courseId": 25,
+    "title": "fr_11",
+    "exerciseType": "transcription",
+    "language": "fr",
+    "category": "",
+    "question": "n/a",
+    "answer": "C'est super bon. Je connais pas le nom, mais c'est magnifique.",
+    "audioPath": "/public/audio/fr_11.mp3",
+    "answerOptions": [],
+    "badgeName": "n/a",
+    "badgeDescription": "n/a",
+    "badgePath": "n/a",
+    "points": 10
+  },
+
+  {
+    "courseId": 26,
+    "title": "es_01",
+    "exerciseType": "transcription",
+    "language": "fr",
+    "category": "",
+    "question": "n/a",
+    "answer": "Es complicado.",
+    "audioPath": "/public/audio/es_01.mp3",
+    "answerOptions": [],
+    "badgeName": "n/a",
+    "badgeDescription": "n/a",
+    "badgePath": "n/a",
+    "points": 10
+  },
+
+  {
+    "courseId": 27,
+    "title": "es_02",
+    "exerciseType": "transcription",
+    "language": "fr",
+    "category": "",
+    "question": "n/a",
+    "answer": "Y esa es la falacia más grande que puede existir.",
+    "audioPath": "/public/audio/es_02.mp3",
+    "answerOptions": [],
+    "badgeName": "n/a",
+    "badgeDescription": "n/a",
+    "badgePath": "n/a",
+    "points": 10
+  },
+
+  {
+    "courseId": 28,
+    "title": "es_03",
+    "exerciseType": "transcription",
+    "language": "fr",
+    "category": "",
+    "question": "n/a",
+    "answer": "Si ves lo que sucede con alguien más, que también lo veas en ti ¿no?",
+    "audioPath": "/public/audio/es_03.mp3",
+    "answerOptions": [],
+    "badgeName": "n/a",
+    "badgeDescription": "n/a",
+    "badgePath": "n/a",
+    "points": 10
+  },
+
+  {
+    "courseId": 29,
+    "title": "es_04",
+    "exerciseType": "transcription",
+    "language": "fr",
+    "category": "",
+    "question": "n/a",
+    "answer": "Es la historia de cómo se manejaron las finanzas durante la guerra con Chile.",
+    "audioPath": "/public/audio/es_04.mp3",
+    "answerOptions": [],
+    "badgeName": "n/a",
+    "badgeDescription": "n/a",
+    "badgePath": "n/a",
+    "points": 10
+  },
+
+  {
+    "courseId": 30,
+    "title": "es_05",
+    "exerciseType": "transcription",
+    "language": "fr",
+    "category": "",
+    "question": "n/a",
+    "answer": "Voy a almorzar ahorita.",
+    "audioPath": "/public/audio/es_05.mp3",
+    "answerOptions": [],
+    "badgeName": "n/a",
+    "badgeDescription": "n/a",
+    "badgePath": "n/a",
+    "points": 10
+  },
+
+  {
+    "courseId": 31,
+    "title": "es_06",
+    "exerciseType": "transcription",
+    "language": "fr",
+    "category": "",
+    "question": "n/a",
+    "answer": "Si pudieras tener un super poder, ¿cuál elegirías?",
+    "audioPath": "/public/audio/es_06.mp3",
+    "answerOptions": [],
+    "badgeName": "n/a",
+    "badgeDescription": "n/a",
+    "badgePath": "n/a",
+    "points": 10
+  },
+
+  {
+    "courseId": 32,
+    "title": "es_07",
+    "exerciseType": "transcription",
+    "language": "fr",
+    "category": "",
+    "question": "n/a",
+    "answer": "Y de las formas de pensar, de sentir, de ser, de querer, de la gente del mundo.",
+    "audioPath": "/public/audio/es_07.mp3",
+    "answerOptions": [],
+    "badgeName": "n/a",
+    "badgeDescription": "n/a",
+    "badgePath": "n/a",
+    "points": 10
+  },
+
+  {
+    "courseId": 33,
+    "title": "es_08",
+    "exerciseType": "transcription",
+    "language": "fr",
+    "category": "",
+    "question": "n/a",
+    "answer": "Salud, trabajo, y amor. Las tres.",
+    "audioPath": "/public/audio/es_08.mp3",
+    "answerOptions": [],
+    "badgeName": "n/a",
+    "badgeDescription": "n/a",
+    "badgePath": "n/a",
+    "points": 10
+  },
+
+  {
+    "courseId": 34,
+    "title": "es_09",
+    "exerciseType": "transcription",
+    "language": "fr",
+    "category": "",
+    "question": "n/a",
+    "answer": "Pero si te pierdes y de verdad descubres lo que es Londres, te gustará mucho más.",
+    "audioPath": "/public/audio/es_09.mp3",
+    "answerOptions": [],
+    "badgeName": "n/a",
+    "badgeDescription": "n/a",
+    "badgePath": "n/a",
+    "points": 10
+  },
+
+  {
+    "courseId": 35,
+    "title": "es_10",
+    "exerciseType": "transcription",
+    "language": "fr",
+    "category": "",
+    "question": "n/a",
+    "answer": "Ah, me gusta mucho la danza en general, pero lo que he practicado un tiempo es contemporáneo.",
+    "audioPath": "/public/audio/es_10.mp3",
+    "answerOptions": [],
+    "badgeName": "n/a",
+    "badgeDescription": "n/a",
+    "badgePath": "n/a",
+    "points": 10
+  },
+
+  {
+    "courseId": 36,
+    "title": "es_11",
+    "exerciseType": "transcription",
+    "language": "fr",
+    "category": "",
+    "question": "n/a",
+    "answer": "El momento más feliz de mi fue cuando nacio mi hermano.",
+    "audioPath": "/public/audio/es_11.mp3",
+    "answerOptions": [],
+    "badgeName": "n/a",
+    "badgeDescription": "n/a",
+    "badgePath": "n/a",
+    "points": 10
+  }
 ]
 
