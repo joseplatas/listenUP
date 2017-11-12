@@ -8,7 +8,6 @@ import { Tooltip } from './tooltip/component.js'
 import '../shared/img/audio_controls_pause.png'
 import '../shared/img/audio_controls_play.png'
 import '../shared/img/audio_controls_stop.png'
-import '../../../api/public/audio/fr_03.mp3'
 
 import {
     HashRouter,
@@ -19,25 +18,43 @@ import {
 const classes = generateClassHelper(styles)
 
 export class Transcription extends React.Component {
-
-
     constructor(props) {
         super(props);
-        this.state = {
-            language: this.props.match.params.language, //pass as param in url
-            courses: this.getCourses(),
-            userInput: (this.state || {}).userInput || '',
-            user_answer: [] //array to keep user answer
-        };
+        this.getCurrentCourse = this.getCurrentCourse.bind(this);
         this.handleUserInputChange = this.handleUserInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-
+        this.state = { 
+            loading: true
+        }
     }
+
+    // get necessary properties and update state
+    componentDidMount() {
+        this.getCourses()
+            .then(result => {
+                this.setState({
+                    loading: false,
+                    language: this.props.match.params.language, //pass as param in url
+                    courses: result.courses,
+                    id: 0
+                });
+            })
+    }
+
+    //get the current course
+    getCurrentCourse() {
+        if(!this.state.courses)
+            throw 'Attempted to access courses before being loaded.'
+        else {
+            return this.state.courses[this.state.id]
+        }
+    }
+
     /**
       Returns courses base on the language
     */
     getCourses(){
-      fetch(new Request('http://localhost:8080/api/exercises/getCourses', {
+      return fetch(new Request('http://localhost:8080/api/exercises/getCourses', {
         headers: new Headers({
           'Content-Type': 'application/json'
         }),
@@ -50,10 +67,9 @@ export class Transcription extends React.Component {
         //get json full response after is done processing
         return response.json();
       }).then((data)=>{
+
         //return value from above
         console.log(data);
-        //document.getElementById('mp3').src = data.courses[0].audioPath;
-        //document.getElementById("audio_track").load();
         return data;
       });
     }
@@ -62,11 +78,22 @@ export class Transcription extends React.Component {
         this.setState({userInput: event.target.value})
     }
 
+    // forces browser to reload media player
+    // takes down audioplayer and puts it back up after delay
+    // allows loading of next audio file
+    refreshMediaPlayer() {
+        this.setState({
+            mediaPlayerHidden: true
+        })
+        setTimeout(() => this.setState({
+            mediaPlayerHidden: false
+        }), 100)
+    }
+
     //validate answer with api
     handleSubmit(event) {
         event.preventDefault();
         var userAnswer = this.state.userInput;
-        console.log(userAnswer);
         //stop if no answer
         if(userAnswer.length < 5){
           alert("Please enter full answer");
@@ -81,7 +108,7 @@ export class Transcription extends React.Component {
           method: 'POST',
           body: JSON.stringify({
             "username": localStorage.username,
-            "courseId": 1,
+            "courseId": this.getCurrentCourse().courseId,
             "userAnswer": userAnswer
             })
         })).then((response) => {
@@ -89,17 +116,27 @@ export class Transcription extends React.Component {
           return response.json();
         }).then((data)=>{
           //return value from above
-          console.log(data);
-          alert("PROCESSED ANSWER");
-          //update score
-          document.getElementById('score').innerHTML = data.validateRes.pointsEarned;
-          //clear textarea
-          document.getElementById("textarea").value = "";
-          //add answer in tooltip
-          document.getElementById("tooltip_text").innerHTML = "<strong>EXPECTED ANSWER:</strong> " + data.validateRes.answer;
+          this.setState({
+            id: (this.state.id + 1)%this.state.courses.length,
+            userInput: ''
+          })
+          
+          //debugging log: prints the user's input
+          console.log(userAnswer);
+          //debugging: prints points earned
+          console.log(data.validateRes.pointsEarned);
 
-          return data;
+          //reloads audio player
+          this.refreshMediaPlayer();
         });
+    }
+
+    renderMediaPlayer() {
+        return !this.state.mediaPlayerHidden && (
+            <audio id='audio_track' controls preload='auto'>
+                <source id="mp3" src={this.getCurrentCourse().audioPath}/>
+            </audio>
+        )
     }
 
     render() {
@@ -118,7 +155,9 @@ export class Transcription extends React.Component {
             );
           }
 
-        return <div className={classes('page_container', 'flex_container')}>
+        return this.state.loading
+            ? (<div>Loading...</div>)
+            : (<div className={classes('page_container', 'flex_container')}>
 
             <div className={classes('exercise_container', 'flex_container')}>
 
@@ -126,49 +165,21 @@ export class Transcription extends React.Component {
                     <Exercise_Header language = {this.state.language} />
                 </div>
 
-
                 <div className={classes('exercise_content', 'flex_container')}>
-
                     <div className={classes('audio_panel','flex_container')}>
 
                         <h5 className={classes('blue_text','content_subheader')}>
                         listen to the audio:
                         </h5>
 
+                        {/* AUDIO PLAYER */}
                         <div className={classes('audio_player_container', 'flex_container')}>
-
-                        {/* <div className={classes('player_img_container')}>
-                            <img src='/app/exercises/shared/audio_panel/img/icon_speaker_blue.png' className={classes('player_img')}/> */}
-
-                            {/* just for test purposes */}
-                            <audio id='audio_track' controls preload='auto'>
-                              <source id="mp3" src='http://localhost:8080/public/audio/en_01.mp3'/>
-                            </audio>
-
-                        {/* </div> */}
-
-
+                            {this.renderMediaPlayer()}
                         </div>
-
-                        {/*
-                        ------- Temporarily commenting out ------------
-                        <div className={classes('audio_controls', 'flex_container')}>
-                            <button id='btn_play' className={styles.audio_button}>
-                                <img src='/app/exercises/shared/img/audio_controls_play.png' className={styles.btn_img}/>
-                            </button>
-                            <button id='btn_pause' className={styles.audio_button}>
-                                <img src='/app/exercises/shared/img/audio_controls_pause.png' className={styles.btn_img}/>
-                            </button>
-                            <button id='btn_stop' className={styles.audio_button}>
-                                <img src='/app/exercises/shared/img/audio_controls_stop.png' className={styles.btn_img}/>
-                            </button>
-                        </div> */}
-
                     </div>
 
+                    {/* INPUT PANEL */}
                     <div className={classes('input_panel', 'flex_container')}>
-
-
                         <div className={styles.user_input}>
 
                             <h5 className={classes('blue_text', 'content_subheader')}>type what you hear:</h5>
@@ -180,52 +191,18 @@ export class Transcription extends React.Component {
                                         id="textarea"
                                         name='userInput'
                                         placeholder='type here...'
-                                        value={this.state.value}
+                                        value={this.state.userInput}
                                         onChange={this.handleUserInputChange}
                                         ref={(el) => this._input = el}
                                         className={styles.user_input_area}
                                         spellCheck='false' />
                                 </label>
 
-                                {/* ----TEMPORARILY COMMENTING OUT FOR STYLING---
-
-                            <ul className={classes('char_bar', 'fr_chars', 'flex_container')}>
-
-                                <li><a href="#" className={styles.char_button}>à</a></li>
-                                <li><a href="#" c assName={styles.char_button}>â</a></li>
-                                <li><a href="#" className={styles.char_button}>é</a></li>
-                                <li><a href="#" className={styles.char_button}>ê</a></li>
-                                <li><a href="#" className={styles.char_button}>è</a></li>
-                                <li><a href="#" className={styles.char_button}>ë</a></li>
-                                <li><a href="#" className={styles.char_button}>î</a></li>
-                                <li><a href="#" className={styles.char_button}>ô</a></li>
-                                <li><a href="#" className={styles.char_button}>oe</a></li>
-                                <li><a href="#" className={styles.char_button}>û</a></li>
-                                <li><a href="#" className={styles.char_button}>ù</a></li>
-                                <li><a href="#" className={styles.char_button}>ç</a></li>
-
-                            </ul>
-
-
-                        <ul className={classes('char_bar', 'es_chars', 'flex_container')}>
-
-                            <li><a href="#" className={styles.char_button}>á</a></li>
-                            <li><a href="#" className={styles.char_button}>é</a></li>
-                            <li><a href="#" className={styles.char_button}>í</a></li>
-                            <li><a href="#" className={styles.char_button}>ó</a></li>
-                            <li><a href="#" className={styles.char_button}>è</a></li>
-                            <li><a href="#" className={styles.char_button}>ú</a></li>
-                            <li><a href="#" className={styles.char_button}>ñ</a></li>
-                            <li><a href="#" className={styles.char_button}>ü</a></li>
-                            <li><a href="#" className={styles.char_button}>¡</a></li>
-                            <li><a href="#" className={styles.char_button}>¿</a></li>
-
-                        </ul>
-*/}
                               <input type='submit' value='enter' className={styles.enter_button}/>
 
                             </form>
 
+                            {/* TOOLTIP */}
                             <div className={styles.tooltip_feedback}>
                                 <Tooltip />
                             </div>
@@ -233,6 +210,6 @@ export class Transcription extends React.Component {
                     </div>
                 </div>
             </div>
-        </div>
+        </div>)
     }
 }

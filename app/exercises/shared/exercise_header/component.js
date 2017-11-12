@@ -53,7 +53,7 @@ export class Exercise_Header extends React.Component {
                         <img src='/app/exercises/shared/exercise_header/img/icon_es.png' className={styles.icon_img} />
                     </div>
                     <div className={classes('score_icon', 'header_icon')}>
-                        {fns.calcScore(.7)}
+                        {/* {fns.calcScore(.7)} */}
                     </div>
                 </div>
             </div>
@@ -71,7 +71,7 @@ export class Exercise_Header extends React.Component {
                         <img src='/app/exercises/shared/exercise_header/img/icon_fr.png' className={styles.icon_img} />
                     </div>
                     <div className={classes('score_icon', 'header_icon')}>
-                        {fns.calcScore(.7)}
+                        {/* {fns.calcScore(.7)} */}
                     </div>
                 </div>
             </div>
