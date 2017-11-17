@@ -140,6 +140,8 @@ export class Transcription extends React.Component {
     }
 
     render() {
+
+        // if the user is not logged in, tell them to do so
           if(localStorage.user_id == undefined){
             return(
               <div className={classes('page_container', 'flex_container')}>
@@ -155,8 +157,10 @@ export class Transcription extends React.Component {
             );
           }
 
+        // if component is still loading, say so
+        // otherwise, render page
         return this.state.loading
-            ? (<div>Loading...</div>)
+            ? (<div className={classes('page_container','flex_container')}>Loading...</div>)
             : (<div className={classes('page_container', 'flex_container')}>
 
             <div className={classes('exercise_container', 'flex_container')}>
