@@ -33,6 +33,10 @@
     font-size: 2em;
 }
 
+:local .blue_text {
+    color: #33669a;
+}
+
 /*---Exercise header---*/
 
 :local .exercise_header {

@@ -39,12 +39,17 @@
     font-size: 12px;
   }
 
-  :local .form_icon {
-    border-style: solid;
-    border-width: 1px;
-    border-color: #475c64;
+  :local .form_icon_container {
+    display: flex;
     width: 40px;
     height: 40px;
+    margin-right: 5px;
+    align-self: center;
+  }
+
+  :local .form_icon {
+    width: 100%;
+    align-self: center;
   }
 
   :local .login_link {
