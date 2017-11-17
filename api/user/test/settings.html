@@ -15,49 +15,50 @@
     }
   </style>
 </head>
-
++
 <body>
 
   <div class="container">
-      <h1>Register Test Form</h1>
+      <h1>Update Settings Form</h1>
       <hr>
-      <form class="form-horizontal" action="/api/user/registerPost" method="post">
+      <form class="form-horizontal" action="/api/user/settings" method="post">
         <fieldset>
 
           <!-- Text input-->
           <div class="form-group">
-            <label class="col-md-4 control-label" for="textinput">Username</label>
+            <label class="col-md-4 control-label" for="">_id:</label>
             <div class="col-md-4">
-              <input id="textinput" name="username" type="text" placeholder="" class="form-control input-md">
+              <input name="_id" type="text" placeholder="" value="59fd744e6f926ba6f0029ab0" class="form-control input-md">
             </div>
           </div>
-          <!-- Text input-->
+
           <div class="form-group">
-            <label class="col-md-4 control-label" for="textinput">Email</label>
+            <label class="col-md-4 control-label" for="">Username:</label>
             <div class="col-md-4">
-              <input id="textinput" name="email" type="text" placeholder="" class="form-control input-md">
-
+              <input name="username" type="text" placeholder="" value="joseplatas" class="form-control input-md">
             </div>
           </div>
-
-
-          <!-- Password input-->
           <div class="form-group">
-            <label class="col-md-4 control-label" for="passwordinput">Password</label>
+            <label class="col-md-4 control-label" for="">New email:</label>
             <div class="col-md-4">
-              <input id="passwordinput" name="password" type="password" placeholder="" class="form-control input-md">
-
+              <input name="newEmail" type="text" placeholder="" value="jplatas@icuracao.com" class="form-control input-md">
             </div>
           </div>
 
-          <!-- Password input-->
           <div class="form-group">
-            <label class="col-md-4 control-label" for="passwordinput">Confirm Password</label>
+            <label class="col-md-4 control-label" for="">New Password:</label>
             <div class="col-md-4">
-              <input id="passwordinput" name="confirmPassword" type="password" placeholder="" class="form-control input-md">
-
+              <input name="newPassword" type="text" placeholder="" class="form-control input-md">
             </div>
           </div>
+
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="">Current Password:</label>
+            <div class="col-md-4">
+              <input name="currentPassword" type="text" placeholder="" class="form-control input-md">
+            </div>
+          </div>
+
 
           <!-- Button -->
           <div class="form-group">
