@@ -41,6 +41,10 @@ var CourseSchema = new mongoose.Schema({
     type: String,
     trim: true
   },
+  videoUrl: {
+    type: String,
+    trim: true
+  },
   answerOptions: {
     type: Array,
     trim: true
@@ -60,6 +64,14 @@ var CourseSchema = new mongoose.Schema({
   points: {
     type: Number,
     required: true
+  },
+  dateCreated:{
+    type: Date,
+    default: Date.now
+  },
+  dateUpdated: {
+    type: Date,
+    default: Date.now
   }
 
 });
