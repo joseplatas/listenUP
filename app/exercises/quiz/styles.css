@@ -53,6 +53,14 @@
     flex: 1;
 }
 
+
+/*---Video panel---*/
+
+:local .video_panel {
+    width: 560px;
+    align-self: center;
+}
+
 /*---input-panel---*/
 
 :local .input_panel {

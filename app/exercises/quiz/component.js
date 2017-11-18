@@ -53,6 +53,12 @@ export class Quiz extends React.Component {
       });
     }
 
+    renderVideo() {
+      return <iframe width="560" height="315" 
+        src="https://www.youtube.com/embed/5LLyofyJYCk?start=0&end=78&autoplay=1" 
+        frameborder="0" allowfullscreen></iframe>
+    }
+
     render() {
 
       if(localStorage.user_id == undefined){
@@ -82,6 +88,11 @@ export class Quiz extends React.Component {
 
                 <div className={classes('exercise_content', 'flex_container')}>
 
+                <div className={classes('video_panel','flex_container')}>
+
+                {this.renderVideo()}
+
+                </div>
 
                     <div className={classes('input_panel', 'flex_container')}>
 
