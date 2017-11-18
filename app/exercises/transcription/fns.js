@@ -6,3 +6,14 @@ export function updateScore(newScore) {
     score = newScore
     return score
 }
+
+export function generateHeader(language) {
+    switch(language) {
+        case 'fr':
+            return 'exercise de transcription'
+        case 'en':
+            return 'transcription exercise'
+        case 'es':
+            return 'ejercicio de transcripcion'
+    }
+}

@@ -23,6 +23,8 @@ export class Transcription extends React.Component {
         this.getCurrentCourse = this.getCurrentCourse.bind(this);
         this.handleUserInputChange = this.handleUserInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleGoNext = this.handleGoNext.bind(this);
+        this.renderForm = this.renderForm.bind(this);
         this.state = { 
             loading: true
         }
@@ -115,28 +117,69 @@ export class Transcription extends React.Component {
           //get json full response after is done processing
           return response.json();
         }).then((data)=>{
-          //return value from above
           this.setState({
-            id: (this.state.id + 1)%this.state.courses.length,
-            userInput: ''
+              userAnswer: userAnswer,
+              score: data.validateRes.pointsEarned
           })
-          
-          //debugging log: prints the user's input
-          console.log(userAnswer);
-          //debugging: prints points earned
-          console.log(data.validateRes.pointsEarned);
+        });
+    }
+
+    handleGoNext(event) {
+        event.preventDefault();
+
+        //return value from above
+        this.setState({
+            id: (this.state.id + 1)%this.state.courses.length,
+            userInput: '',
+            score: '',
+            userAnswer: null
+          })
 
           //reloads audio player
           this.refreshMediaPlayer();
-        });
     }
 
     renderMediaPlayer() {
         return !this.state.mediaPlayerHidden && (
-            <audio id='audio_track' controls preload='auto'>
+            <audio autoPlay id='audio_track' controls preload='auto'>
                 <source id="mp3" src={this.getCurrentCourse().audioPath}/>
             </audio>
         )
+    }
+
+    renderForm() {
+        return this.state.userAnswer
+            ? (<form onSubmit={this.handleGoNext}>
+
+                <label>
+                    <textarea
+                        id="textarea"
+                        name='userInput'
+                        placeholder='type here...'
+                        value={this.state.userInput}
+                        onChange={this.handleUserInputChange}
+                        className={styles.user_input_area}
+                        spellCheck='false' />
+                </label>
+
+                <input type='submit' value='next' className={styles.enter_button}/>
+            </form>)
+            : (<form onSubmit={this.handleSubmit}>
+
+                <label>
+                    <textarea
+                        id="textarea"
+                        name='userInput'
+                        placeholder='type here...'
+                        value={this.state.userInput}
+                        onChange={this.handleUserInputChange}
+                        className={styles.user_input_area}
+                        spellCheck='false' />
+                </label>
+
+                <input type='submit' value='submit' className={styles.enter_button}/>
+
+            </form>)
     }
 
     render() {
@@ -166,7 +209,10 @@ export class Transcription extends React.Component {
             <div className={classes('exercise_container', 'flex_container')}>
 
                 <div className={classes('exercise_header', 'flex_container')}>
-                    <Exercise_Header language = {this.state.language} />
+                    <Exercise_Header 
+                    language={this.state.language} 
+                    title={fns.generateHeader(this.state.language)} 
+                    score={this.state.score}/>
                 </div>
 
                 <div className={classes('exercise_content', 'flex_container')}>
@@ -188,26 +234,10 @@ export class Transcription extends React.Component {
 
                             <h5 className={classes('blue_text', 'content_subheader')}>type what you hear:</h5>
 
-                            <form onSubmit={this.handleSubmit}>
-
-                                <label>
-                                    <textarea
-                                        id="textarea"
-                                        name='userInput'
-                                        placeholder='type here...'
-                                        value={this.state.userInput}
-                                        onChange={this.handleUserInputChange}
-                                        className={styles.user_input_area}
-                                        spellCheck='false' />
-                                </label>
-
-                              <input type='submit' value='enter' className={styles.enter_button}/>
-
-                            </form>
-
+                            {this.renderForm()}
                             {/* TOOLTIP */}
                             <div className={styles.tooltip_feedback}>
-                                <Tooltip />
+                                <Tooltip expectedAnswer={this.getCurrentCourse().answer}/>
                             </div>
                         </div>
                     </div>
