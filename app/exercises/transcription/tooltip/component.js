@@ -20,7 +20,6 @@ export class Tooltip extends React.Component {
     render() {
         return <div>
 
-            {/* <h5 className={classes('blue_text', 'tooltip_header')}>here's a tip</h5> */}
             <span className={classes('tooltip_text')}>
                 Expected Answer:
                 

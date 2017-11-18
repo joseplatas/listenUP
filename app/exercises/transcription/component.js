@@ -18,6 +18,12 @@ import {
 const classes = generateClassHelper(styles)
 
 export class Transcription extends React.Component {
+
+    /*
+    *** Functions necessary for Component to render ***
+     */
+
+     // constructor
     constructor(props) {
         super(props);
         this.getCurrentCourse = this.getCurrentCourse.bind(this);
@@ -31,6 +37,7 @@ export class Transcription extends React.Component {
     }
 
     // get necessary properties and update state
+    // runs after Constructor
     componentDidMount() {
         this.getCourses()
             .then(result => {
@@ -43,6 +50,10 @@ export class Transcription extends React.Component {
             })
     }
 
+    /*
+    *** Functions for pulling Course data ***
+     */
+
     //get the current course
     getCurrentCourse() {
         if(!this.state.courses)
@@ -52,9 +63,7 @@ export class Transcription extends React.Component {
         }
     }
 
-    /**
-      Returns courses base on the language
-    */
+    // makes API call to get all the courses
     getCourses(){
       return fetch(new Request('http://localhost:8080/api/exercises/getCourses', {
         headers: new Headers({
@@ -69,30 +78,21 @@ export class Transcription extends React.Component {
         //get json full response after is done processing
         return response.json();
       }).then((data)=>{
-
-        //return value from above
-        console.log(data);
         return data;
       });
     }
 
+    /*
+    *** Functions for interactivity ***
+    */
+
+    // handle user input change (textarea)
     handleUserInputChange(event) {
         this.setState({userInput: event.target.value})
     }
 
-    // forces browser to reload media player
-    // takes down audioplayer and puts it back up after delay
-    // allows loading of next audio file
-    refreshMediaPlayer() {
-        this.setState({
-            mediaPlayerHidden: true
-        })
-        setTimeout(() => this.setState({
-            mediaPlayerHidden: false
-        }), 100)
-    }
-
-    //validate answer with api
+    // validate answer with api
+    // get values of expected answer & score to display
     handleSubmit(event) {
         event.preventDefault();
         var userAnswer = this.state.userInput;
@@ -125,6 +125,8 @@ export class Transcription extends React.Component {
         });
     }
 
+    // used when the user has submitted an answer
+    // allows to move on to the next course item
     handleGoNext(event) {
         event.preventDefault();
 
@@ -141,6 +143,19 @@ export class Transcription extends React.Component {
           this.refreshMediaPlayer();
     }
 
+    // forces browser to reload media player
+    // takes down audioplayer and puts it back up after delay
+    // allows loading of next audio file
+    refreshMediaPlayer() {
+        this.setState({
+            mediaPlayerHidden: true
+        })
+        setTimeout(() => this.setState({
+            mediaPlayerHidden: false
+        }), 100)
+    }
+
+    // renders the audio player
     renderMediaPlayer() {
         return !this.state.mediaPlayerHidden && (
             <audio autoPlay id='audio_track' controls preload='auto'>
@@ -149,6 +164,9 @@ export class Transcription extends React.Component {
         )
     }
 
+    // depending on current state of the component,
+    // if there's an answer already submitted, we call handleGoNext()
+    // otherwise, we wait for the user to submit an answer
     renderForm() {
         return this.state.userAnswer
             ? (<form onSubmit={this.handleGoNext}>
@@ -184,6 +202,7 @@ export class Transcription extends React.Component {
             </form>)
     }
 
+    // render the main component
     render() {
 
         // if the user is not logged in, tell them to do so
@@ -208,8 +227,10 @@ export class Transcription extends React.Component {
             ? (<div className={classes('page_container','flex_container')}>Loading...</div>)
             : (<div className={classes('page_container', 'flex_container')}>
 
+{/* --- BEGIN COMPONENT PAGE CONTENT --- */}
             <div className={classes('exercise_container', 'flex_container')}>
 
+                {/* EXERCISE HEADER */}
                 <div className={classes('exercise_header', 'flex_container')}>
                     <Exercise_Header 
                     language={this.state.language} 
@@ -218,6 +239,8 @@ export class Transcription extends React.Component {
                 </div>
 
                 <div className={classes('exercise_content', 'flex_container')}>
+
+                    {/* AUDIO PANEL */}
                     <div className={classes('audio_panel','flex_container')}>
 
                         <h5 className={classes('blue_text','content_subheader')}>
@@ -238,14 +261,15 @@ export class Transcription extends React.Component {
                             type what you hear:
                             </h5>
 
+                            {/* USEFUL TIP FOR USER */}
                             <p>
                             You can skip fillers sounds like 'umm...' and 'uhh...',
-                        but remember to include filler <em>words</em> such as
-                        'like' and 'well.'
-                                </p>
+                            but remember to include filler <em>words</em> such as 
+                            'like' and 'well.'
+                            </p>
 
                             {this.renderForm()}
-                            {/* TOOLTIP */}
+                            {/* FEEDBACK TOOLTIP */}
                             <div className={styles.tooltip_feedback}>
                                 <Tooltip 
                                 expectedAnswer={this.state.expectedAnswer}/>
@@ -254,6 +278,7 @@ export class Transcription extends React.Component {
                     </div>
                 </div>
             </div>
+{/* --- END PAGE CONTENT --- */}
         </div>)
     }
 }
