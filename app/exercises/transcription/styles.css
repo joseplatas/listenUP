@@ -146,6 +146,12 @@
     text-align: center;
 }
 
+:local .enter_button_next {
+    background-color: #475055;
+    color: #fffef3;
+    
+}
+
 :local .enter_button:hover {
     background-color: #33669a;
     color: #fffef3;

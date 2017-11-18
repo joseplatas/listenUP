@@ -119,6 +119,7 @@ export class Transcription extends React.Component {
         }).then((data)=>{
           this.setState({
               userAnswer: userAnswer,
+              expectedAnswer: data.validateRes.answer,
               score: data.validateRes.pointsEarned
           })
         });
@@ -132,6 +133,7 @@ export class Transcription extends React.Component {
             id: (this.state.id + 1)%this.state.courses.length,
             userInput: '',
             score: '',
+            expectedAnswer: '',
             userAnswer: null
           })
 
@@ -162,7 +164,7 @@ export class Transcription extends React.Component {
                         spellCheck='false' />
                 </label>
 
-                <input type='submit' value='next' className={styles.enter_button}/>
+                <input type='submit' value='next' className={classes('enter_button','enter_button_next')}/>
             </form>)
             : (<form onSubmit={this.handleSubmit}>
 
@@ -177,7 +179,7 @@ export class Transcription extends React.Component {
                         spellCheck='false' />
                 </label>
 
-                <input type='submit' value='submit' className={styles.enter_button}/>
+                <input type='submit' value='submit' className={classes('enter_button')}/>
 
             </form>)
     }
@@ -232,12 +234,21 @@ export class Transcription extends React.Component {
                     <div className={classes('input_panel', 'flex_container')}>
                         <div className={styles.user_input}>
 
-                            <h5 className={classes('blue_text', 'content_subheader')}>type what you hear:</h5>
+                            <h5 className={classes('blue_text', 'content_subheader')}>
+                            type what you hear:
+                            </h5>
+
+                            <p>
+                            You can skip fillers sounds like 'umm...' and 'uhh...',
+                        but remember to include filler <em>words</em> such as
+                        'like' and 'well.'
+                                </p>
 
                             {this.renderForm()}
                             {/* TOOLTIP */}
                             <div className={styles.tooltip_feedback}>
-                                <Tooltip expectedAnswer={this.getCurrentCourse().answer}/>
+                                <Tooltip 
+                                expectedAnswer={this.state.expectedAnswer}/>
                             </div>
                         </div>
                     </div>
