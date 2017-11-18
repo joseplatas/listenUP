@@ -1,6 +1,9 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 import styles from './signup.css'
+import '../shared/img/signup-login_email.png'
+import '../shared/img/signup-login_password.png'
+import '../shared/img/signup-login_username.png'
 
 import { Link } from 'react-router-dom'
 
@@ -102,7 +105,9 @@ export class Signup extends React.Component {
           {/*---EMAIL Field---*/}
 
           <label className={classes('topSpace', 'formField', 'flex_container')}>
-            <div className={styles.form_icon} />
+          <div className={styles.form_icon_container} >
+                <img src='/app/user/shared/img/signup-login_username.png'className={styles.form_icon}/>
+            </div>
             <input
               className='inputField'
               name='username'
@@ -116,7 +121,9 @@ export class Signup extends React.Component {
           {/*---EMAIL Field---*/}
 
           <label className={classes('topSpace', 'formField', 'flex_container')}>
-            <div className={styles.form_icon} />
+          <div className={styles.form_icon_container} >
+                <img src='/app/user/shared/img/signup-login_email.png'className={styles.form_icon}/>
+            </div>
             <input
               className='inputField'
               name='email'
@@ -130,7 +137,9 @@ export class Signup extends React.Component {
           {/*---PASSWORD Field---*/}
 
           <label className={classes('topSpace', 'formField', 'flex_container')}>
-            <div className={styles.form_icon} />
+          <div className={styles.form_icon_container} >
+                <img src='/app/user/shared/img/signup-login_password.png'className={styles.form_icon}/>
+            </div>
             <input
               className='inputField'
               name='password'
@@ -144,7 +153,9 @@ export class Signup extends React.Component {
           {/*---CONFIRM PASSWORD Field---*/}
 
           <label className={classes('topSpace', 'formField', 'flex_container')}>
-            <div className={styles.form_icon} />
+          <div className={styles.form_icon_container} >
+                <img src='/app/user/shared/img/signup-login_password.png'className={styles.form_icon}/>
+            </div>
             <input
               className='inputField'
               name='confirmPassword'
