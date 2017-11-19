@@ -58,7 +58,8 @@ module.exports = {
       points: course.points,
       answer: courseAnswer,
       userAnswer: userAnswer,
-      pointsEarned: pointsEarned
+      pointsEarned: pointsEarned,
+      dateCreated: new Date()
     };
     //return an object with the unique course id and points earned
     return response;
