@@ -9,16 +9,19 @@ var User = require('./models/users');
 
 
 userRouter.get('/', function(req, res, next) {
-    res.send("user router");
+    res.send("User Routers");
 });
-
+//login api form
 userRouter.get('/login', function(req, res, next) {
-    res.sendFile(path.join(__dirname+'/test/loginForm.html'));
+    res.sendFile(path.join(__dirname+'/html/loginForm.html'));
 });
-
-//setting appi for user
+//register api form
+userRouter.get('/register', function(req, res, next) {
+    res.sendFile(path.join(__dirname+'/test/registerForm.html'));
+});
+//settings api form
 userRouter.get("/settings",function(req, res, next){
-  res.sendFile(path.join(__dirname,'/test/settings.html'));
+  res.sendFile(path.join(__dirname,'/html/settingsForm.html'));
 });
 
 //update settings
@@ -35,11 +38,6 @@ userRouter.post("/settings",function(req, res, next){
     res.send(response);
   }
   //PENDING CODE TO UPDATE THE SETTINGS
-});
-
-//get user setting information
-userRouter.get("/settingsUser",function(req,res,next){
-
 });
 
 
@@ -80,10 +78,7 @@ userRouter.post('/loginPost', function(req, res, next){
       }
     });
 });
-//register test form
-userRouter.get('/register', function(req, res, next) {
-    res.sendFile(path.join(__dirname+'/test/registerForm.html'));
-});
+//handle the register post
 userRouter.post('/registerPost', function(req, res, next){
   res.setHeader('Content-Type', 'application/json');
   var response = {};

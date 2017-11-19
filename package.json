@@ -49,6 +49,7 @@
     "express": "^4.15.4",
     "express-session": "^1.15.6",
     "mongoose": "^4.12.3",
+    "mongoose-auto-increment": "^5.0.1",
     "react-audioplayer": "^0.3.1"
   }
 }
