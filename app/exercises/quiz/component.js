@@ -50,12 +50,14 @@ export class Quiz extends React.Component {
     }
 
     renderVideo() {
-      return <iframe width="560" height="315" 
-        src="https://www.youtube.com/embed/5LLyofyJYCk?start=0&end=78"></iframe>
+      return <iframe 
+        width="560" 
+        height="315" 
+        src="https://www.youtube.com/embed/5LLyofyJYCk?start=0&end=78">
+      </iframe>
     }
 
     render() {
-
       if(localStorage.user_id == undefined){
         return(
           <div className={classes('page_container', 'flex_container')}>
