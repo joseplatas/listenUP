@@ -10,7 +10,7 @@ export function updateScore(newScore) {
 export function generateHeader(language) {
     switch(language) {
         case 'fr':
-            return 'exercise de transcription'
+            return 'exercice transcription'
         case 'en':
             return 'transcription exercise'
         case 'es':

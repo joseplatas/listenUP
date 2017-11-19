@@ -41,6 +41,7 @@
 
 :local .exercise_header {
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 /*---audio panel--*/

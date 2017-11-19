@@ -46,6 +46,7 @@
 
 :local .exercise_header {
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 :local .exercise_name {

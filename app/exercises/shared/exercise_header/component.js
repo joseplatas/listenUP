@@ -21,11 +21,6 @@ export class Exercise_Header extends React.Component {
 
     constructor(props){
         super(props);
-        /*
-        transcription exercise
-        ejercicio de transcripcion
-        exercice de transcription
-        */
     };
 
     render() {

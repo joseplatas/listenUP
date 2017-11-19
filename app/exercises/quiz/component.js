@@ -21,13 +21,9 @@ function getQuizQuestion() {
 export class Quiz extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            language: this.props.match.params.language, //pass as param in url
-            courses: {},
-        };
-
-        //get the courses for the language
-        this.state.courses = this.getCourses();
+        this.state = { 
+          loading: true
+      }
     }
 
     /**
@@ -55,8 +51,7 @@ export class Quiz extends React.Component {
 
     renderVideo() {
       return <iframe width="560" height="315" 
-        src="https://www.youtube.com/embed/5LLyofyJYCk?start=0&end=78&autoplay=1" 
-        frameborder="0" allowfullscreen></iframe>
+        src="https://www.youtube.com/embed/5LLyofyJYCk?start=0&end=78"></iframe>
     }
 
     render() {
@@ -81,10 +76,13 @@ export class Quiz extends React.Component {
 
             <div className={classes('exercise_container', 'flex_container')}>
 
-              <div className={classes('exercise_header', 'flex_container')}>
-                  <Exercise_Header language = {this.state.language} />
-              </div>
-
+                {/* EXERCISE HEADER */}
+                <div className={classes('exercise_header', 'flex_container')}>
+                    <Exercise_Header 
+                    language={'en'} 
+                    title={fns.generateHeader('en')} 
+                    score='0'/>
+                </div>
 
                 <div className={classes('exercise_content', 'flex_container')}>
 
@@ -99,7 +97,9 @@ export class Quiz extends React.Component {
 
                         <div className={styles.user_input}>
 
-                            <h5 className={classes('blue_text', 'input_header')}>{getQuizQuestion()}</h5>
+                            <h5 className={classes('blue_text', 'input_header')}>
+                            {getQuizQuestion()}
+                            </h5>
 
                             <div className={classes('quiz_btns_container', 'flex_container')}>
                                 <a className={classes('quiz_option')} href="#">First answer to the question
