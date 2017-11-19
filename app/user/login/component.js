@@ -120,7 +120,7 @@ export class Login extends React.Component {
                         </div>
                         <input
                             className='inputField'
-                            name='email'
+                            name='password'
                             type='password'
                             placeholder='password'
                             value={this.state.password}

@@ -173,6 +173,7 @@ export class Transcription extends React.Component {
 
                 <label>
                     <textarea
+                        disabled 
                         id="textarea"
                         name='userInput'
                         placeholder='type here...'

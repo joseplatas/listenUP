@@ -23,7 +23,6 @@ export class Header extends React.Component{
   logOut(){
     localStorage.removeItem("user_id");
     localStorage.removeItem("username");
-    alert("You have been logged out");
     window.location.href = "";
   }
   render(){
