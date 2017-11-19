@@ -1,7 +1,7 @@
 const fns = require('./fns.js');
 const data = require('./data.js');
-const levenshtein = require('./library/levenshtein.js');
-//console.log(levenshtein.compareString('test','testing'));
+const mongoose = require('mongoose');
+const levenshtein = require('./libraries/levenshtein.js');
 
 //initialize
 var express = require('express');
@@ -10,15 +10,21 @@ var exerciseRouter = express.Router();
 var Course = require('./models/courses');
 var User = require('../user/models/users.js');
 
-//test forms
-exerciseRouter.get('/getCourses', function(req, res, next) {
-  res.sendFile(path.join(__dirname + '/test/exerciseForm.html'));
+exerciseRouter.get('/', function(req, res, next) {
+  res.send('Course Routers')
 });
+//get courses form
+exerciseRouter.get('/getCourses', function(req, res, next) {
+  res.sendFile(path.join(__dirname + '/html/exerciseForm.html'));
+});
+//verify course answer form
 exerciseRouter.get('/verifyCourseAnswer',function(req, res, next){
-  res.sendFile(path.join(__dirname + '/test/verifyCourseAnswer.html'));
+  res.sendFile(path.join(__dirname + '/html/verifyCourseAnswer.html'));
 });
 
-//NOTE: transcription post handler to give the courses in a language and a
+//NOTE: get courses base on post request
+//@param String language
+//@para String exerciseType
 exerciseRouter.post('/getCourses',function(req, res, next){
   res.setHeader('Content-Type', 'application/json');
   var response = {};
@@ -108,14 +114,24 @@ exerciseRouter.post('/verifyCourseAnswer',function(req, res, next){
 
 
 
-//this will add some data to our course schema
+//NOTE:this will add some data to our course schema
 exerciseRouter.get('/buildCourses',function(req, res, next){
+  Course.dropAndResetCount(); //drop and reset counter
+  //set page header
   res.setHeader('Content-Type', 'application/json');
-  var courses = data.getCourseData(); //gets data from json
+  var en_trans = data.getCourseData('data/en_trans.json');
+  var en_quiz  = data.getCourseData('data/en_quiz.json');
+  var es_trans = data.getCourseData('data/es_trans.json');
+  var es_quiz = data.getCourseData('data/es_quiz.json');
+  var fr_trans = data.getCourseData('data/fr_trans.json');
+  var fr_quiz = data.getCourseData('data/fr_quiz.json');
 
+  //concat and build data
+  var courses = en_trans.concat(en_quiz).concat(es_trans).concat(es_quiz).concat(fr_trans).concat(fr_quiz);
+
+  //add all of the courses to collection
+  var response = {};
   for(var i = 0; i < courses.length ; i++){
-    //tries to add it to the table
-    var response = {};
     Course.create(courses[i],function(error, course){
       if(error){
         response.err = -1;

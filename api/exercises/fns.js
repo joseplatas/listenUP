@@ -1,6 +1,6 @@
 var fs = require("fs");
 var path = require("path");
-const levenshtein = require('./library/levenshtein.js');
+const levenshtein = require('./libraries/levenshtein.js');
 
 module.exports = {
   //clean up the courses data and sent only whats necessary
@@ -28,10 +28,12 @@ module.exports = {
       return false;
     }
     //make answer to lower case
+    //PENDING: remove punctuation when comparing strings
     let courseAnswer = course.answer.toLowerCase().trim();
     userAnswer = userAnswer.toLowerCase().trim();
-    let pointsEarned = -1;
-    let minusPoints = levenshtein.compareString(courseAnswer, userAnswer);
+    let pointsEarned = -1;//placeholder for real value
+    //reduced minus points by half
+    let minusPoints = (levenshtein.compareString(courseAnswer, userAnswer)) * .5;
 
     //check what type exerciseType the course is
     if(course.exerciseType == "quiz"){
