@@ -12,15 +12,19 @@ import {
 const classes = generateClassHelper(styles)
 
 export class Tooltip extends React.Component {
+
+    constructor(props) {
+        super(props);
+    }
+
     render() {
         return <div>
 
-            {/* <h5 className={classes('blue_text', 'tooltip_header')}>here's a tip</h5> */}
-
-            <p id='tooltip_text'>You can skip fillers sounds like 'umm...' and 'uhh...',
-                        but remember to include filler <em>words</em> such as
-                        'like' and 'well.'
-                        </p>
+            <span className={classes('tooltip_text')}>
+                Expected Answer:
+                
+                <p><em>{this.props.expectedAnswer}</em></p>
+            </span>
         </div>
     }
 }

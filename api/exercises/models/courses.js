@@ -1,11 +1,13 @@
 const fns = require('../fns.js');
 
 var mongoose = require('mongoose');
+var mongooseAutoIncrement = require('mongoose-auto-increment');
+mongooseAutoIncrement.initialize(mongoose.connection);
 
 var CourseSchema = new mongoose.Schema({
   courseId: {
     type: Number,
-    required: true,
+    default: 0,
     unique: true
   },
   title:{
@@ -41,6 +43,10 @@ var CourseSchema = new mongoose.Schema({
     type: String,
     trim: true
   },
+  videoUrl: {
+    type: String,
+    trim: true
+  },
   answerOptions: {
     type: Array,
     trim: true
@@ -60,9 +66,46 @@ var CourseSchema = new mongoose.Schema({
   points: {
     type: Number,
     required: true
+  },
+  dateCreated:{
+    type: Date,
+    default: Date.now
+  },
+  dateUpdated: {
+    type: Date,
+    default: Date.now
   }
 
 });
+
+//auto increment
+CourseSchema.plugin(mongooseAutoIncrement.plugin, {
+  model: 'CourseSchema',
+  field: 'courseId',
+  startAt: 1,
+  incrementBy: 1
+});
+
+//Method drops table and reinitialized the courseId to start at 1 again
+CourseSchema.statics.dropAndResetCount = function(){
+  //drop table and add new Data
+  mongoose.connection.db.dropCollection('courses',function(error, result){
+    if (error) {
+      console.log(error)
+    }
+    console.log('Courses collection drop: ' + result);
+  });
+  //reset the auto-increment value to 1 again
+  //method describe in plugin documentation
+  var course = new Course();
+  course.save(function (err) {
+    course.nextCount(function(err, count) {
+        course.resetCount(function(err, nextCount) {
+        });
+    });
+  });
+
+}
 
 //authenticate input against database document
 CourseSchema.statics.getCoursesBy = function(language, exerciseType, callback){

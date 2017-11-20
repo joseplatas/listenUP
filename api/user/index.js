@@ -9,18 +9,43 @@ var User = require('./models/users');
 
 
 userRouter.get('/', function(req, res, next) {
-    res.send("user router");
+    res.send("User Routers");
+});
+//login api form
+userRouter.get('/login', function(req, res, next) {
+    res.sendFile(path.join(__dirname+'/html/loginForm.html'));
+});
+//register api form
+userRouter.get('/register', function(req, res, next) {
+    res.sendFile(path.join(__dirname+'/test/registerForm.html'));
+});
+//settings api form
+userRouter.get("/settings",function(req, res, next){
+  res.sendFile(path.join(__dirname,'/html/settingsForm.html'));
 });
 
-userRouter.get('/login', function(req, res, next) {
-    res.sendFile(path.join(__dirname+'/test/loginForm.html'));
+//update settings
+userRouter.post("/settings",function(req, res, next){
+  res.setHeader('Content-Type', 'application/json');
+  var response = {};
+
+  //check if all parameters are pass
+  if(req.body._id){
+    //ALL VALUES WERE PASS
+  }else{
+    response.err = -1;
+    response.message = "Missing user_id";
+    res.send(response);
+  }
+  //PENDING CODE TO UPDATE THE SETTINGS
 });
+
 
 //login handler
 userRouter.post('/loginPost', function(req, res, next){
     res.setHeader('Content-Type', 'application/json');
-    var response = {}; //console.log("Data send from react");
-    //console.log(res.body);
+    var response = {};
+
     //check if all parameters are pass
     if(req.body.email && req.body.password){
       //ALL VALUES WERE PASS
@@ -31,16 +56,20 @@ userRouter.post('/loginPost', function(req, res, next){
     }
     //check if the user exist
     User.authenticate(req.body.email, req.body.password, function(error, user){
-      //console.log(error);
-      //console.log(user);
+
       if(error || !user){
+        //if an error, or user is not found
         response.err = -1;
         response.message = "User not found";
         response.error = error;
         res.send(response);
+      }else if (user.active == 0) {
+        //if unactive user, then send response
+        response.err = -2;
+        response.message = "Unactive user";
+        res.send(response);
       }else{
-        //add session variable
-        //req.session.userId = user._id;
+        //send user id and email
         response.user_id = user._id;
         response.username = user.username;
         response.err = 0;
@@ -49,15 +78,11 @@ userRouter.post('/loginPost', function(req, res, next){
       }
     });
 });
-//register test form
-userRouter.get('/register', function(req, res, next) {
-    res.sendFile(path.join(__dirname+'/test/registerForm.html'));
-});
+//handle the register post
 userRouter.post('/registerPost', function(req, res, next){
   res.setHeader('Content-Type', 'application/json');
   var response = {};
   // console.log("Data send from react");
-  // console.log(res.body);
   //check if all parameters are pass
   if(req.body.username && req.body.email && req.body.password && req.body.confirmPassword){
     //ALL VALUES WERE PASS
@@ -65,6 +90,7 @@ userRouter.post('/registerPost', function(req, res, next){
     response.err = -1;
     response.message = "Missing values";
     res.send(response);
+    return;
   }
 
   //check if passwords are matching
@@ -72,6 +98,7 @@ userRouter.post('/registerPost', function(req, res, next){
     response.err = -2;
     response.message = "Password not matching";
     res.send(response);
+    return;
   }
   //assign data to userData object
   var userData = {
@@ -92,6 +119,7 @@ userRouter.post('/registerPost', function(req, res, next){
       //PENDING: log the user in and send them to dashboard
       response.user_id = user._id;
       response.username = user.username;
+      response.email = user.email;
       response.err = 0;
       response.message = "Successfully created user"
 

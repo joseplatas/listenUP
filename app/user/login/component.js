@@ -4,6 +4,9 @@ import * as styles from './login.css'
 import PropTypes from 'prop-types'
 import {browserHistory} from 'react-router';
 import { Link } from 'react-router-dom'
+import '../shared/img/signup-login_email.png'
+import '../shared/img/signup-login_password.png'
+import '../shared/img/signup-login_username.png'
 
 function classes(...classNames) {
     return classNames
@@ -96,7 +99,10 @@ export class Login extends React.Component {
                     {/*---USERNAME Field---*/}
 
                     <label className={classes('formLabel', 'flex_container')}>
-                        <div className={styles.form_icon} />
+                        <div className={styles.form_icon_container} >
+                            <img src='/app/user/shared/img/signup-login_email.png'className={styles.form_icon}/>
+                        </div>
+
                         <input
                             className='inputField'
                             name='email'
@@ -109,10 +115,12 @@ export class Login extends React.Component {
                     {/*---PASSWORD Field---*/}
 
                     <label className={classes('topSpace', 'formField', 'flex_container')}>
-                        <div className={styles.form_icon} />
+                    <div className={styles.form_icon_container} >
+                            <img src='/app/user/shared/img/signup-login_password.png'className={styles.form_icon}/>
+                        </div>
                         <input
                             className='inputField'
-                            name='email'
+                            name='password'
                             type='password'
                             placeholder='password'
                             value={this.state.password}

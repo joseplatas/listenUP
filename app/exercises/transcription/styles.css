@@ -33,10 +33,15 @@
     font-size: 2em;
 }
 
+:local .blue_text {
+    color: #33669a;
+}
+
 /*---Exercise header---*/
 
 :local .exercise_header {
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 /*---audio panel--*/
@@ -140,6 +145,12 @@
     background-color: #9ed4ae;
     font-size: 1.5em;
     text-align: center;
+}
+
+:local .enter_button_next {
+    background-color: #475055;
+    color: #fffef3;
+    
 }
 
 :local .enter_button:hover {

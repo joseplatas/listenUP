@@ -45,10 +45,9 @@ var exericiseRouter = require('./exercises/index');
 app.use('/api/user', userRouter);
 app.use('/api/exercises',exericiseRouter);
 
-
 // default home route response
 app.get("/",function(req, res, next){
-  res.send("API ListenUp, please use request provided in documentation");
+  res.send("ListenUp API, please use routes provided in documentation");
 });
 
 

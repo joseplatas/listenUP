@@ -46,11 +46,20 @@
 
 :local .exercise_header {
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 :local .exercise_name {
     font-size: 3em;
     flex: 1;
+}
+
+
+/*---Video panel---*/
+
+:local .video_panel {
+    width: 560px;
+    align-self: center;
 }
 
 /*---input-panel---*/

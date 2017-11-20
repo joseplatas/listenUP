@@ -18,17 +18,26 @@ import {
 const classes = generateClassHelper(styles)
 
 export class Transcription extends React.Component {
+
+    /*
+    *** Functions necessary for Component to render ***
+     */
+
+     // constructor
     constructor(props) {
         super(props);
         this.getCurrentCourse = this.getCurrentCourse.bind(this);
         this.handleUserInputChange = this.handleUserInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleGoNext = this.handleGoNext.bind(this);
+        this.renderForm = this.renderForm.bind(this);
         this.state = { 
             loading: true
         }
     }
 
     // get necessary properties and update state
+    // runs after Constructor
     componentDidMount() {
         this.getCourses()
             .then(result => {
@@ -41,6 +50,10 @@ export class Transcription extends React.Component {
             })
     }
 
+    /*
+    *** Functions for pulling Course data ***
+     */
+
     //get the current course
     getCurrentCourse() {
         if(!this.state.courses)
@@ -50,9 +63,7 @@ export class Transcription extends React.Component {
         }
     }
 
-    /**
-      Returns courses base on the language
-    */
+    // makes API call to get all the courses
     getCourses(){
       return fetch(new Request('http://localhost:8080/api/exercises/getCourses', {
         headers: new Headers({
@@ -67,30 +78,21 @@ export class Transcription extends React.Component {
         //get json full response after is done processing
         return response.json();
       }).then((data)=>{
-
-        //return value from above
-        console.log(data);
         return data;
       });
     }
 
+    /*
+    *** Functions for interactivity ***
+    */
+
+    // handle user input change (textarea)
     handleUserInputChange(event) {
         this.setState({userInput: event.target.value})
     }
 
-    // forces browser to reload media player
-    // takes down audioplayer and puts it back up after delay
-    // allows loading of next audio file
-    refreshMediaPlayer() {
-        this.setState({
-            mediaPlayerHidden: true
-        })
-        setTimeout(() => this.setState({
-            mediaPlayerHidden: false
-        }), 100)
-    }
-
-    //validate answer with api
+    // validate answer with api
+    // get values of expected answer & score to display
     handleSubmit(event) {
         event.preventDefault();
         var userAnswer = this.state.userInput;
@@ -115,31 +117,96 @@ export class Transcription extends React.Component {
           //get json full response after is done processing
           return response.json();
         }).then((data)=>{
-          //return value from above
           this.setState({
-            id: (this.state.id + 1)%this.state.courses.length,
-            userInput: ''
+              userAnswer: userAnswer,
+              expectedAnswer: data.validateRes.answer,
+              score: data.validateRes.pointsEarned
           })
-          
-          //debugging log: prints the user's input
-          console.log(userAnswer);
-          //debugging: prints points earned
-          console.log(data.validateRes.pointsEarned);
-
-          //reloads audio player
-          this.refreshMediaPlayer();
         });
     }
 
+    // used when the user has submitted an answer
+    // allows to move on to the next course item
+    handleGoNext(event) {
+        event.preventDefault();
+
+        //return value from above
+        this.setState({
+            id: (this.state.id + 1)%this.state.courses.length,
+            userInput: '',
+            score: '',
+            expectedAnswer: '',
+            userAnswer: null
+          })
+
+          //reloads audio player
+          this.refreshMediaPlayer();
+    }
+
+    // forces browser to reload media player
+    // takes down audioplayer and puts it back up after delay
+    // allows loading of next audio file
+    refreshMediaPlayer() {
+        this.setState({
+            mediaPlayerHidden: true
+        })
+        setTimeout(() => this.setState({
+            mediaPlayerHidden: false
+        }), 100)
+    }
+
+    // renders the audio player
     renderMediaPlayer() {
         return !this.state.mediaPlayerHidden && (
-            <audio id='audio_track' controls preload='auto'>
+            <audio autoPlay id='audio_track' controls preload='auto'>
                 <source id="mp3" src={this.getCurrentCourse().audioPath}/>
             </audio>
         )
     }
 
+    // depending on current state of the component,
+    // if there's an answer already submitted, we call handleGoNext()
+    // otherwise, we wait for the user to submit an answer
+    renderForm() {
+        return this.state.userAnswer
+            ? (<form onSubmit={this.handleGoNext}>
+
+                <label>
+                    <textarea
+                        disabled 
+                        id="textarea"
+                        name='userInput'
+                        placeholder='type here...'
+                        value={this.state.userInput}
+                        onChange={this.handleUserInputChange}
+                        className={styles.user_input_area}
+                        spellCheck='false' />
+                </label>
+
+                <input type='submit' value='next' className={classes('enter_button','enter_button_next')}/>
+            </form>)
+            : (<form onSubmit={this.handleSubmit}>
+
+                <label>
+                    <textarea
+                        id="textarea"
+                        name='userInput'
+                        placeholder='type here...'
+                        value={this.state.userInput}
+                        onChange={this.handleUserInputChange}
+                        className={styles.user_input_area}
+                        spellCheck='false' />
+                </label>
+
+                <input type='submit' value='submit' className={classes('enter_button')}/>
+
+            </form>)
+    }
+
+    // render the main component
     render() {
+
+        // if the user is not logged in, tell them to do so
           if(localStorage.user_id == undefined){
             return(
               <div className={classes('page_container', 'flex_container')}>
@@ -155,17 +222,26 @@ export class Transcription extends React.Component {
             );
           }
 
+        // if component is still loading, say so
+        // otherwise, render page
         return this.state.loading
-            ? (<div>Loading...</div>)
+            ? (<div className={classes('page_container','flex_container')}>Loading...</div>)
             : (<div className={classes('page_container', 'flex_container')}>
 
+{/* --- BEGIN COMPONENT PAGE CONTENT --- */}
             <div className={classes('exercise_container', 'flex_container')}>
 
+                {/* EXERCISE HEADER */}
                 <div className={classes('exercise_header', 'flex_container')}>
-                    <Exercise_Header language = {this.state.language} />
+                    <Exercise_Header 
+                    language={this.state.language} 
+                    title={fns.generateHeader(this.state.language)} 
+                    score={this.state.score}/>
                 </div>
 
                 <div className={classes('exercise_content', 'flex_container')}>
+
+                    {/* AUDIO PANEL */}
                     <div className={classes('audio_panel','flex_container')}>
 
                         <h5 className={classes('blue_text','content_subheader')}>
@@ -182,6 +258,7 @@ export class Transcription extends React.Component {
                     <div className={classes('input_panel', 'flex_container')}>
                         <div className={styles.user_input}>
 
+<<<<<<< HEAD
                             <h5 className={classes('blue_text', 'content_subheader')}>type what you hear:</h5>
 
                             <form onSubmit={this.handleSubmit}>
@@ -199,17 +276,30 @@ export class Transcription extends React.Component {
                                 </label>
 
                               <input type='submit' value='enter' className={styles.enter_button}/>
+=======
+                            <h5 className={classes('blue_text', 'content_subheader')}>
+                            type what you hear:
+                            </h5>
+>>>>>>> 22db198c7e2357d4c5305ab095c772a82f1826c1
 
-                            </form>
+                            {/* USEFUL TIP FOR USER */}
+                            <p>
+                            You can skip fillers sounds like 'umm...' and 'uhh...',
+                            but remember to include filler <em>words</em> such as 
+                            'like' and 'well.'
+                            </p>
 
-                            {/* TOOLTIP */}
+                            {this.renderForm()}
+                            {/* FEEDBACK TOOLTIP */}
                             <div className={styles.tooltip_feedback}>
-                                <Tooltip />
+                                <Tooltip 
+                                expectedAnswer={this.state.expectedAnswer}/>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+{/* --- END PAGE CONTENT --- */}
         </div>)
     }
 }
