@@ -1,3 +1,117 @@
 [
+
+    {
+        "title": "en_01",
+        "exerciseType": "quiz",
+        "language": "en",
+        "category": "",
+        "question": "Where has Tracy lived?",
+        "answer": "France, Argentina, South Korea",
+        "videoUrl": "https://www.youtube.com/embed/bZYwZDqdsas?start=82&end=94",
+        "answerOptions": [
+            "France, Argentina, North Korea",
+            "France, Algeria, South Korea",
+            "Finland, Argentina, South Korea"
+        ],
+        "badgeName": "n/a",
+        "badgeDescription": "n/a",
+        "badgePath": "n/a",
+        "points": 10
+      },
+    
+      {
+        "title": "en_02",
+        "exerciseType": "quiz",
+        "language": "en",
+        "category": "",
+        "question": "What was Tracy's job in France?",
+        "answer": "Au Pair",
+        "videoUrl": "https://www.youtube.com/embed/bZYwZDqdsas?start=95&end=115",
+        "answerOptions": [
+            "Teacher",
+            "She did some odd jobs",
+            "Gardener"
+        ],
+        "badgeName": "n/a",
+        "badgeDescription": "n/a",
+        "badgePath": "n/a",
+        "points": 10
+      },
+    
+      {
+        "title": "en_03",
+        "exerciseType": "quiz",
+        "language": "en",
+        "category": "",
+        "question": "How long did she live outside of US before coming back?",
+        "answer": "4 years",
+        "videoUrl": "https://www.youtube.com/embed/bZYwZDqdsas?start=239&end=256",
+        "answerOptions": [
+            "14 years",
+            "3-4 years",
+            "4 months"
+        ],
+        "badgeName": "n/a",
+        "badgeDescription": "n/a",
+        "badgePath": "n/a",
+        "points": 10
+      },
+      
+      {
+        "title": "en_04",
+        "exerciseType": "quiz",
+        "language": "en",
+        "category": "",
+        "question": "What changed with her boyfriend that helped their relationship?",
+        "answer": "Speaking Spanish",
+        "videoUrl": "https://www.youtube.com/embed/bZYwZDqdsas?start=540&end=605",
+        "answerOptions": [
+            "Doing chores around the house",
+            "Spending more time together",
+            "Traveling together"
+        ],
+        "badgeName": "n/a",
+        "badgeDescription": "n/a",
+        "badgePath": "n/a",
+        "points": 10
+      },
+      
+      {
+        "title": "en_05",
+        "exerciseType": "quiz",
+        "language": "en",
+        "category": "",
+        "question": "What happened when she came back from South Korea to the US?",
+        "answer": "She felt a reverse culture shock",
+        "videoUrl": "https://www.youtube.com/embed/bZYwZDqdsas?start=686&end=763",
+        "answerOptions": [
+            "She didn't like going back",
+            "She missed her boyfriend",
+            "She wanted to go back to South Korea"
+        ],
+        "badgeName": "n/a",
+        "badgeDescription": "n/a",
+        "badgePath": "n/a",
+        "points": 10
+      },
+    
+      {
+        "title": "en_06",
+        "exerciseType": "quiz",
+        "language": "en",
+        "category": "",
+        "question": "After landing, she felt ____ hearing her native language. An example she gave was getting a ____",
+        "answer": "Strange; cellphone",
+        "videoUrl": "https://www.youtube.com/embed/bZYwZDqdsas?start=763&end=836",
+        "answerOptions": [
+            "Hungry; purse",
+            "Happy; puppye",
+            "Comfortable; car"
+        ],
+        "badgeName": "n/a",
+        "badgeDescription": "n/a",
+        "badgePath": "n/a",
+        "points": 10
+      }
   
 ]
