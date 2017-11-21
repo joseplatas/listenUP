@@ -1,3 +1,192 @@
 [
+    {
+      "title": "es_01",
+      "exerciseType": "quiz",
+      "language": "es",
+      "category": "",
+      "question": "¿Por qué le gusta el restaurante?",
+      "answer": "Porque tiene muchas opciones de menú",
+      "videoUrl": "https://www.youtube.com/embed/pGTq-n2_Wc8?start=0&end=38",
+      "answerOptions": [
+          "Debido al pollo.",
+          "Debido al servicio.",
+          "Porque a ella le gusta comer."
+      ],
+      "badgeName": "n/a",
+      "badgeDescription": "n/a",
+      "badgePath": "n/a",
+      "points": 10
+    },
   
-]
+    {
+      "title": "es_02",
+      "exerciseType": "quiz",
+      "language": "es",
+      "category": "",
+      "question": "¿Qué día especial es para ellos?",
+      "answer": "Es su aniversario",
+      "videoUrl": "https://www.youtube.com/embed/-vB_PzgsXzQ?start=34&end=72",
+      "answerOptions": [
+          "Es una cita",
+          "Es un día especial",
+          "Es dia de san valentin"
+      ],
+      "badgeName": "n/a",
+      "badgeDescription": "n/a",
+      "badgePath": "n/a",
+      "points": 10
+    },
+  
+    {
+      "title": "es_03",
+      "exerciseType": "quiz",
+      "language": "es",
+      "category": "",
+      "question": "¿Qué van a ordenar?",
+      "answer": "El especial de las casa",
+      "videoUrl": "https://www.youtube.com/embed/XPY0RRAQU5I?start=0&end=36",
+      "answerOptions": [
+          "El desayuno",
+          "La cena",
+          "El desayuno especial"
+      ],
+      "badgeName": "n/a",
+      "badgeDescription": "n/a",
+      "badgePath": "n/a",
+      "points": 10
+    },
+    
+    {
+      "title": "es_04",
+      "exerciseType": "quiz",
+      "language": "es",
+      "category": "",
+      "question": "¿A dónde se dirige?",
+      "answer": "A un hotel",
+      "videoUrl": "https://www.youtube.com/embed/cdeASbFvz7s?start=0&end=35",
+      "answerOptions": [
+          "A la iglesia",
+          "A un juego de fútbol",
+          "A comer"
+      ],
+      "badgeName": "n/a",
+      "badgeDescription": "n/a",
+      "badgePath": "n/a",
+      "points": 10
+    },
+    
+    {
+      "title": "es_05",
+      "exerciseType": "quiz",
+      "language": "es",
+      "category": "",
+      "question": "¿Cuánto duró su vuelo?",
+      "answer": "Seis horas",
+      "videoUrl": "https://www.youtube.com/embed/cdeASbFvz7s?start=36&end=58",
+      "answerOptions": [
+          "Siete horas",
+          "Dos horas",
+          "Cuatro horas"
+      ],
+      "badgeName": "n/a",
+      "badgeDescription": "n/a",
+      "badgePath": "n/a",
+      "points": 10
+    },
+  
+    {
+      "title": "es_06",
+      "exerciseType": "quiz",
+      "language": "es",
+      "category": "",
+      "question": "¿Qué documento necesitan para que se registre?",
+      "answer": "Ninguno",
+      "videoUrl": "https://www.youtube.com/embed/pbWZLV3iZnE?start=0&end=35",
+      "answerOptions": [
+          "Licencia de conducir",
+          "Pasaporte",
+          "Papel de registro"
+      ],
+      "badgeName": "n/a",
+      "badgeDescription": "n/a",
+      "badgePath": "n/a",
+      "points": 10
+    },
+    
+    {
+      "title": "es_07",
+      "exerciseType": "quiz",
+      "language": "es",
+      "category": "",
+      "question": "¿Cuál es su problema?",
+      "answer": "Su habitación no tiene internet",
+      "videoUrl": "https://www.youtube.com/embed/WzaAPRJB8Wo?start=0&end=35",
+      "answerOptions": [
+          "El inodoro no funciona",
+          "No hay ningun problema",
+          "El técnico no está allí"
+      ],
+      "badgeName": "n/a",
+      "badgeDescription": "n/a",
+      "badgePath": "n/a",
+      "points": 10
+    },
+      
+    {
+      "title": "es_08",
+      "exerciseType": "quiz",
+      "language": "es",
+      "category": "",
+      "question": "¿Cuál es la razón principal por la que el hombre visitará México?",
+      "answer": "Tiene una cita medica",
+      "videoUrl": "https://www.youtube.com/embed/khCc9u83R78?start=0&end=60",
+      "answerOptions": [
+          "Viene por la comida",
+          "Tiene que trabajar",
+          "Porque estaba aburrido"
+      ],
+      "badgeName": "n/a",
+      "badgeDescription": "n/a",
+      "badgePath": "n/a",
+      "points": 10
+    },
+    
+    {
+      "title": "es_09",
+      "exerciseType": "quiz",
+      "language": "es",
+      "category": "",
+      "question": "¿Qué está buscando?",
+      "answer": "Un historiador",
+      "videoUrl": "https://www.youtube.com/embed/8ApwV8N0_Rg?start=0&end=70",
+      "answerOptions": [
+          "Tomar fotos bonitas",
+          "Buscar a su amigo jos",
+          "Encontrar un lugar para comer"
+      ],
+      "badgeName": "n/a",
+      "badgeDescription": "n/a",
+      "badgePath": "n/a",
+      "points": 10
+    },
+    
+    {
+      "title": "es_10",
+      "exerciseType": "quiz",
+      "language": "es",
+      "category": "",
+      "question": "¿qué hora y fecha es su cita?",
+      "answer": "El dia veinticuarto a las once y media de la mañana",
+      "videoUrl": "https://www.youtube.com/embed/pzeIWXOfIgg",
+      "answerOptions": [
+          "El dia veinticinco a las once y media de la mañana",
+          "El dia veinticinco a las doce de la tarde",
+          "El dia veinticinco a las once y media de la mañana"
+      ],
+      "badgeName": "n/a",
+      "badgeDescription": "n/a",
+      "badgePath": "n/a",
+      "points": 10
+    }
+  ]
+  

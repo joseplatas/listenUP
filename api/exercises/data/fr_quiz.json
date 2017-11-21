@@ -1,3 +1,191 @@
 [
+  {
+    "title": "fr_01",
+    "exerciseType": "quiz",
+    "language": "fr",
+    "category": "",
+    "question": "Qu'est-ce qu'il y arriverai si on rajoutais plus de fraises?",
+    "answer": "La cuisson serai plus longue.",
+    "videoUrl": "https://www.youtube.com/embed/kNq42JZPlSM",
+    "answerOptions": [
+        "La cuisson serai trop courte.",
+        "La confiture serai trop cuite.",
+        "La confiture ne se tiendrai pas très bien."
+    ],
+    "badgeName": "n/a",
+    "badgeDescription": "n/a",
+    "badgePath": "n/a",
+    "points": 10
+  },
+
+  {
+    "title": "fr_02",
+    "exerciseType": "quiz",
+    "language": "fr",
+    "category": "",
+    "question": "Nommez trois ingrédients de cette recette:",
+    "answer": "Beurre salé, sucre, crème",
+    "videoUrl": "https://www.youtube.com/embed/Fhl1TcS5eok",
+    "answerOptions": [
+        "Beurre insalé, cassonade, eau",
+        "Beurre salé, sucre, eau",
+        "Beurre insalé, cassonade, crème"
+    ],
+    "badgeName": "n/a",
+    "badgeDescription": "n/a",
+    "badgePath": "n/a",
+    "points": 10
+  },
+
+  {
+    "title": "fr_03",
+    "exerciseType": "quiz",
+    "language": "fr",
+    "category": "",
+    "question": "Ce chariot ne vous aiderai pas à...",
+    "answer": "acheter des billets d'avion",
+    "videoUrl": "https://www.youtube.com/embed/WHc2d7v1Pz4",
+    "answerOptions": [
+        "vérifier que vous êtes encore à l'heure",
+        "faire le boarding",
+        "porter vos bagages"
+    ],
+    "badgeName": "n/a",
+    "badgeDescription": "n/a",
+    "badgePath": "n/a",
+    "points": 10
+  },
   
+  {
+    "title": "fr_04",
+    "exerciseType": "quiz",
+    "language": "fr",
+    "category": "",
+    "question": "Selectionnez la bonne réponse:",
+    "answer": "On rève plus longtemps à la fin de nuit qu'au début de nuit.",
+    "videoUrl": "https://www.youtube.com/embed/zP1WEBMtZF4",
+    "answerOptions": [
+        "Il se passe 16-18 cycles des phases paradoxiques au cours de la nuit.",
+        "En général, on se souviens des phases de veille.",
+        "Le sommeil est une phase des successions."
+    ],
+    "badgeName": "n/a",
+    "badgeDescription": "n/a",
+    "badgePath": "n/a",
+    "points": 10
+  },
+  
+  {
+    "title": "fr_05",
+    "exerciseType": "quiz",
+    "language": "fr",
+    "category": "",
+    "question": "Quelle est la description la plus correcte à propos du magma?",
+    "answer": "Ce n'est pas liquide",
+    "videoUrl": "https://www.youtube.com/embed/muWrmfXpivY?start=0&end=26",
+    "answerOptions": [
+        "La Terre flotte sur magma.",
+        "En fusion avec l'océan, il fait des continents.",
+        "C'est liquide."
+    ],
+    "badgeName": "n/a",
+    "badgeDescription": "n/a",
+    "badgePath": "n/a",
+    "points": 10
+  },
+
+  {
+    "title": "fr_06",
+    "exerciseType": "quiz",
+    "language": "fr",
+    "category": "",
+    "question": "Le bateau partira pour un tour du monde, commençant en",
+    "answer": "France, Espagne, et Portugal",
+    "videoUrl": "https://www.youtube.com/embed/-4UnH7rQ-2o",
+    "answerOptions": [
+        "France, Italie, et Angleterre",
+        "France, Espagne, et Italie",
+        "France, Italie, et Portugal"
+    ],
+    "badgeName": "n/a",
+    "badgeDescription": "n/a",
+    "badgePath": "n/a",
+    "points": 10
+  },
+  
+  {
+    "title": "fr_07",
+    "exerciseType": "quiz",
+    "language": "fr",
+    "category": "",
+    "question": "Décrire le problème dont ce type de paiement mobile cherche à résoudre.",
+    "answer": "Des paysans vulnérables sont souvent des victimes de fraude.",
+    "videoUrl": "https://www.youtube.com/embed/a1ZtSNaMMnA",
+    "answerOptions": [
+        "L'argent de l'état va trop souvent directement dans la poche des paysans.",
+        "La plupart des paysans commettent souvent une fraude.",
+        "L'argent des paysans va directement dans leurs poches."
+    ],
+    "badgeName": "n/a",
+    "badgeDescription": "n/a",
+    "badgePath": "n/a",
+    "points": 10
+  },
+    
+  {
+    "title": "fr_08",
+    "exerciseType": "quiz",
+    "language": "fr",
+    "category": "",
+    "question": "D'après cette vidéo, dans un monde à l'envers, que se passerait-il?",
+    "answer": "On enlévérait nos ceintures de securité",
+    "videoUrl": "https://www.youtube.com/embed/1G7at6I_eXE?start=26&end=90",
+    "answerOptions": [
+        "On ne gagne pas son permis après avoir grillé 4 feux rouges.",
+        "On se marie après dix ans d'être un couple",
+        "Le PDG d'Apple avoue que les Samsungs sont chèr pour rien."
+    ],
+    "badgeName": "n/a",
+    "badgeDescription": "n/a",
+    "badgePath": "n/a",
+    "points": 10
+  },
+  
+  {
+    "title": "fr_09",
+    "exerciseType": "quiz",
+    "language": "fr",
+    "category": "",
+    "question": "Comment a-t-il fait pour regarder toute une série dans une seule nuit?",
+    "answer": "Il a regardé plusieurs saisons en même temps",
+    "videoUrl": "https://www.youtube.com/embed/5LLyofyJYCk?start=0&end=78",
+    "answerOptions": [
+        "Il s'est caché dans un placard au travail en attendant que toutes les épisodes soient sorties.",
+        "Il a dit qu'il n'y a pas de séries à regarder.",
+        "Il n'a pas regardé toute la série."
+    ],
+    "badgeName": "n/a",
+    "badgeDescription": "n/a",
+    "badgePath": "n/a",
+    "points": 10
+  },
+  
+  {
+    "title": "fr_10",
+    "exerciseType": "quiz",
+    "language": "fr",
+    "category": "",
+    "question": "Sélectionnez la bonne sommaire de ce qu'il a dit:",
+    "answer": "S'inspirer est obligatoire et comme la réspiration.",
+    "videoUrl": "https://www.youtube.com/embed/c48Luh40udQ?start=234&end=300",
+    "answerOptions": [
+        "On inspire des choses en s'éxprimant.",
+        "Créer est obligatoire, surtout pour un photographe.",
+        "Inspirer c'est comme éxpirer."
+    ],
+    "badgeName": "n/a",
+    "badgeDescription": "n/a",
+    "badgePath": "n/a",
+    "points": 10
+  }
 ]
