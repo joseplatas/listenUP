@@ -131,7 +131,7 @@
         "badgeDescription": "n/a",
         "badgePath": "n/a",
         "points": 10
-      }
+      },
 
       {
         "title": "en_08",
@@ -150,7 +150,7 @@
         "badgeDescription": "n/a",
         "badgePath": "n/a",
         "points": 10
-      }
+      },
 
       {
         "title": "en_09",
@@ -169,7 +169,7 @@
         "badgeDescription": "n/a",
         "badgePath": "n/a",
         "points": 10
-      }
+      },
 
       {
         "title": "en_10",
@@ -189,6 +189,5 @@
         "badgePath": "n/a",
         "points": 10
       }
-  
-  
+
 ]
