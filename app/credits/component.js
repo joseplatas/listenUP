@@ -43,19 +43,23 @@ export class Credits extends React.Component {
 
                     <div className={classes('flex_container', 'logo_row')}>
                         <div className={styles.credits_logo_container}>
-                            <img src='app/credits/img/logo_EL.png' className={styles.credits_logo} />
+                            <a href='https://www.easy-languages.org/' target='_blank'>
+                                <img src='app/credits/img/logo_EL.png' className={styles.credits_logo} />
+                            </a>
                         </div>
 
                         <div className={styles.credits_logo_container}>
-                            <img src='app/credits/img/logo_shutupandgo.png' className={styles.credits_logo} />
+                            <a href='http://www.shutupandgo.travel/' target='_blank'>
+                                <img src='app/credits/img/logo_shutupandgo.png' className={styles.credits_logo} />
+                            </a>
                         </div>
 
                         <div className={styles.credits_link}>
-                            <a href="https://www.youtube.com/user/MonsieurDream" className={styles.credits_link_text}>Cyprien</a>
+                            <a href="https://www.youtube.com/user/MonsieurDream" target='_blank' className={styles.credits_link_text}>Cyprien</a>
                         </div>
 
                         <div className={styles.credits_link}>
-                            <a href="https://www.youtube.com/user/tomcrewther" className={styles.credits_link_text}>Tom Crewther</a>
+                            <a href="https://www.youtube.com/user/tomcrewther" target='_blank' className={styles.credits_link_text}>Tom Crewther</a>
                         </div>
                     </div>
                 </section>
@@ -67,19 +71,27 @@ export class Credits extends React.Component {
 
                     <div className={classes('flex_container', 'logo_row')}>
                         <div className={styles.credits_logo_container}>
-                            <img src='app/credits/img/logo_mongoDB.png' className={styles.credits_logo} />
+                            <a href='https://www.mongodb.com/' target='_blank'>
+                                <img src='app/credits/img/logo_mongoDB.png' className={styles.credits_logo} />
+                            </a>
                         </div>
 
                         <div className={styles.credits_logo_container}>
-                            <img src='app/credits/img/logo_nodeJS.png' className={styles.credits_logo} />
+                            <a href='https://nodejs.org/en/' target='_blank'>
+                                <img src='app/credits/img/logo_nodeJS.png' className={styles.credits_logo} />
+                            </a>
                         </div>
 
                         <div className={styles.credits_logo_container}>
-                            <img src='app/credits/img/logo_reactJS.png' className={styles.credits_logo} />
+                            <a href='https://reactjs.org/' target='_blank'>
+                                <img src='app/credits/img/logo_reactJS.png' className={styles.credits_logo} />
+                            </a>
                         </div>
 
                         <div className={styles.credits_logo_container}>
-                            <img src='app/credits/img/logo_webpack.png' className={styles.credits_logo} />
+                            <a href='https://webpack.js.org/' target='_blank'>
+                                <img src='app/credits/img/logo_webpack.png' className={styles.credits_logo} />
+                            </a>
                         </div>
                     </div>
                 </section>
