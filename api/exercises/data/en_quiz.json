@@ -105,7 +105,7 @@
         "videoUrl": "https://www.youtube.com/embed/bZYwZDqdsas?start=763&end=836",
         "answerOptions": [
             "Hungry; purse",
-            "Happy; puppye",
+            "Happy; puppy",
             "Comfortable; car"
         ],
         "badgeName": "n/a",
@@ -124,7 +124,7 @@
         "videoUrl": "https://www.youtube.com/embed/nBpPe9UweWs",
         "answerOptions": [
             "A bit warm",
-            "Really nice weather",
+            "Really nice",
             "It is raining"
         ],
         "badgeName": "n/a",
@@ -138,11 +138,11 @@
         "exerciseType": "quiz",
         "language": "en",
         "category": "",
-        "question": "At age 14 what olympic game can you compete in?",
+        "question": "At age 14 what Olympic sport can you compete in?",
         "answer": "Diving",
         "videoUrl": "https://www.youtube.com/embed/mGS4pnRc0vE?end=30",
         "answerOptions": [
-            "Gymnast",
+            "Gymnastics",
             "Speed eating contest",
             "Swimming"
         ],
@@ -182,7 +182,7 @@
         "answerOptions": [
             "30 seconds",
             "as long as you want",
-            "2 hour"
+            "2 hours"
         ],
         "badgeName": "n/a",
         "badgeDescription": "n/a",
