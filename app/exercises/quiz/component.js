@@ -21,17 +21,9 @@ function getQuizQuestion() {
 export class Quiz extends React.Component {
     constructor(props) {
         super(props);
+        this.getCurrentCourse = this.getCurrentCourse.bind(this);
         this.state = { 
           loading: true
-      }
-    }
-
-    //get the current course
-    getCurrentCourse() {
-      if(!this.state.courses)
-          throw 'Attempted to access courses before being loaded.'
-      else {
-          return this.state.courses[this.state.id]
       }
     }
 
@@ -48,12 +40,21 @@ export class Quiz extends React.Component {
               });
           })
   }
+    //get the current course
+    getCurrentCourse() {
+      if(!this.state.courses)
+          throw 'Attempted to access courses before being loaded.'
+      else {
+          return this.state.courses[this.state.id]
+      }
+    }
+
 
     /**
       Returns courses base on the language
     */
     getCourses(){
-      fetch(new Request('http://localhost:8080/api/exercises/getCourses', {
+      return fetch(new Request('http://localhost:8080/api/exercises/getCourses', {
         headers: new Headers({
           'Content-Type': 'application/json'
         }),
@@ -76,7 +77,7 @@ export class Quiz extends React.Component {
       return <iframe 
         width="560" 
         height="315" 
-        src="https://www.youtube.com/embed/5LLyofyJYCk?start=0&end=78">
+        src={this.state.courses[this.state.id].videoUrl}>
       </iframe>
     }
 
@@ -96,8 +97,9 @@ export class Quiz extends React.Component {
         );
       }
 
-      return (
-        <div className={classes('page_container', 'flex_container')}>
+      return this.state.loading
+      ? (<div className={classes('page_container','flex_container')}>Loading...</div>)
+      : (<div className={classes('page_container', 'flex_container')}>
 
             <div className={classes('exercise_container', 'flex_container')}>
 
@@ -123,7 +125,7 @@ export class Quiz extends React.Component {
                         <div className={styles.user_input}>
 
                             <h5 className={classes('blue_text', 'input_header')}>
-                            {getQuizQuestion()}
+                            {this.state.courses[this.state.id].question}
                             </h5>
 
                             <div className={classes('quiz_btns_container', 'flex_container')}>

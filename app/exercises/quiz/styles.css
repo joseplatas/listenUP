@@ -110,7 +110,7 @@
 }
 
 /*---Desktop & Tablet---*/
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 900px) {
     :local .page_header {
         flex-wrap: nowrap;
     }
