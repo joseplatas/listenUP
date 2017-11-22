@@ -258,29 +258,9 @@ export class Transcription extends React.Component {
                     <div className={classes('input_panel', 'flex_container')}>
                         <div className={styles.user_input}>
 
-<<<<<<< HEAD
-                            <h5 className={classes('blue_text', 'content_subheader')}>type what you hear:</h5>
-
-                            <form onSubmit={this.handleSubmit}>
-
-                                <label>
-                                    <textarea
-                                        id="textarea"
-                                        name='userInput'
-                                        placeholder='type here...'
-                                        value={this.state.userInput}
-                                        onChange={this.handleUserInputChange}
-                                        ref={(el) => this._input = el}
-                                        className={styles.user_input_area}
-                                        spellCheck='false' />
-                                </label>
-
-                              <input type='submit' value='enter' className={styles.enter_button}/>
-=======
                             <h5 className={classes('blue_text', 'content_subheader')}>
                             type what you hear:
                             </h5>
->>>>>>> 22db198c7e2357d4c5305ab095c772a82f1826c1
 
                             {/* USEFUL TIP FOR USER */}
                             <p>

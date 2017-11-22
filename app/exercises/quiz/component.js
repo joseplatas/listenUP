@@ -26,6 +26,29 @@ export class Quiz extends React.Component {
       }
     }
 
+    //get the current course
+    getCurrentCourse() {
+      if(!this.state.courses)
+          throw 'Attempted to access courses before being loaded.'
+      else {
+          return this.state.courses[this.state.id]
+      }
+    }
+
+    // get necessary properties and update state
+    // runs after Constructor
+    componentDidMount() {
+      this.getCourses()
+          .then(result => {
+              this.setState({
+                  loading: false,
+                  language: this.props.match.params.language, //pass as param in url
+                  courses: result.courses,
+                  id: 0
+              });
+          })
+  }
+
     /**
       Returns courses base on the language
     */
@@ -81,8 +104,8 @@ export class Quiz extends React.Component {
                 {/* EXERCISE HEADER */}
                 <div className={classes('exercise_header', 'flex_container')}>
                     <Exercise_Header 
-                    language={'en'} 
-                    title={fns.generateHeader('en')} 
+                    language={this.state.language} 
+                    title={fns.generateHeader(this.state.language)} 
                     score='0'/>
                 </div>
 
