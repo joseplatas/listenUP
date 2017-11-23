@@ -22,35 +22,40 @@ export class Quiz extends React.Component {
     constructor(props) {
         super(props);
         this.getCurrentCourse = this.getCurrentCourse.bind(this);
-        this.quizOptions = this.quizOptions.bind(this);
         this.state = { 
           loading: true
       }
     }
 
+    //begin lifecycle hooks
     // get necessary properties and update state
     // runs after Constructor
     componentDidMount() {
       this.getCourses()
           .then(result => {
               this.setState({
-                  loading: false,
                   language: this.props.match.params.language, //pass as param in url
                   courses: result.courses,
                   id: 0,
               })
           })
-          .then(() => this.quizOptions())
-  }
-    //get the current course
-    getCurrentCourse() {
-      if(!this.state.courses)
-          throw 'Attempted to access courses before being loaded.'
-      else {
-          return this.state.courses[this.state.id]
-      }
+          .then(() => {
+            this.setState({
+              options: fns.getQuizOptions(
+                () => Math.random(),
+                this.getCurrentCourse().answer,
+                this.getCurrentCourse().answerOptions)
+            })
+          })
+          .then(() => {
+            this.setState({
+              loading: false
+            })
+          })
     }
+    //end lifecycle hooks
 
+    //begin init methods
     /**
       Returns courses base on the language
     */
@@ -73,19 +78,27 @@ export class Quiz extends React.Component {
         return data;
       });
     }
+    
+    //end init methods
 
+    //begin runtime methods
+    //get the current course
+    getCurrentCourse() {
+      if(!this.state.courses)
+          throw 'Attempted to access courses before being loaded.'
+      else {
+          return this.state.courses[this.state.id]
+      }
+    }
+    //end runtime methods
+
+    //begin JSX
     renderVideo() {
       return <iframe 
         width="560" 
         height="315" 
         src={this.getCurrentCourse().videoUrl}>
       </iframe>
-    }
-
-    quizOptions() {
-      this.options = fns.getQuizOptions(
-        this.getCurrentCourse().answer,
-        this.getCurrentCourse().answerOptions)
     }
 
     render() {
@@ -136,15 +149,22 @@ export class Quiz extends React.Component {
                         <div className={styles.user_input}>
 
                             <h5 className={classes('blue_text', 'input_header')}>
-                            {this.state.courses[this.state.id].question}
+                            {this.getCurrentCourse().question}
                             </h5>
 
                             <div className={classes('quiz_btns_container', 'flex_container')}>
                                 <a className={classes('quiz_option')} href="#">
+                                  {this.state.options[0]}
                                 </a>
-                                <a className={classes('quiz_option')} href="#">Second answer to the question</a>
-                                <a className={classes('quiz_option')} href="#">Third answer to the question</a>
-                                <a className={classes('quiz_option')} href="#">Fourth answer to the question</a>
+                                <a className={classes('quiz_option')} href="#">
+                                  {this.state.options[1]}
+                                </a>
+                                <a className={classes('quiz_option')} href="#">
+                                  {this.state.options[2]}
+                                </a>
+                                <a className={classes('quiz_option')} href="#">
+                                  {this.state.options[3]}
+                                </a>
 
                             </div>
                         </div>
@@ -157,4 +177,8 @@ export class Quiz extends React.Component {
 
 
     }
+    //end JSX
+
+
+    
 }

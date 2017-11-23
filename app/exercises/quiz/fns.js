@@ -26,29 +26,27 @@ export function generateQuizDirections(language) {
 
 // creates and returns an array to fill the options
 // utilizes additional method scrambleQuestions to randomize positions
-export function getQuizOptions(correctAnswer, wrongAnswers) {
+export function getQuizOptions(rng, correctAnswer, wrongAnswers) {
     var quizOptions = [
-        correctAnswer,
         wrongAnswers[0],
         wrongAnswers[1],
+        correctAnswer,        
         wrongAnswers[2]
     ]
 
-    console.log(quizOptions)
-    shuffleOptions(quizOptions)
-    console.log(quizOptions)
+    shuffleOptions(rng, quizOptions)
 
     return quizOptions
 }
 
-function shuffleOptions(quizOptions) {
+function shuffleOptions(rng, quizOptions) {
     var currentIndex = quizOptions.length, temporaryValue, randomIndex
 
     // while there are remaining elements to shuffle
     while (0 != currentIndex) {
 
         // pick a remaining element
-        randomIndex = Math.floor(Math.random() * currentIndex)
+        randomIndex = Math.floor(rng() * currentIndex)
         currentIndex -= 1
 
         // swap it with the current element
@@ -56,8 +54,4 @@ function shuffleOptions(quizOptions) {
         quizOptions[currentIndex] = quizOptions[randomIndex]
         quizOptions[randomIndex] = temporaryValue
     }
-}
-
-export function logOptions(quizOptions) {
-    console.log(quizOptions)
 }
