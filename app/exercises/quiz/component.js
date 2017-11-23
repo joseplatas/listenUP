@@ -115,6 +115,10 @@ export class Quiz extends React.Component {
 
                 <div className={classes('video_panel','flex_container')}>
 
+                <h5 className={classes('blue_text', 'input_header')}>
+                  {fns.generateQuizDirections(this.state.language)}
+                </h5>
+
                 {this.renderVideo()}
 
                 </div>

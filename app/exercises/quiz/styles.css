@@ -60,6 +60,7 @@
 :local .video_panel {
     width: 560px;
     align-self: center;
+    flex-direction: column;
 }
 
 /*---input-panel---*/
