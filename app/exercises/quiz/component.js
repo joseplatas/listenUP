@@ -22,6 +22,7 @@ export class Quiz extends React.Component {
     constructor(props) {
         super(props);
         this.getCurrentCourse = this.getCurrentCourse.bind(this);
+        this.quizOptions = this.quizOptions.bind(this);
         this.state = { 
           loading: true
       }
@@ -36,9 +37,10 @@ export class Quiz extends React.Component {
                   loading: false,
                   language: this.props.match.params.language, //pass as param in url
                   courses: result.courses,
-                  id: 0
-              });
+                  id: 0,
+              })
           })
+          .then(() => this.quizOptions())
   }
     //get the current course
     getCurrentCourse() {
@@ -48,7 +50,6 @@ export class Quiz extends React.Component {
           return this.state.courses[this.state.id]
       }
     }
-
 
     /**
       Returns courses base on the language
@@ -77,8 +78,14 @@ export class Quiz extends React.Component {
       return <iframe 
         width="560" 
         height="315" 
-        src={this.state.courses[this.state.id].videoUrl}>
+        src={this.getCurrentCourse().videoUrl}>
       </iframe>
+    }
+
+    quizOptions() {
+      this.options = fns.getQuizOptions(
+        this.getCurrentCourse().answer,
+        this.getCurrentCourse().answerOptions)
     }
 
     render() {
@@ -133,8 +140,7 @@ export class Quiz extends React.Component {
                             </h5>
 
                             <div className={classes('quiz_btns_container', 'flex_container')}>
-                                <a className={classes('quiz_option')} href="#">First answer to the question
-                            which has a bit of a long answer, possibly two lines?
+                                <a className={classes('quiz_option')} href="#">
                                 </a>
                                 <a className={classes('quiz_option')} href="#">Second answer to the question</a>
                                 <a className={classes('quiz_option')} href="#">Third answer to the question</a>
