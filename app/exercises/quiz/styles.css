@@ -104,6 +104,15 @@
     color: #475055;
 }
 
+:local .quiz_option_correct {
+    background-color: #9ed4ae;
+}
+
+:local .quiz_option_incorrect {
+    background-color: #fe4a49;
+    color: #fffef3;
+}
+
 :local .quiz_option:hover {
     border-color: #33669a;
     background-color: #33669a;
