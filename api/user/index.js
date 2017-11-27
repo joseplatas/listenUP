@@ -43,8 +43,8 @@ userRouter.post("/settingsPost",function(req, res, next){
     _id: req.body._id,
     username: req.body.username,
     email: req.body.email,
-    newPassword: req.body.newPassword,
-    currentPassword: req.body.currentPassword
+    newPassword: (req.body.newPassword != undefined)?req.body.newPassword: "",
+    currentPassword: (req.body.currentPassword != undefined)?req.body.currentPassword: ""
   };
   var userDB = {};
   //get user information and comparte it to see to update it
@@ -75,7 +75,7 @@ userRouter.post("/settingsPost",function(req, res, next){
           });
         }else{
           response.err = -3;
-          response.message = "Password was incorrect";
+          response.message = "Current Password was incorrect";
           res.send(response);
         }
 

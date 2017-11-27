@@ -63,8 +63,13 @@ export class Settings extends React.Component {
     _allowEdit(event){
       event.stopPropagation();
       this.setState({
+        newPassword: "",
+        currentPassword: "",
         disableInput: !this.state.disableInput
       });
+      //clear input text
+      this.refs.newPassword.value = '';
+      this.refs.currentPassword.value = '';
     }
     // validate answer with api
     // get values of expected answer & score to display
@@ -90,9 +95,22 @@ export class Settings extends React.Component {
           return response.json();
         }).then((data)=>{
           alert(data.message);
-          this.setState({
-            //SET THE STATES IF NEEDED
-          })
+          //if there is no errors than update localstorage
+          if(data.err == 0){
+            //update localstorage
+            localStorage.setItem("username", this.state.username);
+            localStorage.setItem("email", this.state.email);
+            //update the state
+            this.setState({
+              newPassword: "",
+              currentPassword: "",
+              disableInput: true
+            });
+            //clear input text
+            this.refs.newPassword.value = '';
+            this.refs.currentPassword.value = '';
+
+          }
         });
     }
 
@@ -183,7 +201,8 @@ export class Settings extends React.Component {
                                 className='inputField'
                                 name='newPassword'
                                 type='password'
-                                placeholder='New Password'
+                                placeholder='New Password (Optional)'
+                                ref='newPassword'
                                 onChange={this.handleNewPasswordChange}
                                 disabled = {(this.state.disableInput)?"disabled": ""}
                             />
@@ -197,8 +216,9 @@ export class Settings extends React.Component {
                                   className='inputField'
                                   name='currentPassword'
                                   type='password'
+                                  ref='currentPassword'
                                   placeholder='Current Password'
-                                  onChange={this.handleCurrentPassword}
+                                  onChange={this.handleCurrentPasswordChange}
                               />
                           </label>
                         </div>
