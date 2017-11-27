@@ -26,7 +26,7 @@ export class Quiz extends React.Component {
         this.handleGoNext = this.handleGoNext.bind(this);
         this.renderOptionButton = this.renderOptionButton.bind(this);
         this.renderSelectedOptionButton = this.renderSelectedOptionButton.bind(this);
-        this.state = { 
+        this.state = {
           loading: true
       }
     }
@@ -77,7 +77,7 @@ export class Quiz extends React.Component {
         return data;
       });
     }
-    
+
     //end init methods
 
     //begin runtime methods
@@ -170,9 +170,9 @@ export class Quiz extends React.Component {
     // render video player
     renderVideo() {
       return !this.state.videoPlayerHidden && (
-      <iframe 
-        width="560" 
-        height="315" 
+      <iframe
+        width="560"
+        height="315"
         src={this.state.currentCourse.videoUrl}>
       </iframe>
       )
@@ -186,8 +186,8 @@ export class Quiz extends React.Component {
           this.renderSelectedOptionButton(option)
         )
         : (
-          <button 
-          className={classes('quiz_option')} 
+          <button
+          className={classes('quiz_option')}
           onClick={e => this.handleSubmit(option)} >
           {option}
           </button>
@@ -198,13 +198,13 @@ export class Quiz extends React.Component {
     renderSelectedOptionButton(option) {
       return (this.state.score == 10)
       ? (
-          <button 
+          <button
           className={classes('quiz_option','quiz_option_correct')}>
           {option}
           </button>
       )
       : (
-        <button 
+        <button
         className={classes('quiz_option', 'quiz_option_incorrect')}>
         {option}
         </button>
@@ -215,8 +215,8 @@ export class Quiz extends React.Component {
       return this.state.userAnswer
         ? (
           <form onSubmit={this.handleGoNext}>
-            <input type='submit' 
-            value='next' 
+            <input type='submit'
+            value='next'
             className={classes('quiz_option','next_btn')}/>
           </form>
         )
@@ -249,9 +249,9 @@ export class Quiz extends React.Component {
 
                 {/* EXERCISE HEADER */}
                 <div className={classes('exercise_header', 'flex_container')}>
-                    <Exercise_Header 
-                    language={this.state.language} 
-                    title={fns.generateHeader(this.state.language)} 
+                    <Exercise_Header
+                    language={this.state.language}
+                    title={fns.generateHeader(this.state.language)}
                     score={this.state.score}/>
                 </div>
 
@@ -277,7 +277,7 @@ export class Quiz extends React.Component {
                             </h5>
 
                             <div className={classes('quiz_btns_container', 'flex_container')}>
-                                
+
                                 {/* <a className={classes('quiz_option')} href="#">
                                   {this.state.options[0]}
                                 </a>
@@ -300,7 +300,7 @@ export class Quiz extends React.Component {
                                 {this.renderOptionButton(this.state.currentCourse.options[3])}
 
                                 {this.renderNextButton()}
-                              
+
                             </div>
                         </div>
                     </div>
@@ -315,5 +315,5 @@ export class Quiz extends React.Component {
     //end JSX
 
 
-    
+
 }

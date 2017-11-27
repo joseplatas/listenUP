@@ -31,7 +31,7 @@ export class Transcription extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleGoNext = this.handleGoNext.bind(this);
         this.renderForm = this.renderForm.bind(this);
-        this.state = { 
+        this.state = {
             loading: true
         }
     }
@@ -173,7 +173,7 @@ export class Transcription extends React.Component {
 
                 <label>
                     <textarea
-                        disabled 
+                        disabled
                         id="textarea"
                         name='userInput'
                         placeholder='type here...'
@@ -207,7 +207,7 @@ export class Transcription extends React.Component {
     render() {
 
         // if the user is not logged in, tell them to do so
-          if(localStorage.user_id == undefined){
+          if(localStorage._id == undefined){
             return(
               <div className={classes('page_container', 'flex_container')}>
                 <div className={classes('center_container')}>
@@ -233,9 +233,9 @@ export class Transcription extends React.Component {
 
                 {/* EXERCISE HEADER */}
                 <div className={classes('exercise_header', 'flex_container')}>
-                    <Exercise_Header 
-                    language={this.state.language} 
-                    title={fns.generateHeader(this.state.language)} 
+                    <Exercise_Header
+                    language={this.state.language}
+                    title={fns.generateHeader(this.state.language)}
                     score={this.state.score}/>
                 </div>
 
@@ -265,14 +265,14 @@ export class Transcription extends React.Component {
                             {/* USEFUL TIP FOR USER */}
                             <p>
                             You can skip fillers sounds like 'umm...' and 'uhh...',
-                            but remember to include filler <em>words</em> such as 
+                            but remember to include filler <em>words</em> such as
                             'like' and 'well.'
                             </p>
 
                             {this.renderForm()}
                             {/* FEEDBACK TOOLTIP */}
                             <div className={styles.tooltip_feedback}>
-                                <Tooltip 
+                                <Tooltip
                                 expectedAnswer={this.state.expectedAnswer}/>
                             </div>
                         </div>

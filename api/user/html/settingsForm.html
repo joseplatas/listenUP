@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Test Register form</title>
+  <title>Test Settings form</title>
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <!-- jQuery library -->
@@ -15,20 +15,19 @@
     }
   </style>
 </head>
-+
 <body>
 
   <div class="container">
       <h1>Update Settings Form</h1>
       <hr>
-      <form class="form-horizontal" action="/api/user/settings" method="post">
+      <form class="form-horizontal" action="/api/user/settingsPost" method="post">
         <fieldset>
 
           <!-- Text input-->
           <div class="form-group">
             <label class="col-md-4 control-label" for="">_id:</label>
             <div class="col-md-4">
-              <input name="_id" type="text" placeholder="" value="59fd744e6f926ba6f0029ab0" class="form-control input-md">
+              <input name="_id" type="text" placeholder="" value="5a1b6c64c6aaf953e0eba054" class="form-control input-md">
             </div>
           </div>
 
@@ -41,7 +40,7 @@
           <div class="form-group">
             <label class="col-md-4 control-label" for="">New email:</label>
             <div class="col-md-4">
-              <input name="newEmail" type="text" placeholder="" value="jplatas@icuracao.com" class="form-control input-md">
+              <input name="email" type="text" placeholder="" value="jplatas@outlook.com" class="form-control input-md">
             </div>
           </div>
 
