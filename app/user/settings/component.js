@@ -34,7 +34,7 @@ export class Settings extends React.Component {
 
                         <label className={classes('formLabel', 'flex_container')}>
                             <div className={styles.field_tooltip}>
-                                <p className={styles.tooltip_text}>change the name we'll greet you with.</p>
+                                <p className={styles.tooltip_text}>change the name we&#39;ll greet you with.</p>
                             </div>
                             <input
                                 className='inputField'
@@ -95,7 +95,7 @@ export class Settings extends React.Component {
                         <a href="/" className={classes('delete_account_link')}>
                         delete account
                          </a>
-                         
+
                     {/*---FORM BUTTONS---*/}
 
                     <div className={classes('buttons_container','flex_container')}>

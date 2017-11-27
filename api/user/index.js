@@ -1,6 +1,7 @@
 const fns = require('./fns.js')
 const data = require('./data.js')
 
+
 //initialize
 var express = require('express');
 var path = require('path');
@@ -25,7 +26,7 @@ userRouter.get("/settings",function(req, res, next){
 });
 
 //update settings
-userRouter.post("/settings",function(req, res, next){
+userRouter.post("/settingsPost",function(req, res, next){
   res.setHeader('Content-Type', 'application/json');
   var response = {};
 
@@ -37,7 +38,53 @@ userRouter.post("/settings",function(req, res, next){
     response.message = "Missing user_id";
     res.send(response);
   }
-  //PENDING CODE TO UPDATE THE SETTINGS
+  //assign variables
+  var userInfo = {
+    _id: req.body._id,
+    username: req.body.username,
+    email: req.body.email,
+    newPassword: req.body.newPassword,
+    currentPassword: req.body.currentPassword
+  };
+  var userDB = {};
+  //get user information and comparte it to see to update it
+  User.getUserById(userInfo._id, function(error, user){
+    if(error || !user){
+      //if an error, or user is not found
+      response.err = -1;
+      response.message = "User not found";
+      response.error = error;
+      res.send(response);
+    }else if (user.active == 0) {
+      //if unactive user, then send response
+      response.err = -2;
+      response.message = "Unactive user";
+      res.send(response);
+    }else{
+      userDB = user;
+      //Check if passwords are matching, if so update the data that is different
+      fns.comparePasswords(userInfo.currentPassword, userDB.password, function(result){
+        //correct password
+        if(result){
+          var passwordOkay = result; //
+          //update the data the was different
+          User.updateUserInfo(userInfo, passwordOkay, function(error, result){
+            response.err = 0;
+            response.message = "Updated information";
+            res.send(response)
+          });
+        }else{
+          response.err = -3;
+          response.message = "Password was incorrect";
+          res.send(response);
+        }
+
+      });
+    }
+  });
+
+
+
 });
 
 
