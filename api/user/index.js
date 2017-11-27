@@ -117,8 +117,9 @@ userRouter.post('/loginPost', function(req, res, next){
         res.send(response);
       }else{
         //send user id and email
-        response.user_id = user._id;
+        response._id = user._id;
         response.username = user.username;
+        response.email = user.email;
         response.err = 0;
         response.message = "User found";
         res.send(response)

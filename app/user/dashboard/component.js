@@ -24,7 +24,7 @@ export class Dashboard extends React.Component {
 
     render() {
       //console.log("dashboard greeting");
-      if(localStorage.user_id == undefined){
+      if(localStorage._id == undefined){
         return(
           <div className={classes('page_container', 'flex_container')}>
             <div className={classes('center_container')}>

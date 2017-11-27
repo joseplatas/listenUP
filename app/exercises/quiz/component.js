@@ -22,7 +22,7 @@ export class Quiz extends React.Component {
     constructor(props) {
         super(props);
         this.getCurrentCourse = this.getCurrentCourse.bind(this);
-        this.state = { 
+        this.state = {
           loading: true
       }
     }
@@ -78,7 +78,7 @@ export class Quiz extends React.Component {
         return data;
       });
     }
-    
+
     //end init methods
 
     //begin runtime methods
@@ -94,15 +94,15 @@ export class Quiz extends React.Component {
 
     //begin JSX
     renderVideo() {
-      return <iframe 
-        width="560" 
-        height="315" 
+      return <iframe
+        width="560"
+        height="315"
         src={this.getCurrentCourse().videoUrl}>
       </iframe>
     }
 
     render() {
-      if(localStorage.user_id == undefined){
+      if(localStorage._id == undefined){
         return(
           <div className={classes('page_container', 'flex_container')}>
             <div className={classes('center_container')}>
@@ -125,9 +125,9 @@ export class Quiz extends React.Component {
 
                 {/* EXERCISE HEADER */}
                 <div className={classes('exercise_header', 'flex_container')}>
-                    <Exercise_Header 
-                    language={this.state.language} 
-                    title={fns.generateHeader(this.state.language)} 
+                    <Exercise_Header
+                    language={this.state.language}
+                    title={fns.generateHeader(this.state.language)}
                     score='0'/>
                 </div>
 
@@ -180,5 +180,5 @@ export class Quiz extends React.Component {
     //end JSX
 
 
-    
+
 }

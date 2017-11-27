@@ -1,3 +1,12 @@
+/*input disalbled/*/
+.inputField{
+  font-size: 16px;
+}
+.inputField:disabled{
+  background: #f1f1f1;
+  border: 0;
+}
+
 
 :local .flex_container {
     display: flex;
@@ -7,7 +16,7 @@
 /*---Shared Styles---*/
 
 :local .page_container {
-    min-height: 100vh;
+    min-height: calc(100vh - 130px);
     background-color: #fffef3;
     flex-direction: column;
     justify-content: center;
@@ -59,27 +68,27 @@
 
 :local .buttons_container {
     flex-direction: column;
-    justify-content: center;
+    justify-content: left;
     margin-top: 20px;
 }
 
 :local .settings_button {
-    width: 100%;
+    width: auto;
+    line-height: 50px;
     height: 50px;
+    padding: 0 10px;
     font-size: 1.5em;
-    color: #fffef3;    
+    color: #fffef3;
+    cursor: pointer;
+    outline: none;
+    margin-right: 10px;
 }
 
-:local .settings_button:hover {
-    background-color: #9ed4ae;
-    color: #475055;
-}
-
-:local .submit_button {
+:local .settings_button.submit_button {
     background-color: #33669a;
 }
 
-:local .cancel_button {
+:local .settings_button.cancel_button {
     background-color: #475055;
 }
 
@@ -107,6 +116,6 @@
     }
 
     :local .settings_button {
-        width: 200px;
+
     }
 }

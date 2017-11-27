@@ -21,8 +21,9 @@ function classes(...classNames) {
 export class Header extends React.Component{
   //kill localStorage
   logOut(){
-    localStorage.removeItem("user_id");
+    localStorage.removeItem("_id");
     localStorage.removeItem("username");
+    localStorage.removeItem("email");
     window.location.href = "";
   }
   render(){
