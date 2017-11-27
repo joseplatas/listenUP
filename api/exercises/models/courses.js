@@ -144,7 +144,7 @@ CourseSchema.statics.getCoursesBy = function(language, exerciseType, callback){
 //validate the answer and give back a score
 CourseSchema.statics.validateCourseAnswer = function(courseId, userAnswer, callback){
   //check if course_id and userAnswer was pass
-  if(courseId && userAnswer){
+  if((typeof courseId !== 'undefined') && userAnswer){
     Course.findOne({courseId: courseId})
           .exec(
             function(error,course) {

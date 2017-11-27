@@ -66,7 +66,7 @@ exerciseRouter.post('/verifyCourseAnswer',function(req, res, next){
   var response = {};
 
   //check if all parameters are pass
-  if(req.body.username && req.body.courseId && req.body.userAnswer){
+  if(req.body.username && (typeof req.body.courseId !== 'undefined') && req.body.userAnswer){
     //ALL VALUES WERE \PASS
   }else{
     response.err = -1;

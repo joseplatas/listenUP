@@ -21,7 +21,11 @@ function getQuizQuestion() {
 export class Quiz extends React.Component {
     constructor(props) {
         super(props);
-        this.getCurrentCourse = this.getCurrentCourse.bind(this);
+        //this.getCurrentCourse = this.getCurrentCourse.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleGoNext = this.handleGoNext.bind(this);
+        this.renderOptionButton = this.renderOptionButton.bind(this);
+        this.renderSelectedOptionButton = this.renderSelectedOptionButton.bind(this);
         this.state = {
           loading: true
       }
@@ -40,12 +44,7 @@ export class Quiz extends React.Component {
               })
           })
           .then(() => {
-            this.setState({
-              options: fns.getQuizOptions(
-                () => Math.random(),
-                this.getCurrentCourse().answer,
-                this.getCurrentCourse().answerOptions)
-            })
+            this.handleGoNext()
           })
           .then(() => {
             this.setState({
@@ -82,27 +81,152 @@ export class Quiz extends React.Component {
     //end init methods
 
     //begin runtime methods
+
     //get the current course
-    getCurrentCourse() {
-      if(!this.state.courses)
-          throw 'Attempted to access courses before being loaded.'
-      else {
-          return this.state.courses[this.state.id]
-      }
+    // getCurrentCourse() {
+    //   if(!this.state.courses)
+    //       throw 'Attempted to access courses before being loaded.'
+    //   else {
+    //       return this.state.courses[this.state.id]
+    //   }
+    // }
+
+    handleSubmit(userAnswer) {
+      var event = new MouseEvent('click', {
+        bubbles: true,
+        cancelable: false,
+        view: window
+      });
+
+      //api call to validate answer
+      fetch(new Request('http://localhost:8080/api/exercises/verifyCourseAnswer', {
+        headers: new Headers({
+          'Content-Type': 'application/json'
+        }),
+        method: 'POST',
+        body: JSON.stringify({
+          "username": localStorage.username,
+          "courseId": this.state.currentCourse.id,
+          "userAnswer": userAnswer
+          })
+      })).then((response) => {
+        //get json full response after is done processing
+        return response.json();
+      }).then((data)=>{
+        this.setState({
+            userAnswer: userAnswer,
+            expectedAnswer: data.validateRes.answer,
+            score: data.validateRes.pointsEarned
+        })
+      });
     }
+
+    // allows to move on to the next course item
+    handleGoNext(event) {
+      if(event)
+        event.preventDefault();
+
+      const currentCourseIndex = fns.findCourseIndexById(this.state.courses, (this.state.currentCourse || {}).id)
+      const nextCourse = this.state.courses[(currentCourseIndex + 1) % this.state.courses.length];
+      console.log(currentCourseIndex)
+      console.log(nextCourse)
+      const scrambledNextCourse = {
+        id: nextCourse.courseId,
+        options: fns.getQuizOptions(
+          () => Math.random(),
+          nextCourse.answer,
+          nextCourse.answerOptions),
+        videoUrl: nextCourse.videoUrl,
+        question: nextCourse.question
+      }
+
+      console.log(scrambledNextCourse)
+      //return value from above
+      this.setState({
+        score: '',
+        expectedAnswer: '',
+        userAnswer: null,
+        currentCourse: scrambledNextCourse
+      })
+
+        //reloads audio player
+        this.refreshVideoPlayer();
+  }
+
     //end runtime methods
 
     //begin JSX
+
+    // refresh video player
+    refreshVideoPlayer() {
+      this.setState({
+          videoPlayerHidden: true
+      })
+      setTimeout(() => this.setState({
+          videoPlayerHidden: false
+      }), 100)
+  }
+
+    // render video player
     renderVideo() {
-      return <iframe
+      return !this.state.videoPlayerHidden && (
+      <iframe
         width="560"
         height="315"
-        src={this.getCurrentCourse().videoUrl}>
+        src={this.state.currentCourse.videoUrl}>
       </iframe>
+      )
+    }
+
+    // render option buttons
+
+    renderOptionButton(option) {
+      return this.state.userAnswer
+        ? (
+          this.renderSelectedOptionButton(option)
+        )
+        : (
+          <button
+          className={classes('quiz_option')}
+          onClick={e => this.handleSubmit(option)} >
+          {option}
+          </button>
+        )
+    }
+
+    // change color when receiving results
+    renderSelectedOptionButton(option) {
+      return (this.state.score == 10)
+      ? (
+          <button
+          className={classes('quiz_option','quiz_option_correct')}>
+          {option}
+          </button>
+      )
+      : (
+        <button
+        className={classes('quiz_option', 'quiz_option_incorrect')}>
+        {option}
+        </button>
+      )
+    }
+
+    renderNextButton() {
+      return this.state.userAnswer
+        ? (
+          <form onSubmit={this.handleGoNext}>
+            <input type='submit'
+            value='next'
+            className={classes('quiz_option','next_btn')}/>
+          </form>
+        )
+        : (
+          <button className={classes('quiz_option','next_hidden')}></button>
+        )
     }
 
     render() {
-      if(localStorage._id == undefined){
+      if(localStorage.user_id == undefined){
         return(
           <div className={classes('page_container', 'flex_container')}>
             <div className={classes('center_container')}>
@@ -128,7 +252,7 @@ export class Quiz extends React.Component {
                     <Exercise_Header
                     language={this.state.language}
                     title={fns.generateHeader(this.state.language)}
-                    score='0'/>
+                    score={this.state.score}/>
                 </div>
 
                 <div className={classes('exercise_content', 'flex_container')}>
@@ -149,11 +273,12 @@ export class Quiz extends React.Component {
                         <div className={styles.user_input}>
 
                             <h5 className={classes('blue_text', 'input_header')}>
-                            {this.getCurrentCourse().question}
+                            {this.state.currentCourse.question}
                             </h5>
 
                             <div className={classes('quiz_btns_container', 'flex_container')}>
-                                <a className={classes('quiz_option')} href="#">
+
+                                {/* <a className={classes('quiz_option')} href="#">
                                   {this.state.options[0]}
                                 </a>
                                 <a className={classes('quiz_option')} href="#">
@@ -164,7 +289,17 @@ export class Quiz extends React.Component {
                                 </a>
                                 <a className={classes('quiz_option')} href="#">
                                   {this.state.options[3]}
-                                </a>
+                                </a> */}
+
+                                {this.renderOptionButton(this.state.currentCourse.options[0])}
+
+                                {this.renderOptionButton(this.state.currentCourse.options[1])}
+
+                                {this.renderOptionButton(this.state.currentCourse.options[2])}
+
+                                {this.renderOptionButton(this.state.currentCourse.options[3])}
+
+                                {this.renderNextButton()}
 
                             </div>
                         </div>
