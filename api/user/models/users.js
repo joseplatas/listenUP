@@ -96,8 +96,8 @@ UserSchema.statics.addCourseToUser = function(username, course, callback){
                  callback(error);
                }else if(!user){
                  var customErr = {
-                  origin: "mode/users.js",
-                  message: "User not found, course taken not save in DB"
+                  origin: "models/users.js",
+                  message: "User not found, course taken not saved in DB"
                  };
                  callback(customErr);
                }else{

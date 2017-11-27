@@ -24,6 +24,12 @@ export function generateQuizDirections(language) {
     }
 }
 
+export function findCourseIndexById(courses, courseId) {
+    return courseId 
+        ? courses.indexOf(courses.find(c => c.courseId === courseId))
+        : -1
+}
+
 // creates and returns an array to fill the options
 // utilizes additional method scrambleQuestions to randomize positions
 export function getQuizOptions(rng, correctAnswer, wrongAnswers) {

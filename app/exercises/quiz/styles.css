@@ -100,6 +100,7 @@
     padding: 2%;
     margin-top: 5px;
 
+    text-align: left;
     text-decoration: none;
     color: #475055;
 }
@@ -115,6 +116,26 @@
 
 :local .quiz_option:hover {
     border-color: #33669a;
+    background-color: #33669a;
+    color: #fffef3;
+}
+
+:local .next_hidden {
+    background-color: #fffef3;
+    border-width: 0;
+    border-style: none;
+    border-color: none;
+}
+
+:local .next_hidden:hover {
+    border-color: none;
+    background-color: #fffef3;
+}
+
+:local .next_btn {
+    font-size: 1.5em;
+    text-align: center;
+
     background-color: #33669a;
     color: #fffef3;
 }

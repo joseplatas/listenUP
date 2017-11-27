@@ -21,7 +21,7 @@ function getQuizQuestion() {
 export class Quiz extends React.Component {
     constructor(props) {
         super(props);
-        this.getCurrentCourse = this.getCurrentCourse.bind(this);
+        //this.getCurrentCourse = this.getCurrentCourse.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleGoNext = this.handleGoNext.bind(this);
         this.renderOptionButton = this.renderOptionButton.bind(this);
@@ -83,13 +83,13 @@ export class Quiz extends React.Component {
     //begin runtime methods
 
     //get the current course
-    getCurrentCourse() {
-      if(!this.state.courses)
-          throw 'Attempted to access courses before being loaded.'
-      else {
-          return this.state.courses[this.state.id]
-      }
-    }
+    // getCurrentCourse() {
+    //   if(!this.state.courses)
+    //       throw 'Attempted to access courses before being loaded.'
+    //   else {
+    //       return this.state.courses[this.state.id]
+    //   }
+    // }
 
     handleSubmit(userAnswer) {
       var event = new MouseEvent('click', {
@@ -106,7 +106,7 @@ export class Quiz extends React.Component {
         method: 'POST',
         body: JSON.stringify({
           "username": localStorage.username,
-          "courseId": this.getCurrentCourse().courseId,
+          "courseId": this.state.currentCourse.id,
           "userAnswer": userAnswer
           })
       })).then((response) => {
@@ -126,17 +126,28 @@ export class Quiz extends React.Component {
       if(event)
         event.preventDefault();
 
+      const currentCourseIndex = fns.findCourseIndexById(this.state.courses, (this.state.currentCourse || {}).id)
+      const nextCourse = this.state.courses[(currentCourseIndex + 1) % this.state.courses.length];
+      console.log(currentCourseIndex)
+      console.log(nextCourse)
+      const scrambledNextCourse = {
+        id: nextCourse.courseId,
+        options: fns.getQuizOptions(
+          () => Math.random(),
+          nextCourse.answer,
+          nextCourse.answerOptions),
+        videoUrl: nextCourse.videoUrl,
+        question: nextCourse.question
+      }
+
+      console.log(scrambledNextCourse)
       //return value from above
       this.setState({
-          id: (this.state.id + 1)%this.state.courses.length,
-          score: '',
-          expectedAnswer: '',
-          userAnswer: null,
-          options: fns.getQuizOptions(
-            () => Math.random(),
-            this.getCurrentCourse().answer,
-            this.getCurrentCourse().answerOptions)
-        })
+        score: '',
+        expectedAnswer: '',
+        userAnswer: null,
+        currentCourse: scrambledNextCourse
+      })
 
         //reloads audio player
         this.refreshVideoPlayer();
@@ -162,7 +173,7 @@ export class Quiz extends React.Component {
       <iframe 
         width="560" 
         height="315" 
-        src={this.getCurrentCourse().videoUrl}>
+        src={this.state.currentCourse.videoUrl}>
       </iframe>
       )
     }
@@ -206,11 +217,11 @@ export class Quiz extends React.Component {
           <form onSubmit={this.handleGoNext}>
             <input type='submit' 
             value='next' 
-            className={classes('quiz_option')}/>
+            className={classes('quiz_option','next_btn')}/>
           </form>
         )
         : (
-          <div></div>
+          <button className={classes('quiz_option','next_hidden')}></button>
         )
     }
 
@@ -262,7 +273,7 @@ export class Quiz extends React.Component {
                         <div className={styles.user_input}>
 
                             <h5 className={classes('blue_text', 'input_header')}>
-                            {this.getCurrentCourse().question}
+                            {this.state.currentCourse.question}
                             </h5>
 
                             <div className={classes('quiz_btns_container', 'flex_container')}>
@@ -280,13 +291,13 @@ export class Quiz extends React.Component {
                                   {this.state.options[3]}
                                 </a> */}
 
-                                {this.renderOptionButton(this.state.options[0])}
+                                {this.renderOptionButton(this.state.currentCourse.options[0])}
 
-                                {this.renderOptionButton(this.state.options[1])}
+                                {this.renderOptionButton(this.state.currentCourse.options[1])}
 
-                                {this.renderOptionButton(this.state.options[2])}
+                                {this.renderOptionButton(this.state.currentCourse.options[2])}
 
-                                {this.renderOptionButton(this.state.options[3])}
+                                {this.renderOptionButton(this.state.currentCourse.options[3])}
 
                                 {this.renderNextButton()}
                               
