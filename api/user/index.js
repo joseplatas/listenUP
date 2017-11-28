@@ -35,7 +35,7 @@ userRouter.post("/settingsPost",function(req, res, next){
     //ALL VALUES WERE PASS
   }else{
     response.err = -1;
-    response.message = "Missing user_id";
+    response.message = "Missing _id";
     res.send(response);
   }
   //assign variables
@@ -165,7 +165,7 @@ userRouter.post('/registerPost', function(req, res, next){
       res.send(response);
     }else{
       //PENDING: log the user in and send them to dashboard
-      response.user_id = user._id;
+      response._id = user._id;
       response.username = user.username;
       response.email = user.email;
       response.err = 0;
