@@ -21,7 +21,6 @@ function getQuizQuestion() {
 export class Quiz extends React.Component {
     constructor(props) {
         super(props);
-        //this.getCurrentCourse = this.getCurrentCourse.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleGoNext = this.handleGoNext.bind(this);
         this.renderOptionButton = this.renderOptionButton.bind(this);
@@ -55,9 +54,8 @@ export class Quiz extends React.Component {
     //end lifecycle hooks
 
     //begin init methods
-    /**
-      Returns courses base on the language
-    */
+
+    // returns courses based on language
     getCourses(){
       return fetch(new Request('http://localhost:8080/api/exercises/getCourses', {
         headers: new Headers({
@@ -81,15 +79,6 @@ export class Quiz extends React.Component {
     //end init methods
 
     //begin runtime methods
-
-    //get the current course
-    // getCurrentCourse() {
-    //   if(!this.state.courses)
-    //       throw 'Attempted to access courses before being loaded.'
-    //   else {
-    //       return this.state.courses[this.state.id]
-    //   }
-    // }
 
     handleSubmit(userAnswer) {
       var event = new MouseEvent('click', {
@@ -128,8 +117,8 @@ export class Quiz extends React.Component {
 
       const currentCourseIndex = fns.findCourseIndexById(this.state.courses, (this.state.currentCourse || {}).id)
       const nextCourse = this.state.courses[(currentCourseIndex + 1) % this.state.courses.length];
-      console.log(currentCourseIndex)
-      console.log(nextCourse)
+
+      // prepares next course and shuffles its options
       const scrambledNextCourse = {
         id: nextCourse.courseId,
         options: fns.getQuizOptions(
@@ -140,7 +129,6 @@ export class Quiz extends React.Component {
         question: nextCourse.question
       }
 
-      console.log(scrambledNextCourse)
       //return value from above
       this.setState({
         score: '',
@@ -211,6 +199,8 @@ export class Quiz extends React.Component {
       )
     }
 
+    // renders Next button when question has been answered
+    // remains blank if not
     renderNextButton() {
       return this.state.userAnswer
         ? (
@@ -225,6 +215,7 @@ export class Quiz extends React.Component {
         )
     }
 
+    // allows user to access page only if they are logged in
     render() {
       if(localStorage._id == undefined){
         return(
@@ -241,55 +232,49 @@ export class Quiz extends React.Component {
         );
       }
 
+      // returns component if the page is completely loaded
       return this.state.loading
       ? (<div className={classes('page_container','flex_container')}>Loading...</div>)
       : (<div className={classes('page_container', 'flex_container')}>
 
             <div className={classes('exercise_container', 'flex_container')}>
 
-                {/* EXERCISE HEADER */}
+                {/* pulls in Exercise_Header component */}
                 <div className={classes('exercise_header', 'flex_container')}>
                     <Exercise_Header
                     language={this.state.language}
+                    // generates a language-appropriate title
                     title={fns.generateHeader(this.state.language)}
                     score={this.state.score}/>
                 </div>
 
                 <div className={classes('exercise_content', 'flex_container')}>
 
+                {/* begin video panel */}
                 <div className={classes('video_panel','flex_container')}>
 
-                <h5 className={classes('blue_text', 'input_header')}>
-                  {fns.generateQuizDirections(this.state.language)}
-                </h5>
+                  {/* generates instructions for user depending on language */}
+                  <h5 className={classes('blue_text', 'input_header')}>
+                    {fns.generateQuizDirections(this.state.language)}
+                  </h5>
 
-                {this.renderVideo()}
+                  {/* renders video */}
+                  {this.renderVideo()}
 
                 </div>
 
+                {/* begin input panel */}
                     <div className={classes('input_panel', 'flex_container')}>
-
 
                         <div className={styles.user_input}>
 
+                            {/* generations course question */}
                             <h5 className={classes('blue_text', 'input_header')}>
-                            {this.state.currentCourse.question}
+                              {this.state.currentCourse.question}
                             </h5>
 
+                            {/* renders course options and Next button (if question has been answered) */}
                             <div className={classes('quiz_btns_container', 'flex_container')}>
-
-                                {/* <a className={classes('quiz_option')} href="#">
-                                  {this.state.options[0]}
-                                </a>
-                                <a className={classes('quiz_option')} href="#">
-                                  {this.state.options[1]}
-                                </a>
-                                <a className={classes('quiz_option')} href="#">
-                                  {this.state.options[2]}
-                                </a>
-                                <a className={classes('quiz_option')} href="#">
-                                  {this.state.options[3]}
-                                </a> */}
 
                                 {this.renderOptionButton(this.state.currentCourse.options[0])}
 
