@@ -226,7 +226,7 @@ export class Quiz extends React.Component {
     }
 
     render() {
-      if(localStorage.user_id == undefined){
+      if(localStorage._id == undefined){
         return(
           <div className={classes('page_container', 'flex_container')}>
             <div className={classes('center_container')}>
