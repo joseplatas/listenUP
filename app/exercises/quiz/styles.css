@@ -67,17 +67,16 @@
 /*---input-panel---*/
 
 :local .input_panel {
-    padding: 2%;
     flex-direction: column;
-    justify-content: center;
     min-width: 400px;
     max-width: 500px;
+    padding-left: 3%;
 }
 
 :local .input_header {
     font-size: 2em;
-    
-    margin-top: 10px;
+    min-height: 75px;
+    margin-top: 0;
     margin-bottom: 10px;
 }
 
@@ -104,6 +103,7 @@
     text-align: left;
     text-decoration: none;
     color: #475055;
+    font-size: 1.2em;
 }
 
 :local .quiz_option_correct {
