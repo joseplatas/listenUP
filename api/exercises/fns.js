@@ -2,6 +2,17 @@ var fs = require("fs");
 var path = require("path");
 const levenshtein = require('./libraries/levenshtein.js');
 
+function removePunctuation(s){ 
+  //replace any punctuation with spaces.
+  //if there are many consecutive punctuation characters, they'll all be replaced by a single space, as dictated by the '+' in the RegEx.
+  return s.replace(/[^a-zA-Z]+/g, ' ')
+}
+
+function prepareForComparison(s) {
+  return removePunctuation(s.toLowerCase())
+          .trim();
+}
+
 module.exports = {
   //clean up the courses data and sent only whats necessary
   //Add url to audioPath
@@ -29,11 +40,11 @@ module.exports = {
     }
     //make answer to lower case
     //PENDING: remove punctuation when comparing strings
-    let courseAnswer = course.answer.toLowerCase().trim();
-    userAnswer = userAnswer.toLowerCase().trim();
+    const preparedCourseAnswer = prepareForComparison(course.answer)
+    const preparedUserAnswer = prepareForComparison(userAnswer)
     let pointsEarned = -1;//placeholder for real value
     //reduced minus points by half
-    let minusPoints = (levenshtein.compareString(courseAnswer, userAnswer)) * .5;
+    let minusPoints = (levenshtein.compareString(preparedCourseAnswer, preparedUserAnswer)) * .5;
 
     //check what type exerciseType the course is
     if(course.exerciseType == "quiz"){
@@ -56,7 +67,7 @@ module.exports = {
       language: course.language,
       category: course.category,
       points: course.points,
-      answer: courseAnswer,
+      answer: course.answer,
       userAnswer: userAnswer,
       pointsEarned: pointsEarned,
       dateCreated: new Date()

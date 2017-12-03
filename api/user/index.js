@@ -7,6 +7,7 @@ var express = require('express');
 var path = require('path');
 var userRouter = express.Router();
 var User = require('./models/users');
+var Course = require('../exercises/models/courses')
 
 
 userRouter.get('/', function(req, res, next) {
@@ -178,8 +179,14 @@ userRouter.post('/registerPost', function(req, res, next){
 });
 
 //will gathers all of the information needed for the dashboard
-userRouter.get('/dashboard', function(req, res, next) {
-    res.send("Dashboard Router");
+userRouter.get('/dashboard/:username', function(req, res, next) {
+    res.setHeader('Content-Type', 'application/json')
+    
+    Course.getAllCoursesBasicInfo(function(err, allCourses) {
+      User.getCourseInfo(req.params.username, function(err, userCourses) {
+        res.send(JSON.stringify(fns.analyzeDashboard(allCourses, userCourses)))
+      })
+    })
 });
 
 

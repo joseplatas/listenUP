@@ -48,6 +48,7 @@
     "body-parser": "^1.18.2",
     "express": "^4.15.4",
     "express-session": "^1.15.6",
+    "lodash": "^4.17.4",
     "mongoose": "^4.12.3",
     "mongoose-auto-increment": "^5.0.1",
     "react-audioplayer": "^0.3.1"

@@ -161,7 +161,7 @@ export class Quiz extends React.Component {
       <iframe
         width="560"
         height="315"
-        src={this.state.currentCourse.videoUrl}>
+        src={this.state.currentCourse.videoUrl+'?autoplay=1'}>
       </iframe>
       )
     }

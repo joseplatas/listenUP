@@ -19,7 +19,7 @@ export class Statistics extends React.Component {
 
         <div className={classes('stat','flex_container')}>
             <h3 className={classes('stats_text')}>
-            382
+                {this.props.statistics.lifetimePoints}
             </h3>
             <p className={classes('stats_tooltip')}>
             lifetime points earned
@@ -28,16 +28,16 @@ export class Statistics extends React.Component {
 
         <div className={classes('stat','flex_container')}>
             <h3 className={classes('stats_text')}>
-            33
+                {Math.round(10 * this.props.statistics.averageScore) / 10}
             </h3>
             <p className={classes('stats_tooltip')}>
-            minutes spent learning
+                average score
             </p>
         </div>
 
         <div className={classes('stat','flex_container')}>
             <h3 className={classes('stats_text')}>
-            108
+                {this.props.statistics.completedExercises}
             </h3>
             <p className={classes('stats_tooltip')}>
             exercises completed
@@ -46,7 +46,7 @@ export class Statistics extends React.Component {
 
         <div className={classes('stat','flex_container')}>
             <h3 className={classes('stats_text')}>
-            10
+                {this.props.statistics.longestStreak}
             </h3>
             <p className={classes('stats_tooltip')}>
             longest streak
