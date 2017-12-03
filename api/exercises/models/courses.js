@@ -141,10 +141,22 @@ CourseSchema.statics.getCoursesBy = function(language, exerciseType, callback){
   }
 
 }
+
+CourseSchema.statics.getAllCoursesBasicInfo = function(callback) {
+  Course.aggregate([
+    { $project: {
+      _id: 0,
+      id: 1,
+      language: 1,
+      exerciseType: 1
+    }}
+  ], callback)
+}
+
 //validate the answer and give back a score
 CourseSchema.statics.validateCourseAnswer = function(courseId, userAnswer, callback){
   //check if course_id and userAnswer was pass
-  if((typeof courseId !== 'undefined') && userAnswer){
+  if((typeof courseId !== 'undefined') && userAnswer) {
     Course.findOne({courseId: courseId})
           .exec(
             function(error,course) {

@@ -38,7 +38,7 @@ export class Credits extends React.Component {
 
                 <section className={classes('credits_section', 'flex_container', 'audioVideo_content')}>
                     <h2 className={classes('section_header')}>
-                        audio & video content
+                        audio content
                 </h2>
 
                     <div className={classes('flex_container', 'logo_row')}>

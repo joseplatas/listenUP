@@ -19,7 +19,13 @@ export class Dashboard extends React.Component {
 
     constructor(props){
       super(props);
-      //check if the user is login before showing page
+      this.state = {}
+    }
+
+    componentDidMount() {
+        fetch(`http://localhost:8080/api/user/dashboard/${localStorage.username}`)
+            .then(response => response.json())
+            .then(dashboardInfo => this.setState({ info: dashboardInfo }))
     }
 
     render() {
@@ -74,8 +80,7 @@ export class Dashboard extends React.Component {
                     achievements:
                 </h2>
                 </div>
-                        {/* calls Achievements component to display achievements */}
-                        <Achievements />
+                        {this.state.info ? <Achievements achievements={this.state.info.achievements}/> : 'Loading...'}
                 </section>
 
                 {/* statistics */}
@@ -86,8 +91,7 @@ export class Dashboard extends React.Component {
                     statistics:
                 </h2>
                 </div>
-                        {/* calls Statistics component to display statistics */}
-                        <Statistics />
+                        {this.state.info ? <Statistics statistics={this.state.info.statistics}/> : 'Loading...' }
                 </section>
             </div>
         </div>

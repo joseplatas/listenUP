@@ -23,10 +23,10 @@
     flex-direction: column;
 }
 
-
 :local .exercise_content {
     flex-direction: column;
     justify-content: center;
+    align-self: center;
 }
 
 :local .small_blue_header {
@@ -35,6 +35,11 @@
 
 :local .blue_text {
     color: #33669a;
+}
+
+:local .content_subheader {
+    background-color: #d2ead7;
+    padding: 2%;
 }
 
 /*---Exercise header---*/
@@ -48,38 +53,12 @@
 
 :local .audio_panel {
     flex-direction: column;
-    align-self: center;
     justify-content: center;
 }
 
-:local .audio_player,
-:local .audio_controls {
+:local .audio_player {
     justify-content: center;
-}
-
-:local .player_img_container {
-    width: 250px;
-}
-
-:local .player_img {
     width: 100%;
-    align-self: center;
-}
-
-:local .audio_controls {
-    white-space: nowrap;
-}
-
-:local .btn_img {
-    width: 100%;
-}
-
-:local .audio_button {
-    background-color: #fffef3;
-    border-style: none;
-    border-width: 0px;
-    height: 100px;
-    width: 100px;
 }
 
 @media only screen and (min-width: 700px) {
@@ -91,10 +70,8 @@
 /*---input-panel---*/
 
 :local .input_panel {
-    padding: 2%;
     flex-direction: column;
     justify-content: space-between;
-    align-self: center;
     max-width: 500px;
 }
 
@@ -111,8 +88,8 @@
 :local .user_input_area {
     resize: none;
     display: block;
-    width: 100%;
-    height: 75px;
+    width: 99%;
+    height: 100px;
     margin: 16px 0;
     font-size: 1.2em;
     font-family: Arial, Helvetica, sans-serif;

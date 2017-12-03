@@ -1,10 +1,13 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 import styles from './home.css'
-import whiteLogo from '../shared/img/ListenUp_logo_white.png'
-import ss_Listen from './img/howitworks_listen.png'
-import ss_Answer from './img/howitworks_type.png'
-import ss_Learn from './img/howitworks_learn.png'
+// import ss_Listen from './img/howitworks_listen.png'
+// import ss_Answer from './img/howitworks_type.png'
+// import ss_Learn from './img/howitworks_learn.png'
+
+import './img/howitworks_1.png'
+import './img/howitworks_2.png'
+import './img/howitworks_3.png'
 
 import { Link } from 'react-router-dom'
 
@@ -104,51 +107,54 @@ export const Home=() =>
     <section className={classes('details_container', 'flex_container','marginOnTop')}>
         <div className={classes('detail', 'flex_container')}>
         <div className={styles.detail_thumbnail}>
+            <img className={classes('thumbnail_img')} src='app/home/img/howitworks_1.png'/>
         </div>
         <h4 className={styles.detail_header}>
-            listen.
+            press play.
         </h4>
         <p className={styles.detail_body}>
-            We'll play a short audio or video clip
-            of a native speaker. All of our clips have
-            been specially chosen to expose you to how
-            people speak in a natural environment,
-            without slowing themselves down for learners.
+            We offer two exercises: Transcription and Quiz. 
+            In either mode, just press play: listen to the audio 
+            clip in Transcription or watch the video in Quiz.
         </p>
         </div>
 
         <div className={classes('detail', 'flex_container')}>
         <div className={styles.detail_thumbnail}>
+            <img className={classes('thumbnail_img')} src='app/home/img/howitworks_2.png'/>
         </div>
         <h4 className={styles.detail_header}>
-            answer.
+            give an answer.
         </h4>
         <p className={styles.detail_body}>
-            We offer two types of exercises: Transcription
-            and Quiz. In Transcription, all you have to do
-            is write down what you hear, excluding non-word
-            fillers like "umm." In Quiz Mode, you'll answer
-            a question that tests your comprehension.
+            After listening or watching the clip in the exercise, you'll 
+            be prompted to write down what you hear OR to answer a 
+            quick quiz question to test your listening comprehension.
         </p>
         </div>
 
         <div className={classes('detail', 'flex_container')}>
         <div className={styles.detail_thumbnail}>
+            <img className={classes('thumbnail_img')} src='app/home/img/howitworks_3.png'/>
         </div>
         <h4 className={styles.detail_header}>
-            learn.
+            get feedback.
         </h4>
         <p className={styles.detail_body}>
             In either learning mode, you'll earn points based
-            on your answer. We'll also cycle back through the
-            difficult exercises for you, so you have plenty
-            of opportunities to improve. Over time, you'll
+            on your answer. Over time, you'll
             become more comfortable with listening to how
             native speakers really talk!
         </p>
         </div>
-    </section>
 
+
+    </section>
+        <div className={classes('centered_text','marginOnTop')}>
+                <Link to="/signup" className={classes('actionButton','blueButton')}>
+                Give it a try!
+                </Link>
+            </div>
     </section>
 
 </div>

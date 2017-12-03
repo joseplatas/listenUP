@@ -86,7 +86,25 @@ UserSchema.pre('save', function(next){
   });
 
 });
+UserSchema.statics.getCourseInfo = function(username, callback) {
+  const field = path => `$coursesTaken.${path}`
 
+  User.aggregate([
+    { $match: { username: username } },
+    { $unwind: '$coursesTaken' },
+    {
+      $project: {
+        id: field('courseId'),
+        date: field('dateCreated'),
+        exerciseType: field('exerciseType'),
+        points: field('pointsEarned'),
+        language: field('language'),
+        _id: 0
+      }
+    },
+    { $sort: { date: 1 } }
+  ], callback)
+}
 //add to coursesTaken property of document for an specific username
 UserSchema.statics.addCourseToUser = function(username, course, callback){
   //check if course_id and userAnswer was pass

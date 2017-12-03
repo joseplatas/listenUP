@@ -25,6 +25,7 @@
 :local .credits_header {
     font-size: 3em;
     margin-bottom: 0;
+    color: #33669a;
 }
 
 :local .credits_subtitle {
@@ -32,16 +33,15 @@
 }
 
 :local .section_header {
-    padding-left: 10px;
+    width: 100%;
+    background-color: #9ed4ae;
+    padding: 1%;
 }
 
 /*---Shared Section Styles---*/
 
 :local .credits_section {
     flex-direction: column;
-    border-width: 1px;
-    border-style: solid;
-    border-color: #475c64;
     max-width: 100%;
     padding-bottom: 20px;
     margin-bottom: 30px;

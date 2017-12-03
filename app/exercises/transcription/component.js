@@ -5,9 +5,6 @@ import * as fns from './fns.js'
 import { generateClassHelper } from '../../shared/shared_fns.js'
 import { Exercise_Header } from '../shared/exercise_header/component.js'
 import { Tooltip } from './tooltip/component.js'
-import '../shared/img/audio_controls_pause.png'
-import '../shared/img/audio_controls_play.png'
-import '../shared/img/audio_controls_stop.png'
 
 import {
     HashRouter,
@@ -158,7 +155,11 @@ export class Transcription extends React.Component {
     // renders the audio player
     renderMediaPlayer() {
         return !this.state.mediaPlayerHidden && (
-            <audio autoPlay id='audio_track' controls preload='auto'>
+            <audio 
+            autoPlay 
+            id='audio_track' 
+            controls preload='auto' 
+            className={classes('audio_player')}>
                 <source id="mp3" src={this.getCurrentCourse().audioPath}/>
             </audio>
         )
@@ -244,7 +245,7 @@ export class Transcription extends React.Component {
                     {/* AUDIO PANEL */}
                     <div className={classes('audio_panel','flex_container')}>
 
-                        <h5 className={classes('blue_text','content_subheader')}>
+                        <h5 className={classes('content_subheader')}>
                         listen to the audio:
                         </h5>
 
@@ -258,7 +259,7 @@ export class Transcription extends React.Component {
                     <div className={classes('input_panel', 'flex_container')}>
                         <div className={styles.user_input}>
 
-                            <h5 className={classes('blue_text', 'content_subheader')}>
+                            <h5 className={classes('content_subheader')}>
                             type what you hear:
                             </h5>
 

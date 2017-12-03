@@ -161,7 +161,7 @@ export class Quiz extends React.Component {
       <iframe
         width="560"
         height="315"
-        src={this.state.currentCourse.videoUrl}>
+        src={this.state.currentCourse.videoUrl+'?autoplay=1'}>
       </iframe>
       )
     }
@@ -254,7 +254,7 @@ export class Quiz extends React.Component {
                 <div className={classes('video_panel','flex_container')}>
 
                   {/* generates instructions for user depending on language */}
-                  <h5 className={classes('blue_text', 'input_header')}>
+                  <h5 className={classes('input_header')}>
                     {fns.generateQuizDirections(this.state.language)}
                   </h5>
 
@@ -269,7 +269,7 @@ export class Quiz extends React.Component {
                         <div className={styles.user_input}>
 
                             {/* generations course question */}
-                            <h5 className={classes('blue_text', 'input_header')}>
+                            <h5 className={classes('input_header')}>
                               {this.state.currentCourse.question}
                             </h5>
 
