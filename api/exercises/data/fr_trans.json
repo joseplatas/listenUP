@@ -133,24 +133,9 @@
     "badgePath": "n/a",
     "points": 10
   },
-
+  
   {
     "title": "fr_10",
-    "exerciseType": "transcription",
-    "language": "fr",
-    "category": "",
-    "question": "n/a",
-    "answer": "Je viens d'arriver à Istanbul.",
-    "audioPath": "/public/audio/fr_10.mp3",
-    "answerOptions": [],
-    "badgeName": "n/a",
-    "badgeDescription": "n/a",
-    "badgePath": "n/a",
-    "points": 10
-  },
-
-  {
-    "title": "fr_11",
     "exerciseType": "transcription",
     "language": "fr",
     "category": "",
