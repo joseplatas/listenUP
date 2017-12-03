@@ -48,13 +48,7 @@ export class Achievements extends React.Component {
 
         return <div className={classes('flex_container', 'achievements_container')}>
 
-<<<<<<< HEAD
-            {/* ---------- begin single achievement ---------- */}
-            {/* ---------- Scored 5 correct Quiz answers in a row! ---------- */}
-            <div className={classes('achievement_container', 'flex_container')}>
-=======
             
->>>>>>> 2ed5cdd700b5fba018e67a567ccfbf6bc184b1a4
 
             <div className={classes('achievement_container', 'flex_container')}>
                 <div className={classes('thumbnail_container')}>
@@ -67,13 +61,7 @@ export class Achievements extends React.Component {
                     Answer a quiz question correctly!
                 </p>
             </div>
-<<<<<<< HEAD
-            {/* ---------- end single achievement ---------- */}
-
-            {/* ---------- Got a Quiz answer correct without replaying the audio! ---------- */}
-=======
             {/* ---------- begin single achievement ---------- */}
->>>>>>> 2ed5cdd700b5fba018e67a567ccfbf6bc184b1a4
             <div className={classes('achievement_container', 'flex_container')}>
                 {/* achievement thumbnail */}
                 <div className={classes('thumbnail_container')}>
@@ -90,12 +78,7 @@ export class Achievements extends React.Component {
                     Score 5 correct Quiz answers in a row!
                 </p>
             </div>
-<<<<<<< HEAD
-
-            {/* ---------- Scored a perfect 10 on a Transcription Exercise! ---------- */}
-=======
             {/* ---------- end single achievement ---------- */}
->>>>>>> 2ed5cdd700b5fba018e67a567ccfbf6bc184b1a4
             <div className={classes('achievement_container', 'flex_container')}>
                 <div className={classes('thumbnail_container')}>
                     <img src={color(a.trans_singleTen, '/app/user/dashboard/achievements/img/badges_tr_10score.png')} className={classes('thumbnail')} />
@@ -108,7 +91,6 @@ export class Achievements extends React.Component {
                 </p>
             </div>
 
-            {/* ---------- 3 Perfect 10s in a row on Transcription! ---------- */}
             <div className={classes('achievement_container', 'flex_container')}>
                 <div className={classes('thumbnail_container')}>
                     <img src={color(a.trans_tripleTens, '/app/user/dashboard/achievements/img/badges_tr_10scoreStreak.png')} className={classes('thumbnail')} />
@@ -121,7 +103,6 @@ export class Achievements extends React.Component {
                 </p>
             </div>
 
-            {/* ---------- Complete all English exercises with a perfect 10 score! ---------- */}
             <div className={classes('achievement_container', 'flex_container')}>
                 <div className={classes('thumbnail_container')}>
                     <img src={color(a.en_perfect, '/app/user/dashboard/achievements/img/badges_lang_medal_en.png')} className={classes('thumbnail')} />
@@ -134,7 +115,6 @@ export class Achievements extends React.Component {
                 </p>
             </div>
 
-            {/* ---------- Complete all French exercises with a perfect 10 score! ---------- */}
             <div className={classes('achievement_container', 'flex_container')}>
                 <div className={classes('thumbnail_container')}>
                     <img src={color(a.fr_perfect, '/app/user/dashboard/achievements/img/badges_lang_medal_fr.png')} className={classes('thumbnail')} />
@@ -147,7 +127,6 @@ export class Achievements extends React.Component {
                 </p>
             </div>
 
-            {/* ---------- Complete all Spanish exercises with a perfect 10 score! ---------- */}
             <div className={classes('achievement_container', 'flex_container')}>
                 <div className={classes('thumbnail_container')}>
                     <img src={color(a.es_perfect, '/app/user/dashboard/achievements/img/badges_lang_medal_es.png')} className={classes('thumbnail')} />
@@ -160,7 +139,6 @@ export class Achievements extends React.Component {
                 </p>
             </div>
 
-            {/* ---------- Complete all exercises in every language with a perfect 10 score! ---------- */}
             <div className={classes('achievement_container', 'flex_container')}>
                 <div className={classes('thumbnail_container')}>
                     <img src={color(a.perfect, '/app/user/dashboard/achievements/img/badges_lang_medal_ALL.png')} className={classes('thumbnail')} />
