@@ -17,14 +17,31 @@ export class Tooltip extends React.Component {
         super(props);
     }
 
+    renderTooltipText() {
+        if (this.props.score === 10) {
+            return <div className={classes('tooltip_text')}>
+                    Great job!
+                </div>
+        }
+        else {
+            return <div className={classes('tooltip_text','incorrect_answer')}>
+                    {fns.generateTooltipText(this.props.language)}
+                    
+                    <p><em>{this.props.expectedAnswer}</em></p>
+                </div>
+        }
+    }
+
     render() {
-        return <div>
+        return this.props.expectedAnswer 
+        ? <div>
 
             <span className={classes('tooltip_text')}>
-                Expected Answer:
-                
-                <p><em>{this.props.expectedAnswer}</em></p>
+                {this.renderTooltipText()}
             </span>
         </div>
+        : <div>
+
+            </div>
     }
 }

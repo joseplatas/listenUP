@@ -177,14 +177,14 @@ export class Transcription extends React.Component {
                         disabled
                         id="textarea"
                         name='userInput'
-                        placeholder='type here...'
+                        placeholder={fns.generatePlaceholder(this.state.language)}
                         value={this.state.userInput}
                         onChange={this.handleUserInputChange}
                         className={styles.user_input_area}
                         spellCheck='false' />
                 </label>
 
-                <input type='submit' value='next' className={classes('enter_button','enter_button_next')}/>
+                <input type='submit' value={fns.generateNextText(this.state.language)} className={classes('enter_button','enter_button_next')}/>
             </form>)
             : (<form onSubmit={this.handleSubmit}>
 
@@ -192,14 +192,14 @@ export class Transcription extends React.Component {
                     <textarea
                         id="textarea"
                         name='userInput'
-                        placeholder='type here...'
+                        placeholder={fns.generatePlaceholder(this.state.language)}
                         value={this.state.userInput}
                         onChange={this.handleUserInputChange}
                         className={styles.user_input_area}
                         spellCheck='false' />
                 </label>
 
-                <input type='submit' value='submit' className={classes('enter_button')}/>
+                <input type='submit' value={fns.generateSubmitText(this.state.language)} className={classes('enter_button')}/>
 
             </form>)
     }
@@ -246,7 +246,7 @@ export class Transcription extends React.Component {
                     <div className={classes('audio_panel','flex_container')}>
 
                         <h5 className={classes('content_subheader')}>
-                        listen to the audio:
+                            {fns.generateAudioInstructions(this.state.language)}
                         </h5>
 
                         {/* AUDIO PLAYER */}
@@ -260,21 +260,21 @@ export class Transcription extends React.Component {
                         <div className={styles.user_input}>
 
                             <h5 className={classes('content_subheader')}>
-                            type what you hear:
+                                {fns.generateTrInstructions(this.state.language)}
                             </h5>
 
                             {/* USEFUL TIP FOR USER */}
                             <p>
-                            You can skip fillers sounds like 'umm...' and 'uhh...',
-                            but remember to include filler <em>words</em> such as
-                            'like' and 'well.'
+                                {fns.generateTip(this.state.language)}
                             </p>
 
                             {this.renderForm()}
                             {/* FEEDBACK TOOLTIP */}
                             <div className={styles.tooltip_feedback}>
                                 <Tooltip
-                                expectedAnswer={this.state.expectedAnswer}/>
+                                expectedAnswer={this.state.expectedAnswer} 
+                                language={this.state.language}
+                                score={this.state.score}/>
                             </div>
                         </div>
                     </div>
