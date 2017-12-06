@@ -45,9 +45,9 @@ export function generateTip(language) {
         case 'en':
             return "You can skip sounds like 'umm...' and 'uhh...', but remember to include words such as 'like' and 'well.'"
         case 'fr':
-            return "Vous pouvez ignorer les sons comme 'euhh...', mais souvenez-vous d'inclure des mots comme 'bon' et 'enfin.'"
+            return "Ignorez les sons comme 'euhh...', mais souvenez-vous d'inclure des mots comme 'bon' et 'enfin.'"
         case 'es':
-            return "Puede ignorar los sonidos como 'ehh', pero recuerde incluir palabras como 'bueno...' y 'A ver...'"
+            return "Ignorar los sonidos como 'ehh', pero recuerde incluir palabras como 'bueno...' y 'A ver...'"
     }
 }
 

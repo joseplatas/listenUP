@@ -172,32 +172,32 @@ export class Transcription extends React.Component {
         return this.state.userAnswer
             ? (<form onSubmit={this.handleGoNext}>
 
-                <label>
-                    <textarea
-                        disabled
-                        id="textarea"
-                        name='userInput'
-                        placeholder={fns.generatePlaceholder(this.state.language)}
-                        value={this.state.userInput}
-                        onChange={this.handleUserInputChange}
-                        className={styles.user_input_area}
-                        spellCheck='false' />
-                </label>
+                <input 
+                    type='text'
+                    id="textarea"
+                    name='userInput'
+                    placeholder={fns.generatePlaceholder(this.state.language)}
+                    value={this.state.userInput}
+                    onChange={this.handleUserInputChange}
+                    className={styles.user_input_area}
+                    spellCheck='false' 
+                    disabled='disabled'/>
 
                 <input type='submit' value={fns.generateNextText(this.state.language)} className={classes('enter_button','enter_button_next')}/>
+                
             </form>)
+
             : (<form onSubmit={this.handleSubmit}>
 
-                <label>
-                    <textarea
-                        id="textarea"
-                        name='userInput'
-                        placeholder={fns.generatePlaceholder(this.state.language)}
-                        value={this.state.userInput}
-                        onChange={this.handleUserInputChange}
-                        className={styles.user_input_area}
-                        spellCheck='false' />
-                </label>
+                <input 
+                    type='text'
+                    id="textarea"
+                    name='userInput'
+                    placeholder={fns.generatePlaceholder(this.state.language)}
+                    value={this.state.userInput}
+                    onChange={this.handleUserInputChange}
+                    className={styles.user_input_area}
+                    spellCheck='false' />
 
                 <input type='submit' value={fns.generateSubmitText(this.state.language)} className={classes('enter_button')}/>
 
