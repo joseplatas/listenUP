@@ -93,7 +93,7 @@ function longestStreak(myExercises) {
           })
 
   return _.flattenDeep(allStreaks)
-          .reduce(findMax)
+          .reduce(findMax, 0)
 }
 
 module.exports = {
