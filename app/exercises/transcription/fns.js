@@ -47,7 +47,7 @@ export function generateTip(language) {
         case 'fr':
             return "Ignorez les sons comme 'euhh...', mais souvenez-vous d'inclure des mots comme 'bon' et 'enfin.'"
         case 'es':
-            return "Ignorar los sonidos como 'ehh', pero recuerde incluir palabras como 'bueno...' y 'A ver...'"
+            return "Ignore los sonidos como 'ehh', pero recuerde incluir palabras como 'bueno...' y 'A ver...'"
     }
 }
 
