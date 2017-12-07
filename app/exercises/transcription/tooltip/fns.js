@@ -8,3 +8,14 @@ export function generateTooltipText(language) {
             return "Respuesta esperada:"
     }
 }
+
+export function generateGoodJob(language) {
+    switch(language) {
+        case 'en':
+            return "Good job!"
+        case 'fr':
+            return "Bien joué!"
+        case 'es':
+            return "¡Buen trabajo!"
+    }
+}

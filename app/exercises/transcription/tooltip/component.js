@@ -20,7 +20,7 @@ export class Tooltip extends React.Component {
     renderTooltipText() {
         if (this.props.score === 10) {
             return <div className={classes('tooltip_text')}>
-                    Great job!
+                    {fns.generateGoodJob(this.props.language)}
                 </div>
         }
         else {
